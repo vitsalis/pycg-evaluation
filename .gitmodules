@@ -1,0 +1,24 @@
+[submodule "data/macro-benchmark/projects/fabric"]
+	path = data/macro-benchmark/projects/fabric
+	url = https://github.com/fabric/fabric
+[submodule "data/macro-benchmark/projects/face_classification"]
+	path = data/macro-benchmark/projects/face_classification
+	url = https://github.com/oarriaga/face_classification
+[submodule "data/macro-benchmark/projects/Sublist3r"]
+	path = data/macro-benchmark/projects/Sublist3r
+	url = https://github.com/aboul3la/Sublist3r
+[submodule "pyan"]
+	path = pyan
+	url = https://github.com/davidfraser/pyan
+[submodule "depends"]
+	path = depends
+	url = https://github.com/multilang-depends/depends
+[submodule "data/macro-benchmark/projects/asciinema"]
+	path = data/macro-benchmark/projects/asciinema
+	url = https://github.com/asciinema/asciinema
+[submodule "data/macro-benchmark/projects/autojump"]
+	path = data/macro-benchmark/projects/autojump
+	url = https://github.com/wting/autojump
+[submodule "PyCG"]
+	path = PyCG
+	url = https://github.com/vitsalis/PyCG
