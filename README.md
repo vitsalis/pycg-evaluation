@@ -1,10 +1,14 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4456584.svg)](https://doi.org/10.5281/zenodo.4456584)
+
+
 # Artifact for "PyCG: Practicall Call Graph Generation in Python" (ICSE'21)
 
 This is the artifact for the ICSE'21 paper titled "PyCG: Practical Call Graph
 Generation in Python".
 
 An archived version of the artifact is also available on Zenodo.
-See **TODO LINK**.
+See https://doi.org/10.5281/zenodo.4456584
+
 
 # What is included in this artifact?
 
