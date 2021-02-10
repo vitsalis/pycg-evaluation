@@ -38,6 +38,32 @@ Note that our prototype implementation `PyCG` is available as open-source
 software under the Apache 2.0 Licence, and can also be found in the
 following repository: https://github.com/vitsalis/pycg
 
+The `PyCG` directory contains the following:
+
+* `pycg/pycg.py`: The main module of `PyCG`. Initializes the analysis state and
+  invokes the iteration of the Abstract Syntax Tree (AST).
+* `pycg/processing`: Defines methods for iterating the AST of the input Python
+  files, while updating the analysis state data structures. In addition, it
+  implements the final iteration of the AST that leads to the
+  generation of the resulting call graph.
+* `pycg/machinery`: Contains the implemention of the data structures
+  that are used to represent the analysis state. Specifically:
+    * `pycg/machinery/classes.py`: Keeps track of classes and their Method
+      Resolution Order.
+    * `pycg/machinery/definitions.py`: Implements the storage of objects
+      as well as methods that handle the traversal of the assignment graph.
+    * `pycg/machinery/pointers.py`: Keeps track of the assignment relationships
+      between objects.
+    * `pycg/machinery/scopes.py`: Defines methods for creating and accessing
+      the scope tree.
+    * `pycg/machinery/modules.py`: Keeps track of the source modules identified
+      during analysis.
+    * `pycg/machinery/imports.py`: Implements the methods that allow `PyCG` to
+      discover the file locations of imported files.
+* `pycg/utils`: Defines common functions (e.g. joining two namespaces) and
+  constants.
+* `pycg/formats`: Contains JSON generators for different output formats.
+
 # Requirements
 
 *Copied from REQUIREMENTS.md*
