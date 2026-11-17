@@ -1,0 +1,16 @@
+{
+ "base_images": {
+  "cpygraph": "python:3.14@sha256:a7097ae62ea4cf4fec036282cbf97f0d0b7b4f9cb286277951115fb30442527d",
+  "headergen": "python:3.12-slim@sha256:5e2bdb1b0d542d5039cffb8181c65930093949194a65c365dfb1b0fe13a4fa5b",
+  "jarvis": "python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90",
+  "pyan": "python:3.15-slim@sha256:65a65fc7b30b06cb6df4930fd4650697cb23f4c2698ab81fc87e4b031bc36928",
+  "pyanalyzer": "python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90"
+ },
+ "trees": {
+  "cpygraph/source": "a7f47f7fa7cb1d953ff8bb78d284097c686fd2e76da259c52e8053f4af563c10",
+  "headergen/headergen": "883efd3447d0949a75832eedc7809b5b0f63943b35d4b0b0480fd7255d257148",
+  "headergen/typeshed": "2358c44a3e580d34011e74338586d6be2784eee88492cd18e4d758b8b2187270",
+  "jarvis/source": "048b257ebd118afc6e2a1178a7e755a7a681336d1aa0d3bc7624a73aac27909d",
+  "pyanalyzer/source": "e3fb6647bad8fed05fa883a517e7323152cf4e5643dde4e10364f15355239cab"
+ }
+}

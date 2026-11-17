@@ -1,0 +1,6 @@
+# Written by evaluation/tools/pin.py deps: the runtime dependencies of
+# macro-benchmark/configargparse for HeaderGen, at the versions of macro-benchmark/requirements/configargparse.txt
+# and their closure, for CPython 3.12 on
+# aarch64-manylinux_2_28 and x86_64-manylinux_2_28; every file by SHA-256.
+# The tool's environment wins; at another version than the trace's:
+# tool version: pyyaml==6.0.2 (trace 6.0.3)

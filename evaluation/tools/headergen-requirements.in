@@ -1,0 +1,21 @@
+# UNPINNED: the input of headergen-requirements.txt, which does not exist yet.
+# The lead resolves it, with the network, by
+#   python3 -I evaluation/tools/pin.py requirements headergen
+# (uv pip compile: Python 3.12, wheels only, every file by SHA-256, newest
+# release uploaded before 2024-10-19, the day after the HeaderGen pin).
+#
+# The distributions that the analysis path of HeaderGen 1ea5226 imports, with
+# shim B for framework_models (round-2 scan, HeaderGen 3 and 4), and their
+# dependencies by resolution. Versions named by the scan are given; the rest
+# take the newest release before the cutoff.
+pytype==2024.10.11  # imported at start; the last release, wheels cp310 to cp312
+jedi                 # typestubs.py
+pygtrie              # typestubs.py (2.6.2 of 2026 needs Python 3.11; before the cutoff: 2.5.0)
+requests             # typestubs.py (its only call is not reached at the pin)
+dill                 # machinery/imports.py
+gast                 # the vendored beniget 0.4.1 and usedef_processor.py
+jupytext             # utils/common.py
+setuptools           # pkg_resources, for formats/fasten.py; the scan names 80.9.0 (as for JARVIS),
+                     # which is newer than the cutoff: the newest before it is taken
+# Not installed, by shim B: numpy, scipy, scikit-learn, nltk (and its data);
+# pin.py refuses a resolution that contains them.

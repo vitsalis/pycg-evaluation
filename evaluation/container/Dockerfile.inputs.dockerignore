@@ -1,0 +1,23 @@
+# The context of the inputs image is the repository (compose.yaml): only
+# the files that the steps of Dockerfile.inputs read go in.
+*
+!macro-benchmark/projects.py
+!macro-benchmark/projects.toml
+!macro-benchmark/check.py
+!macro-benchmark/trace.py
+!macro-benchmark/sites.py
+!macro-benchmark/ledger.py
+!macro-benchmark/draw.py
+!PyCG/micro-benchmark/validate.py
+!evaluation/common/
+!evaluation/container/fetch.py
+!evaluation/container/tool_job.py
+!evaluation/tools/*.py
+!evaluation/rq1-accuracy/trace_recall.py
+!evaluation/rq3-scale/corpus.py
+!evaluation/rq3-scale/robustness.py
+!evaluation/rq3-scale/table.py
+!evaluation/rq3-scale/corpus/
+!evaluation/rq4-test-selection/rts.py
+!evaluation/rq4-test-selection/corpus/
+**/__pycache__
