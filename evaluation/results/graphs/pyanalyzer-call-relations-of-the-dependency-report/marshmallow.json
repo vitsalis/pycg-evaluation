@@ -1,0 +1,322 @@
+{
+"marshmallow.decorators.post_dump": [
+"marshmallow.decorators.set_hook"
+],
+"marshmallow.decorators.post_load": [
+"marshmallow.decorators.set_hook"
+],
+"marshmallow.decorators.pre_dump": [
+"marshmallow.decorators.set_hook"
+],
+"marshmallow.decorators.pre_load": [
+"marshmallow.decorators.set_hook"
+],
+"marshmallow.decorators.validates": [
+"marshmallow.decorators.set_hook"
+],
+"marshmallow.decorators.validates_schema": [
+"marshmallow.decorators.set_hook"
+],
+"marshmallow.error_store.ErrorStore.store_error": [
+"marshmallow.error_store.copy_containers",
+"marshmallow.error_store.merge_errors"
+],
+"marshmallow.error_store.copy_containers": [
+"marshmallow.error_store.copy_containers"
+],
+"marshmallow.error_store.merge_errors": [
+"marshmallow.error_store.merge_errors",
+"marshmallow.experimental.context.Context.get"
+],
+"marshmallow.experimental.context.Context.get": [
+"marshmallow.experimental.context.Context.get"
+],
+"marshmallow.fields.AwareDateTime._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Boolean._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Constant.__init__": [
+"marshmallow.experimental.context.Context.get"
+],
+"marshmallow.fields.Constant._validate_missing": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Decimal._validated": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Enum.__init__": [
+"marshmallow.fields._resolve_field_instance"
+],
+"marshmallow.fields.Enum._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Field.__init__": [
+"marshmallow.fields.Field._normalize_processors"
+],
+"marshmallow.fields.Field._validate": [
+"marshmallow.fields.Field._validate_all"
+],
+"marshmallow.fields.Field._validate_missing": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Field.deserialize": [
+"marshmallow.fields.Field._deserialize",
+"marshmallow.fields.Field._validate",
+"marshmallow.fields.Field._validate_missing"
+],
+"marshmallow.fields.Field.serialize": [
+"marshmallow.fields.Field._serialize",
+"marshmallow.fields.Field.get_value"
+],
+"marshmallow.fields.Float._validated": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.IP._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.IPInterface._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Integer._validated": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.List.__init__": [
+"marshmallow.fields._resolve_field_instance"
+],
+"marshmallow.fields.List._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Mapping.__init__": [
+"marshmallow.fields._resolve_field_instance"
+],
+"marshmallow.fields.Mapping._deserialize": [
+"marshmallow.fields.Field.make_error",
+"marshmallow.fields.Mapping.mapping_type"
+],
+"marshmallow.fields.Mapping._serialize": [
+"marshmallow.fields.Mapping.mapping_type"
+],
+"marshmallow.fields.NaiveDateTime._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Nested._deserialize": [
+"marshmallow.fields.Nested._load",
+"marshmallow.fields.Nested._test_collection"
+],
+"marshmallow.fields.Nested._load": [
+"marshmallow.schema.Schema.load"
+],
+"marshmallow.fields.Nested._serialize": [
+"marshmallow.schema.Schema.dump"
+],
+"marshmallow.fields.Nested._test_collection": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Nested.schema": [
+"marshmallow.fields.Nested._nested_normalized_option",
+"marshmallow.schema.Schema._init_fields",
+"marshmallow.schema.Schema.from_dict"
+],
+"marshmallow.fields.Number._deserialize": [
+"marshmallow.fields.Number._validated"
+],
+"marshmallow.fields.Number._format_num": [
+"marshmallow.fields.Number.num_type"
+],
+"marshmallow.fields.Number._serialize": [
+"marshmallow.fields.Number._format_num",
+"marshmallow.fields.Number._to_string"
+],
+"marshmallow.fields.Number._validated": [
+"marshmallow.fields.Field.make_error",
+"marshmallow.fields.Number._format_num"
+],
+"marshmallow.fields.Pluck._deserialize": [
+"marshmallow.fields.Nested._load",
+"marshmallow.fields.Nested._test_collection"
+],
+"marshmallow.fields.String._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.TimeDelta._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.Tuple.__init__": [
+"marshmallow.fields._resolve_field_instance"
+],
+"marshmallow.fields.Tuple._deserialize": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields.UUID._deserialize": [
+"marshmallow.fields.UUID._validated"
+],
+"marshmallow.fields.UUID._validated": [
+"marshmallow.fields.Field.make_error"
+],
+"marshmallow.fields._TemporalField._deserialize": [
+"marshmallow.experimental.context.Context.get",
+"marshmallow.fields.Field.make_error",
+"marshmallow.fields._TemporalField._make_object_from_format"
+],
+"marshmallow.fields._TemporalField._serialize": [
+"marshmallow.experimental.context.Context.get"
+],
+"marshmallow.orderedset.OrderedSet.discard": [
+"marshmallow.orderedset.OrderedSet.pop"
+],
+"marshmallow.orderedset.OrderedSet.pop": [
+"marshmallow.orderedset.OrderedSet.discard"
+],
+"marshmallow.schema.Schema.__init__": [
+"marshmallow.schema.Schema._init_fields",
+"marshmallow.schema.Schema._normalize_nested_options",
+"marshmallow.utils.is_collection"
+],
+"marshmallow.schema.Schema._bind_field": [
+"marshmallow.schema.Schema.on_bind_field"
+],
+"marshmallow.schema.Schema._call_and_store": [
+"marshmallow.error_store.ErrorStore.store_error"
+],
+"marshmallow.schema.Schema._deserialize": [
+"marshmallow.error_store.ErrorStore.store_error",
+"marshmallow.experimental.context.Context.get",
+"marshmallow.schema.Schema._call_and_store",
+"marshmallow.schema.Schema._deserialize",
+"marshmallow.utils.is_collection",
+"marshmallow.utils.is_sequence_but_not_string",
+"marshmallow.utils.set_value"
+],
+"marshmallow.schema.Schema._do_load": [
+"marshmallow.exceptions.ValidationError.normalized_messages",
+"marshmallow.schema.Schema._deserialize",
+"marshmallow.schema.Schema._invoke_field_validators",
+"marshmallow.schema.Schema._invoke_load_processors",
+"marshmallow.schema.Schema._invoke_schema_validators",
+"marshmallow.schema.Schema.handle_error"
+],
+"marshmallow.schema.Schema._init_fields": [
+"marshmallow.schema.Schema._bind_field"
+],
+"marshmallow.schema.Schema._invoke_dump_processors": [
+"marshmallow.schema.Schema._invoke_processors"
+],
+"marshmallow.schema.Schema._invoke_field_validators": [
+"marshmallow.orderedset.OrderedSet.pop",
+"marshmallow.schema.Schema._call_and_store"
+],
+"marshmallow.schema.Schema._invoke_load_processors": [
+"marshmallow.schema.Schema._invoke_processors"
+],
+"marshmallow.schema.Schema._invoke_processors": [
+"marshmallow.experimental.context.Context.get"
+],
+"marshmallow.schema.Schema._invoke_schema_validators": [
+"marshmallow.experimental.context.Context.get",
+"marshmallow.schema.Schema._run_validator"
+],
+"marshmallow.schema.Schema._normalize_nested_options": [
+"marshmallow.schema.Schema.__apply_nested_option"
+],
+"marshmallow.schema.Schema._run_validator": [
+"marshmallow.error_store.ErrorStore.store_error"
+],
+"marshmallow.schema.Schema._serialize": [
+"marshmallow.fields.Field.serialize",
+"marshmallow.schema.Schema._serialize"
+],
+"marshmallow.schema.Schema.dump": [
+"marshmallow.schema.Schema._invoke_dump_processors",
+"marshmallow.schema.Schema._serialize"
+],
+"marshmallow.schema.Schema.dumps": [
+"marshmallow.schema.Schema.dump"
+],
+"marshmallow.schema.Schema.get_attribute": [
+"marshmallow.utils.get_value"
+],
+"marshmallow.schema.Schema.load": [
+"marshmallow.schema.Schema._do_load"
+],
+"marshmallow.schema.Schema.loads": [
+"marshmallow.schema.Schema.load"
+],
+"marshmallow.schema.Schema.validate": [
+"marshmallow.schema.Schema._do_load"
+],
+"marshmallow.schema.SchemaMeta.__init__": [
+"marshmallow.schema.SchemaMeta.resolve_hooks"
+],
+"marshmallow.schema.SchemaMeta.__new__": [
+"marshmallow.experimental.context.Context.get",
+"marshmallow.schema.SchemaMeta.__new__",
+"marshmallow.schema.SchemaMeta.get_declared_fields",
+"marshmallow.schema._get_fields",
+"marshmallow.schema._get_fields_by_mro"
+],
+"marshmallow.schema._get_fields_by_mro": [
+"marshmallow.schema._get_fields"
+],
+"marshmallow.utils.from_timestamp_ms": [
+"marshmallow.utils.from_timestamp"
+],
+"marshmallow.utils.get_value": [
+"marshmallow.utils._get_value_for_key"
+],
+"marshmallow.utils.is_collection": [
+"marshmallow.utils.is_iterable_but_not_string"
+],
+"marshmallow.utils.is_iterable_but_not_string": [
+"marshmallow.utils.is_generator"
+],
+"marshmallow.utils.set_value": [
+"marshmallow.utils.set_value"
+],
+"marshmallow.utils.timestamp": [
+"marshmallow.utils.is_aware"
+],
+"marshmallow.utils.timestamp_ms": [
+"marshmallow.utils.timestamp"
+],
+"marshmallow.validate.ContainsNoneOf.__call__": [
+"marshmallow.validate.ContainsNoneOf._format_error"
+],
+"marshmallow.validate.ContainsOnly.__call__": [
+"marshmallow.validate.ContainsOnly._format_error"
+],
+"marshmallow.validate.Email.__call__": [
+"marshmallow.validate.Email._format_error"
+],
+"marshmallow.validate.Equal.__call__": [
+"marshmallow.validate.Equal._format_error"
+],
+"marshmallow.validate.Length.__call__": [
+"marshmallow.validate.Length._format_error"
+],
+"marshmallow.validate.NoneOf.__call__": [
+"marshmallow.validate.NoneOf._format_error"
+],
+"marshmallow.validate.OneOf.__call__": [
+"marshmallow.validate.OneOf._format_error"
+],
+"marshmallow.validate.Predicate.__call__": [
+"marshmallow.validate.Predicate._format_error"
+],
+"marshmallow.validate.Range.__call__": [
+"marshmallow.validate.Range._format_error"
+],
+"marshmallow.validate.Regexp.__call__": [
+"marshmallow.validate.Regexp._format_error"
+],
+"marshmallow.validate.URL.RegexMemoizer.__call__": [
+"marshmallow.validate.URL.RegexMemoizer._regex_generator"
+],
+"marshmallow.validate.URL.__call__": [
+"marshmallow.validate.URL._format_error"
+],
+"marshmallow.validate.Validator.__repr__": [
+"marshmallow.validate.Validator._repr_args"
+]
+}

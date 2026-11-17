@@ -1,0 +1,229 @@
+{
+ "rows": [
+  {
+   "tool": "PyCG",
+   "version": "88ff2263ad",
+   "corpus": {
+    "both": {
+     "status": "measured",
+     "packages": 10,
+     "with_target": 10,
+     "finished": 10,
+     "share": 1.0,
+     "failures": {},
+     "wall_seconds": {"median": 0.577, "p90": 5.413, "max": 131.984},
+     "peak_rss_mib": {"median": 51.75, "p90": 401.3, "max": 2404.1}
+    },
+    "PyPI top 100": {
+     "status": "measured",
+     "packages": 5,
+     "with_target": 5,
+     "finished": 5,
+     "share": 1.0,
+     "failures": {},
+     "wall_seconds": {"median": 0.59, "p90": 131.984, "max": 131.984},
+     "peak_rss_mib": {"median": 52.2, "p90": 2404.1, "max": 2404.1}
+    },
+    "DyPyBench": {
+     "status": "measured",
+     "packages": 5,
+     "with_target": 5,
+     "finished": 5,
+     "share": 1.0,
+     "failures": {},
+     "wall_seconds": {"median": 0.573, "p90": 5.187, "max": 5.187},
+     "peak_rss_mib": {"median": 49.9, "p90": 369.3, "max": 369.3}
+    }
+   }
+  },
+  {
+   "tool": "original PyCG",
+   "version": "8555f0590f",
+   "corpus": {
+    "both": {
+     "status": "measured",
+     "packages": 10,
+     "with_target": 10,
+     "finished": 7,
+     "share": 0.7,
+     "failures": {"crash": 3},
+     "wall_seconds": {"median": 1.346, "p90": 84.09, "max": 84.09},
+     "peak_rss_mib": {"median": 42.4, "p90": 285.8, "max": 285.8}
+    },
+    "PyPI top 100": {
+     "status": "measured",
+     "packages": 5,
+     "with_target": 5,
+     "finished": 2,
+     "share": 0.4,
+     "failures": {"crash": 3},
+     "wall_seconds": {"median": 1.3585, "p90": 1.483, "max": 1.483},
+     "peak_rss_mib": {"median": 43.15, "p90": 46.3, "max": 46.3}
+    },
+    "DyPyBench": {
+     "status": "measured",
+     "packages": 5,
+     "with_target": 5,
+     "finished": 5,
+     "share": 1.0,
+     "failures": {},
+     "wall_seconds": {"median": 1.346, "p90": 84.09, "max": 84.09},
+     "peak_rss_mib": {"median": 42.4, "p90": 285.8, "max": 285.8}
+    }
+   }
+  },
+  {
+   "tool": "pyan3",
+   "version": "8e8bd90646",
+   "corpus": {
+    "both": {
+     "status": "measured",
+     "packages": 10,
+     "with_target": 10,
+     "finished": 10,
+     "share": 1.0,
+     "failures": {},
+     "wall_seconds": {"median": 0.34950000000000003, "p90": 1.988, "max": 2.258},
+     "peak_rss_mib": {"median": 40.0, "p90": 104.6, "max": 113.2}
+    },
+    "PyPI top 100": {
+     "status": "measured",
+     "packages": 5,
+     "with_target": 5,
+     "finished": 5,
+     "share": 1.0,
+     "failures": {},
+     "wall_seconds": {"median": 0.356, "p90": 1.988, "max": 1.988},
+     "peak_rss_mib": {"median": 40.4, "p90": 104.6, "max": 104.6}
+    },
+    "DyPyBench": {
+     "status": "measured",
+     "packages": 5,
+     "with_target": 5,
+     "finished": 5,
+     "share": 1.0,
+     "failures": {},
+     "wall_seconds": {"median": 0.268, "p90": 2.258, "max": 2.258},
+     "peak_rss_mib": {"median": 39.3, "p90": 113.2, "max": 113.2}
+    }
+   }
+  },
+  {
+   "tool": "JARVIS",
+   "version": "-",
+   "corpus": {
+    "both": {"status": "missing", "reason": "not run: no results/tools/jarvis/rq3-pilot.json (docker compose -f evaluation/compose.yaml run --rm jarvis rq3-pilot)"}
+   }
+  },
+  {
+   "tool": "JARVIS, class edges dropped",
+   "version": "-",
+   "corpus": {
+    "both": {"status": "missing", "reason": "not run: no results/tools/jarvis-class-edges-dropped/rq3-pilot.json (docker compose -f evaluation/compose.yaml run --rm jarvis rq3-pilot)"}
+   }
+  },
+  {
+   "tool": "JARVIS --precision",
+   "version": "-",
+   "corpus": {
+    "both": {"status": "missing", "reason": "not run: no results/tools/jarvis-precision/rq3-pilot.json (docker compose -f evaluation/compose.yaml run --rm jarvis rq3-pilot)"}
+   }
+  },
+  {
+   "tool": "CPyGraph",
+   "version": "-",
+   "corpus": {
+    "both": {"status": "missing", "reason": "not run: no results/tools/cpygraph/rq3-pilot.json (docker compose -f evaluation/compose.yaml run --rm cpygraph rq3-pilot)"}
+   }
+  },
+  {
+   "tool": "HeaderGen (hybrid: imports the analysed modules)",
+   "version": "-",
+   "corpus": {
+    "both": {"status": "missing", "reason": "not run: the tool imports the analysed code, and the corpus is not scanned"}
+   }
+  },
+  {
+   "tool": "PyAnalyzer",
+   "version": "-",
+   "corpus": {
+    "both": {"status": "missing", "reason": "not run: no results/tools/pyanalyzer/rq3-pilot.json (docker compose -f evaluation/compose.yaml run --rm pyanalyzer rq3-pilot)"}
+   }
+  },
+  {
+   "tool": "PyAnalyzer (call relations of the dependency report)",
+   "version": "-",
+   "corpus": {
+    "both": {"status": "missing", "reason": "not run: no results/tools/pyanalyzer-call-relations-of-the-dependency-report/rq3-pilot.json (docker compose -f evaluation/compose.yaml run --rm pyanalyzer rq3-pilot)"}
+   }
+  }
+ ],
+ "stated packages": [],
+ "corpus": {
+  "PyPI top 100": {
+   "file": "pypi-top-100.json",
+   "sha256": "68bd2509e5ec513fbd7b4bf22572e71252491a4e0aedb215eeed23cd254e99a3",
+   "top": 100,
+   "rank_list": {"file": "macro-benchmark/selection/top-pypi-packages-2026-11-01.json", "sha256": "3e958a64ebe1de0b6a4ab4c6b465d481f350fd1dfa926c639add36eb34dabc1e", "last_update": "2026-11-01 06:41:05"}
+  },
+  "DyPyBench": {
+   "file": "dypybench.json",
+   "sha256": "427afc6fb2fbf00d412a92889fb313aafc75b1f691507873dec274c350da8fce",
+   "source": {
+    "repository": "https://github.com/sola-st/DyPyBench",
+    "commit": "bccfda78e3b7e4d8a65dfa58d1b0cd3bd35c127d",
+    "projects": {"file": "text/github-url.txt", "sha256": "ededa498aa1789e020b7ebb42f1fe5b2a79973c25b4ef30eabd292c3d824a1f2"},
+    "roots": {"file": "text/dynapyt_instrument_src.txt", "sha256": "726d07c8e4a0a96ed730facdc04cf4ffe9b82e5a474c229643ed534ad1e126fd"},
+    "rule": "scripts/install-all-projects.sh: git log -n 1 --until=2023-01-18 --format=%H on the default branch, at the end of the day (UTC); see the note of a row for another branch or end"
+   },
+   "projects": 50
+  }
+ },
+ "python": "3.14.10",
+ "platform": "linux aarch64",
+ "limits": {"seconds": 1800, "memory_mib": 8192.0},
+ "pilot": {
+  "seed": 20261114,
+  "size per half": 5,
+  "sample": {
+   "PyPI top 100": ["pydantic", "aiobotocore", "pillow", "multidict", "lxml"],
+   "DyPyBench": ["supervisor", "python-diskcache", "uvicorn", "gunicorn", "python-decouple"]
+  },
+  "skipped": {
+   "PyPI top 100": [],
+   "DyPyBench": []
+  },
+  "runs": [
+   {"half": "PyPI top 100", "package": "pydantic", "tool": "PyCG", "status": "ok", "seconds": 131.984, "peak_rss_mib": 2404.1},
+   {"half": "PyPI top 100", "package": "pydantic", "tool": "original-PyCG", "status": "crash", "seconds": 0.325, "peak_rss_mib": 41.7},
+   {"half": "PyPI top 100", "package": "pydantic", "tool": "pyan3", "status": "ok", "seconds": 1.988, "peak_rss_mib": 104.6},
+   {"half": "PyPI top 100", "package": "aiobotocore", "tool": "PyCG", "status": "ok", "seconds": 0.59, "peak_rss_mib": 51.3},
+   {"half": "PyPI top 100", "package": "aiobotocore", "tool": "original-PyCG", "status": "ok", "seconds": 1.483, "peak_rss_mib": 46.3},
+   {"half": "PyPI top 100", "package": "aiobotocore", "tool": "pyan3", "status": "ok", "seconds": 0.356, "peak_rss_mib": 40.0},
+   {"half": "PyPI top 100", "package": "pillow", "tool": "PyCG", "status": "ok", "seconds": 5.413, "peak_rss_mib": 401.3},
+   {"half": "PyPI top 100", "package": "pillow", "tool": "original-PyCG", "status": "crash", "seconds": 0.157, "peak_rss_mib": 40.0},
+   {"half": "PyPI top 100", "package": "pillow", "tool": "pyan3", "status": "ok", "seconds": 1.533, "peak_rss_mib": 90.9},
+   {"half": "PyPI top 100", "package": "multidict", "tool": "PyCG", "status": "ok", "seconds": 0.285, "peak_rss_mib": 40.0},
+   {"half": "PyPI top 100", "package": "multidict", "tool": "original-PyCG", "status": "crash", "seconds": 0.137, "peak_rss_mib": 40.0},
+   {"half": "PyPI top 100", "package": "multidict", "tool": "pyan3", "status": "ok", "seconds": 0.168, "peak_rss_mib": 0.3},
+   {"half": "PyPI top 100", "package": "lxml", "tool": "PyCG", "status": "ok", "seconds": 0.482, "peak_rss_mib": 52.2},
+   {"half": "PyPI top 100", "package": "lxml", "tool": "original-PyCG", "status": "ok", "seconds": 1.234, "peak_rss_mib": 40.0},
+   {"half": "PyPI top 100", "package": "lxml", "tool": "pyan3", "status": "ok", "seconds": 0.343, "peak_rss_mib": 40.4},
+   {"half": "DyPyBench", "package": "supervisor", "tool": "PyCG", "status": "ok", "seconds": 5.187, "peak_rss_mib": 369.3},
+   {"half": "DyPyBench", "package": "supervisor", "tool": "original-PyCG", "status": "ok", "seconds": 84.09, "peak_rss_mib": 285.8},
+   {"half": "DyPyBench", "package": "supervisor", "tool": "pyan3", "status": "ok", "seconds": 2.258, "peak_rss_mib": 113.2},
+   {"half": "DyPyBench", "package": "uvicorn", "tool": "PyCG", "status": "ok", "seconds": 0.573, "peak_rss_mib": 49.9},
+   {"half": "DyPyBench", "package": "uvicorn", "tool": "original-PyCG", "status": "ok", "seconds": 37.201, "peak_rss_mib": 73.6},
+   {"half": "DyPyBench", "package": "uvicorn", "tool": "pyan3", "status": "ok", "seconds": 0.268, "peak_rss_mib": 39.3},
+   {"half": "DyPyBench", "package": "python-diskcache", "tool": "PyCG", "status": "ok", "seconds": 0.294, "peak_rss_mib": 40.0},
+   {"half": "DyPyBench", "package": "python-diskcache", "tool": "original-PyCG", "status": "ok", "seconds": 0.287, "peak_rss_mib": 40.0},
+   {"half": "DyPyBench", "package": "python-diskcache", "tool": "pyan3", "status": "ok", "seconds": 0.182, "peak_rss_mib": 0.4},
+   {"half": "DyPyBench", "package": "python-decouple", "tool": "PyCG", "status": "ok", "seconds": 0.179, "peak_rss_mib": 40.0},
+   {"half": "DyPyBench", "package": "python-decouple", "tool": "original-PyCG", "status": "ok", "seconds": 0.117, "peak_rss_mib": 40.0},
+   {"half": "DyPyBench", "package": "python-decouple", "tool": "pyan3", "status": "ok", "seconds": 0.075, "peak_rss_mib": 0.2},
+   {"half": "DyPyBench", "package": "gunicorn", "tool": "PyCG", "status": "ok", "seconds": 0.581, "peak_rss_mib": 54.9},
+   {"half": "DyPyBench", "package": "gunicorn", "tool": "original-PyCG", "status": "ok", "seconds": 1.346, "peak_rss_mib": 42.4},
+   {"half": "DyPyBench", "package": "gunicorn", "tool": "pyan3", "status": "ok", "seconds": 0.369, "peak_rss_mib": 40.0}
+  ]
+ }
+}

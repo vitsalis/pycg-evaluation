@@ -1,0 +1,171 @@
+{
+"fabric.config.Config.__init__": [
+"fabric.config.Config.__init__",
+"fabric.config.Config.load_ssh_config",
+"fabric.config.Config.set_runtime_ssh_path"
+],
+"fabric.config.Config._load_ssh_file": [
+"fabric.config.Config.__init__",
+"fabric.connection.Connection.open"
+],
+"fabric.config.Config._load_ssh_files": [
+"fabric.config.Config._load_ssh_file"
+],
+"fabric.config.Config.clone": [
+"fabric.config.Config.load_ssh_config"
+],
+"fabric.config.Config.global_defaults": [
+"fabric.util.get_local_user"
+],
+"fabric.config.Config.load_ssh_config": [
+"fabric.config.Config._load_ssh_files"
+],
+"fabric.config.Config.set_runtime_ssh_path": [
+"fabric.config.Config.__init__"
+],
+"fabric.connection.Connection": [
+"fabric.connection.opens"
+],
+"fabric.connection.Connection.__eq__": [
+"fabric.connection.Connection._identity"
+],
+"fabric.connection.Connection.__exit__": [
+"fabric.connection.Connection.close"
+],
+"fabric.connection.Connection.__hash__": [
+"fabric.connection.Connection._identity"
+],
+"fabric.connection.Connection.__init__": [
+"fabric.config.Config.__init__",
+"fabric.config.Config.clone",
+"fabric.connection.Connection.__init__",
+"fabric.connection.Connection.derive_shorthand",
+"fabric.connection.Connection.get",
+"fabric.connection.Connection.get_gateway",
+"fabric.connection.Connection.resolve_connect_kwargs"
+],
+"fabric.connection.Connection.__lt__": [
+"fabric.connection.Connection._identity"
+],
+"fabric.connection.Connection.close": [
+"fabric.connection.Connection.is_connected"
+],
+"fabric.connection.Connection.create_session": [
+"fabric.connection.opens"
+],
+"fabric.connection.Connection.forward_local": [
+"fabric.connection.opens",
+"fabric.tunnels.TunnelManager.__init__"
+],
+"fabric.connection.Connection.forward_remote": [
+"fabric.connection.Connection.forward_remote.callback",
+"fabric.connection.opens"
+],
+"fabric.connection.Connection.forward_remote.callback": [
+"fabric.tunnels.Tunnel.__init__"
+],
+"fabric.connection.Connection.get": [
+"fabric.transfer.Transfer.__init__"
+],
+"fabric.connection.Connection.get_gateway": [
+"fabric.connection.Connection.__init__",
+"fabric.connection.Connection.derive_shorthand"
+],
+"fabric.connection.Connection.open": [
+"fabric.connection.Connection.is_connected",
+"fabric.connection.Connection.open_gateway",
+"fabric.connection.Connection.resolve_connect_kwargs"
+],
+"fabric.connection.Connection.open_gateway": [
+"fabric.connection.Connection.__init__"
+],
+"fabric.connection.Connection.put": [
+"fabric.transfer.Transfer.__init__"
+],
+"fabric.connection.Connection.resolve_connect_kwargs": [
+"fabric.connection.Connection.__init__",
+"fabric.connection.Connection.get"
+],
+"fabric.connection.Connection.run": [
+"fabric.connection.Connection.__init__",
+"fabric.connection.opens"
+],
+"fabric.connection.Connection.sftp": [
+"fabric.connection.opens"
+],
+"fabric.connection.Connection.sudo": [
+"fabric.connection.Connection.__init__",
+"fabric.connection.opens"
+],
+"fabric.executor.FabExecutor.expand_calls": [
+"fabric.executor.FabExecutor.expand_calls",
+"fabric.executor.FabExecutor.expand_calls.anonymous",
+"fabric.executor.FabExecutor.parameterize"
+],
+"fabric.executor.FabExecutor.parameterize": [
+"fabric.config.Config.clone"
+],
+"fabric.group.Group.__init__": [
+"fabric.group.Group.__init__"
+],
+"fabric.group.Group.from_connections": [
+"fabric.group.Group.__init__"
+],
+"fabric.group.GroupResult._bifurcate": [
+"fabric.group.GroupResult.__init__"
+],
+"fabric.group.GroupResult.failed": [
+"fabric.group.GroupResult._bifurcate"
+],
+"fabric.group.GroupResult.succeeded": [
+"fabric.group.GroupResult._bifurcate"
+],
+"fabric.group.SerialGroup.run": [
+"fabric.exceptions.GroupException.__init__",
+"fabric.group.GroupResult.__init__",
+"fabric.group.SerialGroup.run"
+],
+"fabric.group.ThreadingGroup.run": [
+"fabric.exceptions.GroupException.__init__",
+"fabric.group.GroupResult.__init__",
+"fabric.group.thread_worker"
+],
+"fabric.main": [
+"fabric.main.make_program"
+],
+"fabric.main.Fab.core_args": [
+"fabric.main.Fab.core_args"
+],
+"fabric.main.Fab.load_collection": [
+"fabric.main.Fab._remainder_only"
+],
+"fabric.main.Fab.no_tasks_given": [
+"fabric.main.Fab._remainder_only"
+],
+"fabric.runners.Remote.generate_result": [
+"fabric.runners.Result.__init__"
+],
+"fabric.transfer.Transfer.get": [
+"fabric.transfer.Result.__init__",
+"fabric.transfer.Transfer.sftp"
+],
+"fabric.transfer.Transfer.is_remote_dir": [
+"fabric.transfer.Transfer.sftp"
+],
+"fabric.transfer.Transfer.put": [
+"fabric.transfer.Result.__init__",
+"fabric.transfer.Transfer.is_remote_dir",
+"fabric.transfer.Transfer.sftp"
+],
+"fabric.transfer.Transfer.sftp": [
+"fabric.transfer.Transfer.__init__"
+],
+"fabric.tunnels.Tunnel._run": [
+"fabric.tunnels.Tunnel.__init__",
+"fabric.tunnels.Tunnel.read_and_write"
+],
+"fabric.tunnels.TunnelManager._run": [
+"fabric.tunnels.Tunnel.__init__",
+"fabric.tunnels.TunnelManager.__init__"
+]
+}

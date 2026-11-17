@@ -1,0 +1,727 @@
+{
+"<builtin>.dict": [],
+"<builtin>.dict.copy": [],
+"<builtin>.dict.items": [],
+"<builtin>.dict.keys": [],
+"<builtin>.dict.update": [],
+"<builtin>.enumerate": [],
+"<builtin>.getattr": [],
+"<builtin>.hasattr": [],
+"<builtin>.int": [],
+"<builtin>.isinstance": [],
+"<builtin>.len": [],
+"<builtin>.list": [],
+"<builtin>.map": [],
+"<builtin>.open": [],
+"<builtin>.ord": [],
+"<builtin>.print": [],
+"<builtin>.range": [],
+"<builtin>.set": [],
+"<builtin>.str.format": [],
+"<builtin>.str.index": [],
+"<builtin>.str.join": [],
+"<builtin>.str.replace": [],
+"<builtin>.str.startswith": [],
+"<builtin>.super": [],
+"<builtin>.zip": [],
+"append": [],
+"argparse.ArgumentParser": [],
+"copy.deepcopy": [],
+"extend": [],
+"functools.partial": [],
+"functools.wraps": [],
+"itertools.chain": [],
+"pypinyin": [
+"pypinyin.compat",
+"pypinyin.constants",
+"pypinyin.core"
+],
+"pypinyin.__main__": [
+"pypinyin.runner",
+"pypinyin.runner.main"
+],
+"pypinyin.compat": [
+"<builtin>.getattr",
+"<builtin>.len"
+],
+"pypinyin.compat.callable_check": [
+"<builtin>.hasattr"
+],
+"pypinyin.constants": [
+"<builtin>.dict.copy",
+"pypinyin.compat",
+"pypinyin.constants.Style",
+"pypinyin.phrases_dict",
+"pypinyin.pinyin_dict"
+],
+"pypinyin.constants.Style": [],
+"pypinyin.contrib": [],
+"pypinyin.contrib._tone_rule": [
+"pypinyin.style._tone_rule"
+],
+"pypinyin.contrib.mmseg": [
+"pypinyin.seg.mmseg"
+],
+"pypinyin.contrib.neutral_tone": [
+"pypinyin",
+"pypinyin.contrib._tone_rule",
+"pypinyin.contrib.neutral_tone.NeutralToneWith5Mixin"
+],
+"pypinyin.contrib.neutral_tone.NeutralToneWith5Mixin": [],
+"pypinyin.contrib.neutral_tone.NeutralToneWith5Mixin.post_convert_style": [
+"<builtin>.super",
+"pypinyin.style._tone_rule.right_mark_index"
+],
+"pypinyin.contrib.tone_convert": [
+"pypinyin.style._tone_convert"
+],
+"pypinyin.contrib.tone_sandhi": [
+"pypinyin.contrib.tone_convert",
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin"
+],
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin": [],
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin._bu": [
+"<builtin>.enumerate",
+"<builtin>.len",
+"pypinyin.style._tone_convert.tone2_to_tone",
+"pypinyin.style._tone_convert.tone_to_tone2"
+],
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin._third_tone": [
+"<builtin>.enumerate",
+"pypinyin.style._tone_convert.tone2_to_tone",
+"pypinyin.style._tone_convert.tone_to_tone2"
+],
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin._yi": [
+"<builtin>.enumerate",
+"<builtin>.len",
+"pypinyin.style._tone_convert.tone2_to_tone",
+"pypinyin.style._tone_convert.tone_to_tone2"
+],
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin.post_pinyin": [
+"<builtin>.super",
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin._bu",
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin._third_tone",
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin._yi"
+],
+"pypinyin.contrib.uv": [
+"pypinyin.contrib.uv.V2UMixin"
+],
+"pypinyin.contrib.uv.V2UMixin": [],
+"pypinyin.contrib.uv.V2UMixin.post_convert_style": [
+"<builtin>.super"
+],
+"pypinyin.converter": [
+"pypinyin.compat",
+"pypinyin.constants",
+"pypinyin.contrib.neutral_tone",
+"pypinyin.contrib.tone_sandhi",
+"pypinyin.contrib.uv",
+"pypinyin.converter.Converter",
+"pypinyin.converter.DefaultConverter",
+"pypinyin.converter.UltimateConverter",
+"pypinyin.converter._neutralToneWith5Converter",
+"pypinyin.converter._toneSandhiConverter",
+"pypinyin.converter._v2UConverter",
+"pypinyin.exceptions",
+"pypinyin.style",
+"pypinyin.style.auto_discover",
+"pypinyin.utils"
+],
+"pypinyin.converter.Converter": [],
+"pypinyin.converter.DefaultConverter": [],
+"pypinyin.converter.DefaultConverter.__init__": [],
+"pypinyin.converter.DefaultConverter._convert_nopinyin_chars": [
+"<builtin>.len",
+"<builtin>.ord",
+"pypinyin.compat.callable_check",
+"pypinyin.exceptions.PinyinNotFoundException.__init__"
+],
+"pypinyin.converter.DefaultConverter._convert_style": [
+"pypinyin.converter.DefaultConverter.convert_style"
+],
+"pypinyin.converter.DefaultConverter._phrase_pinyin": [
+"copy.deepcopy",
+"extend",
+"pypinyin.converter.DefaultConverter._single_pinyin"
+],
+"pypinyin.converter.DefaultConverter._single_pinyin": [
+"<builtin>.ord",
+"pypinyin.converter.DefaultConverter.handle_nopinyin"
+],
+"pypinyin.converter.DefaultConverter.convert": [
+"extend",
+"pypinyin.converter.DefaultConverter._phrase_pinyin",
+"pypinyin.converter.DefaultConverter.convert_styles",
+"pypinyin.converter.DefaultConverter.handle_nopinyin",
+"pypinyin.converter.DefaultConverter.post_pinyin",
+"pypinyin.utils._remove_dup_and_empty"
+],
+"pypinyin.converter.DefaultConverter.convert_style": [
+"pypinyin.converter.DefaultConverter._convert_style",
+"pypinyin.converter.DefaultConverter.post_convert_style",
+"pypinyin.converter.DefaultConverter.pre_convert_style"
+],
+"pypinyin.converter.DefaultConverter.convert_styles": [
+"<builtin>.enumerate",
+"pypinyin.converter.DefaultConverter.convert_style"
+],
+"pypinyin.converter.DefaultConverter.handle_nopinyin": [
+"<builtin>.isinstance",
+"pypinyin.converter.DefaultConverter._convert_nopinyin_chars",
+"pypinyin.converter.DefaultConverter.post_handle_nopinyin",
+"pypinyin.converter.DefaultConverter.pre_handle_nopinyin"
+],
+"pypinyin.converter.DefaultConverter.post_convert_style": [],
+"pypinyin.converter.DefaultConverter.post_handle_nopinyin": [],
+"pypinyin.converter.DefaultConverter.post_pinyin": [],
+"pypinyin.converter.DefaultConverter.pre_convert_style": [],
+"pypinyin.converter.DefaultConverter.pre_handle_nopinyin": [],
+"pypinyin.converter.UltimateConverter": [],
+"pypinyin.converter.UltimateConverter.__init__": [
+"<builtin>.super"
+],
+"pypinyin.converter.UltimateConverter.post_convert_style": [
+"<builtin>.super",
+"pypinyin.contrib.neutral_tone.NeutralToneWith5Mixin.post_convert_style",
+"pypinyin.contrib.uv.V2UMixin.post_convert_style"
+],
+"pypinyin.converter.UltimateConverter.post_pinyin": [
+"<builtin>.super",
+"pypinyin.contrib.tone_sandhi.ToneSandhiMixin.post_pinyin"
+],
+"pypinyin.converter._neutralToneWith5Converter": [],
+"pypinyin.converter._toneSandhiConverter": [],
+"pypinyin.converter._v2UConverter": [],
+"pypinyin.core": [
+"pypinyin.compat",
+"pypinyin.constants",
+"pypinyin.contrib.tone_convert",
+"pypinyin.contrib.tone_sandhi",
+"pypinyin.converter",
+"pypinyin.converter.DefaultConverter.__init__",
+"pypinyin.core.Pinyin",
+"pypinyin.core.Pinyin.__init__",
+"pypinyin.seg.mmseg",
+"pypinyin.seg.simpleseg"
+],
+"pypinyin.core.Pinyin": [],
+"pypinyin.core.Pinyin.__init__": [
+"pypinyin.converter.DefaultConverter.__init__"
+],
+"pypinyin.core.Pinyin.get_seg": [],
+"pypinyin.core.Pinyin.lazy_pinyin": [
+"<builtin>.list",
+"itertools.chain",
+"pypinyin.core.Pinyin.pinyin"
+],
+"pypinyin.core.Pinyin.pinyin": [
+"<builtin>.isinstance",
+"append",
+"extend",
+"itertools.chain",
+"pypinyin.core.Pinyin.seg"
+],
+"pypinyin.core.Pinyin.post_seg": [],
+"pypinyin.core.Pinyin.pre_seg": [],
+"pypinyin.core.Pinyin.seg": [
+"<builtin>.isinstance",
+"pypinyin.core.Pinyin.get_seg",
+"pypinyin.core.Pinyin.post_seg",
+"pypinyin.core.Pinyin.pre_seg",
+"pypinyin.core.Pinyin.seg"
+],
+"pypinyin.core.handle_nopinyin": [
+"pypinyin.converter.DefaultConverter.handle_nopinyin"
+],
+"pypinyin.core.lazy_pinyin": [
+"pypinyin.converter.UltimateConverter.__init__",
+"pypinyin.core.Pinyin.__init__",
+"pypinyin.core.Pinyin.lazy_pinyin"
+],
+"pypinyin.core.load_phrases_dict": [
+"<builtin>.dict.update",
+"<builtin>.list",
+"<builtin>.map",
+"pypinyin.seg.mmseg.retrain"
+],
+"pypinyin.core.load_single_dict": [
+"pypinyin.seg.mmseg.retrain",
+"pypinyin.style._tone_convert.tone2_to_tone"
+],
+"pypinyin.core.phrase_pinyin": [
+"pypinyin.converter.DefaultConverter._phrase_pinyin"
+],
+"pypinyin.core.pinyin": [
+"pypinyin.converter.UltimateConverter.__init__",
+"pypinyin.core.Pinyin.__init__",
+"pypinyin.core.Pinyin.pinyin"
+],
+"pypinyin.core.single_pinyin": [
+"pypinyin.converter.DefaultConverter._single_pinyin"
+],
+"pypinyin.core.slug": [
+"itertools.chain",
+"pypinyin.core.Pinyin.pinyin"
+],
+"pypinyin.core.to_fixed": [
+"pypinyin.converter.DefaultConverter.convert_style"
+],
+"pypinyin.exceptions": [
+"pypinyin.exceptions.PinyinNotFoundException"
+],
+"pypinyin.exceptions.PinyinNotFoundException": [],
+"pypinyin.exceptions.PinyinNotFoundException.__init__": [
+"<builtin>.super"
+],
+"pypinyin.legacy": [],
+"pypinyin.legacy.phrases_dict": [],
+"pypinyin.legacy.phrases_dict_tidy": [],
+"pypinyin.legacy.pinyin_dict": [],
+"pypinyin.phonetic_symbol": [
+"<builtin>.dict",
+"<builtin>.dict.items"
+],
+"pypinyin.phrases_dict": [
+"pypinyin.phrases_dict._load_phrases_dict"
+],
+"pypinyin.phrases_dict._load_phrases_dict": [
+"<builtin>.open"
+],
+"pypinyin.pinyin_dict": [
+"pypinyin.pinyin_dict._load_pinyin_dict"
+],
+"pypinyin.pinyin_dict._load_pinyin_dict": [
+"<builtin>.dict.copy",
+"<builtin>.dict.items",
+"<builtin>.int",
+"<builtin>.open"
+],
+"pypinyin.runner": [
+"pypinyin",
+"pypinyin.compat",
+"pypinyin.runner.NullWriter",
+"pypinyin.runner.main"
+],
+"pypinyin.runner.NullWriter": [],
+"pypinyin.runner.get_parser": [
+"<builtin>.dict.keys",
+"argparse.ArgumentParser"
+],
+"pypinyin.runner.main": [
+"<builtin>.getattr",
+"<builtin>.isinstance",
+"<builtin>.print",
+"pypinyin.runner.get_parser"
+],
+"pypinyin.seg": [],
+"pypinyin.seg.mmseg": [
+"<builtin>.dict.keys",
+"pypinyin.constants",
+"pypinyin.seg.mmseg.PrefixSet",
+"pypinyin.seg.mmseg.PrefixSet.__init__",
+"pypinyin.seg.mmseg.PrefixSet.train",
+"pypinyin.seg.mmseg.Seg",
+"pypinyin.seg.mmseg.Seg.__init__"
+],
+"pypinyin.seg.mmseg.PrefixSet": [],
+"pypinyin.seg.mmseg.PrefixSet.__init__": [
+"<builtin>.set"
+],
+"pypinyin.seg.mmseg.PrefixSet.train": [
+"<builtin>.len",
+"<builtin>.range"
+],
+"pypinyin.seg.mmseg.Seg": [],
+"pypinyin.seg.mmseg.Seg.__init__": [],
+"pypinyin.seg.mmseg.Seg.cut": [
+"<builtin>.len",
+"<builtin>.range"
+],
+"pypinyin.seg.mmseg.Seg.train": [
+"pypinyin.seg.mmseg.PrefixSet.train"
+],
+"pypinyin.seg.mmseg.retrain": [
+"<builtin>.dict.keys",
+"pypinyin.seg.mmseg.Seg.train"
+],
+"pypinyin.seg.simpleseg": [
+"pypinyin.compat",
+"pypinyin.constants",
+"pypinyin.seg.mmseg"
+],
+"pypinyin.seg.simpleseg._seg": [
+"<builtin>.enumerate",
+"append"
+],
+"pypinyin.seg.simpleseg.seg": [
+"append",
+"extend",
+"pypinyin.seg.simpleseg.simple_seg"
+],
+"pypinyin.seg.simpleseg.simple_seg": [
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.list",
+"itertools.chain",
+"pypinyin.seg.simpleseg._seg",
+"pypinyin.seg.simpleseg.simple_seg"
+],
+"pypinyin.standard": [
+"<builtin>.dict.keys",
+"<builtin>.set",
+"<builtin>.str.join",
+"pypinyin.style._constants"
+],
+"pypinyin.standard.convert_finals": [
+"pypinyin.standard.convert_iou",
+"pypinyin.standard.convert_uei",
+"pypinyin.standard.convert_uen",
+"pypinyin.standard.convert_uv",
+"pypinyin.standard.convert_zero_consonant"
+],
+"pypinyin.standard.convert_iou": [],
+"pypinyin.standard.convert_uei": [],
+"pypinyin.standard.convert_uen": [],
+"pypinyin.standard.convert_uv": [],
+"pypinyin.standard.convert_zero_consonant": [
+"<builtin>.len",
+"<builtin>.str.startswith"
+],
+"pypinyin.style": [],
+"pypinyin.style._constants": [
+"<builtin>.dict",
+"<builtin>.len",
+"<builtin>.str.format",
+"pypinyin.phonetic_symbol"
+],
+"pypinyin.style._tone_convert": [
+"pypinyin.phonetic_symbol",
+"pypinyin.style._constants",
+"pypinyin.style._tone_rule",
+"pypinyin.style._utils",
+"pypinyin.style.tone"
+],
+"pypinyin.style._tone_convert._fix_v_u": [
+"<builtin>.str.replace",
+"pypinyin.style._tone_convert._v_to_u"
+],
+"pypinyin.style._tone_convert._get_number_from_pinyin": [],
+"pypinyin.style._tone_convert._improve_tone3": [
+"pypinyin.style._tone_convert._get_number_from_pinyin"
+],
+"pypinyin.style._tone_convert._v_to_u": [
+"<builtin>.str.replace"
+],
+"pypinyin.style._tone_convert.to_finals": [
+"pypinyin.style._tone_convert._fix_v_u",
+"pypinyin.style._utils.get_finals",
+"pypinyin.style._utils.replace_symbol_to_no_symbol"
+],
+"pypinyin.style._tone_convert.to_finals_tone": [
+"pypinyin.style._tone_convert.to_finals_tone2",
+"pypinyin.style._tone_convert.tone2_to_tone"
+],
+"pypinyin.style._tone_convert.to_finals_tone2": [
+"pypinyin.style._tone_convert.to_finals_tone3",
+"pypinyin.style._tone_convert.tone3_to_tone2"
+],
+"pypinyin.style._tone_convert.to_finals_tone3": [
+"pypinyin.style._tone_convert.to_finals",
+"pypinyin.style._utils.replace_symbol_to_number"
+],
+"pypinyin.style._tone_convert.to_initials": [
+"pypinyin.style._utils.get_initials"
+],
+"pypinyin.style._tone_convert.to_normal": [
+"pypinyin.style._tone_convert._fix_v_u",
+"pypinyin.style._tone_convert.tone2_to_normal",
+"pypinyin.style._tone_convert.tone_to_tone2"
+],
+"pypinyin.style._tone_convert.to_tone": [
+"pypinyin.style._tone_convert.tone2_to_tone",
+"pypinyin.style._tone_convert.tone_to_tone2"
+],
+"pypinyin.style._tone_convert.to_tone2": [
+"pypinyin.style._tone_convert._fix_v_u",
+"pypinyin.style._tone_convert.tone3_to_tone2",
+"pypinyin.style._tone_convert.tone_to_tone3"
+],
+"pypinyin.style._tone_convert.to_tone3": [
+"pypinyin.style._tone_convert._fix_v_u",
+"pypinyin.style._tone_convert.tone2_to_tone3",
+"pypinyin.style._tone_convert.tone_to_tone2"
+],
+"pypinyin.style._tone_convert.tone2_to_normal": [
+"pypinyin.style._tone_convert._fix_v_u",
+"pypinyin.style._tone_convert._v_to_u"
+],
+"pypinyin.style._tone_convert.tone2_to_tone": [
+"<builtin>.str.replace"
+],
+"pypinyin.style._tone_convert.tone2_to_tone3": [
+"pypinyin.style._tone_convert._fix_v_u"
+],
+"pypinyin.style._tone_convert.tone3_to_normal": [
+"pypinyin.style._tone_convert._fix_v_u",
+"pypinyin.style._tone_convert._v_to_u"
+],
+"pypinyin.style._tone_convert.tone3_to_tone": [
+"pypinyin.style._tone_convert.tone2_to_tone",
+"pypinyin.style._tone_convert.tone3_to_tone2"
+],
+"pypinyin.style._tone_convert.tone3_to_tone2": [
+"<builtin>.len",
+"pypinyin.style._tone_convert._fix_v_u",
+"pypinyin.style._tone_convert._get_number_from_pinyin",
+"pypinyin.style._tone_convert.tone3_to_normal",
+"pypinyin.style._tone_rule.right_mark_index"
+],
+"pypinyin.style._tone_convert.tone_to_normal": [
+"pypinyin.style._tone_convert._v_to_u",
+"pypinyin.style._tone_convert.tone_to_tone2"
+],
+"pypinyin.style._tone_convert.tone_to_tone2": [
+"pypinyin.style._tone_convert._v_to_u",
+"pypinyin.style._tone_convert.tone3_to_tone2",
+"pypinyin.style._tone_convert.tone_to_tone3"
+],
+"pypinyin.style._tone_convert.tone_to_tone3": [
+"pypinyin.style._tone_convert._improve_tone3",
+"pypinyin.style._tone_convert._v_to_u",
+"pypinyin.style.tone.ToneConverter.to_tone3"
+],
+"pypinyin.style._tone_rule": [],
+"pypinyin.style._tone_rule.right_mark_index": [
+"<builtin>.len",
+"<builtin>.str.index"
+],
+"pypinyin.style._utils": [
+"pypinyin.standard",
+"pypinyin.style._constants"
+],
+"pypinyin.style._utils.get_finals": [
+"<builtin>.len",
+"pypinyin.standard.convert_finals",
+"pypinyin.style._utils.get_initials"
+],
+"pypinyin.style._utils.get_initials": [
+"<builtin>.str.startswith"
+],
+"pypinyin.style._utils.replace_symbol_to_no_symbol": [
+"pypinyin.style._utils.replace_symbol_to_number"
+],
+"pypinyin.style._utils.replace_symbol_to_number": [],
+"pypinyin.style.auto_discover": [
+"pypinyin.style.bopomofo",
+"pypinyin.style.braille_mainland",
+"pypinyin.style.cyrillic",
+"pypinyin.style.finals",
+"pypinyin.style.gwoyeu",
+"pypinyin.style.initials",
+"pypinyin.style.others",
+"pypinyin.style.tone",
+"pypinyin.style.wadegiles"
+],
+"pypinyin.style.bopomofo": [
+"<builtin>.dict",
+"<builtin>.zip",
+"pypinyin.constants",
+"pypinyin.style",
+"pypinyin.style._constants",
+"pypinyin.style._utils",
+"pypinyin.style.bopomofo.BopomofoConverter",
+"pypinyin.style.register"
+],
+"pypinyin.style.bopomofo.BopomofoConverter": [],
+"pypinyin.style.bopomofo.BopomofoConverter._pre_convert": [
+"pypinyin.style._utils.replace_symbol_to_number"
+],
+"pypinyin.style.bopomofo.BopomofoConverter.to_bopomofo": [
+"pypinyin.style.bopomofo.BopomofoConverter._pre_convert"
+],
+"pypinyin.style.bopomofo.BopomofoConverter.to_bopomofo_first": [
+"pypinyin.style.bopomofo.BopomofoConverter.to_bopomofo"
+],
+"pypinyin.style.braille_mainland": [
+"<builtin>.dict",
+"<builtin>.zip",
+"pypinyin.constants",
+"pypinyin.style",
+"pypinyin.style._constants",
+"pypinyin.style._utils",
+"pypinyin.style.braille_mainland.BrailleMainlandConverter",
+"pypinyin.style.register"
+],
+"pypinyin.style.braille_mainland.BrailleMainlandConverter": [],
+"pypinyin.style.braille_mainland.BrailleMainlandConverter.to_braille_mainland": [
+"pypinyin.style._utils.replace_symbol_to_no_symbol"
+],
+"pypinyin.style.braille_mainland.BrailleMainlandConverter.to_braille_mainland_tone": [
+"pypinyin.style._utils.replace_symbol_to_number"
+],
+"pypinyin.style.convert": [
+"pypinyin.style.register.decorator.func"
+],
+"pypinyin.style.cyrillic": [
+"<builtin>.dict",
+"<builtin>.zip",
+"pypinyin.constants",
+"pypinyin.style",
+"pypinyin.style._constants",
+"pypinyin.style._utils",
+"pypinyin.style.cyrillic.CyrillicfoConverter",
+"pypinyin.style.register"
+],
+"pypinyin.style.cyrillic.CyrillicfoConverter": [],
+"pypinyin.style.cyrillic.CyrillicfoConverter._pre_convert": [
+"pypinyin.style._utils.replace_symbol_to_number"
+],
+"pypinyin.style.cyrillic.CyrillicfoConverter.to_cyrillic": [
+"pypinyin.style.cyrillic.CyrillicfoConverter._pre_convert"
+],
+"pypinyin.style.cyrillic.CyrillicfoConverter.to_cyrillic_first": [
+"pypinyin.style.cyrillic.CyrillicfoConverter.to_cyrillic"
+],
+"pypinyin.style.finals": [
+"pypinyin.constants",
+"pypinyin.style",
+"pypinyin.style._tone_convert",
+"pypinyin.style.finals.FinalsConverter",
+"pypinyin.style.register"
+],
+"pypinyin.style.finals.FinalsConverter": [],
+"pypinyin.style.finals.FinalsConverter.to_finals": [
+"pypinyin.style.finals.FinalsConverter.to_finals"
+],
+"pypinyin.style.finals.FinalsConverter.to_finals_tone": [
+"pypinyin.style.finals.FinalsConverter.to_finals_tone"
+],
+"pypinyin.style.finals.FinalsConverter.to_finals_tone2": [
+"pypinyin.style.finals.FinalsConverter.to_finals_tone2"
+],
+"pypinyin.style.finals.FinalsConverter.to_finals_tone3": [
+"pypinyin.style.finals.FinalsConverter.to_finals_tone3"
+],
+"pypinyin.style.gwoyeu": [
+"pypinyin.constants",
+"pypinyin.style",
+"pypinyin.style._constants",
+"pypinyin.style._utils",
+"pypinyin.style.gwoyeu.GwoyeuConverter",
+"pypinyin.style.register"
+],
+"pypinyin.style.gwoyeu.GwoyeuConverter": [],
+"pypinyin.style.gwoyeu.GwoyeuConverter._pre_convert": [
+"pypinyin.style._utils.replace_symbol_to_number"
+],
+"pypinyin.style.gwoyeu.GwoyeuConverter.to_gwoyeu": [
+"pypinyin.style.gwoyeu.GwoyeuConverter._pre_convert"
+],
+"pypinyin.style.initials": [
+"pypinyin.constants",
+"pypinyin.style",
+"pypinyin.style._utils",
+"pypinyin.style.register",
+"pypinyin.style.register.decorator"
+],
+"pypinyin.style.initials.convert": [
+"pypinyin.style._utils.get_initials"
+],
+"pypinyin.style.others": [
+"pypinyin.constants",
+"pypinyin.style",
+"pypinyin.style._utils",
+"pypinyin.style.others.OthersConverter",
+"pypinyin.style.register"
+],
+"pypinyin.style.others.OthersConverter": [],
+"pypinyin.style.others.OthersConverter.to_first_letter": [
+"pypinyin.style.others.OthersConverter.to_normal"
+],
+"pypinyin.style.others.OthersConverter.to_normal": [
+"pypinyin.style._utils.replace_symbol_to_no_symbol"
+],
+"pypinyin.style.register": [],
+"pypinyin.style.register.decorator": [
+"functools.wraps"
+],
+"pypinyin.style.register.decorator.func": [],
+"pypinyin.style.register.decorator.wrapper": [
+"pypinyin.style.initials.convert"
+],
+"pypinyin.style.tone": [
+"pypinyin.constants",
+"pypinyin.style",
+"pypinyin.style._constants",
+"pypinyin.style._utils",
+"pypinyin.style.register",
+"pypinyin.style.tone.ToneConverter"
+],
+"pypinyin.style.tone.ToneConverter": [],
+"pypinyin.style.tone.ToneConverter.to_tone2": [
+"pypinyin.style._utils.replace_symbol_to_number"
+],
+"pypinyin.style.tone.ToneConverter.to_tone3": [
+"pypinyin.style.tone.ToneConverter.to_tone2"
+],
+"pypinyin.style.wadegiles": [
+"pypinyin.constants",
+"pypinyin.style",
+"pypinyin.style._utils",
+"pypinyin.style.register",
+"sort"
+],
+"pypinyin.style.wadegiles._convert_whole": [],
+"pypinyin.style.wadegiles._fixed_result": [
+"<builtin>.str.replace"
+],
+"pypinyin.style.wadegiles.to_wade_glides": [
+"<builtin>.len",
+"pypinyin.style._utils.get_initials",
+"pypinyin.style._utils.replace_symbol_to_no_symbol",
+"pypinyin.style.wadegiles._convert_whole",
+"pypinyin.style.wadegiles._fixed_result"
+],
+"pypinyin.tools": [],
+"pypinyin.tools.toneconvert": [
+"<builtin>.len",
+"pypinyin.compat",
+"pypinyin.contrib.tone_convert",
+"pypinyin.style._constants",
+"pypinyin.tools.toneconvert.main"
+],
+"pypinyin.tools.toneconvert.convert": [
+"<builtin>.print",
+"pypinyin.tools.toneconvert.prepare"
+],
+"pypinyin.tools.toneconvert.get_parser": [
+"<builtin>.dict.keys",
+"argparse.ArgumentParser",
+"functools.partial"
+],
+"pypinyin.tools.toneconvert.main": [
+"pypinyin.tools.toneconvert.get_parser"
+],
+"pypinyin.tools.toneconvert.prepare": [],
+"pypinyin.tools.toneconvert.re_sub": [
+"pypinyin.style._tone_convert.to_normal",
+"pypinyin.style._tone_convert.to_tone",
+"pypinyin.style._tone_convert.to_tone2",
+"pypinyin.style._tone_convert.to_tone3"
+],
+"pypinyin.utils": [
+"pypinyin.seg.simpleseg",
+"pypinyin.style._tone_convert"
+],
+"pypinyin.utils._remove_dup_and_empty": [
+"append",
+"pypinyin.utils._remove_dup_items"
+],
+"pypinyin.utils._remove_dup_items": [
+"append"
+],
+"pypinyin.utils._replace_tone2_style_dict_to_default": [
+"pypinyin.style._tone_convert.tone2_to_tone"
+],
+"sort": []
+}

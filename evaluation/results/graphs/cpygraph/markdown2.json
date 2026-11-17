@@ -1,0 +1,137 @@
+{
+"markdown2": [
+"<builtin>.map",
+"<builtin>.str.join",
+"markdown2.Extra.register",
+"markdown2._hash_text",
+"markdown2._memoized.__init__",
+"markdown2.main"
+],
+"markdown2.CodeFriendly.__init__": [
+"markdown2.CodeFriendly.__init__",
+"markdown2.Extra.__init__",
+"markdown2.MarkdownFileLinks.__init__",
+"markdown2.MiddleWordEm.__init__"
+],
+"markdown2.Extra.__init__": [
+"markdown2.CodeFriendly.__init__",
+"markdown2.Extra.__init__",
+"markdown2.MarkdownFileLinks.__init__",
+"markdown2.MiddleWordEm.__init__"
+],
+"markdown2.Extra.register": [
+"<builtin>.len"
+],
+"markdown2.LinkProcessor.__init__": [
+"markdown2.CodeFriendly.__init__",
+"markdown2.Extra.__init__",
+"markdown2.MarkdownFileLinks.__init__",
+"markdown2.MiddleWordEm.__init__"
+],
+"markdown2.Markdown": [
+"markdown2.mark_stage",
+"markdown2.mark_stage.wrapper"
+],
+"markdown2.Markdown.__init__": [
+"markdown2._hash_text"
+],
+"markdown2.Markdown._add_footnotes": [
+"<builtin>.len",
+"<builtin>.str.join",
+"markdown2.Markdown._do_footnote_marker"
+],
+"markdown2.Markdown._detab": [
+"<builtin>.str.join",
+"markdown2.Markdown._detab_line"
+],
+"markdown2.Markdown._detab_line": [
+"<builtin>.len",
+"<builtin>.str.split",
+"markdown2.Markdown._detab_line"
+],
+"markdown2.Markdown._extract_metadata": [
+"<builtin>.str.split",
+"markdown2.Markdown._extract_metadata.parse_structured_value",
+"markdown2._dedent"
+],
+"markdown2.Markdown._extract_metadata.parse_structured_value": [
+"<builtin>.len",
+"markdown2.Markdown._extract_metadata.parse_structured_value"
+],
+"markdown2.Markdown._get_emacs_vars": [
+"<builtin>.dict.items",
+"<builtin>.len",
+"<builtin>.str.split"
+],
+"markdown2.Markdown._setup_extras": [
+"<builtin>.dict.items",
+"markdown2.CodeFriendly.__init__",
+"markdown2.Extra.__init__",
+"markdown2.MarkdownFileLinks.__init__",
+"markdown2.MiddleWordEm.__init__",
+"markdown2._hash_text"
+],
+"markdown2.Markdown._unescape_special_chars": [
+"<builtin>.dict.items"
+],
+"markdown2.Markdown._unhash_html_spans": [
+"<builtin>.dict.items"
+],
+"markdown2.Markdown.convert": [
+"<builtin>.str.split",
+"markdown2.Markdown._add_footnotes",
+"markdown2.Markdown._detab",
+"markdown2.Markdown._do_footnote_marker",
+"markdown2.Markdown._extract_metadata",
+"markdown2.Markdown._get_emacs_vars",
+"markdown2.Markdown._setup_extras",
+"markdown2.Markdown._strip_footnote_definitions",
+"markdown2.Markdown._unescape_special_chars",
+"markdown2.Markdown._unhash_html_spans",
+"markdown2.Markdown.reset",
+"markdown2.calculate_toc_html"
+],
+"markdown2.Markdown.reset": [
+"markdown2.Markdown._setup_extras"
+],
+"markdown2.MarkdownFileLinks.__init__": [
+"markdown2.CodeFriendly.__init__",
+"markdown2.Extra.__init__",
+"markdown2.LinkProcessor.__init__",
+"markdown2.MarkdownFileLinks.__init__",
+"markdown2.MiddleWordEm.__init__"
+],
+"markdown2.MiddleWordEm.__init__": [
+"<builtin>.str.join",
+"markdown2.CodeFriendly.__init__",
+"markdown2.Extra.__init__",
+"markdown2.MarkdownFileLinks.__init__",
+"markdown2.MiddleWordEm.__init__",
+"markdown2._hash_text"
+],
+"markdown2._dedent": [
+"<builtin>.str.join",
+"markdown2._dedentlines"
+],
+"markdown2._regex_from_encoded_pattern": [
+"<builtin>.str.join"
+],
+"markdown2.calculate_toc_html": [
+"<builtin>.len",
+"<builtin>.str.join",
+"markdown2.calculate_toc_html.indent"
+],
+"markdown2.calculate_toc_html.indent": [
+"<builtin>.len"
+],
+"markdown2.main": [
+"<builtin>.str.split",
+"markdown2._regex_from_encoded_pattern",
+"markdown2._test",
+"markdown2.markdown"
+],
+"markdown2.markdown": [
+"markdown2.Markdown.__init__",
+"markdown2.Markdown.convert"
+]
+}

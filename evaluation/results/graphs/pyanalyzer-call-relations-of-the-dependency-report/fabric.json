@@ -1,0 +1,124 @@
+{
+"fabric.config.Config.__init__": [
+"fabric.config.Config.load_ssh_config",
+"fabric.config.Config.set_runtime_ssh_path"
+],
+"fabric.config.Config._clone_init_kwargs": [
+"fabric.config.Config._clone_init_kwargs"
+],
+"fabric.config.Config._load_ssh_files": [
+"fabric.config.Config._load_ssh_file"
+],
+"fabric.config.Config.clone": [
+"fabric.config.Config.clone",
+"fabric.config.Config.load_ssh_config"
+],
+"fabric.config.Config.global_defaults": [
+"fabric.config.Config.global_defaults",
+"fabric.util.get_local_user"
+],
+"fabric.config.Config.load_ssh_config": [
+"fabric.config.Config._load_ssh_files"
+],
+"fabric.connection.Connection": [
+"fabric.connection.opens"
+],
+"fabric.connection.Connection.__eq__": [
+"fabric.connection.Connection._identity"
+],
+"fabric.connection.Connection.__exit__": [
+"fabric.connection.Connection.close"
+],
+"fabric.connection.Connection.__hash__": [
+"fabric.connection.Connection._identity"
+],
+"fabric.connection.Connection.__init__": [
+"fabric.config.Config.clone",
+"fabric.connection.Connection.derive_shorthand",
+"fabric.connection.Connection.get_gateway",
+"fabric.connection.Connection.resolve_connect_kwargs"
+],
+"fabric.connection.Connection.__lt__": [
+"fabric.connection.Connection._identity"
+],
+"fabric.connection.Connection.close": [
+"fabric.connection.Connection.close"
+],
+"fabric.connection.Connection.get": [
+"fabric.transfer.Transfer.get"
+],
+"fabric.connection.Connection.get_gateway": [
+"fabric.config.Config.clone",
+"fabric.connection.Connection.derive_shorthand"
+],
+"fabric.connection.Connection.open": [
+"fabric.connection.Connection.open_gateway"
+],
+"fabric.connection.Connection.open_gateway": [
+"fabric.connection.Connection.open"
+],
+"fabric.connection.Connection.put": [
+"fabric.transfer.Transfer.put"
+],
+"fabric.connection.opens": [
+"fabric.connection.Connection.create_session",
+"fabric.connection.Connection.forward_local",
+"fabric.connection.Connection.forward_remote",
+"fabric.connection.Connection.open",
+"fabric.connection.Connection.run",
+"fabric.connection.Connection.sftp",
+"fabric.connection.Connection.sudo"
+],
+"fabric.executor.FabExecutor.expand_calls": [
+"fabric.executor.FabExecutor.expand_calls",
+"fabric.executor.FabExecutor.parameterize"
+],
+"fabric.executor.FabExecutor.parameterize": [
+"fabric.config.Config.clone"
+],
+"fabric.group.GroupResult.failed": [
+"fabric.group.GroupResult._bifurcate"
+],
+"fabric.group.GroupResult.succeeded": [
+"fabric.group.GroupResult._bifurcate"
+],
+"fabric.group.ThreadingGroup.run": [
+"fabric.runners.Remote.start"
+],
+"fabric.main": [
+"fabric.main.make_program"
+],
+"fabric.main.Fab.core_args": [
+"fabric.main.Fab.core_args"
+],
+"fabric.main.Fab.load_collection": [
+"fabric.main.Fab.load_collection"
+],
+"fabric.main.Fab.no_tasks_given": [
+"fabric.main.Fab.no_tasks_given"
+],
+"fabric.main.Fab.print_version": [
+"fabric.main.Fab.print_version"
+],
+"fabric.main.Fab.update_config": [
+"fabric.config.Config.load_ssh_config",
+"fabric.config.Config.set_runtime_ssh_path",
+"fabric.main.Fab.update_config"
+],
+"fabric.runners.Remote.start": [
+"fabric.connection.Connection.create_session"
+],
+"fabric.runners.Remote.stop": [
+"fabric.connection.Connection.close"
+],
+"fabric.transfer.Transfer.put": [
+"fabric.transfer.Transfer.is_remote_dir"
+],
+"fabric.tunnels.Tunnel._run": [
+"fabric.connection.Connection.close",
+"fabric.tunnels.Tunnel.read_and_write"
+],
+"fabric.tunnels.TunnelManager._run": [
+"fabric.connection.Connection.close"
+]
+}

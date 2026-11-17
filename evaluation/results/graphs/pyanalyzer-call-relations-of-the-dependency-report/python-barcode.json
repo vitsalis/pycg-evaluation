@@ -1,0 +1,116 @@
+{
+"barcode.base.Barcode.__repr__": [
+"barcode.base.Barcode.get_fullcode"
+],
+"barcode.base.Barcode.render": [
+"barcode.base.Barcode.build",
+"barcode.base.Barcode.get_fullcode",
+"barcode.writer.BaseWriter.set_options"
+],
+"barcode.base.Barcode.save": [
+"barcode.base.Barcode.render"
+],
+"barcode.base.Barcode.to_ascii": [
+"barcode.base.Barcode.build"
+],
+"barcode.base.Barcode.write": [
+"barcode.base.Barcode.render"
+],
+"barcode.codex.Code128.__init__": [
+"barcode.codex.check_code"
+],
+"barcode.codex.Code128._build": [
+"barcode.codex.Code128._convert",
+"barcode.codex.Code128._maybe_switch_charset",
+"barcode.codex.Code128._new_charset",
+"barcode.codex.Code128._try_to_optimize"
+],
+"barcode.codex.Code128._maybe_switch_charset": [
+"barcode.codex.Code128._convert",
+"barcode.codex.Code128._is_char_fnc1_char",
+"barcode.codex.Code128._maybe_switch_charset.look_next",
+"barcode.codex.Code128._new_charset"
+],
+"barcode.codex.Code128._new_charset": [
+"barcode.codex.Code128._convert"
+],
+"barcode.codex.Code128.build": [
+"barcode.codex.Code128._build",
+"barcode.codex.Code128._calculate_checksum"
+],
+"barcode.codex.Code128.encoded": [
+"barcode.codex.Code128._build"
+],
+"barcode.codex.Code39.__init__": [
+"barcode.codex.Code39.calculate_checksum",
+"barcode.codex.check_code"
+],
+"barcode.codex.PZN7.__init__": [
+"barcode.codex.PZN7.calculate_checksum"
+],
+"barcode.ean.EuropeanArticleNumber13.__init__": [
+"barcode.ean.EuropeanArticleNumber13.calculate_checksum"
+],
+"barcode.ean.EuropeanArticleNumber13.to_ascii": [
+"barcode.ean.EuropeanArticleNumber13.build"
+],
+"barcode.generate": [
+"barcode.get",
+"barcode.writer.BaseWriter.set_options"
+],
+"barcode.get_class": [
+"barcode.get"
+],
+"barcode.isxn.InternationalStandardBookNumber10.__init__": [
+"barcode.isxn.InternationalStandardBookNumber10._calculate_checksum"
+],
+"barcode.isxn.InternationalStandardSerialNumber.__init__": [
+"barcode.isxn.InternationalStandardSerialNumber._calculate_checksum",
+"barcode.isxn.InternationalStandardSerialNumber.make_ean"
+],
+"barcode.isxn.InternationalStandardSerialNumber.make_ean": [
+"barcode.isxn.InternationalStandardSerialNumber._calculate_checksum"
+],
+"barcode.pybarcode": [
+"barcode.pybarcode.main"
+],
+"barcode.upc.UniversalProductCodeA.__init__": [
+"barcode.upc.UniversalProductCodeA.calculate_checksum"
+],
+"barcode.upc.UniversalProductCodeA.to_ascii": [
+"barcode.upc.UniversalProductCodeA.build"
+],
+"barcode.writer.BaseWriter.calculate_size": [
+"barcode.writer.pt2mm"
+],
+"barcode.writer.BaseWriter.render": [
+"barcode.writer.BaseWriter.packed",
+"barcode.writer.pt2mm"
+],
+"barcode.writer.ImageWriter._init": [
+"barcode.writer.BaseWriter.calculate_size",
+"barcode.writer.mm2px"
+],
+"barcode.writer.ImageWriter._paint_module": [
+"barcode.writer.mm2px"
+],
+"barcode.writer.ImageWriter._paint_text": [
+"barcode.writer.mm2px",
+"barcode.writer.pt2mm"
+],
+"barcode.writer.SVGWriter._create_module": [
+"barcode.writer._set_attributes"
+],
+"barcode.writer.SVGWriter._create_text": [
+"barcode.writer._set_attributes",
+"barcode.writer.pt2mm"
+],
+"barcode.writer.SVGWriter._init": [
+"barcode.writer.BaseWriter.calculate_size",
+"barcode.writer._set_attributes",
+"barcode.writer.create_svg_object"
+],
+"barcode.writer.create_svg_object": [
+"barcode.writer._set_attributes"
+]
+}

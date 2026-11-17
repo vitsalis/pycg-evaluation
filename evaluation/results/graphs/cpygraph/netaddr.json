@@ -1,0 +1,251 @@
+{
+"netaddr": [
+"<builtin>.str.split"
+],
+"netaddr.cli": [
+"netaddr.cli.main"
+],
+"netaddr.cli.info": [
+"<builtin>.dict.items",
+"<builtin>.len",
+"netaddr.ip.BaseIP.version",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPAddress.__int__",
+"netaddr.ip.IPAddress.bits",
+"netaddr.ip.IPListMixin.size",
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.IPNetwork.__str__",
+"netaddr.ip.IPNetwork._usable_range",
+"netaddr.ip.IPNetwork.broadcast",
+"netaddr.ip.IPNetwork.cidr",
+"netaddr.ip.IPNetwork.first",
+"netaddr.ip.IPNetwork.last",
+"netaddr.ip.IPNetwork.netmask",
+"netaddr.ip.IPNetwork.network"
+],
+"netaddr.cli.main": [
+"netaddr.cli.info",
+"netaddr.cli.shell"
+],
+"netaddr.cli.shell": [
+"netaddr.cli.shell.shell"
+],
+"netaddr.cli.shell.shell": [
+"<builtin>.str.join"
+],
+"netaddr.eui.ieee": [
+"netaddr.eui.ieee.create_indices",
+"netaddr.eui.ieee.load_indices"
+],
+"netaddr.eui.ieee.IABIndexParser.__init__": [
+"netaddr.core.Publisher.__init__"
+],
+"netaddr.eui.ieee.IABIndexParser.parse": [
+"<builtin>.len",
+"<builtin>.str.split",
+"netaddr.core.Publisher.notify"
+],
+"netaddr.eui.ieee.OUIIndexParser.__init__": [
+"netaddr.core.Publisher.__init__"
+],
+"netaddr.eui.ieee.OUIIndexParser.parse": [
+"<builtin>.len",
+"<builtin>.str.split",
+"netaddr.core.Publisher.notify"
+],
+"netaddr.eui.ieee.create_index_from_registry": [
+"netaddr.core.Publisher.attach",
+"netaddr.eui.ieee.FileIndexer.__init__",
+"netaddr.eui.ieee.IABIndexParser.__init__",
+"netaddr.eui.ieee.IABIndexParser.parse",
+"netaddr.eui.ieee.OUIIndexParser.__init__",
+"netaddr.eui.ieee.OUIIndexParser.parse"
+],
+"netaddr.eui.ieee.create_indices": [
+"<builtin>.str.join",
+"netaddr.eui.ieee.create_index_from_registry"
+],
+"netaddr.eui.ieee.load_indices": [
+"netaddr.compat._open_binary",
+"netaddr.eui.ieee.load_index"
+],
+"netaddr.fbsocket._compact_ipv6_tokens": [
+"<builtin>.len"
+],
+"netaddr.fbsocket._inet_pton_af_inet": [
+"<builtin>.len",
+"<builtin>.str.join",
+"<builtin>.str.split"
+],
+"netaddr.fbsocket.inet_ntoa": [
+"<builtin>.len"
+],
+"netaddr.fbsocket.inet_ntop": [
+"<builtin>.len",
+"<builtin>.str.join",
+"netaddr.fbsocket._compact_ipv6_tokens",
+"netaddr.fbsocket.inet_ntoa"
+],
+"netaddr.fbsocket.inet_pton": [
+"<builtin>.len",
+"<builtin>.range",
+"<builtin>.str.join",
+"<builtin>.str.split",
+"netaddr.fbsocket._inet_pton_af_inet"
+],
+"netaddr.ip": [
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.IPRange.__init__"
+],
+"netaddr.ip.IPAddress.__init__": [
+"netaddr.ip.BaseIP.__init__",
+"netaddr.strategy.ipv4.str_to_int",
+"netaddr.strategy.ipv6.str_to_int"
+],
+"netaddr.ip.IPAddress.bits": [
+"netaddr.strategy.ipv4.int_to_bits",
+"netaddr.strategy.ipv6.int_to_bits"
+],
+"netaddr.ip.IPNetwork.__init__": [
+"netaddr.ip.BaseIP.__init__",
+"netaddr.ip.parse_ip_network"
+],
+"netaddr.ip.IPNetwork.__str__": [
+"netaddr.ip.IPNetwork.<lambda1>",
+"netaddr.strategy.ipv4.int_to_str",
+"netaddr.strategy.ipv6.int_to_str"
+],
+"netaddr.ip.IPNetwork._netmask_int": [
+"netaddr.ip.IPNetwork._hostmask_int"
+],
+"netaddr.ip.IPNetwork._usable_range": [
+"netaddr.ip.IPListMixin.size",
+"netaddr.ip.IPNetwork.first",
+"netaddr.ip.IPNetwork.last"
+],
+"netaddr.ip.IPNetwork.broadcast": [
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork._hostmask_int"
+],
+"netaddr.ip.IPNetwork.cidr": [
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.IPNetwork._netmask_int"
+],
+"netaddr.ip.IPNetwork.first": [
+"netaddr.ip.IPNetwork._hostmask_int"
+],
+"netaddr.ip.IPNetwork.netmask": [
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork._hostmask_int"
+],
+"netaddr.ip.IPNetwork.network": [
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork._netmask_int"
+],
+"netaddr.ip.IPRange.__init__": [
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPAddress.__int__"
+],
+"netaddr.ip.iana": [
+"netaddr.ip.iana.load_info"
+],
+"netaddr.ip.iana.IPv4Parser.__init__": [
+"netaddr.ip.iana.XMLRecordParser.__init__"
+],
+"netaddr.ip.iana.IPv6Parser.__init__": [
+"netaddr.ip.iana.XMLRecordParser.__init__"
+],
+"netaddr.ip.iana.IPv6UnicastParser.__init__": [
+"netaddr.ip.iana.XMLRecordParser.__init__"
+],
+"netaddr.ip.iana.MulticastParser.__init__": [
+"netaddr.ip.iana.XMLRecordParser.__init__"
+],
+"netaddr.ip.iana.XMLRecordParser.__init__": [
+"netaddr.core.Publisher.__init__",
+"netaddr.ip.iana.SaxRecordParser.__init__"
+],
+"netaddr.ip.iana.load_info": [
+"netaddr.compat._open_binary",
+"netaddr.core.Publisher.attach",
+"netaddr.ip.iana.DictUpdater.__init__",
+"netaddr.ip.iana.IPv4Parser.__init__",
+"netaddr.ip.iana.IPv6Parser.__init__",
+"netaddr.ip.iana.IPv6UnicastParser.__init__",
+"netaddr.ip.iana.MulticastParser.__init__",
+"netaddr.ip.iana.XMLRecordParser.parse"
+],
+"netaddr.ip.parse_ip_network": [
+"<builtin>.len",
+"<builtin>.str.split",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPAddress.is_hostmask",
+"netaddr.ip.IPAddress.is_netmask",
+"netaddr.strategy.ipv4.expand_partial_address"
+],
+"netaddr.ip.rfc1924": [
+"<builtin>.range",
+"netaddr.ip.rfc1924.chr_range"
+],
+"netaddr.ip.rfc1924.chr_range": [
+"<builtin>.range"
+],
+"netaddr.strategy": [
+"netaddr.strategy.bytes_to_bits"
+],
+"netaddr.strategy.bytes_to_bits": [
+"<builtin>.range",
+"<builtin>.str.join"
+],
+"netaddr.strategy.eui48": [
+"<builtin>.str.join"
+],
+"netaddr.strategy.eui64": [
+"<builtin>.str.join"
+],
+"netaddr.strategy.int_to_bits": [
+"<builtin>.str.join",
+"netaddr.strategy.int_to_words"
+],
+"netaddr.strategy.int_to_words": [
+"<builtin>.range"
+],
+"netaddr.strategy.ipv4": [
+"<builtin>.range"
+],
+"netaddr.strategy.ipv4.expand_partial_address": [
+"<builtin>.len",
+"<builtin>.range",
+"<builtin>.str.split"
+],
+"netaddr.strategy.ipv4.int_to_bits": [
+"netaddr.strategy.int_to_bits"
+],
+"netaddr.strategy.ipv4.str_to_int": [
+"<builtin>.len",
+"<builtin>.str.join",
+"<builtin>.str.split",
+"netaddr.fbsocket.inet_pton"
+],
+"netaddr.strategy.ipv6": [
+"<builtin>.range"
+],
+"netaddr.strategy.ipv6.int_to_bits": [
+"netaddr.strategy.int_to_bits"
+],
+"netaddr.strategy.ipv6.int_to_packed": [
+"netaddr.strategy.ipv6.int_to_words"
+],
+"netaddr.strategy.ipv6.int_to_str": [
+"<builtin>.str.join",
+"netaddr.fbsocket.inet_ntop",
+"netaddr.strategy.ipv6.int_to_packed"
+],
+"netaddr.strategy.ipv6.int_to_words": [
+"netaddr.strategy.int_to_words"
+],
+"netaddr.strategy.ipv6.str_to_int": [
+"netaddr.fbsocket.inet_pton",
+"netaddr.strategy.ipv6.packed_to_int"
+]
+}

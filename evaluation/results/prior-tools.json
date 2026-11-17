@@ -1,0 +1,92 @@
+{
+ "tools": {
+  "pyan3": {
+   "version": "v2.9.0 (8e8bd90646)",
+   "python": null,
+   "not run": "needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)",
+   "note": null,
+   "image": null,
+   "pin": {"name": "pyan3", "version": "v2.9.0", "repository": "https://github.com/Technologicat/pyan", "commit": "8e8bd90646de039696b91fdf2d970e02fe8d1f62", "source": "PyPI wheel pyan3==2.9.0 (pyan-requirements.txt)"},
+   "memory_mib": null
+  },
+  "JARVIS": {
+   "version": "8871b86 (8871b86494)",
+   "python": null,
+   "not run": "needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)",
+   "note": "the child imports importlib.metadata before the tool starts: JARVIS puts an import hook with empty module sources first, then calls importlib.invalidate_caches(), which on Python 3.10 and later imports importlib.metadata through that hook and fails",
+   "image": null,
+   "pin": {"name": "JARVIS", "version": "8871b86", "repository": "https://github.com/pythonJaRvis/pythonJaRvis.github.io", "commit": "8871b86494a1aec0095686ffa543994a7361af88", "source": "git archive of the pinned commit, directory Jarvis/tool/Jarvis"},
+   "memory_mib": null
+  },
+  "JARVIS, class edges dropped": {
+   "version": "8871b86 (8871b86494)",
+   "python": null,
+   "not run": "needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)",
+   "note": "the child imports importlib.metadata before the tool starts: JARVIS puts an import hook with empty module sources first, then calls importlib.invalidate_caches(), which on Python 3.10 and later imports importlib.metadata through that hook and fails",
+   "image": null,
+   "pin": {"name": "JARVIS", "version": "8871b86", "repository": "https://github.com/pythonJaRvis/pythonJaRvis.github.io", "commit": "8871b86494a1aec0095686ffa543994a7361af88", "source": "git archive of the pinned commit, directory Jarvis/tool/Jarvis"},
+   "memory_mib": null
+  },
+  "JARVIS --precision": {
+   "version": "8871b86 (8871b86494)",
+   "python": null,
+   "not run": "needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)",
+   "note": "the child imports importlib.metadata before the tool starts: JARVIS puts an import hook with empty module sources first, then calls importlib.invalidate_caches(), which on Python 3.10 and later imports importlib.metadata through that hook and fails",
+   "image": null,
+   "pin": {"name": "JARVIS", "version": "8871b86", "repository": "https://github.com/pythonJaRvis/pythonJaRvis.github.io", "commit": "8871b86494a1aec0095686ffa543994a7361af88", "source": "git archive of the pinned commit, directory Jarvis/tool/Jarvis"},
+   "memory_mib": null
+  },
+  "CPyGraph": {
+   "version": "v0.1.0 (984d34ed2f)",
+   "python": null,
+   "not run": "needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)",
+   "note": null,
+   "image": null,
+   "pin": {"name": "CPyGraph", "version": "v0.1.0", "repository": "https://github.com/awen-li/CPyGraph", "commit": "984d34ed2f6b81eecb60b975723ad20394ec4a69", "source": "git archive of the pinned commit, built with CMake"},
+   "memory_mib": null
+  },
+  "HeaderGen (hybrid: imports the analysed modules)": {
+   "version": "1ea5226 (1ea52265ca)",
+   "python": null,
+   "not run": "needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)",
+   "note": "a shim of 15 lines replaces its framework_models package: the same check_alias over the pinned aliases/*.json, without the classifier, its pickles and the nltk download; HeaderGen imports the analysed modules and the libraries that they name, so each macro project with runtime dependencies runs in an image that has them (README, Prior tools)",
+   "image": null,
+   "pin": {"name": "HeaderGen", "version": "1ea5226", "repository": "https://github.com/secure-software-engineering/HeaderGen", "commit": "1ea52265ca4e76bb202a2deb26f3b9394d3caa95", "typeshed": "be0ef211679fabf020dcc79cd4b5c43af0fa1839", "source": "git archive of the pinned commit (pycg_extended, beniget, typestub-database, framework_models/aliases) and of its typeshed submodule (stdlib, stubs)"},
+   "memory_mib": null
+  },
+  "PyAnalyzer": {
+   "version": "ea143ef (ea143ef8bd)",
+   "python": null,
+   "not run": "needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)",
+   "note": "a shim sorts Path.iterdir, so the order of the files does not depend on the file system; its heap objects hash by id() and one rule returns after the first pair of a product of such sets (Resolver.py:394-403), which no shim removes: the pilot measures that spread; no builtins stub, as the paper's is not shipped; the pin has no licence file, and ENRE-py tag zdh-stable (eb6d0f6, MIT) is the same code but 15 lines",
+   "image": null,
+   "pin": {"name": "PyAnalyzer", "version": "ea143ef", "repository": "https://github.com/2024icse/PyAnalyzer", "commit": "ea143ef8bdec2b5f8841bb600b348f0975b90349", "source": "git archive of the pinned commit, directory SourceCode/pyanalyzer only (never its .exe, .jar files, Scripts/ or Data/)", "licence": "none in the repository; ENRE-py tag zdh-stable (eb6d0f6, MIT) is the same code but 15 lines"},
+   "memory_mib": null,
+   "outside": "PyAnalyzer names no callee outside the package (without a builtins stub it models neither builtins nor the standard library nor third-party code)"
+  },
+  "PyAnalyzer (call relations of the dependency report)": {
+   "version": "ea143ef (ea143ef8bd)",
+   "python": null,
+   "not run": "needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)",
+   "note": "a shim sorts Path.iterdir, so the order of the files does not depend on the file system; its heap objects hash by id() and one rule returns after the first pair of a product of such sets (Resolver.py:394-403), which no shim removes: the pilot measures that spread; no builtins stub, as the paper's is not shipped; the pin has no licence file, and ENRE-py tag zdh-stable (eb6d0f6, MIT) is the same code but 15 lines",
+   "image": null,
+   "pin": {"name": "PyAnalyzer", "version": "ea143ef", "repository": "https://github.com/2024icse/PyAnalyzer", "commit": "ea143ef8bdec2b5f8841bb600b348f0975b90349", "source": "git archive of the pinned commit, directory SourceCode/pyanalyzer only (never its .exe, .jar files, Scripts/ or Data/)", "licence": "none in the repository; ENRE-py tag zdh-stable (eb6d0f6, MIT) is the same code but 15 lines"},
+   "memory_mib": null,
+   "outside": "PyAnalyzer names no callee outside the package (without a builtins stub it models neither builtins nor the standard library nor third-party code)"
+  }
+ },
+ "limits": {"seconds": 1800, "memory_mib": 16384, "hash_seed": 0},
+ "scorer": {"table": "55e1e18ccd601300df7da71be50f1c386bb4b5ef735ab39be6adaf053195f6da", "python": "3.14.10", "implementation": "CPython", "platform": "linux aarch64"},
+ "sets": {
+  "micro": {"directory": "micro", "cases": 622, "excluded": 14, "python": "3.12", "commit": "64ceb8b7dcfbbc9d3d1b4dae9c24c3cca54c1608", "dirty": false, "inputs": "ee0452407f716e3a2c223de88def4477f05cc66f598bad76fd416b884ff7cc92"},
+  "macro": {
+   "directory": "macro-benchmark",
+   "commit": "64ceb8b7dcfbbc9d3d1b4dae9c24c3cca54c1608",
+   "dirty": false,
+   "inputs": "d23fd69ee4651d6f3eae8650e928e185099a16b32dff240a98dd6e10d4c5ced1",
+   "projects": ["Sublist3r", "aiocache", "anytree", "argcomplete", "asciinema", "asyncstdlib", "autojump", "bottle", "cachetools", "configargparse", "dagster-pipes", "fabric", "face_classification", "fastjsonschema", "funcy", "h11", "itables", "jmespath", "markdown2", "marshmallow", "netaddr", "pluggy", "pyflakes", "pypinyin", "pyrate-limiter", "python-barcode", "sqlparse", "structlog", "tenacity", "whitenoise"]
+  }
+ },
+ "not measured": {},
+ "results": {}
+}

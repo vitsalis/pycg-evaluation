@@ -1,0 +1,528 @@
+{
+ "columns": ["micro", "micro, newer Python", "batch 1", "batch 2", "batch 3", "batch 4", "batch 5", "ICSE 2021 set", "all projects"],
+ "cohort": "the cases up to Python 3.14",
+ "rows": [
+  {
+   "tool": "PyCG",
+   "version": "c5c6a8951a (c5c6a89)",
+   "columns": {
+    "micro": {
+     "status": "measured",
+     "runs": 628,
+     "failed": [],
+     "cases": 628,
+     "skipped": 0,
+     "exact": 468,
+     "inside": {"tool": 1272, "truth": 1261, "tp": 1177, "fp": 95, "fn": 84, "precision": 0.9253, "recall": 0.9334, "f1": 0.9293},
+     "outside": {"tool": 464, "truth": 480, "tp": 462, "fp": 2, "fn": 18, "precision": 0.9957, "recall": 0.9625, "f1": 0.9788},
+     "all": {"tool": 1736, "truth": 1741, "tp": 1639, "fp": 97, "fn": 102, "precision": 0.9441, "recall": 0.9414, "f1": 0.9428},
+     "cohort": "3.14"
+    },
+    "micro, newer Python": {"status": "missing", "reason": "no case: the interpreter is Python 3.14"},
+    "batch 1": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 1415, "truth": 1392, "tp": 1302, "fp": 113, "fn": 90, "precision": 0.9201, "recall": 0.9353, "f1": 0.9277},
+     "outside": {"tool": 780, "truth": 776, "tp": 766, "fp": 14, "fn": 10, "precision": 0.9821, "recall": 0.9871, "f1": 0.9846},
+     "all": {"tool": 2195, "truth": 2168, "tp": 2068, "fp": 127, "fn": 100, "precision": 0.9421, "recall": 0.9539, "f1": 0.948}
+    },
+    "batch 2": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 1726, "truth": 1852, "tp": 1645, "fp": 81, "fn": 207, "precision": 0.9531, "recall": 0.8882, "f1": 0.9195},
+     "outside": {"tool": 1347, "truth": 1338, "tp": 1293, "fp": 54, "fn": 45, "precision": 0.9599, "recall": 0.9664, "f1": 0.9631},
+     "all": {"tool": 3073, "truth": 3190, "tp": 2938, "fp": 135, "fn": 252, "precision": 0.9561, "recall": 0.921, "f1": 0.9382}
+    },
+    "batch 3": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 1444, "truth": 1466, "tp": 1396, "fp": 48, "fn": 70, "precision": 0.9668, "recall": 0.9523, "f1": 0.9595},
+     "outside": {"tool": 2011, "truth": 2033, "tp": 1856, "fp": 155, "fn": 177, "precision": 0.9229, "recall": 0.9129, "f1": 0.9179},
+     "all": {"tool": 3455, "truth": 3499, "tp": 3252, "fp": 203, "fn": 247, "precision": 0.9412, "recall": 0.9294, "f1": 0.9353}
+    },
+    "batch 4": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 1569, "truth": 1690, "tp": 1513, "fp": 56, "fn": 177, "precision": 0.9643, "recall": 0.8953, "f1": 0.9285},
+     "outside": {"tool": 2030, "truth": 2276, "tp": 1943, "fp": 87, "fn": 333, "precision": 0.9571, "recall": 0.8537, "f1": 0.9025},
+     "all": {"tool": 3599, "truth": 3966, "tp": 3456, "fp": 143, "fn": 510, "precision": 0.9603, "recall": 0.8714, "f1": 0.9137}
+    },
+    "batch 5": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 1328, "truth": 1630, "tp": 1200, "fp": 128, "fn": 430, "precision": 0.9036, "recall": 0.7362, "f1": 0.8114},
+     "outside": {"tool": 1640, "truth": 1751, "tp": 1548, "fp": 92, "fn": 203, "precision": 0.9439, "recall": 0.8841, "f1": 0.913},
+     "all": {"tool": 2968, "truth": 3381, "tp": 2748, "fp": 220, "fn": 633, "precision": 0.9259, "recall": 0.8128, "f1": 0.8656}
+    },
+    "ICSE 2021 set": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 490, "truth": 547, "tp": 475, "fp": 15, "fn": 72, "precision": 0.9694, "recall": 0.8684, "f1": 0.9161},
+     "outside": {"tool": 1150, "truth": 1287, "tp": 1019, "fp": 131, "fn": 268, "precision": 0.8861, "recall": 0.7918, "f1": 0.8363},
+     "all": {"tool": 1640, "truth": 1834, "tp": 1494, "fp": 146, "fn": 340, "precision": 0.911, "recall": 0.8146, "f1": 0.8601}
+    },
+    "all projects": {
+     "status": "measured",
+     "runs": 30,
+     "failed": [],
+     "inside": {"tool": 7972, "truth": 8577, "tp": 7531, "fp": 441, "fn": 1046, "precision": 0.9447, "recall": 0.878, "f1": 0.9101},
+     "outside": {"tool": 8958, "truth": 9461, "tp": 8425, "fp": 533, "fn": 1036, "precision": 0.9405, "recall": 0.8905, "f1": 0.9148},
+     "all": {"tool": 16930, "truth": 18038, "tp": 15956, "fp": 974, "fn": 2082, "precision": 0.9425, "recall": 0.8846, "f1": 0.9126}
+    }
+   }
+  },
+  {
+   "tool": "original PyCG",
+   "version": "046479ebcb (the 2021 analysis)",
+   "columns": {
+    "micro": {
+     "status": "measured",
+     "runs": 628,
+     "failed": [],
+     "cases": 628,
+     "skipped": 0,
+     "exact": 203,
+     "inside": {"tool": 878, "truth": 1261, "tp": 763, "fp": 115, "fn": 498, "precision": 0.869, "recall": 0.6051, "f1": 0.7134},
+     "outside": {"tool": 368, "truth": 480, "tp": 318, "fp": 50, "fn": 162, "precision": 0.8641, "recall": 0.6625, "f1": 0.75},
+     "all": {"tool": 1246, "truth": 1741, "tp": 1081, "fp": 165, "fn": 660, "precision": 0.8676, "recall": 0.6209, "f1": 0.7238},
+     "cohort": "3.14"
+    },
+    "micro, newer Python": {"status": "missing", "reason": "no case: the interpreter is Python 3.14"},
+    "batch 1": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 747, "truth": 1392, "tp": 626, "fp": 121, "fn": 766, "precision": 0.838, "recall": 0.4497, "f1": 0.5853},
+     "outside": {"tool": 593, "truth": 776, "tp": 452, "fp": 141, "fn": 324, "precision": 0.7622, "recall": 0.5825, "f1": 0.6603},
+     "all": {"tool": 1340, "truth": 2168, "tp": 1078, "fp": 262, "fn": 1090, "precision": 0.8045, "recall": 0.4972, "f1": 0.6146}
+    },
+    "batch 2": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 662, "truth": 1852, "tp": 640, "fp": 22, "fn": 1212, "precision": 0.9668, "recall": 0.3456, "f1": 0.5091},
+     "outside": {"tool": 877, "truth": 1338, "tp": 803, "fp": 74, "fn": 535, "precision": 0.9156, "recall": 0.6001, "f1": 0.7251},
+     "all": {"tool": 1539, "truth": 3190, "tp": 1443, "fp": 96, "fn": 1747, "precision": 0.9376, "recall": 0.4524, "f1": 0.6103}
+    },
+    "batch 3": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 805, "truth": 1466, "tp": 741, "fp": 64, "fn": 725, "precision": 0.9205, "recall": 0.5055, "f1": 0.6526},
+     "outside": {"tool": 1812, "truth": 2033, "tp": 1006, "fp": 806, "fn": 1027, "precision": 0.5552, "recall": 0.4948, "f1": 0.5233},
+     "all": {"tool": 2617, "truth": 3499, "tp": 1747, "fp": 870, "fn": 1752, "precision": 0.6676, "recall": 0.4993, "f1": 0.5713}
+    },
+    "batch 4": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [
+      {"run": "macro/bottle", "status": "crash", "error": "exit status -9: "},
+      {"run": "macro/itables", "status": "crash", "error": "AttributeError: 'NoneType' object has no attribute 'inc_list_counter'", "where": "pycg/processing/base.py:117 in visit_List"}
+     ],
+     "inside": {"tool": 542, "truth": 1690, "tp": 488, "fp": 54, "fn": 1202, "precision": 0.9004, "recall": 0.2888, "f1": 0.4373},
+     "outside": {"tool": 491, "truth": 2276, "tp": 410, "fp": 81, "fn": 1866, "precision": 0.835, "recall": 0.1801, "f1": 0.2963},
+     "all": {"tool": 1033, "truth": 3966, "tp": 898, "fp": 135, "fn": 3068, "precision": 0.8693, "recall": 0.2264, "f1": 0.3593}
+    },
+    "batch 5": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [
+      {"run": "macro/funcy", "status": "timeout"}
+     ],
+     "inside": {"tool": 594, "truth": 1630, "tp": 546, "fp": 48, "fn": 1084, "precision": 0.9192, "recall": 0.335, "f1": 0.491},
+     "outside": {"tool": 1435, "truth": 1751, "tp": 686, "fp": 749, "fn": 1065, "precision": 0.478, "recall": 0.3918, "f1": 0.4306},
+     "all": {"tool": 2029, "truth": 3381, "tp": 1232, "fp": 797, "fn": 2149, "precision": 0.6072, "recall": 0.3644, "f1": 0.4555}
+    },
+    "ICSE 2021 set": {
+     "status": "measured",
+     "runs": 5,
+     "failed": [],
+     "inside": {"tool": 382, "truth": 547, "tp": 367, "fp": 15, "fn": 180, "precision": 0.9607, "recall": 0.6709, "f1": 0.7901},
+     "outside": {"tool": 1071, "truth": 1287, "tp": 853, "fp": 218, "fn": 434, "precision": 0.7965, "recall": 0.6628, "f1": 0.7235},
+     "all": {"tool": 1453, "truth": 1834, "tp": 1220, "fp": 233, "fn": 614, "precision": 0.8396, "recall": 0.6652, "f1": 0.7423}
+    },
+    "all projects": {
+     "status": "measured",
+     "runs": 30,
+     "failed": [
+      {"run": "macro/bottle", "status": "crash", "error": "exit status -9: "},
+      {"run": "macro/funcy", "status": "timeout"},
+      {"run": "macro/itables", "status": "crash", "error": "AttributeError: 'NoneType' object has no attribute 'inc_list_counter'", "where": "pycg/processing/base.py:117 in visit_List"}
+     ],
+     "inside": {"tool": 3732, "truth": 8577, "tp": 3408, "fp": 324, "fn": 5169, "precision": 0.9132, "recall": 0.3973, "f1": 0.5537},
+     "outside": {"tool": 6279, "truth": 9461, "tp": 4210, "fp": 2069, "fn": 5251, "precision": 0.6705, "recall": 0.445, "f1": 0.5349},
+     "all": {"tool": 10011, "truth": 18038, "tp": 7618, "fp": 2393, "fn": 10420, "precision": 0.761, "recall": 0.4223, "f1": 0.5432}
+    }
+   }
+  },
+  {
+   "tool": "pyan3",
+   "version": "-",
+   "columns": {
+    "micro": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "micro, newer Python": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 1": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 2": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 3": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 4": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 5": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "ICSE 2021 set": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "all projects": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"}
+   }
+  },
+  {
+   "tool": "JARVIS",
+   "version": "-",
+   "columns": {
+    "micro": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "micro, newer Python": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 1": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 2": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 3": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 4": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 5": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "ICSE 2021 set": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "all projects": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"}
+   }
+  },
+  {
+   "tool": "JARVIS, class edges dropped",
+   "version": "-",
+   "columns": {
+    "micro": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "micro, newer Python": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 1": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 2": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 3": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 4": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 5": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "ICSE 2021 set": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "all projects": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"}
+   }
+  },
+  {
+   "tool": "JARVIS --precision",
+   "version": "-",
+   "columns": {
+    "micro": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "micro, newer Python": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 1": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 2": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 3": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 4": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 5": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "ICSE 2021 set": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "all projects": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"}
+   }
+  },
+  {
+   "tool": "CPyGraph",
+   "version": "-",
+   "columns": {
+    "micro": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "micro, newer Python": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 1": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 2": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 3": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 4": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 5": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "ICSE 2021 set": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "all projects": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"}
+   }
+  },
+  {
+   "tool": "HeaderGen (hybrid: imports the analysed modules)",
+   "version": "-",
+   "columns": {
+    "micro": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)"},
+    "micro, newer Python": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)"},
+    "batch 1": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)"},
+    "batch 2": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)"},
+    "batch 3": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)"},
+    "batch 4": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)"},
+    "batch 5": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)"},
+    "ICSE 2021 set": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)"},
+    "all projects": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB)"}
+   }
+  },
+  {
+   "tool": "PyAnalyzer",
+   "version": "-",
+   "columns": {
+    "micro": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "micro, newer Python": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 1": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 2": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 3": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 4": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 5": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "ICSE 2021 set": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "all projects": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"}
+   }
+  },
+  {
+   "tool": "PyAnalyzer (call relations of the dependency report)",
+   "version": "-",
+   "columns": {
+    "micro": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "micro, newer Python": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 1": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 2": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 3": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 4": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "batch 5": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "ICSE 2021 set": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"},
+    "all projects": {"status": "missing", "reason": "not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"}
+   }
+  }
+ ],
+ "batches": {
+  "batch 1": ["jmespath", "tenacity", "cachetools", "pluggy", "h11"],
+  "batch 2": ["marshmallow", "asyncstdlib", "configargparse", "sqlparse", "anytree"],
+  "batch 3": ["aiocache", "argcomplete", "pypinyin", "markdown2", "netaddr"],
+  "batch 4": ["dagster-pipes", "fastjsonschema", "pyflakes", "bottle", "itables"],
+  "batch 5": ["whitenoise", "funcy", "python-barcode", "pyrate-limiter", "structlog"],
+  "ICSE 2021 set": ["autojump", "fabric", "asciinema", "face_classification", "Sublist3r"]
+ },
+ "scorer": {"table": "55e1e18ccd601300df7da71be50f1c386bb4b5ef735ab39be6adaf053195f6da", "python": "3.14.10", "implementation": "CPython", "platform": "linux aarch64"},
+ "first measurements": {
+  "about": "The first measurement of each batch of the macro-benchmark after the first: a frozen engine, run once on the batch before anyone read its false positives and false negatives. Counts are [TP, FP, FN], raw names, summed over the five projects of the batch ('batch') and over the projects of the batches known at that time ('known'); null: not recorded then, or not measured. The numbers were recorded when they were measured and are not regenerated: the ground truths and the engine changed afterwards. evaluation/rq1-accuracy/table.py shows them in the table of RQ1.",
+  "original": {"commit": "8555f0590f3c296212bb1288a5f5e965cf3af94f", "tag": "baseline-original-engine"},
+  "batches": [
+   {
+    "batch": 2,
+    "date": "2026-11-13",
+    "engine": {"commit": "2bcc0b1d9a0f35caccdc517eb83ce3d34c003b7f", "tag": null},
+    "known": [1],
+    "names": "string equality and the trace's aliases (before the table of names of one function)",
+    "rows": [
+     {
+      "tool": "PyCG",
+      "batch": {
+       "inside": [1366, 98, 457],
+       "outside": [1218, 49, 111]
+      },
+      "known": {
+       "inside": [1241, 105, 157],
+       "outside": [752, 21, 26]
+      },
+      "runs": "5 ok"
+     },
+     {
+      "tool": "original PyCG",
+      "batch": {
+       "inside": [640, 22, 1183],
+       "outside": [803, 74, 526]
+      },
+      "known": null,
+      "runs": "5 ok"
+     }
+    ]
+   },
+   {
+    "batch": 3,
+    "date": "2026-11-13",
+    "engine": {"commit": "343541c8aef48cb80bac84e477d548c52b6ab102", "tag": "freeze-round-1"},
+    "known": [1, 2],
+    "names": "string equality and the trace's aliases (before the table of names of one function)",
+    "rows": [
+     {
+      "tool": "PyCG",
+      "batch": {
+       "inside": [1347, 215, 115],
+       "outside": [1843, 200, 135]
+      },
+      "known": {
+       "inside": [2894, 170, 327],
+       "outside": [2042, 84, 65]
+      },
+      "runs": "5 ok"
+     },
+     {
+      "tool": "original PyCG",
+      "batch": {
+       "inside": [749, 56, 713],
+       "outside": [1013, 799, 965]
+      },
+      "known": null,
+      "runs": "5 ok"
+     }
+    ]
+   },
+   {
+    "batch": 4,
+    "date": "2026-11-14",
+    "engine": {"commit": "b8469bd1b540dde4c8ea587f69f927566c5f3d06", "tag": "freeze-round-2"},
+    "known": [1, 2, 3, "icse-2021"],
+    "names": "string equality and the trace's aliases (before the table of names of one function)",
+    "rows": [
+     {
+      "tool": "PyCG",
+      "batch": {
+       "inside": [1508, 238, 145],
+       "outside": [1908, 190, 258]
+      },
+      "known": {
+       "inside": [4823, 252, 415],
+       "outside": [4913, 372, 449]
+      },
+      "runs": "5 ok"
+     },
+     {
+      "tool": "original PyCG",
+      "batch": {
+       "inside": [488, 54, 1165],
+       "outside": [411, 80, 1755]
+      },
+      "known": null,
+      "runs": "2 crash, 3 ok"
+     }
+    ],
+    "corrected after": [
+     {"date": "2026-11-14", "project": "bottle", "what": "bottle's ground truth was corrected by a second blind audit (rulings 13 to 15 of the batch): two calls that cannot bind (-12 edges), one missing edge (+1), Python 2 values that keep their type (+10 outside); 1,462 edges become 1,461 (608 inside). The frozen engine on the corrected truth: inside 1507/239/143, outside 1910/188/258"}
+    ]
+   },
+   {
+    "batch": 5,
+    "date": "2026-11-14",
+    "engine": {"commit": "8ef722cadd828ffa02e1d15cf99bcc726e452f23", "tag": "freeze-round-3"},
+    "known": [1, 2, 3, 4, "icse-2021"],
+    "names": "the table of names of one function c22f9ab9e73d442414c1fb24ec6f3e6d03c0b06cae91d2ed0f59990c429d45ad",
+    "rows": [
+     {
+      "tool": "PyCG",
+      "batch": {
+       "inside": [1198, 130, 268],
+       "outside": [1539, 101, 192]
+      },
+      "known": {
+       "inside": [6330, 314, 558],
+       "outside": [6876, 442, 651]
+      },
+      "runs": "5 ok",
+      "known runs": "25 ok"
+     },
+     {
+      "tool": "original PyCG",
+      "batch": {
+       "inside": [546, 48, 920],
+       "outside": [681, 754, 1050]
+      },
+      "known": {
+       "inside": [2870, 268, 4018],
+       "outside": [3486, 1358, 4041]
+      },
+      "runs": "4 ok, 1 timeout",
+      "known runs": "2 crash, 23 ok"
+     },
+     {
+      "tool": "pyan3",
+      "version": "v2.9.0 (8e8bd90646)",
+      "batch": {
+       "inside": [690, 601, 776],
+       "outside": [0, 0, 1731]
+      },
+      "known": {
+       "inside": [3538, 1548, 3350],
+       "outside": [0, 0, 7527]
+      }
+     },
+     {
+      "tool": "JARVIS",
+      "version": "8871b86 (8871b86494)",
+      "batch": {
+       "inside": [678, 417, 788],
+       "outside": [732, 77, 999]
+      },
+      "known": {
+       "inside": [3035, 1610, 3853],
+       "outside": [3044, 499, 4483]
+      }
+     },
+     {
+      "tool": "JARVIS, class edges dropped",
+      "version": "8871b86 (8871b86494)",
+      "batch": {
+       "inside": [678, 253, 788],
+       "outside": [732, 77, 999]
+      },
+      "known": {
+       "inside": [3035, 810, 3853],
+       "outside": [3044, 499, 4483]
+      }
+     },
+     {
+      "tool": "JARVIS --precision",
+      "version": "8871b86 (8871b86494)",
+      "batch": {
+       "inside": [618, 29, 848],
+       "outside": [550, 67, 1181]
+      },
+      "known": {
+       "inside": [2955, 241, 3933],
+       "outside": [2675, 412, 4852]
+      }
+     },
+     {
+      "tool": "CPyGraph",
+      "version": "v0.1.0 (984d34ed2f)",
+      "batch": {
+       "inside": [42, 30, 1424],
+       "outside": [17, 1, 1714]
+      },
+      "known": {
+       "inside": [943, 586, 5945],
+       "outside": [176, 22, 7351]
+      }
+     },
+     {
+      "tool": "HeaderGen (hybrid: imports the analysed modules)",
+      "version": "1ea5226 (1ea52265ca)",
+      "batch": {
+       "inside": [225, 78, 175],
+       "outside": [287, 85, 181]
+      },
+      "known": {
+       "inside": [2215, 181, 4139],
+       "outside": [3060, 778, 2953]
+      },
+      "projects measured": [1, 5],
+      "known projects measured": [21, 25]
+     },
+     {
+      "tool": "PyAnalyzer",
+      "version": "ea143ef (ea143ef8bd)",
+      "batch": {
+       "inside": [368, 14, 1098],
+       "outside": null
+      },
+      "known": {
+       "inside": [1549, 120, 5339],
+       "outside": null
+      },
+      "no outside": "not measured: PyAnalyzer names no callee outside the package (without a builtins stub it models neither builtins nor the standard library nor third-party code)"
+     },
+     {
+      "tool": "PyAnalyzer (call relations of the dependency report)",
+      "version": "ea143ef (ea143ef8bd)",
+      "batch": {
+       "inside": [590, 67, 876],
+       "outside": null
+      },
+      "known": {
+       "inside": [2629, 2452, 4259],
+       "outside": null
+      },
+      "no outside": "not measured: PyAnalyzer names no callee outside the package (without a builtins stub it models neither builtins nor the standard library nor third-party code)"
+     }
+    ]
+   }
+  ]
+ }
+}

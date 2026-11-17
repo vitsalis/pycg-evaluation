@@ -1,0 +1,57 @@
+{
+"barcode.codabar.CODABAR.build": [
+"barcode.errors.BarcodeError.__init__"
+],
+"barcode.codex.Code128._maybe_switch_charset": [
+"barcode.codex.Code128._maybe_switch_charset.look_next"
+],
+"barcode.codex.PZN7.calculate_checksum": [
+"barcode.errors.BarcodeError.__init__"
+],
+"barcode.generate": [
+"barcode.get"
+],
+"barcode.get_class": [
+"barcode.get"
+],
+"barcode.isxn.InternationalStandardBookNumber13.__init__": [
+"barcode.errors.BarcodeError.__init__"
+],
+"barcode.pybarcode": [
+"barcode.pybarcode.main"
+],
+"barcode.pybarcode.create_barcode": [
+"barcode.writer.ImageWriter.__init__",
+"barcode.writer.SVGWriter.__init__"
+],
+"barcode.writer.BaseWriter.calculate_size": [
+"barcode.writer.pt2mm"
+],
+"barcode.writer.BaseWriter.render": [
+"barcode.writer.pt2mm"
+],
+"barcode.writer.ImageWriter._init": [
+"barcode.writer.mm2px"
+],
+"barcode.writer.ImageWriter._paint_module": [
+"barcode.writer.mm2px"
+],
+"barcode.writer.ImageWriter._paint_text": [
+"barcode.writer.mm2px",
+"barcode.writer.pt2mm"
+],
+"barcode.writer.SVGWriter._create_module": [
+"barcode.writer._set_attributes"
+],
+"barcode.writer.SVGWriter._create_text": [
+"barcode.writer._set_attributes",
+"barcode.writer.pt2mm"
+],
+"barcode.writer.SVGWriter._init": [
+"barcode.writer._set_attributes",
+"barcode.writer.create_svg_object"
+],
+"barcode.writer.create_svg_object": [
+"barcode.writer._set_attributes"
+]
+}

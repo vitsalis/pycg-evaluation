@@ -1,0 +1,47 @@
+{
+"absent": {},
+"cohort": "3.12",
+"only": "aiocache",
+"question": "rq1",
+"row": "HeaderGen (hybrid: imports the analysed modules)",
+"sets": {
+"macro": {
+"runs": {
+"macro/aiocache": {
+"graph_sha256": "43c0c3e96020ca6be92221efe31a7e2bbfe0b167b6f86a3eee745c92ca6e2203",
+"input_sha256": "e53099d48b5fb98518e168356ce5eb790b604943d0d3db100865cb9a32c0458b",
+"notes": {
+"merged: callers equal once line numbers are stripped": 43
+},
+"status": "ok"
+}
+}
+}
+},
+"settings": {
+"deps": "/opt/deps",
+"lib": "/opt/tool/lib",
+"shim": "/opt/tool/shim",
+"source": "/opt/tool/headergen"
+},
+"tool": {
+"image": "pycg-tool-headergen",
+"limits": {
+"memory_mib": 2048,
+"seconds": 600
+},
+"memory_mib": 4096,
+"note": "a shim of 15 lines replaces its framework_models package: the same check_alias over the pinned aliases/*.json, without the classifier, its pickles and the nltk download; HeaderGen imports the analysed modules and the libraries that they name, so each macro project with runtime dependencies runs in an image that has them (README, Prior tools)",
+"pin": {
+"commit": "1ea52265ca4e76bb202a2deb26f3b9394d3caa95",
+"name": "HeaderGen",
+"repository": "https://github.com/secure-software-engineering/HeaderGen",
+"source": "git archive of the pinned commit (pycg_extended, beniget, typestub-database, framework_models/aliases) and of its typeshed submodule (stdlib, stubs)",
+"typeshed": "be0ef211679fabf020dcc79cd4b5c43af0fa1839",
+"version": "1ea5226"
+},
+"python": "3.12.16",
+"tool": "headergen",
+"version": "1ea5226 (1ea52265ca)"
+}
+}

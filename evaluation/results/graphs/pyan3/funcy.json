@@ -1,0 +1,814 @@
+{
+"funcy": [
+"funcy.calc.cache",
+"funcy.calc.memoize",
+"funcy.colls.all",
+"funcy.colls.any",
+"funcy.colls.compact",
+"funcy.colls.del_in",
+"funcy.colls.empty",
+"funcy.colls.flip",
+"funcy.colls.get_in",
+"funcy.colls.get_lax",
+"funcy.colls.has_path",
+"funcy.colls.invoke",
+"funcy.colls.is_distinct",
+"funcy.colls.iteritems",
+"funcy.colls.itervalues",
+"funcy.colls.join",
+"funcy.colls.join_with",
+"funcy.colls.linvoke",
+"funcy.colls.lpluck",
+"funcy.colls.lpluck_attr",
+"funcy.colls.lwhere",
+"funcy.colls.merge",
+"funcy.colls.merge_with",
+"funcy.colls.none",
+"funcy.colls.omit",
+"funcy.colls.one",
+"funcy.colls.pluck",
+"funcy.colls.pluck_attr",
+"funcy.colls.project",
+"funcy.colls.select",
+"funcy.colls.select_keys",
+"funcy.colls.select_values",
+"funcy.colls.set_in",
+"funcy.colls.some",
+"funcy.colls.split_keys",
+"funcy.colls.update_in",
+"funcy.colls.walk",
+"funcy.colls.walk_keys",
+"funcy.colls.walk_values",
+"funcy.colls.where",
+"funcy.colls.zip_dicts",
+"funcy.colls.zip_values",
+"funcy.colls.zipdict",
+"funcy.debug.log_calls",
+"funcy.debug.log_enters",
+"funcy.debug.log_exits",
+"funcy.debug.log_iter_durations",
+"funcy.debug.print_calls",
+"funcy.debug.print_enters",
+"funcy.debug.print_exits",
+"funcy.debug.print_iter_durations",
+"funcy.debug.tap",
+"funcy.decorators.decorator",
+"funcy.decorators.wraps",
+"funcy.flow.fallback",
+"funcy.flow.ignore",
+"funcy.flow.joining",
+"funcy.flow.limit_error_rate",
+"funcy.flow.once_per",
+"funcy.flow.once_per_args",
+"funcy.flow.post_processing",
+"funcy.flow.raiser",
+"funcy.flow.reraise",
+"funcy.flow.retry",
+"funcy.flow.silent",
+"funcy.flow.throttle",
+"funcy.flow.wrap_with",
+"funcy.funcolls.all_fn",
+"funcy.funcolls.any_fn",
+"funcy.funcolls.none_fn",
+"funcy.funcolls.one_fn",
+"funcy.funcolls.some_fn",
+"funcy.funcs.autocurry",
+"funcy.funcs.caller",
+"funcy.funcs.complement",
+"funcy.funcs.compose",
+"funcy.funcs.constantly",
+"funcy.funcs.curry",
+"funcy.funcs.func_partial",
+"funcy.funcs.identity",
+"funcy.funcs.iffy",
+"funcy.funcs.juxt",
+"funcy.funcs.ljuxt",
+"funcy.funcs.rcompose",
+"funcy.funcs.rcurry",
+"funcy.funcs.rpartial",
+"funcy.objects.monkey",
+"funcy.objects.wrap_prop",
+"funcy.primitives.dec",
+"funcy.primitives.even",
+"funcy.primitives.inc",
+"funcy.primitives.isnone",
+"funcy.primitives.notnone",
+"funcy.primitives.odd",
+"funcy.seqs.butlast",
+"funcy.seqs.chunks",
+"funcy.seqs.count_by",
+"funcy.seqs.count_reps",
+"funcy.seqs.distinct",
+"funcy.seqs.drop",
+"funcy.seqs.dropwhile",
+"funcy.seqs.filter",
+"funcy.seqs.first",
+"funcy.seqs.flatten",
+"funcy.seqs.group_by",
+"funcy.seqs.group_by_keys",
+"funcy.seqs.group_values",
+"funcy.seqs.ilen",
+"funcy.seqs.interleave",
+"funcy.seqs.interpose",
+"funcy.seqs.iterate",
+"funcy.seqs.keep",
+"funcy.seqs.last",
+"funcy.seqs.lcat",
+"funcy.seqs.lchunks",
+"funcy.seqs.lconcat",
+"funcy.seqs.ldistinct",
+"funcy.seqs.lfilter",
+"funcy.seqs.lflatten",
+"funcy.seqs.lkeep",
+"funcy.seqs.lmap",
+"funcy.seqs.lmapcat",
+"funcy.seqs.lpartition",
+"funcy.seqs.lpartition_by",
+"funcy.seqs.lreductions",
+"funcy.seqs.lremove",
+"funcy.seqs.lsplit",
+"funcy.seqs.lsplit_at",
+"funcy.seqs.lsplit_by",
+"funcy.seqs.lsums",
+"funcy.seqs.lwithout",
+"funcy.seqs.lzip",
+"funcy.seqs.map",
+"funcy.seqs.mapcat",
+"funcy.seqs.nth",
+"funcy.seqs.pairwise",
+"funcy.seqs.partition",
+"funcy.seqs.partition_by",
+"funcy.seqs.reductions",
+"funcy.seqs.remove",
+"funcy.seqs.repeatedly",
+"funcy.seqs.rest",
+"funcy.seqs.second",
+"funcy.seqs.split",
+"funcy.seqs.split_at",
+"funcy.seqs.split_by",
+"funcy.seqs.sums",
+"funcy.seqs.take",
+"funcy.seqs.takewhile",
+"funcy.seqs.with_next",
+"funcy.seqs.with_prev",
+"funcy.seqs.without",
+"funcy.strings.cut_prefix",
+"funcy.strings.cut_suffix",
+"funcy.strings.re_all",
+"funcy.strings.re_find",
+"funcy.strings.re_finder",
+"funcy.strings.re_iter",
+"funcy.strings.re_test",
+"funcy.strings.re_tester",
+"funcy.strings.str_join",
+"funcy.tree.ltree_leaves",
+"funcy.tree.ltree_nodes",
+"funcy.tree.tree_leaves",
+"funcy.tree.tree_nodes",
+"funcy.types.isa"
+],
+"funcy._inspect.get_spec": [
+"funcy._inspect._code_to_spec",
+"funcy._inspect._sig_to_spec",
+"funcy._inspect.get_spec"
+],
+"funcy.calc": [
+"funcy.calc._make_lookuper",
+"funcy.calc.cache"
+],
+"funcy.calc.CacheMemory.__getitem__": [
+"funcy.calc.CacheMemory.expire"
+],
+"funcy.calc.CacheMemory.__init__": [
+"funcy.calc.CacheMemory.clear"
+],
+"funcy.calc.CacheMemory.expire": [
+"funcy.calc.CacheMemory.__init__"
+],
+"funcy.calc._make_lookuper": [
+"funcy.calc._make_lookuper.make_lookuper"
+],
+"funcy.calc._make_lookuper.make_lookuper": [
+"funcy.calc._make_lookuper.make_lookuper.wrapper",
+"funcy.calc.has_arg_types",
+"funcy.calc.memoize",
+"funcy.decorators.wraps"
+],
+"funcy.calc._make_lookuper.make_lookuper.wrapper": [
+"funcy.calc._make_lookuper.make_lookuper",
+"funcy.calc.memoize"
+],
+"funcy.calc._memory_decorator": [
+"funcy.calc._memory_decorator.decorator"
+],
+"funcy.calc._memory_decorator.decorator": [
+"funcy.calc._memory_decorator.decorator.invalidate",
+"funcy.calc._memory_decorator.decorator.invalidate_all",
+"funcy.calc._memory_decorator.decorator.wrapper",
+"funcy.decorators.wraps"
+],
+"funcy.calc._memory_decorator.decorator.wrapper": [
+"funcy.decorators.wraps"
+],
+"funcy.calc.cache": [
+"funcy.calc.CacheMemory.__init__",
+"funcy.calc._memory_decorator"
+],
+"funcy.calc.has_arg_types": [
+"funcy.colls.any"
+],
+"funcy.calc.memoize": [
+"funcy.calc._memory_decorator",
+"funcy.calc.memoize"
+],
+"funcy.colls": [
+"funcy.colls.itervalues"
+],
+"funcy.colls._factory": [
+"funcy.funcs.compose"
+],
+"funcy.colls.all": [
+"funcy.seqs.map"
+],
+"funcy.colls.any": [
+"funcy.seqs.map"
+],
+"funcy.colls.compact": [
+"funcy.colls.select",
+"funcy.colls.select_values"
+],
+"funcy.colls.del_in": [
+"funcy.colls.del_in"
+],
+"funcy.colls.empty": [
+"funcy.colls._factory"
+],
+"funcy.colls.flip": [
+"funcy.colls.flip.flip_pair",
+"funcy.colls.walk"
+],
+"funcy.colls.invoke": [
+"funcy.seqs.map"
+],
+"funcy.colls.is_distinct": [
+"funcy.seqs.map"
+],
+"funcy.colls.join_with": [
+"funcy.colls.iteritems"
+],
+"funcy.colls.linvoke": [
+"funcy.colls.invoke"
+],
+"funcy.colls.lpluck": [
+"funcy.colls.pluck"
+],
+"funcy.colls.lpluck_attr": [
+"funcy.colls.pluck_attr"
+],
+"funcy.colls.lwhere": [
+"funcy.colls.where"
+],
+"funcy.colls.merge": [
+"funcy.colls.join"
+],
+"funcy.colls.merge_with": [
+"funcy.colls.join_with"
+],
+"funcy.colls.none": [
+"funcy.colls.any"
+],
+"funcy.colls.omit": [
+"funcy.colls._factory",
+"funcy.colls.iteritems"
+],
+"funcy.colls.one": [
+"funcy.colls.one",
+"funcy.seqs.filter",
+"funcy.seqs.take"
+],
+"funcy.colls.pluck": [
+"funcy.seqs.map"
+],
+"funcy.colls.pluck_attr": [
+"funcy.seqs.map"
+],
+"funcy.colls.project": [
+"funcy.colls._factory"
+],
+"funcy.colls.select": [
+"funcy.colls._factory",
+"funcy.colls.iteritems",
+"funcy.seqs.filter"
+],
+"funcy.colls.select_keys": [
+"funcy.colls.select",
+"funcy.funcmakers.make_pred"
+],
+"funcy.colls.select_values": [
+"funcy.colls.select",
+"funcy.funcmakers.make_pred"
+],
+"funcy.colls.set_in": [
+"funcy.colls.update_in"
+],
+"funcy.colls.some": [
+"funcy.colls.some",
+"funcy.seqs.filter"
+],
+"funcy.colls.split_keys": [
+"funcy.colls._factory",
+"funcy.funcmakers.make_pred"
+],
+"funcy.colls.update_in": [
+"funcy.colls.update_in"
+],
+"funcy.colls.walk": [
+"funcy.colls._factory",
+"funcy.colls.iteritems",
+"funcy.seqs.map"
+],
+"funcy.colls.walk_keys": [
+"funcy.colls.walk",
+"funcy.colls.walk_keys.pair_f",
+"funcy.funcmakers.make_func"
+],
+"funcy.colls.walk_keys.pair_f": [
+"funcy.funcmakers.make_func"
+],
+"funcy.colls.walk_values": [
+"funcy.colls._factory",
+"funcy.colls.iteritems",
+"funcy.colls.walk_values.pair_f",
+"funcy.funcmakers.make_func",
+"funcy.seqs.map"
+],
+"funcy.colls.walk_values.pair_f": [
+"funcy.funcmakers.make_func"
+],
+"funcy.colls.where": [
+"funcy.colls.all",
+"funcy.seqs.filter"
+],
+"funcy.colls.zip_dicts": [
+"funcy.seqs.map"
+],
+"funcy.colls.zip_values": [
+"funcy.seqs.map"
+],
+"funcy.debug": [
+"funcy.debug.format_time",
+"funcy.debug.log_errors.__init__",
+"funcy.debug.print_calls"
+],
+"funcy.debug.LabeledContextDecorator.__call__": [
+"funcy.debug.LabeledContextDecorator.__init__",
+"funcy.debug.LabeledContextDecorator.decorator"
+],
+"funcy.debug.LabeledContextDecorator.decorator": [
+"funcy.debug.LabeledContextDecorator.decorator.inner",
+"funcy.decorators.wraps"
+],
+"funcy.debug.LabeledContextDecorator.decorator.inner": [
+"funcy.debug.LabeledContextDecorator.__init__",
+"funcy.debug.signature_repr",
+"funcy.decorators.Call.__init__",
+"funcy.decorators.wraps"
+],
+"funcy.debug.log_calls": [
+"funcy.debug._format_error",
+"funcy.debug.signature_repr",
+"funcy.debug.smart_repr",
+"funcy.decorators.decorator"
+],
+"funcy.debug.log_durations.__exit__": [
+"funcy.debug.log_durations.__init__",
+"funcy.debug.signature_repr"
+],
+"funcy.debug.log_durations.__init__": [
+"funcy.debug.LabeledContextDecorator.__init__"
+],
+"funcy.debug.log_enters": [
+"funcy.debug.signature_repr",
+"funcy.decorators.decorator"
+],
+"funcy.debug.log_errors.__exit__": [
+"funcy.debug._format_error",
+"funcy.debug.signature_repr"
+],
+"funcy.debug.log_errors.__init__": [
+"funcy.debug.LabeledContextDecorator.__init__"
+],
+"funcy.debug.log_exits": [
+"funcy.debug._format_error",
+"funcy.debug.signature_repr",
+"funcy.debug.smart_repr",
+"funcy.decorators.decorator"
+],
+"funcy.debug.print_calls": [
+"funcy.debug.log_calls"
+],
+"funcy.debug.print_enters": [
+"funcy.debug.log_enters"
+],
+"funcy.debug.print_exits": [
+"funcy.debug.log_exits"
+],
+"funcy.debug.print_iter_durations": [
+"funcy.debug.log_iter_durations"
+],
+"funcy.debug.signature_repr": [
+"funcy.debug.smart_repr"
+],
+"funcy.decorators.Call.__getattr__": [
+"funcy.decorators.arggetter"
+],
+"funcy.decorators.Call.__str__": [
+"funcy.decorators.Call.__init__",
+"funcy.seqs.map"
+],
+"funcy.decorators.arggetter": [
+"funcy.decorators.arggetter.get_arg"
+],
+"funcy.decorators.arggetter.get_arg": [
+"funcy.colls.omit"
+],
+"funcy.decorators.decorator": [
+"funcy.decorators.decorator.decorator_fab",
+"funcy.decorators.has_1pos_and_kwonly",
+"funcy.decorators.has_single_arg",
+"funcy.decorators.make_decorator",
+"funcy.decorators.wraps"
+],
+"funcy.decorators.decorator.decorator_fab": [
+"funcy.decorators.make_decorator"
+],
+"funcy.decorators.make_decorator": [
+"funcy.decorators.make_decorator._decorator",
+"funcy.decorators.wraps"
+],
+"funcy.decorators.make_decorator._decorator": [
+"funcy.decorators.make_decorator._decorator.wrapper",
+"funcy.decorators.wraps"
+],
+"funcy.decorators.make_decorator._decorator.wrapper": [
+"funcy.decorators.Call.__init__"
+],
+"funcy.decorators.wraps": [
+"funcy.decorators.update_wrapper"
+],
+"funcy.flow": [
+"funcy.flow.post_processing"
+],
+"funcy.flow._ensure_exceptable": [
+"funcy.flow._is_exception_type"
+],
+"funcy.flow.fallback": [
+"funcy.flow._ensure_exceptable"
+],
+"funcy.flow.ignore": [
+"funcy.flow._ensure_exceptable",
+"funcy.flow.ignore.decorator"
+],
+"funcy.flow.ignore.decorator": [
+"funcy.decorators.wraps",
+"funcy.flow.ignore.decorator.wrapper"
+],
+"funcy.flow.ignore.decorator.wrapper": [
+"funcy.decorators.wraps",
+"funcy.flow._ensure_exceptable"
+],
+"funcy.flow.joining": [
+"funcy.decorators.decorator",
+"funcy.seqs.map"
+],
+"funcy.flow.limit_error_rate": [
+"funcy.flow.limit_error_rate.decorator"
+],
+"funcy.flow.limit_error_rate.decorator": [
+"funcy.decorators.wraps",
+"funcy.flow.limit_error_rate.decorator.wrapper"
+],
+"funcy.flow.limit_error_rate.decorator.wrapper": [
+"funcy.decorators.wraps"
+],
+"funcy.flow.once_per": [
+"funcy.flow.once_per.once"
+],
+"funcy.flow.once_per.once": [
+"funcy.decorators.arggetter",
+"funcy.decorators.wraps",
+"funcy.flow.once_per.once.wrapper"
+],
+"funcy.flow.once_per.once.wrapper": [
+"funcy.decorators.arggetter",
+"funcy.decorators.wraps"
+],
+"funcy.flow.once_per_args": [
+"funcy.decorators.get_argnames",
+"funcy.flow.once_per"
+],
+"funcy.flow.post_processing": [
+"funcy.decorators.decorator"
+],
+"funcy.flow.raiser": [
+"funcy.flow.raiser._raiser"
+],
+"funcy.flow.reraise": [
+"funcy.flow._ensure_exceptable",
+"funcy.flow._is_exception_type"
+],
+"funcy.flow.retry": [
+"funcy.decorators.decorator",
+"funcy.flow._ensure_exceptable"
+],
+"funcy.flow.silent": [
+"funcy.flow.ignore"
+],
+"funcy.flow.throttle": [
+"funcy.flow.throttle.decorator"
+],
+"funcy.flow.throttle.decorator": [
+"funcy.decorators.wraps",
+"funcy.flow.throttle.decorator.wrapper"
+],
+"funcy.flow.throttle.decorator.wrapper": [
+"funcy.decorators.wraps"
+],
+"funcy.flow.wrap_with": [
+"funcy.decorators.decorator"
+],
+"funcy.funcmakers.make_func": [
+"funcy.strings.re_finder",
+"funcy.strings.re_tester"
+],
+"funcy.funcmakers.make_pred": [
+"funcy.funcmakers.make_func"
+],
+"funcy.funcolls.all_fn": [
+"funcy.colls.all",
+"funcy.funcs.compose",
+"funcy.funcs.juxt"
+],
+"funcy.funcolls.any_fn": [
+"funcy.colls.any",
+"funcy.funcs.compose",
+"funcy.funcs.juxt"
+],
+"funcy.funcolls.none_fn": [
+"funcy.colls.none",
+"funcy.funcs.compose",
+"funcy.funcs.juxt"
+],
+"funcy.funcolls.one_fn": [
+"funcy.colls.one",
+"funcy.funcs.compose",
+"funcy.funcs.juxt"
+],
+"funcy.funcolls.some_fn": [
+"funcy.colls.some",
+"funcy.funcs.compose",
+"funcy.funcs.juxt"
+],
+"funcy.funcs.autocurry": [
+"funcy._inspect.get_spec",
+"funcy.decorators.wraps",
+"funcy.funcs.autocurry.autocurried"
+],
+"funcy.funcs.autocurry.autocurried": [
+"funcy.funcs.autocurry"
+],
+"funcy.funcs.complement": [
+"funcy.funcs.compose"
+],
+"funcy.funcs.compose": [
+"funcy.funcmakers.make_func",
+"funcy.funcs.identity",
+"funcy.seqs.map"
+],
+"funcy.funcs.curry": [
+"funcy._inspect.get_spec"
+],
+"funcy.funcs.iffy": [
+"funcy.funcmakers.make_func",
+"funcy.funcmakers.make_pred",
+"funcy.funcs.identity",
+"funcy.funcs.iffy"
+],
+"funcy.funcs.juxt": [
+"funcy.funcmakers.make_func",
+"funcy.seqs.map"
+],
+"funcy.funcs.ljuxt": [
+"funcy.funcmakers.make_func",
+"funcy.seqs.map"
+],
+"funcy.funcs.rcompose": [
+"funcy.funcs.compose"
+],
+"funcy.funcs.rcurry": [
+"funcy._inspect.get_spec",
+"funcy.funcs.rpartial"
+],
+"funcy.objects.LazyObject.__getattr__": [
+"funcy.objects.LazyObject._setup"
+],
+"funcy.objects.LazyObject.__setattr__": [
+"funcy.objects.LazyObject._setup"
+],
+"funcy.objects.LazyObject._setup": [
+"funcy.objects.LazyObject.__init__"
+],
+"funcy.objects.cached_property.__get__": [
+"funcy.objects.cached_property.__init__"
+],
+"funcy.objects.monkey": [
+"funcy.objects.monkey.decorator"
+],
+"funcy.objects.monkey.decorator": [
+"funcy.strings.cut_prefix"
+],
+"funcy.objects.wrap_prop": [
+"funcy.objects.wrap_prop.decorator"
+],
+"funcy.seqs._cut": [
+"funcy.seqs._cut_iter",
+"funcy.seqs._cut_seq"
+],
+"funcy.seqs._cut_iter": [
+"funcy.seqs._cut_seq",
+"funcy.seqs.take"
+],
+"funcy.seqs._lfilter": [
+"funcy.seqs.filter"
+],
+"funcy.seqs._lmap": [
+"funcy.seqs.map"
+],
+"funcy.seqs._zip_strict": [
+"funcy.seqs._zip_strict_error",
+"funcy.seqs._zip_strict_iters"
+],
+"funcy.seqs._zip_strict_iters": [
+"funcy.seqs._zip_strict_error"
+],
+"funcy.seqs.chunks": [
+"funcy.seqs._cut"
+],
+"funcy.seqs.count_by": [
+"funcy.funcmakers.make_func"
+],
+"funcy.seqs.distinct": [
+"funcy.funcmakers.make_func"
+],
+"funcy.seqs.dropwhile": [
+"funcy.funcmakers.make_pred"
+],
+"funcy.seqs.filter": [
+"funcy.funcmakers.make_pred",
+"funcy.seqs.filter"
+],
+"funcy.seqs.flatten": [
+"funcy.seqs.flatten"
+],
+"funcy.seqs.group_by": [
+"funcy.funcmakers.make_func"
+],
+"funcy.seqs.group_by_keys": [
+"funcy.funcmakers.make_func"
+],
+"funcy.seqs.interpose": [
+"funcy.seqs.drop",
+"funcy.seqs.interleave"
+],
+"funcy.seqs.keep": [
+"funcy.seqs.filter",
+"funcy.seqs.map"
+],
+"funcy.seqs.lchunks": [
+"funcy.seqs.chunks"
+],
+"funcy.seqs.ldistinct": [
+"funcy.seqs.distinct"
+],
+"funcy.seqs.lfilter": [
+"funcy.funcmakers.make_pred",
+"funcy.seqs._lfilter"
+],
+"funcy.seqs.lflatten": [
+"funcy.seqs.flatten"
+],
+"funcy.seqs.lkeep": [
+"funcy.seqs.keep"
+],
+"funcy.seqs.lmap": [
+"funcy.funcmakers.make_func",
+"funcy.seqs._lmap"
+],
+"funcy.seqs.lmapcat": [
+"funcy.seqs.lcat",
+"funcy.seqs.map"
+],
+"funcy.seqs.lpartition": [
+"funcy.seqs.partition"
+],
+"funcy.seqs.lpartition_by": [
+"funcy.seqs._lmap",
+"funcy.seqs.partition_by"
+],
+"funcy.seqs.lreductions": [
+"funcy.seqs.reductions"
+],
+"funcy.seqs.lremove": [
+"funcy.seqs.remove"
+],
+"funcy.seqs.lsplit": [
+"funcy.funcmakers.make_pred"
+],
+"funcy.seqs.lsplit_at": [
+"funcy.seqs.split_at"
+],
+"funcy.seqs.lsplit_by": [
+"funcy.seqs.split_by"
+],
+"funcy.seqs.lsums": [
+"funcy.seqs.lreductions"
+],
+"funcy.seqs.lwithout": [
+"funcy.seqs.without"
+],
+"funcy.seqs.lzip": [
+"funcy.seqs._zip_strict"
+],
+"funcy.seqs.map": [
+"funcy.funcmakers.make_func",
+"funcy.seqs.map"
+],
+"funcy.seqs.mapcat": [
+"funcy.seqs.map"
+],
+"funcy.seqs.partition": [
+"funcy.seqs._cut"
+],
+"funcy.seqs.partition_by": [
+"funcy.funcmakers.make_func"
+],
+"funcy.seqs.reductions": [
+"funcy.seqs._reductions"
+],
+"funcy.seqs.remove": [
+"funcy.funcmakers.make_pred"
+],
+"funcy.seqs.rest": [
+"funcy.seqs.drop"
+],
+"funcy.seqs.second": [
+"funcy.seqs.first",
+"funcy.seqs.rest"
+],
+"funcy.seqs.split": [
+"funcy.funcmakers.make_pred",
+"funcy.seqs.split._split"
+],
+"funcy.seqs.split_by": [
+"funcy.seqs.dropwhile",
+"funcy.seqs.takewhile"
+],
+"funcy.seqs.sums": [
+"funcy.seqs.reductions"
+],
+"funcy.seqs.takewhile": [
+"funcy.funcmakers.make_pred"
+],
+"funcy.strings._prepare": [
+"funcy.strings._make_getter"
+],
+"funcy.strings.re_all": [
+"funcy.strings.re_iter"
+],
+"funcy.strings.re_find": [
+"funcy.strings.re_finder"
+],
+"funcy.strings.re_finder": [
+"funcy.strings._prepare"
+],
+"funcy.strings.re_iter": [
+"funcy.seqs.map",
+"funcy.strings._prepare"
+],
+"funcy.strings.re_test": [
+"funcy.strings.re_tester"
+],
+"funcy.strings.str_join": [
+"funcy.seqs.map",
+"funcy.strings.str_join"
+],
+"funcy.tree.ltree_leaves": [
+"funcy.tree.tree_leaves"
+],
+"funcy.tree.ltree_nodes": [
+"funcy.tree.tree_nodes"
+],
+"funcy.types": [
+"funcy.types.isa"
+]
+}

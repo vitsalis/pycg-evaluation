@@ -1,0 +1,351 @@
+{
+"sqlparse.__main__": [
+"sqlparse.cli.main"
+],
+"sqlparse.cli._process_file": [
+"<builtin>.str.join",
+"sqlparse.cli._error",
+"sqlparse.format",
+"sqlparse.formatter.validate_options"
+],
+"sqlparse.cli.create_parser": [
+"<builtin>.str.join"
+],
+"sqlparse.cli.main": [
+"<builtin>.len",
+"sqlparse.cli._error",
+"sqlparse.cli._process_file",
+"sqlparse.cli.create_parser"
+],
+"sqlparse.engine.filter_stack.FilterStack.run": [
+"sqlparse.engine.grouping.group",
+"sqlparse.engine.statement_splitter.StatementSplitter.__init__",
+"sqlparse.engine.statement_splitter.StatementSplitter.process",
+"sqlparse.lexer.tokenize",
+"sqlparse.sql.TokenList.__iter__"
+],
+"sqlparse.engine.grouping": [
+"sqlparse.tokens._TokenType.__getattr__",
+"sqlparse.utils.recurse",
+"sqlparse.utils.recurse.wrap"
+],
+"sqlparse.engine.grouping._group": [
+"<builtin>.len",
+"sqlparse.engine.grouping._group",
+"sqlparse.engine.grouping._is_delimiter",
+"sqlparse.engine.grouping.group_assignment.match",
+"sqlparse.engine.grouping.group_assignment.post",
+"sqlparse.engine.grouping.group_assignment.valid",
+"sqlparse.engine.grouping.group_comparison.match",
+"sqlparse.engine.grouping.group_comparison.post",
+"sqlparse.engine.grouping.group_comparison.valid",
+"sqlparse.engine.grouping.group_identifier_list.match",
+"sqlparse.engine.grouping.group_identifier_list.post",
+"sqlparse.engine.grouping.group_identifier_list.valid",
+"sqlparse.engine.grouping.group_operator.match",
+"sqlparse.engine.grouping.group_operator.post",
+"sqlparse.engine.grouping.group_operator.valid",
+"sqlparse.engine.grouping.group_typecasts.match",
+"sqlparse.engine.grouping.group_typecasts.post",
+"sqlparse.engine.grouping.group_typecasts.valid",
+"sqlparse.engine.grouping.group_typed_literal.match",
+"sqlparse.engine.grouping.group_typed_literal.match_to_extend",
+"sqlparse.engine.grouping.group_typed_literal.post",
+"sqlparse.engine.grouping.group_typed_literal.valid_final",
+"sqlparse.engine.grouping.group_typed_literal.valid_next",
+"sqlparse.engine.grouping.group_typed_literal.valid_prev",
+"sqlparse.engine.grouping.group_tzcasts.match",
+"sqlparse.engine.grouping.group_tzcasts.post",
+"sqlparse.engine.grouping.group_tzcasts.valid_next",
+"sqlparse.engine.grouping.group_tzcasts.valid_prev",
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_next"
+],
+"sqlparse.engine.grouping._group_matching": [
+"<builtin>.len",
+"sqlparse.engine.grouping._group_matching",
+"sqlparse.sql.TokenList.group_tokens"
+],
+"sqlparse.engine.grouping.align_comments": [
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_next_by",
+"sqlparse.sql.TokenList.token_prev"
+],
+"sqlparse.engine.grouping.group": [
+"sqlparse.engine.grouping.group_assignment",
+"sqlparse.engine.grouping.group_begin",
+"sqlparse.engine.grouping.group_brackets",
+"sqlparse.engine.grouping.group_case",
+"sqlparse.engine.grouping.group_comparison",
+"sqlparse.engine.grouping.group_for",
+"sqlparse.engine.grouping.group_identifier_list",
+"sqlparse.engine.grouping.group_if",
+"sqlparse.engine.grouping.group_operator",
+"sqlparse.engine.grouping.group_parenthesis",
+"sqlparse.engine.grouping.group_typecasts",
+"sqlparse.engine.grouping.group_typed_literal",
+"sqlparse.engine.grouping.group_tzcasts",
+"sqlparse.engine.grouping.group_values",
+"sqlparse.utils.recurse.wrap.wrapped_f"
+],
+"sqlparse.engine.grouping.group_aliased": [
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_next",
+"sqlparse.sql.TokenList.token_next_by"
+],
+"sqlparse.engine.grouping.group_assignment": [
+"sqlparse.engine.grouping._group"
+],
+"sqlparse.engine.grouping.group_assignment.post": [
+"sqlparse.sql.TokenList.token_next_by"
+],
+"sqlparse.engine.grouping.group_begin": [
+"sqlparse.engine.grouping._group_matching"
+],
+"sqlparse.engine.grouping.group_brackets": [
+"sqlparse.engine.grouping._group_matching"
+],
+"sqlparse.engine.grouping.group_case": [
+"sqlparse.engine.grouping._group_matching"
+],
+"sqlparse.engine.grouping.group_comments": [
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_next_by",
+"sqlparse.sql.TokenList.token_not_matching",
+"sqlparse.sql.TokenList.token_prev"
+],
+"sqlparse.engine.grouping.group_comments.<lambda1>": [
+"sqlparse.utils.imt"
+],
+"sqlparse.engine.grouping.group_comparison": [
+"sqlparse.engine.grouping._group"
+],
+"sqlparse.engine.grouping.group_comparison.match": [
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.engine.grouping.group_comparison.valid": [
+"sqlparse.utils.imt"
+],
+"sqlparse.engine.grouping.group_for": [
+"sqlparse.engine.grouping._group_matching"
+],
+"sqlparse.engine.grouping.group_functions": [
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_next",
+"sqlparse.sql.TokenList.token_next_by"
+],
+"sqlparse.engine.grouping.group_identifier": [
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_next_by",
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.engine.grouping.group_identifier_list": [
+"sqlparse.engine.grouping._group"
+],
+"sqlparse.engine.grouping.group_identifier_list.valid": [
+"sqlparse.utils.imt"
+],
+"sqlparse.engine.grouping.group_if": [
+"sqlparse.engine.grouping._group_matching"
+],
+"sqlparse.engine.grouping.group_operator": [
+"sqlparse.engine.grouping._group"
+],
+"sqlparse.engine.grouping.group_operator.match": [
+"sqlparse.utils.imt"
+],
+"sqlparse.engine.grouping.group_operator.valid": [
+"sqlparse.sql.Token.match",
+"sqlparse.utils.imt"
+],
+"sqlparse.engine.grouping.group_order": [
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_next_by",
+"sqlparse.sql.TokenList.token_prev",
+"sqlparse.tokens._TokenType.__getattr__",
+"sqlparse.utils.imt"
+],
+"sqlparse.engine.grouping.group_over": [
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_next",
+"sqlparse.sql.TokenList.token_next_by",
+"sqlparse.utils.imt"
+],
+"sqlparse.engine.grouping.group_parenthesis": [
+"sqlparse.engine.grouping._group_matching"
+],
+"sqlparse.engine.grouping.group_typecasts": [
+"sqlparse.engine.grouping._group"
+],
+"sqlparse.engine.grouping.group_typed_literal": [
+"sqlparse.engine.grouping._group"
+],
+"sqlparse.engine.grouping.group_typed_literal.match": [
+"sqlparse.utils.imt"
+],
+"sqlparse.engine.grouping.group_tzcasts": [
+"sqlparse.engine.grouping._group"
+],
+"sqlparse.engine.grouping.group_tzcasts.match": [
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.engine.grouping.group_values": [
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_next",
+"sqlparse.sql.TokenList.token_next_by"
+],
+"sqlparse.engine.grouping.group_where": [
+"sqlparse.sql.TokenList._groupable_tokens",
+"sqlparse.sql.TokenList.group_tokens",
+"sqlparse.sql.TokenList.token_index",
+"sqlparse.sql.TokenList.token_next_by"
+],
+"sqlparse.engine.statement_splitter.StatementSplitter.__init__": [
+"sqlparse.engine.statement_splitter.StatementSplitter._reset"
+],
+"sqlparse.engine.statement_splitter.StatementSplitter._change_splitlevel": [
+"sqlparse.engine.statement_splitter.StatementSplitter._handle_closing_keyword",
+"sqlparse.engine.statement_splitter.StatementSplitter._handle_nested_block",
+"sqlparse.tokens._TokenType.__contains__",
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.engine.statement_splitter.StatementSplitter.process": [
+"<builtin>.str.split",
+"sqlparse.engine.statement_splitter.StatementSplitter._change_splitlevel",
+"sqlparse.engine.statement_splitter.StatementSplitter._reset",
+"sqlparse.sql.Token.__init__",
+"sqlparse.sql.TokenList.__init__",
+"sqlparse.sql.TokenList.__iter__",
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.filters.aligned_indent.AlignedIndentFilter.__init__": [
+"<builtin>.len"
+],
+"sqlparse.filters.tokens.IdentifierCaseFilter": [
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.format": [
+"<builtin>.str.join",
+"sqlparse.engine.filter_stack.FilterStack.__init__",
+"sqlparse.engine.filter_stack.FilterStack.run",
+"sqlparse.formatter.build_filter_stack",
+"sqlparse.formatter.validate_options"
+],
+"sqlparse.formatter.build_filter_stack": [
+"sqlparse.engine.filter_stack.FilterStack.enable_grouping",
+"sqlparse.filters.aligned_indent.AlignedIndentFilter.__init__",
+"sqlparse.filters.output.OutputFilter.__init__",
+"sqlparse.filters.reindent.ReindentFilter.__init__",
+"sqlparse.filters.right_margin.RightMarginFilter.__init__",
+"sqlparse.filters.tokens.TruncateStringFilter.__init__",
+"sqlparse.filters.tokens._CaseFilter.__init__"
+],
+"sqlparse.keywords": [
+"sqlparse.keywords.DelimitedSpans.__init__",
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.keywords.DelimitedSpans.resolve": [
+"<builtin>.len"
+],
+"sqlparse.keywords.find_delimited_spans": [
+"<builtin>.len",
+"sqlparse.keywords.DelimitedSpans.__init__",
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.lexer.Lexer.default_initialization": [
+"sqlparse.lexer.Lexer.add_keywords",
+"sqlparse.lexer.Lexer.clear",
+"sqlparse.lexer.Lexer.set_SQL_REGEX"
+],
+"sqlparse.lexer.Lexer.get_default_instance": [
+"sqlparse.lexer.Lexer.default_initialization"
+],
+"sqlparse.lexer.Lexer.get_tokens": [
+"sqlparse.keywords.DelimitedSpans.resolve",
+"sqlparse.keywords.find_delimited_spans",
+"sqlparse.lexer.Lexer.is_keyword",
+"sqlparse.utils.consume"
+],
+"sqlparse.lexer.tokenize": [
+"sqlparse.lexer.Lexer.get_default_instance",
+"sqlparse.lexer.Lexer.get_tokens"
+],
+"sqlparse.sql.Token.__init__": [
+"sqlparse.tokens._TokenType.__contains__"
+],
+"sqlparse.sql.TokenList.__init__": [
+"<builtin>.str.join",
+"sqlparse.sql.Token.__init__",
+"sqlparse.sql.TokenList.__iter__"
+],
+"sqlparse.sql.TokenList.__iter__": [
+"sqlparse.sql.TokenList.__iter__"
+],
+"sqlparse.sql.TokenList._token_matching": [
+"<builtin>.len",
+"<builtin>.range",
+"sqlparse.engine.grouping.group_comments.<lambda1>",
+"sqlparse.sql.TokenList.token_next.matcher",
+"sqlparse.sql.TokenList.token_next_by.<lambda1>",
+"sqlparse.sql.TokenList.token_not_matching.<lambda1>"
+],
+"sqlparse.sql.TokenList.get_sublists": [
+"sqlparse.sql.TokenList.__iter__"
+],
+"sqlparse.sql.TokenList.group_tokens": [
+"<builtin>.str.join",
+"sqlparse.sql.TokenList.__init__",
+"sqlparse.sql.TokenList.__iter__"
+],
+"sqlparse.sql.TokenList.token_index": [
+"sqlparse.sql.TokenList.token_index"
+],
+"sqlparse.sql.TokenList.token_next": [
+"sqlparse.sql.TokenList._token_matching"
+],
+"sqlparse.sql.TokenList.token_next.matcher": [
+"sqlparse.utils.imt"
+],
+"sqlparse.sql.TokenList.token_next_by": [
+"sqlparse.sql.TokenList._token_matching"
+],
+"sqlparse.sql.TokenList.token_next_by.<lambda1>": [
+"sqlparse.utils.imt"
+],
+"sqlparse.sql.TokenList.token_not_matching": [
+"sqlparse.sql.TokenList._token_matching",
+"sqlparse.sql.TokenList.token_not_matching.<lambda1>"
+],
+"sqlparse.sql.TokenList.token_not_matching.<lambda1>": [
+"sqlparse.engine.grouping.group_comments.<lambda1>",
+"sqlparse.sql.TokenList.token_not_matching.<lambda1>"
+],
+"sqlparse.sql.TokenList.token_prev": [
+"sqlparse.sql.TokenList.token_next"
+],
+"sqlparse.sql.TypedLiteral": [
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.tokens": [
+"sqlparse.tokens._TokenType.__getattr__"
+],
+"sqlparse.tokens._TokenType.__contains__": [
+"<builtin>.len"
+],
+"sqlparse.utils.imt": [
+"sqlparse.tokens._TokenType.__contains__"
+],
+"sqlparse.utils.recurse.wrap.wrapped_f": [
+"sqlparse.engine.grouping.align_comments",
+"sqlparse.engine.grouping.group_aliased",
+"sqlparse.engine.grouping.group_comments",
+"sqlparse.engine.grouping.group_functions",
+"sqlparse.engine.grouping.group_identifier",
+"sqlparse.engine.grouping.group_order",
+"sqlparse.engine.grouping.group_over",
+"sqlparse.engine.grouping.group_where",
+"sqlparse.sql.TokenList.__iter__",
+"sqlparse.sql.TokenList.get_sublists",
+"sqlparse.utils.recurse.wrap.wrapped_f"
+]
+}

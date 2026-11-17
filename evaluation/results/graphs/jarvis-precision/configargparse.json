@@ -1,0 +1,311 @@
+{
+"<builtin>.NotImplementedError": [],
+"<builtin>.TypeError": [],
+"<builtin>.ValueError": [],
+"<builtin>.all": [],
+"<builtin>.any": [],
+"<builtin>.bool": [],
+"<builtin>.callable": [],
+"<builtin>.dict": [],
+"<builtin>.enumerate": [],
+"<builtin>.filter": [],
+"<builtin>.getattr": [],
+"<builtin>.hasattr": [],
+"<builtin>.id": [],
+"<builtin>.int": [],
+"<builtin>.isinstance": [],
+"<builtin>.issubclass": [],
+"<builtin>.len": [],
+"<builtin>.list": [],
+"<builtin>.max": [],
+"<builtin>.print": [],
+"<builtin>.repr": [],
+"<builtin>.reversed": [],
+"<builtin>.set": [],
+"<builtin>.str": [],
+"<builtin>.str.endswith": [],
+"<builtin>.str.format": [],
+"<builtin>.str.join": [],
+"<builtin>.str.replace": [],
+"<builtin>.str.split": [],
+"<builtin>.str.startswith": [],
+"<builtin>.super": [],
+"<builtin>.tuple": [],
+"<builtin>.type": [],
+"append": [],
+"configargparse": [
+"<builtin>.tuple",
+"append"
+],
+"configargparse.<lambda1>": [],
+"configargparse.ArgumentParser.__init__": [
+"<builtin>.TypeError",
+"<builtin>.callable",
+"<builtin>.enumerate",
+"<builtin>.isinstance",
+"<builtin>.issubclass"
+],
+"configargparse.ArgumentParser._could_set_option": [
+"<builtin>.all",
+"<builtin>.getattr",
+"<builtin>.len"
+],
+"configargparse.ArgumentParser._find_insertion_index": [
+"<builtin>.any",
+"<builtin>.enumerate",
+"<builtin>.len",
+"<builtin>.tuple",
+"configargparse.ArgumentParser._find_subcommand_index"
+],
+"configargparse.ArgumentParser._find_subcommand_index": [
+"<builtin>.enumerate",
+"<builtin>.isinstance"
+],
+"configargparse.ArgumentParser._names_a_write_out_config_file_arg": [
+"<builtin>.any",
+"<builtin>.getattr",
+"configargparse.ArgumentParser._write_out_config_file_args"
+],
+"configargparse.ArgumentParser._open_config_files": [
+"<builtin>.TypeError",
+"<builtin>.enumerate",
+"<builtin>.getattr",
+"<builtin>.hasattr",
+"<builtin>.isinstance",
+"<builtin>.repr",
+"<builtin>.str",
+"append"
+],
+"configargparse.ArgumentParser._option_strings_that_override": [
+"<builtin>.list"
+],
+"configargparse.ArgumentParser._reachable_parsers": [
+"configargparse._subparsers_of"
+],
+"configargparse.ArgumentParser._reject_write_out_config_file_args": [
+"configargparse.ArgumentParser._names_a_write_out_config_file_arg",
+"configargparse.ArgumentParser._write_out_config_file_args",
+"configargparse._subparsers_of"
+],
+"configargparse.ArgumentParser._write_out_config_file_args": [
+"<builtin>.getattr"
+],
+"configargparse.ArgumentParser.convert_item_to_command_line_arg": [
+"<builtin>.ValueError",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.type",
+"append",
+"configargparse.<lambda1>",
+"configargparse.ArgumentParser.get_command_line_key_for_unknown_config_file_setting"
+],
+"configargparse.ArgumentParser.format_help": [
+"<builtin>.filter",
+"<builtin>.getattr",
+"<builtin>.max",
+"<builtin>.tuple",
+"configargparse.ArgumentParser.format_help._describe_default_config_file_entry",
+"configargparse.ArgumentParser.get_possible_config_keys",
+"configargparse.DefaultConfigFileParser.get_syntax_description"
+],
+"configargparse.ArgumentParser.format_help._describe_default_config_file_entry": [
+"<builtin>.getattr",
+"<builtin>.isinstance",
+"<builtin>.repr"
+],
+"configargparse.ArgumentParser.format_values": [
+"<builtin>.isinstance",
+"<builtin>.tuple"
+],
+"configargparse.ArgumentParser.get_command_line_key_for_unknown_config_file_setting": [],
+"configargparse.ArgumentParser.get_items_for_config_file_output": [
+"<builtin>.getattr",
+"configargparse.ArgumentParser.get_possible_config_keys",
+"configargparse._convert_parsed_value_to_config_file_value",
+"configargparse.already_on_command_line"
+],
+"configargparse.ArgumentParser.get_possible_config_keys": [
+"<builtin>.any",
+"<builtin>.getattr"
+],
+"configargparse.ArgumentParser.parse_args": [
+"configargparse.ArgumentParser.parse_known_args"
+],
+"configargparse.ArgumentParser.parse_known_args": [
+"<builtin>.any",
+"<builtin>.isinstance",
+"<builtin>.list",
+"<builtin>.reversed",
+"<builtin>.set",
+"<builtin>.str",
+"configargparse.ArgumentParser._find_insertion_index",
+"configargparse.ArgumentParser._open_config_files",
+"configargparse.ArgumentParser._option_strings_that_override",
+"configargparse.ArgumentParser._reachable_parsers",
+"configargparse.ArgumentParser._reject_write_out_config_file_args",
+"configargparse.ArgumentParser.convert_item_to_command_line_arg",
+"configargparse.ArgumentParser.get_command_line_key_for_unknown_config_file_setting",
+"configargparse.ArgumentParser.get_possible_config_keys",
+"configargparse.ArgumentParser.write_config_file",
+"configargparse.DefaultConfigFileParser.parse",
+"configargparse.already_on_command_line"
+],
+"configargparse.ArgumentParser.print_values": [
+"configargparse.ArgumentParser.format_values"
+],
+"configargparse.ArgumentParser.write_config_file": [
+"<builtin>.ValueError",
+"<builtin>.print",
+"configargparse.ArgumentParser.get_items_for_config_file_output",
+"configargparse.DefaultConfigFileParser.serialize"
+],
+"configargparse.CompositeConfigParser.__init__": [
+"<builtin>.isinstance",
+"<builtin>.super"
+],
+"configargparse.CompositeConfigParser.get_syntax_description": [
+"<builtin>.enumerate",
+"configargparse.CompositeConfigParser.get_syntax_description.guess_format_name"
+],
+"configargparse.CompositeConfigParser.get_syntax_description.guess_format_name": [],
+"configargparse.CompositeConfigParser.parse": [
+"<builtin>.enumerate",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.repr",
+"<builtin>.str",
+"append"
+],
+"configargparse.ConfigFileParser.get_syntax_description": [
+"<builtin>.NotImplementedError"
+],
+"configargparse.ConfigFileParser.parse": [
+"<builtin>.NotImplementedError"
+],
+"configargparse.ConfigFileParser.serialize": [
+"<builtin>.NotImplementedError"
+],
+"configargparse.ConfigparserConfigFileParser.parse": [
+"<builtin>.isinstance",
+"<builtin>.list",
+"<builtin>.str"
+],
+"configargparse.ConfigparserConfigFileParser.serialize": [
+"<builtin>.isinstance",
+"<builtin>.repr",
+"<builtin>.str",
+"configargparse._keep_literal_or_convert_to_str"
+],
+"configargparse.DefaultConfigFileParser.get_syntax_description": [],
+"configargparse.DefaultConfigFileParser.parse": [
+"<builtin>.enumerate",
+"<builtin>.str.endswith",
+"<builtin>.str.format",
+"<builtin>.str.split",
+"<builtin>.str.startswith"
+],
+"configargparse.DefaultConfigFileParser.serialize": [
+"<builtin>.ValueError",
+"<builtin>.isinstance",
+"<builtin>.str",
+"<builtin>.str.join"
+],
+"configargparse.IniConfigParser.__init__": [
+"<builtin>.super"
+],
+"configargparse.IniConfigParser.parse": [
+"<builtin>.str",
+"configargparse.is_quoted",
+"configargparse.unquote_str"
+],
+"configargparse.IniConfigParser.serialize": [
+"<builtin>.isinstance",
+"<builtin>.str",
+"<builtin>.str.replace"
+],
+"configargparse.TomlConfigParser.__init__": [
+"<builtin>.super"
+],
+"configargparse.TomlConfigParser.parse": [
+"<builtin>.isinstance",
+"<builtin>.str",
+"configargparse.get_toml_section"
+],
+"configargparse.TomlConfigParser.serialize": [
+"<builtin>.dict",
+"<builtin>.enumerate",
+"configargparse.parse_toml_section_name"
+],
+"configargparse.YAMLConfigFileParser._load_yaml": [],
+"configargparse.YAMLConfigFileParser.parse": [
+"<builtin>.getattr",
+"<builtin>.isinstance",
+"<builtin>.str",
+"<builtin>.type",
+"configargparse.YAMLConfigFileParser._load_yaml"
+],
+"configargparse.YAMLConfigFileParser.serialize": [
+"<builtin>.dict",
+"configargparse.YAMLConfigFileParser._load_yaml"
+],
+"configargparse._WriteOutConfigFileActionMixin.__call__": [
+"<builtin>.getattr",
+"<builtin>.hasattr",
+"<builtin>.id",
+"<builtin>.super"
+],
+"configargparse._convert_parsed_value_to_config_file_value": [
+"<builtin>.isinstance",
+"<builtin>.str"
+],
+"configargparse._dispatches_to_subparsers": [
+"<builtin>.getattr",
+"<builtin>.isinstance"
+],
+"configargparse._keep_literal_or_convert_to_str": [
+"<builtin>.repr",
+"<builtin>.str"
+],
+"configargparse._subparsers_of": [
+"<builtin>.getattr",
+"<builtin>.id",
+"<builtin>.isinstance",
+"<builtin>.set",
+"configargparse._dispatches_to_subparsers",
+"configargparse._subparsers_of"
+],
+"configargparse.add_argument": [
+"<builtin>.ValueError",
+"<builtin>.isinstance",
+"<builtin>.type"
+],
+"configargparse.already_on_command_line": [
+"<builtin>.any",
+"append"
+],
+"configargparse.get_argument_parser": [
+"<builtin>.len",
+"configargparse.init_argument_parser"
+],
+"configargparse.get_toml_section": [
+"<builtin>.isinstance",
+"configargparse.get_toml_section",
+"configargparse.parse_toml_section_name"
+],
+"configargparse.init_argument_parser": [
+"<builtin>.ValueError",
+"configargparse.ArgumentParser.__init__"
+],
+"configargparse.is_quoted": [
+"<builtin>.bool"
+],
+"configargparse.parse_toml_section_name": [
+"<builtin>.tuple",
+"append"
+],
+"configargparse.unquote_str": [
+"<builtin>.ValueError",
+"<builtin>.isinstance",
+"configargparse.is_quoted"
+]
+}

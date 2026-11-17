@@ -1,0 +1,262 @@
+{
+"<builtin>.Exception": [],
+"<builtin>.dict": [],
+"<builtin>.enumerate": [],
+"<builtin>.int": [],
+"<builtin>.len": [],
+"<builtin>.open": [],
+"<builtin>.ord": [],
+"<builtin>.print": [],
+"<builtin>.range": [],
+"<builtin>.sorted": [],
+"<builtin>.str.format": [],
+"<builtin>.zip": [],
+"append": [],
+"image_emotion_gender_demo": [
+"utils.datasets.get_labels",
+"utils.inference.apply_offsets",
+"utils.inference.detect_faces",
+"utils.inference.draw_bounding_box",
+"utils.inference.draw_text",
+"utils.inference.load_detection_model",
+"utils.inference.load_image",
+"utils.preprocessor.preprocess_input"
+],
+"image_gradcam_demo": [
+"utils.datasets.get_labels",
+"utils.grad_cam.calculate_guided_gradient_CAM",
+"utils.grad_cam.compile_gradient_function",
+"utils.grad_cam.compile_saliency_function",
+"utils.grad_cam.modify_backprop",
+"utils.grad_cam.register_gradient",
+"utils.inference.apply_offsets",
+"utils.inference.detect_faces",
+"utils.inference.draw_bounding_box",
+"utils.inference.load_detection_model",
+"utils.inference.load_image",
+"utils.preprocessor.preprocess_input"
+],
+"models": [],
+"models.cnn": [
+"models.cnn.simple_CNN"
+],
+"models.cnn.mini_XCEPTION": [],
+"models.cnn.simple_CNN": [],
+"pop": [],
+"train_emotion_classifier": [
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.print",
+"models.cnn.mini_XCEPTION",
+"utils.datasets.DataManager.__init__",
+"utils.datasets.DataManager.get_data",
+"utils.datasets.split_data",
+"utils.preprocessor.preprocess_input"
+],
+"train_gender_classifier": [
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.print",
+"models.cnn.mini_XCEPTION",
+"utils.data_augmentation.ImageGenerator.__init__",
+"utils.data_augmentation.ImageGenerator.flow",
+"utils.datasets.DataManager.__init__",
+"utils.datasets.DataManager.get_data",
+"utils.datasets.split_imdb_data"
+],
+"utils": [],
+"utils.data_augmentation": [],
+"utils.data_augmentation.ImageGenerator.__init__": [
+"append"
+],
+"utils.data_augmentation.ImageGenerator._do_random_crop": [],
+"utils.data_augmentation.ImageGenerator._gray_scale": [],
+"utils.data_augmentation.ImageGenerator._wrap_in_dictionary": [],
+"utils.data_augmentation.ImageGenerator.contrast": [
+"utils.data_augmentation.ImageGenerator._gray_scale"
+],
+"utils.data_augmentation.ImageGenerator.flow": [
+"<builtin>.Exception",
+"<builtin>.len",
+"append",
+"utils.data_augmentation.ImageGenerator._do_random_crop",
+"utils.data_augmentation.ImageGenerator._wrap_in_dictionary",
+"utils.data_augmentation.ImageGenerator.preprocess_images",
+"utils.data_augmentation.ImageGenerator.transform"
+],
+"utils.data_augmentation.ImageGenerator.horizontal_flip": [],
+"utils.data_augmentation.ImageGenerator.lighting": [],
+"utils.data_augmentation.ImageGenerator.preprocess_images": [],
+"utils.data_augmentation.ImageGenerator.saturation": [
+"utils.data_augmentation.ImageGenerator._gray_scale"
+],
+"utils.data_augmentation.ImageGenerator.transform": [
+"utils.data_augmentation.ImageGenerator.horizontal_flip",
+"utils.data_augmentation.ImageGenerator.lighting",
+"utils.data_augmentation.ImageGenerator.vertical_flip"
+],
+"utils.data_augmentation.ImageGenerator.vertical_flip": [],
+"utils.datasets": [],
+"utils.datasets.DataManager.__init__": [
+"<builtin>.Exception"
+],
+"utils.datasets.DataManager._load_KDEF": [
+"<builtin>.enumerate",
+"<builtin>.len",
+"append",
+"utils.datasets.get_class_to_arg"
+],
+"utils.datasets.DataManager._load_fer2013": [
+"<builtin>.int",
+"append"
+],
+"utils.datasets.DataManager._load_imdb": [
+"<builtin>.dict",
+"<builtin>.range",
+"<builtin>.zip",
+"append"
+],
+"utils.datasets.DataManager.get_data": [
+"utils.datasets.DataManager._load_KDEF",
+"utils.datasets.DataManager._load_fer2013",
+"utils.datasets.DataManager._load_imdb"
+],
+"utils.datasets.get_class_to_arg": [
+"<builtin>.Exception"
+],
+"utils.datasets.get_labels": [
+"<builtin>.Exception"
+],
+"utils.datasets.split_data": [
+"<builtin>.int",
+"<builtin>.len"
+],
+"utils.datasets.split_imdb_data": [
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.sorted"
+],
+"utils.grad_cam": [
+"<builtin>.open",
+"utils.grad_cam.calculate_guided_gradient_CAM",
+"utils.grad_cam.compile_gradient_function",
+"utils.grad_cam.compile_saliency_function",
+"utils.grad_cam.load_image",
+"utils.grad_cam.modify_backprop",
+"utils.grad_cam.register_gradient"
+],
+"utils.grad_cam.calculate_gradient_weighted_CAM": [
+"<builtin>.enumerate"
+],
+"utils.grad_cam.calculate_guided_gradient_CAM": [
+"utils.grad_cam.calculate_gradient_weighted_CAM",
+"utils.grad_cam.deprocess_image"
+],
+"utils.grad_cam.calculate_guided_gradient_CAM_v2": [
+"utils.grad_cam.calculate_gradient_weighted_CAM",
+"utils.grad_cam.deprocess_image"
+],
+"utils.grad_cam.compile_gradient_function": [
+"utils.grad_cam.normalize"
+],
+"utils.grad_cam.compile_gradient_function.<lambda1>": [
+"utils.grad_cam.target_category_loss"
+],
+"utils.grad_cam.compile_saliency_function": [],
+"utils.grad_cam.deprocess_image": [],
+"utils.grad_cam.load_image": [],
+"utils.grad_cam.modify_backprop": [],
+"utils.grad_cam.normalize": [],
+"utils.grad_cam.register_gradient": [],
+"utils.grad_cam.target_category_loss": [],
+"utils.inference": [],
+"utils.inference.apply_offsets": [],
+"utils.inference.detect_faces": [],
+"utils.inference.draw_bounding_box": [],
+"utils.inference.draw_text": [],
+"utils.inference.load_detection_model": [],
+"utils.inference.load_image": [],
+"utils.preprocessor": [],
+"utils.preprocessor.preprocess_input": [],
+"utils.visualizer": [
+"<builtin>.int",
+"<builtin>.open",
+"<builtin>.print",
+"utils.visualizer.make_mosaic",
+"utils.visualizer.pretty_imshow"
+],
+"utils.visualizer.display_image": [
+"<builtin>.Exception",
+"<builtin>.len",
+"utils.visualizer.pretty_imshow"
+],
+"utils.visualizer.draw_mosaic": [
+"<builtin>.Exception",
+"<builtin>.len",
+"<builtin>.range",
+"append"
+],
+"utils.visualizer.make_mosaic": [
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.range"
+],
+"utils.visualizer.make_mosaic_v2": [
+"<builtin>.int",
+"<builtin>.range"
+],
+"utils.visualizer.pretty_imshow": [],
+"video_emotion_color_demo": [
+"<builtin>.len",
+"<builtin>.ord",
+"append",
+"pop",
+"utils.datasets.get_labels",
+"utils.inference.apply_offsets",
+"utils.inference.detect_faces",
+"utils.inference.draw_bounding_box",
+"utils.inference.draw_text",
+"utils.inference.load_detection_model",
+"utils.preprocessor.preprocess_input"
+],
+"video_emotion_gender_demo": [
+"<builtin>.len",
+"<builtin>.ord",
+"append",
+"pop",
+"utils.datasets.get_labels",
+"utils.inference.apply_offsets",
+"utils.inference.detect_faces",
+"utils.inference.draw_bounding_box",
+"utils.inference.draw_text",
+"utils.inference.load_detection_model",
+"utils.preprocessor.preprocess_input"
+],
+"video_gradcam_demo": [
+"<builtin>.ord",
+"utils.datasets.get_class_to_arg",
+"utils.grad_cam.calculate_guided_gradient_CAM",
+"utils.grad_cam.compile_gradient_function",
+"utils.grad_cam.compile_saliency_function",
+"utils.grad_cam.modify_backprop",
+"utils.grad_cam.register_gradient",
+"utils.inference.apply_offsets",
+"utils.inference.detect_faces",
+"utils.inference.draw_bounding_box",
+"utils.inference.load_detection_model",
+"utils.preprocessor.preprocess_input"
+],
+"web": [],
+"web.emotion_gender_processor": [],
+"web.emotion_gender_processor.process_image": [
+"<builtin>.str.format",
+"utils.datasets.get_labels",
+"utils.inference.apply_offsets",
+"utils.inference.detect_faces",
+"utils.inference.draw_bounding_box",
+"utils.inference.draw_text",
+"utils.inference.load_detection_model",
+"utils.preprocessor.preprocess_input"
+],
+"web.faces": []
+}

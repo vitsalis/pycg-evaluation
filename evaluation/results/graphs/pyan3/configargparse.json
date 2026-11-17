@@ -1,0 +1,113 @@
+{
+"configargparse": [
+"configargparse.ArgumentParser.parse_args",
+"configargparse.add_argument",
+"configargparse.get_argument_parser"
+],
+"configargparse.ArgumentParser.__init__": [
+"configargparse.ArgumentParser.__init__"
+],
+"configargparse.ArgumentParser._could_set_option": [
+"configargparse.ArgumentParser.__init__"
+],
+"configargparse.ArgumentParser._find_insertion_index": [
+"configargparse.ArgumentParser._find_subcommand_index"
+],
+"configargparse.ArgumentParser._names_a_write_out_config_file_arg": [
+"configargparse.ArgumentParser._could_set_option",
+"configargparse.ArgumentParser._write_out_config_file_args"
+],
+"configargparse.ArgumentParser._open_config_files": [
+"configargparse.ArgumentParser.__init__",
+"configargparse.ArgumentParser._open_config_files.error_method"
+],
+"configargparse.ArgumentParser._reachable_parsers": [
+"configargparse._subparsers_of"
+],
+"configargparse.ArgumentParser._reject_write_out_config_file_args": [
+"configargparse.ArgumentParser.__init__",
+"configargparse.ArgumentParser._names_a_write_out_config_file_arg",
+"configargparse.ArgumentParser._write_out_config_file_args",
+"configargparse._subparsers_of"
+],
+"configargparse.ArgumentParser.convert_item_to_command_line_arg": [
+"configargparse.ArgumentParser.__init__",
+"configargparse.ArgumentParser.get_command_line_key_for_unknown_config_file_setting"
+],
+"configargparse.ArgumentParser.format_help": [
+"configargparse.ArgumentParser.__init__",
+"configargparse.ArgumentParser.format_help._describe_default_config_file_entry",
+"configargparse.ArgumentParser.get_possible_config_keys"
+],
+"configargparse.ArgumentParser.get_items_for_config_file_output": [
+"configargparse.ArgumentParser.get_possible_config_keys",
+"configargparse._convert_parsed_value_to_config_file_value",
+"configargparse.already_on_command_line"
+],
+"configargparse.ArgumentParser.parse_args": [
+"configargparse.ArgumentParser.__init__",
+"configargparse.ArgumentParser.parse_known_args"
+],
+"configargparse.ArgumentParser.parse_known_args": [
+"configargparse.ArgumentParser.__init__",
+"configargparse.ArgumentParser._find_insertion_index",
+"configargparse.ArgumentParser._open_config_files",
+"configargparse.ArgumentParser._option_strings_that_override",
+"configargparse.ArgumentParser._reachable_parsers",
+"configargparse.ArgumentParser._reject_write_out_config_file_args",
+"configargparse.ArgumentParser.convert_item_to_command_line_arg",
+"configargparse.ArgumentParser.get_command_line_key_for_unknown_config_file_setting",
+"configargparse.ArgumentParser.get_possible_config_keys",
+"configargparse.ArgumentParser.write_config_file",
+"configargparse.already_on_command_line"
+],
+"configargparse.ArgumentParser.print_values": [
+"configargparse.ArgumentParser.format_values"
+],
+"configargparse.ArgumentParser.write_config_file": [
+"configargparse.ArgumentParser.__init__",
+"configargparse.ArgumentParser.get_items_for_config_file_output"
+],
+"configargparse.CompositeConfigParser.get_syntax_description": [
+"configargparse.CompositeConfigParser.get_syntax_description.guess_format_name"
+],
+"configargparse.ConfigparserConfigFileParser.serialize": [
+"configargparse._keep_literal_or_convert_to_str"
+],
+"configargparse.IniConfigParser.parse": [
+"configargparse.is_quoted",
+"configargparse.unquote_str"
+],
+"configargparse.TomlConfigParser.parse": [
+"configargparse.get_toml_section"
+],
+"configargparse.TomlConfigParser.serialize": [
+"configargparse.parse_toml_section_name"
+],
+"configargparse.YAMLConfigFileParser.parse": [
+"configargparse.YAMLConfigFileParser._load_yaml"
+],
+"configargparse.YAMLConfigFileParser.serialize": [
+"configargparse.YAMLConfigFileParser._load_yaml"
+],
+"configargparse._subparsers_of": [
+"configargparse._dispatches_to_subparsers",
+"configargparse._subparsers_of"
+],
+"configargparse.get_argument_parser": [
+"configargparse.init_argument_parser"
+],
+"configargparse.get_toml_section": [
+"configargparse.get_toml_section",
+"configargparse.parse_toml_section_name"
+],
+"configargparse.init_argument_parser": [
+"configargparse.ArgumentParser.__init__"
+],
+"configargparse.parse_toml_section_name": [
+"configargparse.unquote_str"
+],
+"configargparse.unquote_str": [
+"configargparse.is_quoted"
+]
+}
