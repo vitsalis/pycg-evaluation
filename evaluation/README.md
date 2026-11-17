@@ -110,7 +110,7 @@ without git:
 |---|---|---|---|
 | `/inputs/macro-benchmark/projects/<name>` | The 30 projects of the macro-benchmark | `container/fetch.py macro` (github.com; files.pythonhosted.org for the two sdists) | The commit of `projects.toml` (git), or the SHA-256 of the sdist |
 | `/inputs/tools/<name>` | The trees of the prior tools' images | `container/fetch.py tools` (github.com) | The commit of the adapter (git); the image of the tool checks the tree's SHA-256 of `tools/pins.json` |
-| `/inputs/corpus/cache`, `work`, `dypybench` | The corpus of RQ3: the archives, and their unpacked trees (`CORPUS_WORK` below) | `rq3-scale/corpus.py fetch` (pypi.org, files.pythonhosted.org, codeload.github.com) | The SHA-256 and size of each file of the manifests |
+| `/inputs/corpus/cache`, `work`, `dypybench`, `large` | The corpus of RQ3: the archives, and their unpacked trees (`CORPUS_WORK` below) | `rq3-scale/corpus.py fetch` (pypi.org, files.pythonhosted.org, codeload.github.com) | The SHA-256 and size of each file of the manifests |
 | `/inputs/corpus/dypybench-traces` | DyPyBench's traces | `rq1-accuracy/trace_recall.py fetch` (raw.githubusercontent.com) | The SHA-256 and size of the zip |
 | `/inputs/rts/export` | The commits of RQ4's dataset as plain files | `rq4-test-selection/rts.py fetch` and `export` (github.com) | The commits and file lists of `corpus/rts.json` |
 
@@ -177,8 +177,8 @@ fetched. A defence against a compromised build is not a goal.
 **Maintenance.** The commands that write a pin or a manifest need the
 network: `tools/pin.py requirements` and `deps` (uv, pypi.org),
 `macro-benchmark/draw.py` (its clones and its requests to PyPI and
-GitHub), `rq3-scale/corpus.py manifest` and `rq4-test-selection/rts.py
-manifest`. They run in the target `maintain` of `Dockerfile.inputs` (git,
+GitHub), `rq3-scale/corpus.py manifest` and `pin`, and
+`rq4-test-selection/rts.py manifest`. They run in the target `maintain` of `Dockerfile.inputs` (git,
 the CA certificates and uv), with the repository read-only and the one
 directory that the command writes mounted writable. `pin.py trees` reads
 the trees of the inputs image and runs in the `inputs` service;
@@ -191,6 +191,10 @@ docker build -f evaluation/container/Dockerfile.inputs --target maintain \
 docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD:/repo:ro" -w /repo \
     -v "$PWD/evaluation/tools:/repo/evaluation/tools" pycg-evaluation-maintain \
     python3 -I evaluation/tools/pin.py requirements headergen   # writes the pins
+docker run --rm -u "$(id -u):$(id -g)" -e HOME=/tmp -v "$PWD:/repo:ro" -w /repo \
+    -v "$PWD/evaluation/rq3-scale/corpus:/repo/evaluation/rq3-scale/corpus" \
+    pycg-evaluation-maintain python3 -I evaluation/rq3-scale/corpus.py pin \
+    --manifest evaluation/rq3-scale/corpus/large-projects.json --work /tmp/large
 $C run --rm -v "$PWD/evaluation/tools:/repo/evaluation/tools" inputs \
     python3 -I evaluation/tools/pin.py trees                    # tree hashes, from /inputs/tools
 ```
@@ -596,7 +600,7 @@ small and biased sample of what the tests execute; the table says so.
 48 projects have a trace; akshare (its commit cannot be recovered) and
 python-diskcache (no trace published) are stated rows.
 
-**The projects.** The trees of RQ3's DyPyBench half, at the same commits
+**The projects.** The trees of RQ3's DyPyBench part, at the same commits
 (`CORPUS_WORK/dypybench`), and the same targets: the root and the modules
 of each row. No git, and nothing of a project runs. One run per project
 and tool, in a child process of `run.py`, 30 minutes and 16 GiB by
@@ -861,30 +865,35 @@ the wall time and the peak memory.
 
 **The corpus and the limits** (the maintainer's decision, 2026-11-14): the
 top 100 packages of PyPI, for every tool, plus the 50 projects of
-DyPyBench; 30 minutes and 16 GB per run. The container of rq3 has 18 GB, so
+DyPyBench; 30 minutes and 16 GB per run. A third part (the maintainer's
+decision, 2026-11-17): ten large projects, those of NameRTS's dataset (see
+"The large projects"). The container of rq3 has 18 GB, so
 that the watchdog's limit of 16 GB per analysis acts before the kernel's.
 
 **Command.** `docker compose -f evaluation/compose.yaml run --rm rq3` (the corpus:
 `/inputs/corpus`, in the image, from the inputs image).
-`rq3-scale/table.py` runs `robustness.py` on each half of the corpus (the
+`rq3-scale/table.py` runs `robustness.py` on each part of the corpus (the
 PyPI top 100 in `CORPUS_WORK/work`, DyPyBench's projects in
-`CORPUS_WORK/dypybench`) and writes `results/rq3-scale.md` and `.json`,
-and the report of `robustness.py` of each half beside it. The table has,
-per tool, a row for the whole corpus ("both") and one per half (the
-column "Corpus"), and lists every package without a run with its reason
-(akshare among them). A half that is not fetched is an error that names it
+`CORPUS_WORK/dypybench`, the large projects in `CORPUS_WORK/large`) and
+writes `results/rq3-scale.md` and `.json`, and the report of
+`robustness.py` of each part beside it. The table has, per tool, a row for
+the whole corpus ("all") and one per part (the column "Corpus"), and lists
+every package without a run with its reason (akshare among them). The JSON
+keeps the key `halves` for the parts, as the stored runs have it. A part
+that is not fetched is an error that names it
 and the packages that are missing; a row that `corpus.py fetch` would
 refuse (its URL, SHA-256, commit or version do not agree) is an error even
 if its archive was fetched under another row. A run whose processes could
-not be killed stops the whole command: no run starts in either half after
+not be killed stops the whole command: no run starts in any part after
 it, each is "not run" with the reason, and the table says that it stopped.
 
 **The pilot** (`docker compose -f evaluation/compose.yaml run --rm
 rq3-pilot`, `table.py --pilot`) checks that the question runs before the
 full run on a Linux host. It is the same run on ten packages, five of each
-half, drawn with `random.Random(PILOT_SEED)` (a constant of `table.py`)
+of the first two parts (`PILOT_PARTS`; the large projects are not in it),
+drawn with `random.Random(PILOT_SEED)` (a constant of `table.py`)
 from the sorted names of the packages with a file; in that order a package
-is taken if it has an analysis target, until the half has five, and one
+is taken if it has an analysis target, until the part has five, and one
 without is skipped and recorded. Each sampled package is checked as in the
 full run (its row, archive and unpacked tree); one that is not fetched is
 an error that names it. The limits per run are those of RQ3 (30 minutes,
@@ -896,14 +905,16 @@ memory; then the summary columns of the table), never `rq3-scale.*`.
 file of each package by SHA-256, from a rank list that is pinned by its
 SHA-256 (see "Robustness on a corpus"). `rq3-scale/corpus/dypybench.json`
 pins DyPyBench's 50 projects by their commits and the SHA-256 of GitHub's
-archive of each commit (see "The DyPyBench projects"). The build of the
-inputs image fetches both: the top 100 into `CORPUS_WORK/work`, DyPyBench
-into `CORPUS_WORK/dypybench`.
+archive of each commit (see "The DyPyBench projects").
+`rq3-scale/corpus/large-projects.json` pins the ten large projects the
+same way (see "The large projects"). The build of the inputs image fetches
+the three: the top 100 into `CORPUS_WORK/work`, DyPyBench into
+`CORPUS_WORK/dypybench`, the large projects into `CORPUS_WORK/large`.
 
 **State today.** No run is committed.
 Both manifests exist; 49 of DyPyBench's 50 projects have a pinned archive
-(akshare cannot be recovered: a stated row). The table reads both halves
-as one corpus. The prior tools' rows come from their services' runs
+(akshare cannot be recovered: a stated row). The table reads the three
+parts as one corpus. The prior tools' rows come from their services' runs
 (`results/tools/<row>/rq3.json`, `rq3-pilot.json`; see "Prior tools"): a
 row without a run says "not run" with its command, HeaderGen's row is
 stated (it imports the analysed code). HeaderGen imports the modules it analyses, so it does not run on a
@@ -1042,6 +1053,18 @@ PythonRobotics has no package: its ten directories of scripts are its
 modules. python-future's root is `src`, with its Python 2 shims as modules.
 A module or root that is not in the archive is a reason, not a guess. The
 49 targets hold 2,207 files and 381,817 code lines.
+
+**The large projects** (`rq3-scale/corpus/large-projects.json`). The ten
+projects of NameRTS's dataset (Wang, Pradel, Liu, ISSTA 2026;
+github.com/ZJU-CTAG/NameRTS): dask, loguru, matplotlib, pvlib, pylint,
+scikit-learn, seaborn, sphinx, sympy and xarray. Each is at the parent
+commit of the first target of its dataset (`dataset/commit_pairs_<project>.json`),
+as GitHub's archive of that commit; the manifest's `source` block records
+the repository and commit of NameRTS. The root is `""` (matplotlib: `lib`)
+and the modules are the project's packages. The manifest is written
+without SHA-256 and size; `corpus.py pin` downloads each archive once,
+checks that its URL is the archive of its repository and commit, and
+writes the two fields. `fetch` refuses a row without them.
 
 `robustness.py` runs each tool once on each package, in a child process of
 `run.py`, under two limits:
@@ -1768,11 +1791,11 @@ row only), one after another: rq1, the
 micro cases up to the oldest Python of the tools' bases (3.12, HeaderGen)
 and the 30 projects of the macro-benchmark (not run if a project has no
 source); rq3-pilot, the sample of the PyCG
-pilot (`rq3-scale/table.py pilot_plan`); rq3, both halves of the corpus
+pilot (`rq3-scale/table.py pilot_plan`); rq3, the three parts of the corpus
 (`robustness.plan`). HeaderGen runs rq1 only: it imports the analysed code,
 and the corpus is not scanned. Each job has the one limit of every run,
 1800 s and 16384 MiB, as for PyCG; the service has 18 GiB (`EVAL_MEMORY`). A row's result file holds the tool's facts (version, pin,
-Python, image, limits) and per benchmark (rq1) or half of the corpus (rq3) the
+Python, image, limits) and per benchmark (rq1) or part of the corpus (rq3) the
 record of each job: status, time, peak memory, the SHA-256 of its exported
 input and of its graph. For rq1 the graphs, in the benchmark's names, are
 stored too: those of the micro cases in the result file, that of each

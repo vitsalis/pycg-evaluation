@@ -733,23 +733,23 @@ def test_rq3_summarises_each_tool_over_the_corpus_and_each_half():
     assert cell["share"] == 0.6667
     assert cell["failures"] == {"timeout": 1}
     assert cell["wall_seconds"] == {"median": 2.0, "p90": 3.0, "max": 3.0}
-    halves = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
+    parts = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
     not_run = "not run: no results/tools/pyan3/rq3.json"
     rows = [("PyCG", "PyCG"), ("pyan3", tables.missing(not_run))]
-    data, markdown = rq3.build(halves, rows)
+    data, markdown = rq3.build(parts, rows)
     pycg = data["rows"][0]
     assert pycg["version"] == "b" * 10
-    assert list(pycg["corpus"]) == ["both", "PyPI top 100", "DyPyBench"]
-    assert pycg["corpus"]["both"]["packages"] == 6
-    assert data["rows"][1]["corpus"] == {"both": tables.missing(not_run)}
-    assert "| PyCG | bbbbbbbbbb | both | 6 | 4 | 3 | 75.0% | timeout 1 |" in markdown
+    assert list(pycg["corpus"]) == ["all", "PyPI top 100", "DyPyBench"]
+    assert pycg["corpus"]["all"]["packages"] == 6
+    assert data["rows"][1]["corpus"] == {"all": tables.missing(not_run)}
+    assert "| PyCG | bbbbbbbbbb | all | 6 | 4 | 3 | 75.0% | timeout 1 |" in markdown
     assert "| PyCG | bbbbbbbbbb | PyPI top 100 | 4 | 3 | 2 | 66.7% |" in markdown
     assert "| PyCG | bbbbbbbbbb | DyPyBench | 2 | 1 | 1 | 100.0% | - |" in markdown
-    assert f"| pyan3 | - | both | {not_run} |" in markdown
-    # A package of either half without a run is a stated row with its reason.
+    assert f"| pyan3 | - | all | {not_run} |" in markdown
+    # A package of any part without a run is a stated row with its reason.
     assert data["stated packages"] == [
-        {"half": "PyPI top 100", "name": "d", "reason": "no wheel"},
-        {"half": "DyPyBench", "name": "akshare", "reason": "not recoverable"},
+        {"part": "PyPI top 100", "name": "d", "reason": "no wheel"},
+        {"part": "DyPyBench", "name": "akshare", "reason": "not recoverable"},
     ]
     assert "| DyPyBench | akshare | not recoverable |" in markdown
     assert data["corpus"] == {
@@ -758,15 +758,28 @@ def test_rq3_summarises_each_tool_over_the_corpus_and_each_half():
     }
 
 
-def test_rq3_reads_the_two_halves_of_the_corpus():
-    assert [(label, path.name, sub) for label, path, sub in rq3.HALVES] == [
+def test_rq3_reads_the_three_parts_of_the_corpus_and_pilots_the_first_two():
+    assert [(label, path.name, sub) for label, path, sub in rq3.PARTS] == [
         ("PyPI top 100", "pypi-top-100.json", "work"),
         ("DyPyBench", "dypybench.json", "dypybench"),
+        ("Large projects", "large-projects.json", "large"),
     ]
+    assert rq3.PILOT_PARTS == rq3.PARTS[:2]
+    assert all(path.is_file() for _, path, _ in rq3.PARTS)
+
+
+def test_the_rq3_service_copies_the_report_of_every_part():
+    entry = fakes.load("container/question_entry")
+    reports = {
+        f"robustness-{path.stem}.{suffix}"
+        for _, path, _ in rq3.PARTS
+        for suffix in ("json", "md")
+    }
+    assert set(entry.OUTPUTS["rq3"]) == {"rq3-scale.json", "rq3-scale.md"} | reports
 
 
 def pilot_half(tmp_path, label, names, empty=()):
-    """A half of pure wheels; the wheels of `empty` hold no Python module,
+    """A part of pure wheels; the wheels of `empty` hold no Python module,
     so they have no analysis target."""
     work, cache = tmp_path / "corpus" / label, tmp_path / "corpus" / "cache"
     rows, recorded = [], {}
@@ -796,19 +809,20 @@ def pilot_half(tmp_path, label, names, empty=()):
     return manifest
 
 
-def pilot_halves(tmp_path, monkeypatch):
+def pilot_parts(tmp_path, monkeypatch):
     top = pilot_half(tmp_path, "top", [f"t{i}" for i in range(9)], empty=["t-empty"])
     dy = pilot_half(tmp_path, "dy", [f"d{i}" for i in range(7)], empty=["d-empty"])
-    halves = (("PyPI top 100", top, "top"), ("DyPyBench", dy, "dy"))
-    monkeypatch.setattr(rq3, "HALVES", halves)
-    return halves
+    parts = (("PyPI top 100", top, "top"), ("DyPyBench", dy, "dy"))
+    monkeypatch.setattr(rq3, "PARTS", parts)
+    monkeypatch.setattr(rq3, "PILOT_PARTS", parts)
+    return parts
 
 
 def test_rq3_pilot_draws_five_packages_with_a_target_from_each_half(
     tmp_path, monkeypatch
 ):
-    halves = pilot_halves(tmp_path, monkeypatch)
-    for label, path, directory in halves:
+    parts = pilot_parts(tmp_path, monkeypatch)
+    for label, path, directory in parts:
         manifest = json.loads(path.read_text())
         work = tmp_path / "corpus" / directory
         first = rq3.pilot_sample(manifest, work)
@@ -905,13 +919,13 @@ def test_rq3_and_rq4_run_the_headline_row_of_a_tool_only(question, capsys):
     assert "runs the headline row of a tool only" in capsys.readouterr().err
 
 
-def stored_rq3(directory, row, halves, sha256, pin=None):
+def stored_rq3(directory, row, parts, sha256, pin=None):
     """A result file of tool_job.rq3: one run of `row` per package with a
     run of PyCG."""
     stored = {}
-    for label, half in halves.items():
+    for label, part in parts.items():
         packages = {}
-        for name, package in half["packages"].items():
+        for name, package in part["packages"].items():
             packages[name] = {k: v for k, v in package.items() if k != "runs"}
             if "runs" in package:
                 run = {
@@ -932,59 +946,59 @@ def stored_rq3(directory, row, halves, sha256, pin=None):
 
 
 def test_rq3_compares_a_tool_only_at_the_k_of_pycg(tmp_path):
-    halves = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
-    for half in halves.values():
-        half["manifest"]["sha256"] = "1" * 64
-    stored_rq3(tmp_path, "pyan3", halves, "1" * 64)  # one job at a time
-    assert ("pyan3", "pyan3") in rq3.tool_rows(halves, rq3.STEM, tmp_path)
-    for half in halves.values():
-        half["measured"] = {"jobs": 3}
-    rows = dict(rq3.tool_rows(halves, rq3.STEM, tmp_path))
+    parts = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
+    for part in parts.values():
+        part["manifest"]["sha256"] = "1" * 64
+    stored_rq3(tmp_path, "pyan3", parts, "1" * 64)  # one job at a time
+    assert ("pyan3", "pyan3") in rq3.tool_rows(parts, rq3.STEM, tmp_path)
+    for part in parts.values():
+        part["measured"] = {"jobs": 3}
+    rows = dict(rq3.tool_rows(parts, rq3.STEM, tmp_path))
     assert rows["pyan3"]["reason"] == (
         "needs rerun: it ran 1 jobs at a time, PyCG 3 (--jobs)"
     )
-    _, markdown = rq3.build(halves, [("PyCG", "PyCG")])
+    _, markdown = rq3.build(parts, [("PyCG", "PyCG")])
     assert ", 3 runs at a time; limits" in markdown
 
 
 def test_rq3_reads_the_prior_tools_runs_where_they_are(tmp_path):
-    halves = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
-    for half in halves.values():
-        half["manifest"]["sha256"] = "1" * 64
-    rows = dict(rq3.tool_rows(halves, rq3.STEM, tmp_path))
+    parts = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
+    for part in parts.values():
+        part["manifest"]["sha256"] = "1" * 64
+    rows = dict(rq3.tool_rows(parts, rq3.STEM, tmp_path))
     assert rows["pyan3"]["reason"] == (
         "not run: no results/tools/pyan3/rq3.json (docker compose -f "
         "evaluation/compose.yaml run --rm pyan rq3)"
     )
     assert rows["JARVIS"]["status"] == "missing"
     assert "JARVIS --precision" not in rows  # RQ3 runs the headline row only
-    stored_rq3(tmp_path, "pyan3", halves, "1" * 64)
-    rows = rq3.tool_rows(halves, rq3.STEM, tmp_path)
+    stored_rq3(tmp_path, "pyan3", parts, "1" * 64)
+    rows = rq3.tool_rows(parts, rq3.STEM, tmp_path)
     assert ("pyan3", "pyan3") in rows
-    data, markdown = rq3.build(halves, [("PyCG", "PyCG"), *rows])
-    assert "| pyan3 | 8e8bd90646 | both | 6 | 4 | 4 | 100.0% | - |" in markdown
+    data, markdown = rq3.build(parts, [("PyCG", "PyCG"), *rows])
+    assert "| pyan3 | 8e8bd90646 | all | 6 | 4 | 4 | 100.0% | - |" in markdown
     # A run on another manifest of the corpus is never mixed in.
-    halves = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
-    for half in halves.values():
-        half["manifest"]["sha256"] = "2" * 64
-    rows = dict(rq3.tool_rows(halves, rq3.STEM, tmp_path))
+    parts = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
+    for part in parts.values():
+        part["manifest"]["sha256"] = "2" * 64
+    rows = dict(rq3.tool_rows(parts, rq3.STEM, tmp_path))
     assert rows["pyan3"]["reason"].startswith("needs rerun: it ran on another")
-    assert "pyan3" not in halves["DyPyBench"]["packages"]["x"]["runs"]
+    assert "pyan3" not in parts["DyPyBench"]["packages"]["x"]["runs"]
     # A run of another version of the tool, or of fewer packages, neither.
-    halves = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
-    for half in halves.values():
-        half["manifest"]["sha256"] = "1" * 64
+    parts = {"PyPI top 100": robustness_result(), "DyPyBench": dypybench_result()}
+    for part in parts.values():
+        part["manifest"]["sha256"] = "1" * 64
     path = tmp_path / "pyan3" / "rq3.json"
     path.unlink()
-    stored_rq3(tmp_path, "pyan3", halves, "1" * 64, pin={"commit": "0" * 40})
-    rows = dict(rq3.tool_rows(halves, rq3.STEM, tmp_path))
+    stored_rq3(tmp_path, "pyan3", parts, "1" * 64, pin={"commit": "0" * 40})
+    rows = dict(rq3.tool_rows(parts, rq3.STEM, tmp_path))
     assert rows["pyan3"]["reason"] == "needs rerun: it ran another version of the tool"
     path.unlink()
-    stored_rq3(tmp_path, "pyan3", halves, "1" * 64)
+    stored_rq3(tmp_path, "pyan3", parts, "1" * 64)
     data = json.loads(path.read_text())
     del data["halves"]["DyPyBench"]["packages"]["x"]["runs"]
     path.write_text(json.dumps(data))
-    rows = dict(rq3.tool_rows(halves, rq3.STEM, tmp_path))
+    rows = dict(rq3.tool_rows(parts, rq3.STEM, tmp_path))
     assert rows["pyan3"]["reason"] == (
         "needs rerun: it ran on other packages of the corpus"
     )

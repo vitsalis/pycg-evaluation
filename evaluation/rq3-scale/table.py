@@ -5,17 +5,18 @@ packages, and in what time and memory?
     python -I evaluation/rq3-scale/table.py --checkout PYCG --work CORPUS_WORK \\
         [--original ORIGINAL_PYCG] [--timeout S] [--memory-limit GIB] [--jobs K]
 
-The corpus has two halves (HALVES, the maintainer's decision, 2026-11-14):
-the top 100 packages of PyPI (corpus/pypi-top-100.json, fetched into
-CORPUS_WORK/work) and DyPyBench's 50 projects (corpus/dypybench.json,
-fetched into CORPUS_WORK/dypybench), both by `corpus.py fetch` (in the build
-of the inputs image). A half that is not fetched is an error that names it
-and the packages that are not there. The PyCG rows are run here by
-robustness.py (one run per package and tool, under a time and a memory
-limit), once per half; it writes its own report beside the table
+The corpus has three parts (PARTS, the maintainer's decisions of 2026-11-14
+and 2026-11-17): the top 100 packages of PyPI (corpus/pypi-top-100.json,
+fetched into CORPUS_WORK/work), DyPyBench's 50 projects
+(corpus/dypybench.json, into CORPUS_WORK/dypybench) and ten large projects
+(corpus/large-projects.json, into CORPUS_WORK/large), each by `corpus.py
+fetch` (in the build of the inputs image). A part that is not fetched is an
+error that names it and the packages that are not there. The PyCG rows are
+run here by robustness.py (one run per package and tool, under a time and a
+memory limit), once per part; it writes its own report beside the table
 (robustness-<manifest>.md and .json; CORPUS_WORK is only read). The table,
 evaluation/results/rq3-scale.md and .json, has for each tool a row for the
-whole corpus ("both") and one per half: the packages, those with an
+whole corpus ("all") and one per part: the packages, those with an
 analysis target, the runs that finished (status ok) and their share of the
 packages with a target, the failures by status, and the median, 90th
 percentile and maximum of the wall time and the peak memory of the runs
@@ -26,15 +27,16 @@ analyses, so it does not run on a corpus that no security scan covered.
 Their rows say so.
 
 `--pilot` is the same run on a fixed sample of ten packages, PILOT_SIZE of
-each half: to check that the question runs before the full run on a Linux
-host. The sample is drawn with random.Random(PILOT_SEED) from the sorted
-names of the packages with a file; in that order, a package is taken if it
-has an analysis target (one without is skipped and recorded), until a half
-has PILOT_SIZE. Each sampled package is checked as in the full run (its row,
-archive and unpacked tree), and one that is not fetched is an error that
-names it. It writes evaluation/results/rq3-pilot.md and .json (per package
-and tool: status, seconds, peak memory; the sample and the seed; then the
-summary of the table), never rq3-scale.* nor robustness-*.
+each of the first two parts (PILOT_PARTS): to check that the question runs
+before the full run on a Linux host. The sample is drawn with
+random.Random(PILOT_SEED) from the sorted names of the packages with a file;
+in that order, a package is taken if it has an analysis target (one without
+is skipped and recorded), until a part has PILOT_SIZE. Each sampled package
+is checked as in the full run (its row, archive and unpacked tree), and one
+that is not fetched is an error that names it. It writes
+evaluation/results/rq3-pilot.md and .json (per package and tool: status,
+seconds, peak memory; the sample and the seed; then the summary of the
+table), never rq3-scale.* nor robustness-*.
 """
 
 import argparse
@@ -52,15 +54,18 @@ EVALUATION = HERE.parent
 COMMON = EVALUATION / "common"
 STEM = "rq3-scale"
 PILOT_STEM = "rq3-pilot"
-PILOT_SIZE = 5  # per half of the corpus
+PILOT_SIZE = 5  # per part of the pilot
 PILOT_SEED = 20261114
-# The halves of the corpus: (label, manifest, directory under CORPUS_WORK
-# that the build of the inputs image unpacks it into).
-HALVES = (
+# The parts of the corpus: (label, manifest, directory under CORPUS_WORK
+# that the build of the inputs image unpacks it into). The JSON of a result
+# keeps the key "halves" for them, as the stored runs have it.
+PARTS = (
     ("PyPI top 100", HERE / "corpus" / "pypi-top-100.json", "work"),
     ("DyPyBench", HERE / "corpus" / "dypybench.json", "dypybench"),
+    ("Large projects", HERE / "corpus" / "large-projects.json", "large"),
 )
-BOTH = "both"
+PILOT_PARTS = PARTS[:2]  # the pilot's sample: five of each of the first two
+ALL = "all"
 
 
 def _load(name, path):
@@ -79,7 +84,7 @@ tool_job = run.load_sibling(
 
 
 def summary(results, tool):
-    """The cell of one tool from results of robustness.py (one per half of
+    """The cell of one tool from results of robustness.py (one per part of
     the corpus, or one)."""
     packages = [p for data in results for p in data["packages"].values()]
     runs = [p["runs"][tool] for p in packages if tool in p.get("runs", {})]
@@ -118,38 +123,38 @@ def cleanup_failed(data):
     )
 
 
-def build(halves, rows, stopped=False):
-    """The JSON data and the Markdown of the table. `halves`: {label: a
-    result of robustness.py} in the order of HALVES; `rows`: [(row name,
+def build(parts, rows, stopped=False):
+    """The JSON data and the Markdown of the table. `parts`: {label: a
+    result of robustness.py} in the order of PARTS; `rows`: [(row name,
     tool name in the results, or a missing cell)]; `stopped`: a cleanup
     failed, so no later run started."""
-    results = list(halves.values())
+    results = list(parts.values())
     filled = []
     for name, tool in rows:
         if isinstance(tool, dict):
-            filled.append({"tool": name, "version": "-", "corpus": {BOTH: tool}})
+            filled.append({"tool": name, "version": "-", "corpus": {ALL: tool}})
             continue
-        corpus = {BOTH: summary(results, tool)}
-        corpus |= {label: summary([data], tool) for label, data in halves.items()}
+        corpus = {ALL: summary(results, tool)}
+        corpus |= {label: summary([data], tool) for label, data in parts.items()}
         version = (results[0]["tools"][tool]["commit"] or "?")[:10]
         filled.append({"tool": name, "version": version, "corpus": corpus})
     stated = []
-    for label, data in halves.items():
+    for label, data in parts.items():
         for name, package in data["packages"].items():
             if "reason" in package:
                 stated.append(
-                    {"half": label, "name": name, "reason": package["reason"]}
+                    {"part": label, "name": name, "reason": package["reason"]}
                 )
             # A run that did not start (after a failed cleanup), with its tool.
             for tool, result in package.get("runs", {}).items():
                 if result["status"] == "not run":
                     reason = f"{tool}: {result['error']}"
-                    stated.append({"half": label, "name": name, "reason": reason})
+                    stated.append({"part": label, "name": name, "reason": reason})
     first = results[0]
     result = {
         "rows": filled,
         "stated packages": stated,
-        "corpus": {label: data["manifest"] for label, data in halves.items()},
+        "corpus": {label: data["manifest"] for label, data in parts.items()},
     }
     result |= {k: first[k] for k in ("python", "platform", "limits")}
     result["jobs"] = jobs_of(first)
@@ -164,7 +169,7 @@ def build(halves, rows, stopped=False):
         "",
         "Corpus: "
         + "; ".join(
-            f"{label}, `{data['manifest']['file']}`" for label, data in halves.items()
+            f"{label}, `{data['manifest']['file']}`" for label, data in parts.items()
         )
         + f". Python {first['python']} on {first['platform']}, {jobs_of(first)}"
         f" runs at a time; limits {limits['seconds']:g} s and"
@@ -205,13 +210,13 @@ def build(halves, rows, stopped=False):
             )
     lines += tables.table(header, body)
     lines += ["", "Packages without a run, each with its reason:", ""]
-    stated_body = [[p["half"], p["name"], p["reason"]] for p in stated]
+    stated_body = [[p["part"], p["name"], p["reason"]] for p in stated]
     lines += tables.table(["Corpus", "Package", "Reason"], stated_body)
     return result, "\n".join(lines) + "\n"
 
 
 def pilot_sample(manifest, work, size=PILOT_SIZE, seed=PILOT_SEED):
-    """(names, skipped) of the pilot of one half: `size` packages with an
+    """(names, skipped) of the pilot of one part: `size` packages with an
     analysis target, in the order of random.Random(seed) over the sorted
     names of the packages with a file; skipped: [{name, reason}] of those
     passed over for having no target. Each package is checked as in the
@@ -234,10 +239,10 @@ def pilot_sample(manifest, work, size=PILOT_SIZE, seed=PILOT_SEED):
 
 def pilot_plan(work):
     """{label: (manifest path, its bytes, manifest, sample, skipped, entries)}
-    of the pilot: each half's sample, checked and planned as in the full
-    run, before anything runs."""
+    of the pilot: each part's sample (PILOT_PARTS), checked and planned as
+    in the full run, before anything runs."""
     planned = {}
-    for label, path, directory in HALVES:
+    for label, path, directory in PILOT_PARTS:
         text = Path(path).read_bytes()
         manifest = json.loads(text)
         sample, skipped = pilot_sample(manifest, work / directory)
@@ -259,7 +264,7 @@ def pilot(
         | run.git_version(tool.checkout)
         for tool in tools
     }
-    halves, sample, skipped, runs = {}, {}, {}, []
+    parts, sample, skipped, runs = {}, {}, {}, []
     stopped = False
     for label, (path, text, manifest, chosen, passed, entries) in planned.items():
         sample[label], skipped[label] = chosen, passed
@@ -272,7 +277,7 @@ def pilot(
             progress=print,
             stopped=stopped,
         )
-        halves[label] = {
+        parts[label] = {
             "manifest": robustness.manifest_facts(path.name, text, manifest),
             "python": ".".join(map(str, run.python_version(python))),
             "platform": f"{sys.platform} {platform.machine()}",
@@ -281,15 +286,15 @@ def pilot(
             "tools": versions,
             "packages": packages,
         }
-        stopped = stopped or cleanup_failed(halves[label])
-    rows = [*rows, *tool_rows(halves, PILOT_STEM, tools_dir)]
-    for label, half in halves.items():
-        for name, package in half["packages"].items():
+        stopped = stopped or cleanup_failed(parts[label])
+    rows = [*rows, *tool_rows(parts, PILOT_STEM, tools_dir)]
+    for label, part in parts.items():
+        for name, package in part["packages"].items():
             for tool, result in package.get("runs", {}).items():
                 measured = result.get("measured", {})
                 runs.append(
                     {
-                        "half": label,
+                        "part": label,
                         "package": name,
                         "tool": tool,
                         "status": result["status"],
@@ -297,10 +302,10 @@ def pilot(
                         "peak_rss_mib": measured.get("peak_rss_mib"),
                     }
                 )
-    data, markdown = build(halves, rows, stopped)
+    data, markdown = build(parts, rows, stopped)
     data["pilot"] = {
         "seed": PILOT_SEED,
-        "size per half": PILOT_SIZE,
+        "size per part": PILOT_SIZE,
         "sample": sample,
         "skipped": skipped,
         "runs": runs,
@@ -308,13 +313,13 @@ def pilot(
     lines = [
         "# RQ3 pilot: ten packages of the corpus",
         "",
-        f"A fixed sample, {PILOT_SIZE} packages of each half, drawn with"
+        f"A fixed sample, {PILOT_SIZE} packages of each part, drawn with"
         f" random.Random({PILOT_SEED}); it checks that the question runs"
         " before the full run (`table.py` without `--pilot`).",
         "",
     ]
     body = [
-        [r["half"], r["package"], r["tool"], r["status"]]
+        [r["part"], r["package"], r["tool"], r["status"]]
         + ["-" if r[k] is None else f"{r[k]:g}" for k in ("seconds", "peak_rss_mib")]
         for r in runs
     ]
@@ -331,16 +336,16 @@ def _spread(values):
     return " / ".join(f"{values[k]:g}" for k in ("median", "p90", "max"))
 
 
-def jobs_of(half):
-    """How many runs ran at a time in a half (robustness.py: `measured`)."""
-    return half.get("measured", {}).get("jobs", 1)
+def jobs_of(part):
+    """How many runs ran at a time in a part (robustness.py: `measured`)."""
+    return part.get("measured", {}).get("jobs", 1)
 
 
-def tool_rows(halves, question, tools_dir=None):
+def tool_rows(parts, question, tools_dir=None):
     """The rows of the prior tools, [(row, its name in the results, or a
     missing cell)]: the stored runs of `question` (rq3-scale or rq3-pilot;
     results/tools/<row>/<rq3|rq3-pilot>.json of container/tool_job.py) are
-    added to `halves`, the results of robustness.py. A row without its file,
+    added to `parts`, the results of robustness.py. A row without its file,
     or of another manifest, is a missing cell; a tool that imports the
     analysed code is stated (tables.UNSCANNED)."""
     tools_dir = Path(tools_dir or tables.RESULTS / "tools")
@@ -360,7 +365,7 @@ def tool_rows(halves, question, tools_dir=None):
             data = json.loads(path.read_text(encoding="utf-8"))
             stored = data["halves"]
             problem = tool_job.stored_problem(tool, row, data, name)
-            jobs = {jobs_of(half) for half in halves.values()}
+            jobs = {jobs_of(part) for part in parts.values()}
             if not problem and jobs and data.get("jobs", 1) not in jobs:
                 # The times compare only at one K for every tool.
                 problem = (
@@ -371,30 +376,30 @@ def tool_rows(halves, question, tools_dir=None):
                 found.append((row, tables.missing(problem)))
                 continue
             if any(
-                stored.get(label, {}).get("sha256") != half["manifest"]["sha256"]
-                for label, half in halves.items()
+                stored.get(label, {}).get("sha256") != part["manifest"]["sha256"]
+                for label, part in parts.items()
             ):
                 reason = "needs rerun: it ran on another manifest of the corpus"
                 found.append((row, tables.missing(reason)))
                 continue
             if any(  # each package with a target of PyCG's run has a run
-                {p for p, e in half["packages"].items() if "reason" not in e}
+                {p for p, e in part["packages"].items() if "reason" not in e}
                 != {
                     p
                     for p, e in stored[label]["packages"].items()
                     if row in e.get("runs", {})
                 }
-                for label, half in halves.items()
+                for label, part in parts.items()
             ):
                 reason = "needs rerun: it ran on other packages of the corpus"
                 found.append((row, tables.missing(reason)))
                 continue
-            for label, half in halves.items():
-                packages = half["packages"]
+            for label, part in parts.items():
+                packages = part["packages"]
                 for package, entry in stored[label]["packages"].items():
                     if package in packages and "runs" in entry:
                         packages[package].setdefault("runs", {}).update(entry["runs"])
-                half["tools"][row] = {"commit": data["tool"]["pin"]["commit"]}
+                part["tools"][row] = {"commit": data["tool"]["pin"]["commit"]}
             found.append((row, row))
     return found
 
@@ -419,7 +424,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.pilot:
         return _pilot(parser, args)
-    for label, path, directory in HALVES:
+    for label, path, directory in PARTS:
         if not path.is_file():
             parser.error(f"no manifest {path} of {label}")
         manifest = json.loads(Path(path).read_text(encoding="utf-8"))
@@ -436,9 +441,9 @@ def main(argv=None):
     if args.original:
         tools.append(("original PyCG", "original", args.original))
     out = args.results
-    halves = {}
-    stopped = False  # a cleanup failed: no run starts in a later half
-    for label, path, directory in HALVES:
+    parts = {}
+    stopped = False  # a cleanup failed: no run starts in a later part
+    for label, path, directory in PARTS:
         argv = ["--manifest", str(path), "--work", str(args.work / directory)]
         if stopped:
             argv.append("--stopped")
@@ -448,17 +453,17 @@ def main(argv=None):
         argv += ["--memory-limit", str(args.memory_limit), "--jobs", str(args.jobs)]
         argv += ["--results", str(out), "--python", args.python]
         robustness.main(argv)
-        halves[label] = json.loads(
+        parts[label] = json.loads(
             (out / f"robustness-{path.stem}.json").read_text(encoding="utf-8")
         )
-        stopped = stopped or cleanup_failed(halves[label])
+        stopped = stopped or cleanup_failed(parts[label])
     rows = [(name, name.replace(" ", "-")) for name, _, _ in tools]
     if not args.original:
         rows.append(
             ("original PyCG", tables.missing("not run: no --original checkout given"))
         )
-    rows += tool_rows(halves, STEM)
-    result, markdown = build(halves, rows, stopped)
+    rows += tool_rows(parts, STEM)
+    result, markdown = build(parts, rows, stopped)
     for path in tables.write(args.results, STEM, result, markdown):
         print(path)
     return 0

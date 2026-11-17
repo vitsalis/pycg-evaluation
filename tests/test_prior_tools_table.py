@@ -420,3 +420,12 @@ def test_the_committed_graphs_are_those_of_the_committed_records():
                 assert tool_job.graph_digest(found) == record["graph_sha256"], graph
                 seen.add(graph)
     assert seen and seen == set(prior.GRAPHS.glob("*/*.json"))
+
+
+def test_the_committed_rq1_run_of_pyan3_needs_a_rerun_only_for_its_limits():
+    """The committed run (made before the third part of RQ3's corpus) is
+    still one of pyan3's row and pin: its one problem is the limits."""
+    data = json.loads((prior.TOOLS_RESULTS / "pyan3" / "rq1.json").read_text())
+    assert tool_job.stored_problem("pyan", "pyan3", data, "rq1") == (
+        "needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"
+    )

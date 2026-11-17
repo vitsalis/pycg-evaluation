@@ -494,3 +494,107 @@ def test_a_cached_archive_of_the_same_length_but_another_hash_is_not_reused(
     status = corpus.fetch({"rows": [entry]}, cache, work, download)
     assert len(download.asked) == 2
     assert status == {"demo": "unpacked tree changed: demo/core.py: changed"}
+
+
+# --------------------------------------------------------------------------
+# pin: the SHA-256 and size of the archives of a list of commits
+# --------------------------------------------------------------------------
+
+PIN_COMMIT = "c0ffee" + "0" * 34
+
+
+def git_list_row(name="demo", **changes):
+    row = {
+        "name": name,
+        "rank": 1,
+        "repository": f"https://github.com/owner/{name}",
+        "version": PIN_COMMIT,
+        "kind": "git archive",
+        "commit": PIN_COMMIT,
+        "file": f"{name}-{PIN_COMMIT}.tar.gz",
+        "url": f"https://codeload.github.com/owner/{name}/tar.gz/{PIN_COMMIT}",
+        "root": "",
+        "modules": [name],
+    }
+    return row | changes
+
+
+def served_archives(bodies):
+    """A download boundary that serves `bodies` ({url: bytes}) and counts."""
+    calls = []
+
+    def download(url, path, max_bytes):
+        calls.append(url)
+        assert max_bytes == corpus.MAX_ARCHIVE_BYTES
+        Path(path).write_bytes(bodies[url])
+
+    return download, calls
+
+
+def test_pin_writes_the_sha256_and_size_of_each_archive_once(tmp_path):
+    row = git_list_row()
+    download, calls = served_archives({row["url"]: b"archive bytes"})
+    manifest = {"source": {"repository": "r", "commit": "c"}, "rows": [row]}
+    found, refused = corpus.pin(manifest, tmp_path / "work", download)
+    assert refused == {}
+    (pinned,) = found["rows"]
+    digest = hashlib.sha256(b"archive bytes").hexdigest()
+    assert (pinned["sha256"], pinned["size"]) == (digest, 13)
+    assert list(pinned).index("sha256") == list(pinned).index("url") + 1
+    assert corpus.row_problem(pinned) is None  # fetch takes it
+    # A second pin checks the pinned row against the archive it has.
+    again, refused = corpus.pin(found, tmp_path / "work", download)
+    assert (again, refused, len(calls)) == (found, {}, 1)
+
+
+@pytest.mark.parametrize(
+    "changes, problem",
+    [
+        ({"kind": "pure wheel"}, "not a git archive"),
+        ({"url": "https://example.org/demo.tar.gz"}, "refused URL"),
+        ({"repository": "https://gitlab.com/owner/demo"}, "refused URL"),
+        ({"version": "1.0"}, "refused version: not the commit"),
+        ({"file": "other.tar.gz"}, "refused name or file"),
+        ({"sha256": "0" * 64, "size": 13}, "another archive"),
+    ],
+)
+def test_pin_refuses_a_row_that_is_not_a_pinned_archive_of_its_commit(
+    tmp_path, changes, problem
+):
+    row = git_list_row(**changes)
+    download, _ = served_archives({git_list_row()["url"]: b"archive bytes"})
+    _, refused = corpus.pin({"rows": [row]}, tmp_path / "work", download)
+    assert refused["demo"].startswith(problem)
+
+
+def test_the_pin_command_leaves_a_manifest_with_a_refused_row_as_it_was(
+    tmp_path, monkeypatch, capsys
+):
+    path = tmp_path / "list.json"
+    text = json.dumps({"source": {}, "rows": [git_list_row(version="1.0")]})
+    path.write_text(text)
+    argv = ["pin", "--manifest", str(path), "--work", str(tmp_path / "work")]
+    assert corpus.main(argv) == 1
+    assert "REFUSED demo: refused version" in capsys.readouterr().err
+    assert path.read_text() == text
+
+
+def test_the_large_projects_are_ten_git_archives_of_github():
+    data = json.loads((corpus.CORPUS / "large-projects.json").read_text())
+    assert [row["name"] for row in data["rows"]] == [
+        "dask",
+        "loguru",
+        "matplotlib",
+        "pvlib",
+        "pylint",
+        "scikit-learn",
+        "seaborn",
+        "sphinx",
+        "sympy",
+        "xarray",
+    ]
+    for row in data["rows"]:
+        assert row["kind"] == corpus.GIT_ARCHIVE and row["version"] == row["commit"]
+        assert row["url"] == corpus.git_archive_url(row["repository"], row["commit"])
+        if "sha256" in row:  # pinned: fetch takes it
+            assert corpus.row_problem(row) is None

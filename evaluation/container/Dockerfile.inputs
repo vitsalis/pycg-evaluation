@@ -7,7 +7,7 @@
 #   /inputs/macro-benchmark/projects/<name>   the 30 projects (fetch.py macro)
 #   /inputs/tools/<name>                      the trees of the prior tools' images (fetch.py tools)
 #   /inputs/corpus/                           the corpus of RQ3 (corpus.py fetch): cache/ holds the
-#                                             archives, work/ and dypybench/ the unpacked trees
+#                                             archives, work/, dypybench/ and large/ the unpacked trees
 #   /inputs/corpus/dypybench-traces/          DyPyBench's traces (trace_recall.py fetch)
 #   /inputs/rts/export/                       the export of the NameRTS clones (rts.py fetch, export)
 #
@@ -67,6 +67,11 @@ RUN python3 -I -B evaluation/rq3-scale/corpus.py fetch \
     && python3 -I -B evaluation/rq3-scale/corpus.py fetch \
         --manifest evaluation/rq3-scale/corpus/dypybench.json \
         --cache /inputs/corpus/cache --work /inputs/corpus/dypybench
+# The third part in a step of its own: the steps above keep their cache.
+COPY evaluation/rq3-scale/corpus/large-projects.json evaluation/rq3-scale/corpus/
+RUN python3 -I -B evaluation/rq3-scale/corpus.py fetch \
+        --manifest evaluation/rq3-scale/corpus/large-projects.json \
+        --cache /inputs/corpus/cache --work /inputs/corpus/large
 
 # trace_recall.py loads the scorer, which loads the validator of the
 # micro-benchmark (the submodule PyCG): Python 3.14.

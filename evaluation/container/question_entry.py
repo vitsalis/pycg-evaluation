@@ -83,6 +83,8 @@ OUTPUTS = {
         "robustness-pypi-top-100.md",
         "robustness-dypybench.json",
         "robustness-dypybench.md",
+        "robustness-large-projects.json",
+        "robustness-large-projects.md",
     ),
     "rq3-pilot": ("rq3-pilot.json", "rq3-pilot.md"),
     "rq4": ("rq4-test-selection.json", "rq4-test-selection.md"),

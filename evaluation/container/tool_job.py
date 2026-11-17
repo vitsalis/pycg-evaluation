@@ -41,7 +41,7 @@ time):
    link; the adapter converts the parsed JSON (never pickle, never eval).
 It writes one result file per row and question, evaluation/results/tools/
 <row>/<question>.json: the tool's facts, the limits, and per benchmark
-(rq1) or half of the corpus (rq3) the record of each job. For rq1 the graph
+(rq1) or part of the corpus (rq3) the record of each job. For rq1 the graph
 of each job, in the benchmark's names, is stored too: those of the micro
 cases in the result file, that of each macro project in
 evaluation/results/graphs/<row>/<project>.json, so that a reader scores a
@@ -107,7 +107,7 @@ CORPUS = Path("/inputs/corpus")
 # group). One limit for every run of every question (the maintainer,
 # 2026-11-15): 30 minutes and 16 GiB.
 LIMITS = {"rq1": (1800, 16384), "rq3": (1800, 16384), "rq3-pilot": (1800, 16384)}
-LIMITS["rq1-trace"] = LIMITS["rq3"]  # the targets of the DyPyBench half of rq3
+LIMITS["rq1-trace"] = LIMITS["rq3"]  # the targets of the DyPyBench part of rq3
 LIMITS["rq4"] = LIMITS["rq4-pilot"] = (1800, 16384)  # rts.py's of PyCG
 TIMEOUT, MEMORY_MIB = LIMITS["rq1"]
 MAX_OUTPUT_BYTES = 64 << 20
@@ -744,7 +744,7 @@ def rq3(tool, pilot=False, results=RESULTS, work=CORPUS, jobs=1):
         for label, (_, text, _, _, _, entries) in table.pilot_plan(work).items():
             planned[label] = (hashlib.sha256(text).hexdigest(), entries)
     else:
-        for label, path, directory in table.HALVES:
+        for label, path, directory in table.PARTS:
             text = Path(path).read_bytes()
             entries = table.robustness.plan(json.loads(text), work / directory)
             planned[label] = (hashlib.sha256(text).hexdigest(), entries)
@@ -782,21 +782,21 @@ def rq3(tool, pilot=False, results=RESULTS, work=CORPUS, jobs=1):
         ]
         keys = [(label, name) for label, name, _ in tasks]
         results = dict(zip(keys, parallel(tasks, one, jobs)))
-        halves = {}
+        parts = {}
         for label, (digest, entries) in planned.items():
             packages = {}
             for name, (entry, job) in entries.items():
                 packages[name] = dict(entry)
                 if job is not None:
                     packages[name]["runs"] = {row: results[label, name]}
-            halves[label] = {"sha256": digest, "packages": packages}
+            parts[label] = {"sha256": digest, "packages": packages}
         data = {
             "question": question,
             "row": row,
             "settings": record,
             "tool": facts(tool, adapter, limits),
             "jobs": jobs,  # the times were measured beside jobs - 1 others
-            "halves": halves,
+            "halves": parts,  # the key of the stored runs
         }
         path = result_path(results, row, question)
         write(path, data)
@@ -816,13 +816,13 @@ def analysed(adapter, record, job, limits, label, work=WORK):
 
 def rq1_trace(tool, variant=None, graphs=GRAPHS, work=CORPUS, jobs=1):
     """Run the rows of `tool` on DyPyBench's traced projects: the targets of
-    the DyPyBench half of rq3 (robustness.plan) whose row names a trace.
+    the DyPyBench part of rq3 (robustness.plan) whose row names a trace.
     Writes GRAPHS/<row>/rq1-trace.json; trace_recall.py maps the traces and
     scores the graphs."""
     adapter = _build().load_adapter(tool)
     limits = LIMITS["rq1-trace"]
     table = _load("rq3_table", EVALUATION / "rq3-scale" / "table.py")
-    [(path, directory)] = [(p, d) for _, p, d in table.HALVES if d == "dypybench"]
+    [(path, directory)] = [(p, d) for _, p, d in table.PARTS if d == "dypybench"]
     text = Path(path).read_bytes()
     manifest = json.loads(text)
     traced = {row["name"] for row in manifest["rows"] if "trace" in row}

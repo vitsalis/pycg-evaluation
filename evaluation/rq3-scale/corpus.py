@@ -1,12 +1,22 @@
 #!/usr/bin/env python3
-"""A pinned corpus of PyPI packages and of DyPyBench's projects, for the
-robustness runs (robustness.py).
+"""A pinned corpus of PyPI packages, of DyPyBench's projects and of ten
+large projects, for the robustness runs (robustness.py).
 
     python -I evaluation/rq3-scale/corpus.py manifest --top 100 [--rank-list top.json]
+    python -I evaluation/rq3-scale/corpus.py pin \\
+        --manifest evaluation/rq3-scale/corpus/large-projects.json --work WORK
     python -I evaluation/rq3-scale/corpus.py fetch \\
         --manifest evaluation/rq3-scale/corpus/pypi-top-100.json \\
         --cache CACHE --work WORK
-    (or --manifest evaluation/rq3-scale/corpus/dypybench.json)
+    (or --manifest evaluation/rq3-scale/corpus/dypybench.json, large-projects.json)
+
+`pin` pins a manifest of rows of kind "git archive" (a project of GitHub at
+a commit): it downloads the archive of each row from the row's own URL,
+which must be GitHub's archive of the row's repository and commit, at most
+MAX_ARCHIVE_BYTES, into WORK (once), and writes its SHA-256 and size into
+the row. A row that has them already is checked: an archive of another
+SHA-256 or size is refused. Any refusal leaves the manifest as it was, and
+the command fails.
 
 `manifest` reads a download-rank list (JSON with `last_update` and `rows` of
 `{project, download_count}`) and writes evaluation/rq3-scale/corpus/pypi-top-<N>.json,
@@ -538,6 +548,64 @@ def _url_allowed(row):
     return row["url"].startswith(FILES_HOST) and row["url"].endswith("/" + row["file"])
 
 
+MAX_ARCHIVE_BYTES = 2 << 30  # a git archive that `pin` downloads, its size unknown
+
+
+def pin(manifest, work, download=None, progress=None):
+    """(the manifest with the SHA-256 and size of each archive, {name: why a
+    row is refused}) of a manifest of git archives (see the module
+    docstring); the archives go to `work`."""
+    download = download or _download_unsized
+    work = Path(work)
+    work.mkdir(parents=True, exist_ok=True)
+    rows, refused = [], {}
+    for row in manifest["rows"]:
+        name = row.get("name")
+        commit = row.get("commit", "")
+        if row.get("kind") != GIT_ARCHIVE:
+            refused[name] = "not a git archive"
+            continue
+        if (
+            not is_path_component(str(name))
+            or row.get("file") != f"{name}-{commit}.tar.gz"
+        ):
+            refused[name] = "refused name or file"
+            continue
+        if row.get("url") != git_archive_url(row.get("repository", ""), commit):
+            refused[name] = "refused URL: not the archive of its repository and commit"
+            continue
+        if row.get("version") != commit:
+            refused[name] = "refused version: not the commit"
+            continue
+        archive = work / row["file"]
+        if not archive.is_file():
+            partial = archive.with_name(archive.name + ".partial")
+            download(row["url"], partial, MAX_ARCHIVE_BYTES)
+            partial.replace(archive)
+        found = {"sha256": _sha256(archive), "size": archive.stat().st_size}
+        if "sha256" in row or "size" in row:
+            pinned = {"sha256": row.get("sha256"), "size": row.get("size")}
+            if pinned != found:
+                refused[name] = f"another archive: {found}, the row pins {pinned}"
+                continue
+        entry = {}
+        for key, value in row.items():  # sha256 and size after the URL
+            if key in ("sha256", "size"):
+                continue
+            entry[key] = value
+            if key == "url":
+                entry |= found
+        rows.append(entry)
+        if progress:
+            progress(f"{name}: {found['size']} bytes, sha256 {found['sha256']}")
+    return manifest | {"rows": rows}, refused
+
+
+def _download_unsized(url, path, max_bytes):
+    with open(path, "wb") as out:
+        fetch_body(url, out, 300, DOWNLOAD_DEADLINE, max_bytes=max_bytes)
+
+
 def download(url, path, size):
     """Write the file at `url`, of `size` bytes, to `path`. The network
     boundary of `fetch`."""
@@ -955,6 +1023,9 @@ def main(argv=None):
     make.add_argument("--rank-list", type=Path, help=f"default: {RANK_LIST}")
     make.add_argument("--top", type=int, required=True)
     make.add_argument("--out", type=Path, help="default: corpus/pypi-top-<N>.json")
+    pinned = commands.add_parser("pin", help="pin the archives of a manifest")
+    pinned.add_argument("--manifest", type=Path, required=True)
+    pinned.add_argument("--work", type=Path, required=True)
     get = commands.add_parser("fetch", help="download and unpack the manifest")
     get.add_argument("--manifest", type=Path, required=True)
     get.add_argument("--cache", type=Path, required=True)
@@ -973,6 +1044,15 @@ def main(argv=None):
         out.write_text(run.dumps(data) + "\n", encoding="utf-8")
         return 0
     data = json.loads(args.manifest.read_text(encoding="utf-8"))
+    if args.command == "pin":
+        found, refused = pin(data, args.work, progress=_print)
+        for name, problem in sorted(refused.items(), key=lambda item: str(item[0])):
+            print(f"REFUSED {name}: {problem}", file=sys.stderr)
+        if refused:
+            return 1
+        run = _load("evaluation_run", COMMON / "run.py")
+        args.manifest.write_text(run.dumps(found) + "\n", encoding="utf-8")
+        return 0
     status = fetch(data, args.cache, args.work, progress=_print)
     failed = {name: s for name, s in status.items() if not _done(s)}
     for name, problem in sorted(failed.items()):

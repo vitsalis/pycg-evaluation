@@ -47,6 +47,7 @@ COPY --from=inputs /inputs/macro-benchmark /inputs/macro-benchmark
 COPY --from=inputs /inputs/corpus/cache /inputs/corpus/cache
 COPY --from=inputs /inputs/corpus/work /inputs/corpus/work
 COPY --from=inputs /inputs/corpus/dypybench /inputs/corpus/dypybench
+COPY --from=inputs /inputs/corpus/large /inputs/corpus/large
 COPY --from=inputs /inputs/rts/export/trees /inputs/rts/export/trees
 COPY --from=inputs /inputs/rts/export/blobs /inputs/rts/export/blobs
 
