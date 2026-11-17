@@ -10,17 +10,16 @@ Compose from evaluation/tools/docker/ with the inputs of the questions
 from the inputs image, without network, with the repository read-only and
 evaluation/results/ the only writable host path. QUESTION is rq1 (the
 micro-benchmark and the macro-benchmark), rq3 (the corpus of RQ3),
-rq3-pilot (its ten packages, the sample of the PyCG pilot), rq1-trace
-(DyPyBench's traced projects), rq4 or rq4-pilot (the parent commits of
-RQ4's targets; the pilot: PyCG's pilot's). rq1-trace and rq4 write their
-graphs to the volume tool-graphs (GRAPHS), which their questions read. The entry runs
-in the tool's Python:
+rq3-pilot (its ten packages, the sample of the PyCG pilot) or rq1-trace
+(DyPyBench's traced projects). rq1-trace writes its graphs to the volume
+tool-graphs (GRAPHS), which its question reads. The entry runs in the
+tool's Python:
 
     python3 -I -B /repo/evaluation/container/tool_job.py TOOL QUESTION
 
 For rq1 and rq1-trace, for each row of the tool (the variants of its
-adapter, or --variant N); for rq3, rq3-pilot, rq4 and rq4-pilot, for its
-headline row only (the first of its variants: HEADLINE_ONLY), it runs the
+adapter, or --variant N); for rq3 and rq3-pilot, for its headline row
+only (the first of its variants: HEADLINE_ONLY), it runs the
 question's jobs, --jobs K at a time (default 1; run.run_tasks: the first
 error stops them all, and the records are in the order of the jobs,
 whatever K), each in a child process (`run`) in a directory of its own
@@ -95,11 +94,9 @@ RESULTS = Path("/results") / "tools"
 RQ1_GRAPHS = Path("/results") / "graphs"
 # What the image holds: its pin and trees (tools/build.py image_text), and
 # in the image of headergen-deps the pinned dependencies of its project.
-# The graphs of rq1-trace, rq4 and rq4-pilot: a Docker volume, read by the
-# services of those questions (rq1-accuracy/trace_recall.py,
-# rq4-test-selection/table.py); intermediate data, not results.
+# The graphs of rq1-trace: a Docker volume, read by the service of that
+# question (rq1-accuracy/trace_recall.py); intermediate data, not results.
 GRAPHS = Path("/tool-graphs")
-EXPORT = Path("/inputs/rts/export")
 IMAGE_FILE = Path("/opt/tool/image.txt")
 DEPS_FILE = Path("/opt/deps/requirements.txt")
 CORPUS = Path("/inputs/corpus")
@@ -108,7 +105,6 @@ CORPUS = Path("/inputs/corpus")
 # 2026-11-15): 30 minutes and 16 GiB.
 LIMITS = {"rq1": (1800, 16384), "rq3": (1800, 16384), "rq3-pilot": (1800, 16384)}
 LIMITS["rq1-trace"] = LIMITS["rq3"]  # the targets of the DyPyBench part of rq3
-LIMITS["rq4"] = LIMITS["rq4-pilot"] = (1800, 16384)  # rts.py's of PyCG
 TIMEOUT, MEMORY_MIB = LIMITS["rq1"]
 MAX_OUTPUT_BYTES = 64 << 20
 MAX_TOTAL_BYTES = 256 << 20
@@ -553,10 +549,10 @@ def rows(tool, variant=None):
 
 
 # The questions that run the headline row of a tool only (the first of its
-# VARIANTS): RQ3 measures the time and the memory of the tool, and RQ4 a
-# client of its call graph; another variant would run the same tool again.
-# RQ1 and rq1-trace measure accuracy, which the variants change: every row.
-HEADLINE_ONLY = ("rq3", "rq3-pilot", "rq4", "rq4-pilot")
+# VARIANTS): RQ3 measures the time and the memory of the tool; another
+# variant would run the same tool again. RQ1 and rq1-trace measure
+# accuracy, which the variants change: every row.
+HEADLINE_ONLY = ("rq3", "rq3-pilot")
 
 
 def headline(tool):
@@ -867,80 +863,6 @@ def rq1_trace(tool, variant=None, graphs=GRAPHS, work=CORPUS, jobs=1):
     return written
 
 
-def rq4(tool, pilot=False, graphs=GRAPHS, export=EXPORT, manifest=None, jobs=1):
-    """Run the headline row of `tool` on the parent commit of each target of RQ4's
-    dataset (the pilot: the first target of each project, as PyCG's pilot),
-    from the export of the clones. Writes
-    GRAPHS/<row>/<rq4|rq4-pilot>/<project>.json: per parent commit the
-    record, the key of its input (rts.analysis_key) and the graph; the rq4
-    services select and score with it (rts.py select with a stored graph)."""
-    adapter = _build().load_adapter(tool)
-    question = "rq4-pilot" if pilot else "rq4"
-    limits = LIMITS[question]
-    rts = _load("evaluation_rts", EVALUATION / "rq4-test-selection" / "rts.py")
-    if manifest is None:
-        manifest = json.loads(Path(rts.MANIFEST).read_text(encoding="utf-8"))
-    written = []
-    for row, record in headline(tool):
-        # Each parent commit once, in the order of the targets: read first,
-        # then analysed `jobs` at a time.
-        analyses, tasks = {}, []
-        for name, entry in manifest["projects"].items():
-            project = rts.project_config(manifest, name)
-            repo = rts.Export(export, name, entry["trees"])
-            analyses[name] = {}
-            for target in entry["targets"][: 1 if pilot else None]:
-                parent = rts.commit_id(target["parent"])
-                if parent in analyses[name]:
-                    continue
-                try:
-                    sources = rts.parent_sources(repo, parent, project)
-                except rts.NotExported as error:
-                    analyses[name][parent] = {"record": {"status": "not exported"}}
-                    print(f"{row} {name} {parent[:10]}: {error}", flush=True)
-                    continue
-                analyses[name][parent] = None  # its place in the order
-                tasks.append((name, parent, project, sources))
-
-        def one(item, slot):
-            name, parent, project, sources = item
-            key = rts.analysis_key(project, sources)
-            with tempfile.TemporaryDirectory(prefix="rts-tree-") as scratch:
-                rts.write_tree(sources, scratch)
-                tree = Path(scratch).resolve()
-                package = tree.joinpath(*PurePosixPath(project.root).parts)
-                files = tuple(tree / p for p in sorted(sources))
-                entry_points = tuple(
-                    tree / p for p in sorted(sources) if rts.is_entry_point(p, project)
-                )
-                found, graph = analysed(
-                    adapter,
-                    record,
-                    Job(f"rts/{name}/{parent}", package, entry_points, files),
-                    limits,
-                    f"{row} {name} {parent[:10]}",
-                    slot,
-                )
-            return {"record": found, "key": key, "graph": graph}
-
-        for (name, parent, _, _), analysis in zip(tasks, parallel(tasks, one, jobs)):
-            analyses[name][parent] = analysis
-        for name in manifest["projects"]:
-            data = {
-                "question": question,
-                "row": row,
-                "settings": record,
-                "tool": facts(tool, adapter, limits),
-                "dataset": rts.dataset_fingerprint(manifest, name),
-                "jobs": jobs,  # the times were measured beside jobs - 1 others
-                "analyses": analyses[name],
-            }
-            target_path = Path(graphs) / slug(row) / question / f"{name}.json"
-            write(target_path, data)
-            written.append(target_path)
-    return written
-
-
 def main(argv=None, image_file=IMAGE_FILE, deps_file=DEPS_FILE):
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -993,8 +915,6 @@ def main(argv=None, image_file=IMAGE_FILE, deps_file=DEPS_FILE):
         written = rq1(args.tool, args.variant, only, jobs=k)
     elif args.question == "rq1-trace":
         written = rq1_trace(args.tool, args.variant, jobs=k)
-    elif args.question in ("rq4", "rq4-pilot"):
-        written = rq4(args.tool, pilot=args.question == "rq4-pilot", jobs=k)
     else:
         written = rq3(args.tool, pilot=args.question == "rq3-pilot", jobs=k)
     for path in written:

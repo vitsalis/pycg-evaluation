@@ -13,14 +13,14 @@
 # A service runs as user 1000:1000. If that is not your user on Linux:
 #   export EVAL_UID=$(id -u) EVAL_GID=$(id -g)
 #
-# rq1-trace, rq3, rq3-pilot, rq4, rq4-pilot and a prior tool's service take
-# --jobs K
-# (`run --rm rq3 --jobs 3`, `run --rm pyan rq3 --jobs 3`): K analyses at a
+# rq1-trace, rq3, rq3-pilot and a prior tool's service take --jobs K
+# (`run --rm rq1-trace --jobs 3`, `run --rm pyan rq1 --jobs 3`; RQ3 runs at
+# K = 1, as it measures time and memory): K analyses at a
 # time, each with its own limit of 16 GiB (every run: 30 minutes and 16 GiB;
 # rq1, one at a time, has the same memory). Their memory is EVAL_MEMORY
 # (default 18g, for K = 1) and their CPUs EVAL_CPUS (default 4): for K jobs
 # give them K x 16 GiB + 2 GiB and K CPUs (K at least 4), for example
-#   EVAL_MEMORY=50g EVAL_CPUS=4 docker compose -f evaluation/compose.yaml run --rm rq3 --jobs 3
+#   EVAL_MEMORY=50g EVAL_CPUS=4 docker compose -f evaluation/compose.yaml run --rm rq1-trace --jobs 3
 #
 # The file is plain YAML: mappings, lists of scalars, JSON lists, and the
 # anchors below; tests/test_compose.py reads it without a YAML library.
@@ -82,11 +82,10 @@ x-question: &question
 # the additional context `inputs` (the tool's trees, the inputs of the
 # questions); the entry
 # container/tool_job.py runs the jobs of one question one after another
-# (`run --rm TOOL QUESTION`, QUESTION rq1, rq3, rq3-pilot, rq1-trace, rq4
-# or rq4-pilot). rq1 and rq3 write results/tools/<row>/QUESTION.json, and
-# rq1 the graph of each macro project to results/graphs/<row>/; the graphs
-# of rq1-trace and rq4 go to the volume tool-graphs, which their questions
-# read (they are large).
+# (`run --rm TOOL QUESTION`, QUESTION rq1, rq3, rq3-pilot or rq1-trace).
+# rq1 and rq3 write results/tools/<row>/QUESTION.json, and rq1 the graph of
+# each macro project to results/graphs/<row>/; the graphs of rq1-trace go
+# to the volume tool-graphs, which its question reads (they are large).
 x-tool: &tool
   <<: *sealed
   mem_limit: ${EVAL_MEMORY:-18g}
@@ -108,9 +107,8 @@ volumes:
 
 services:
   # Every pinned input (container/Dockerfile.inputs): the projects of the
-  # macro-benchmark, the prior tools' sources, the corpus of RQ3,
-  # DyPyBench's traces and the export of RQ4's dataset, fetched when the
-  # image is built. The images below take theirs from it. A run of it
+  # macro-benchmark, the prior tools' sources, the corpus of RQ3 and
+  # DyPyBench's traces, fetched when the image is built. The images below take theirs from it. A run of it
   # serves the commands of evaluation/README.md that read the inputs (a
   # copy of the sources for reading, pin.py trees).
   inputs:
@@ -166,26 +164,6 @@ services:
     memswap_limit: ${EVAL_MEMORY:-18g}
     cpus: ${EVAL_CPUS:-4}
     entrypoint: ["python3", "-I", "-B", "/repo/evaluation/container/question_entry.py", "rq3-pilot"]
-  rq4-pilot:
-    <<: *question
-    mem_limit: ${EVAL_MEMORY:-18g}
-    memswap_limit: ${EVAL_MEMORY:-18g}
-    cpus: ${EVAL_CPUS:-4}
-    volumes:
-      - ..:/repo:ro
-      - ./results:/results
-      - tool-graphs:/tool-graphs:ro
-    entrypoint: ["python3", "-I", "-B", "/repo/evaluation/container/question_entry.py", "rq4-pilot"]
-  rq4:
-    <<: *question
-    mem_limit: ${EVAL_MEMORY:-18g}
-    memswap_limit: ${EVAL_MEMORY:-18g}
-    cpus: ${EVAL_CPUS:-4}
-    volumes:
-      - ..:/repo:ro
-      - ./results:/results
-      - tool-graphs:/tool-graphs:ro
-    entrypoint: ["python3", "-I", "-B", "/repo/evaluation/container/question_entry.py", "rq4"]
   trace:
     <<: *sealed
     image: pycg-trace-${NAME:-unset}
@@ -215,8 +193,8 @@ services:
     entrypoint: ["python3", "-I", "-B", "/repo/evaluation/container/trace_entry.py", "${NAME:-unset}"]
 
   # The prior tools (x-tool above). JARVIS has three rows and PyAnalyzer
-  # two: a run of rq1 or rq1-trace writes all, `--variant N` one; rq3 and
-  # rq4 run the headline row only.
+  # two: a run of rq1 or rq1-trace writes all, `--variant N` one; rq3 runs
+  # the headline row only.
   pyan:
     <<: *tool
     image: pycg-tool-pyan

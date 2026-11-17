@@ -34,7 +34,6 @@ tables = fakes.load("common/tables")
 rq1 = fakes.load("rq1-accuracy/table")
 rq2 = fakes.load("rq2-causes/table")
 rq3 = fakes.load("rq3-scale/table")
-rq4 = fakes.load("rq4-test-selection/table")
 
 
 PROJECTS = """
@@ -836,82 +835,18 @@ def test_rq3_pilot_draws_five_packages_with_a_target_from_each_half(
     assert isinstance(rq3.PILOT_SEED, int)
 
 
-# --------------------------------------------------------------------------
-# RQ4
-# --------------------------------------------------------------------------
-
-
-def rts_report():
-    def m(safe, reduction, precision):
-        return {"safe_rate": safe, "test_reduction": reduction, "precision": precision}
-
-    def project(safe, precision):
-        return {
-            "tools": {
-                "PyCG": {
-                    "variants": {"client": m(safe, 0.5, precision)},
-                    "safe_by_analysis": safe,
-                    "safe_by_fallback": 0.0,
-                }
-            },
-            "published": {"NameRTS": m(1.0, 0.8, 0.6)},
-        }
-
-    return {
-        "namerts": {"url": "u", "commit": "c" * 40},
-        "versions": {"PyCG": {"tool": {"commit": "e" * 40}, "content": "f" * 64}},
-        "projects": {
-            "p": project(1.0, None),
-            "q": project(0.5, 0.4),
-            "r": project(1 / 3, 0.4),
-        },
-    }
-
-
-def test_rq4_gives_each_mean_with_its_projects_and_rounds_for_display_only():
-    found = rq4.means(rts_report())
-    assert found["PyCG"]["safe_rate"] == {
-        "mean": (1.0 + 0.5 + 1 / 3) / 3,
-        "projects": 3,
-    }
-    assert found["PyCG"]["precision"] == {"mean": 0.4, "projects": 2}
-    assert found["NameRTS (published)"]["projects"] == 3
-    not_run = "not run: no graphs of demo"
-    rows = [("PyCG", "PyCG"), ("CPyGraph", tables.missing(not_run))]
-    data, markdown = rq4.build(rts_report(), rows)
-    assert [r["tool"] for r in data["rows"]] == [
-        "PyCG",
-        "CPyGraph",
-        "NameRTS (published)",
-    ]
-    assert data["rows"][0]["provenance"]["content"] == "f" * 64
-    assert (
-        "| PyCG | eeeeeeeeee | 3 | 61.1% | 61.1% | 0.0% | 50.0% | 40.0% (over 2 of 3) |"
-        in markdown
-    )
-    assert not_run in markdown
-
-
 def test_a_tool_that_imports_the_analysed_code_never_runs_on_an_unscanned_corpus():
     rows = dict(rq3.tool_rows({}, rq3.STEM, Path("/nonexistent")))
     headergen = "HeaderGen (hybrid: imports the analysed modules)"
     assert rows[headergen] == tables.missing(tables.UNSCANNED)
-    manifest = {"projects": {"demo": {}}}
-    rows = dict(rq4.prior_rows(manifest, None, None, False, Path("/nonexistent")))
-    assert rows[headergen] == tables.missing(tables.UNSCANNED)
-    assert rows["pyan3"]["reason"] == (
-        "not run: no graphs of demo (docker compose -f evaluation/compose.yaml "
-        "run --rm pyan rq4)"
-    )
     # One row per tool: its headline row (the first of its variants).
     assert list(rows) == [
-        rq4.tool_job.rows(tool)[0][0] for tool in rq4.tool_job._build().TOOLS
+        rq3.tool_job.rows(tool)[0][0] for tool in rq3.tool_job._build().TOOLS
     ]
-    assert list(dict(rq3.tool_rows({}, rq3.STEM, Path("/nonexistent")))) == list(rows)
 
 
-@pytest.mark.parametrize("question", ["rq3", "rq3-pilot", "rq4", "rq4-pilot"])
-def test_rq3_and_rq4_run_the_headline_row_of_a_tool_only(question, capsys):
+@pytest.mark.parametrize("question", ["rq3", "rq3-pilot"])
+def test_rq3_runs_the_headline_row_of_a_tool_only(question, capsys):
     tool_job = rq3.tool_job
     assert tool_job.headline("jarvis") == tool_job.rows("jarvis")[:1]
     with pytest.raises(SystemExit):
@@ -1004,19 +939,6 @@ def test_rq3_reads_the_prior_tools_runs_where_they_are(tmp_path):
     )
 
 
-def test_rq4_states_each_target_that_is_left_out_of_every_row():
-    report = rts_report()
-    reason = "the export has no blob b (pkg/core.py at p1)"
-    report["projects"]["q"]["excluded"] = [{"current": "c" * 40, "reason": reason}]
-    data, markdown = rq4.build(report, [("PyCG", "PyCG")])
-    assert data["excluded targets"] == [
-        {"project": "q", "target": "c" * 40, "reason": reason}
-    ]
-    assert f"| q | `cccccccccc` | {reason} |" in markdown
-    _, plain = rq4.build(rts_report(), [("PyCG", "PyCG")])
-    assert "left out" not in plain
-
-
 def test_a_prior_tool_that_names_no_outside_callee_says_so_in_its_outside_cells(
     tmp_path,
 ):
@@ -1048,30 +970,3 @@ def test_the_inputs_of_a_benchmark_are_its_files_and_nothing_written_by_python(
     assert tables.inputs_digest(set_dir) == first
     (set_dir / "plugins" / "m.py").write_text("x = 2\n")
     assert tables.inputs_digest(set_dir) != first
-
-
-def test_rq4_never_selects_with_graphs_of_another_pin_or_without_their_graph(
-    tmp_path,
-):
-    tool_job = rq4.tool_job
-    manifest = {"namerts": {}, "projects": {"demo": {}}}
-    adapter = tool_job._build().load_adapter("pyan")
-    facts = tool_job.facts("pyan", adapter, tool_job.LIMITS["rq4"])
-    stored = {
-        "row": "pyan3",
-        "settings": dict(tool_job.rows("pyan"))["pyan3"],
-        "tool": facts | {"pin": {"commit": "0" * 40}},
-        "dataset": rq4.rts.dataset_fingerprint(manifest, "demo"),
-        "analyses": {},
-    }
-    path = tmp_path / "pyan3" / "rq4" / "demo.json"
-    tool_job.write(path, stored)
-    rows = dict(rq4.prior_rows(manifest, None, None, False, tmp_path))
-    assert rows["pyan3"]["reason"] == "needs rerun: it ran another version of the tool"
-    stored["tool"] = facts
-    stored["analyses"] = {"p": {"record": {"status": "ok"}, "key": "k"}}
-    tool_job.write(path, stored)
-    rows = dict(rq4.prior_rows(manifest, None, None, False, tmp_path))
-    assert rows["pyan3"]["reason"] == (
-        "needs rerun: a graph is missing or is not that of its run"
-    )

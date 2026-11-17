@@ -7,9 +7,9 @@ projects of NameRTS's dataset, each at one commit). Each analysis has
 30 minutes and 16 GiB.
 
 **Commands** (`C="docker compose -f evaluation/compose.yaml"`; run them
-one service at a time, with nothing else on the machine, at one `--jobs K`
-for PyCG and every tool: they measure time and memory, and a tool's run at
-another K than PyCG's is "needs rerun"):
+one service at a time, with nothing else on the machine, at K = 1 (the
+default) for PyCG and every tool: they measure time and memory, and a
+tool's run at another K than PyCG's is "needs rerun"):
 
 ```sh
 $C run --rm rq3-pilot        # ten packages, five of each of the first two parts: checks that the question runs
@@ -18,18 +18,12 @@ $C run --rm TOOL rq3-pilot   # a prior tool on the ten packages
 $C run --rm TOOL rq3         # a prior tool on the whole corpus
 ```
 
-`--jobs K` runs K analyses at a time, each with its own limits; the
-records do not depend on K, but the times and the memory are measured
-beside the other K - 1 analyses, so the table writes K beside the
-platform. The service
-needs K analyses of 16 GiB and 2 GiB more, and K CPUs (at least 4):
-`EVAL_MEMORY` (default 18g) and `EVAL_CPUS` (default 4) set them; see
-"Measurements and `--jobs K`" in `../README.md`.
-
-```sh
-EVAL_MEMORY=50g $C run --rm rq3 --jobs 3                      # PyCG, three analyses at a time
-EVAL_MEMORY=130g EVAL_CPUS=8 $C run --rm pyan rq3 --jobs 8    # a prior tool, eight jobs at a time
-```
+The maintainer runs RQ3 at K = 1: its results are the time and the
+memory of each analysis alone. The services take `--jobs K` (K analyses
+at a time, each with its own limits); the records do not depend on K, but
+the times and the memory are measured beside the other K - 1 analyses, so
+the table writes K beside the platform. See "Measurements and `--jobs K`"
+in `../README.md`.
 
 **Inputs.** `corpus/pypi-top-100.json`, `corpus/dypybench.json` and
 `corpus/large-projects.json`: the manifests, which pin each package by URL

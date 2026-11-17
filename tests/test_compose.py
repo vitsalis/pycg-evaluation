@@ -17,7 +17,7 @@ REPOSITORY = Path(__file__).resolve().parents[1]
 EVALUATION = REPOSITORY / "evaluation"
 COMPOSE = EVALUATION / "compose.yaml"
 DIGEST = re.compile(r"[a-z0-9][a-z0-9._/:-]*@sha256:[0-9a-f]{64}")
-QUESTIONS = ("rq1", "rq1-trace", "rq2", "rq3", "rq3-pilot", "rq4-pilot", "rq4")
+QUESTIONS = ("rq1", "rq1-trace", "rq2", "rq3", "rq3-pilot")
 TOOLS = ("pyan", "jarvis", "cpygraph", "pyanalyzer", "headergen")
 TOOL_SERVICES = (*TOOLS, "headergen-deps")
 
@@ -176,17 +176,17 @@ def test_every_prior_tool_is_a_service_built_from_its_pins(compose):
     # that the tables hide.
     assert list(compose["volumes"]) == ["tool-graphs"]
     assert "held-out" not in COMPOSE.read_text()
-    # The questions that read the graphs of rq1-trace and rq4 read them only.
+    # The question that reads the graphs of rq1-trace reads them only.
     for name in QUESTIONS:
         volumes = compose["services"][name]["volumes"]
-        reads = name in ("rq1-trace", "rq4", "rq4-pilot")
+        reads = name == "rq1-trace"
         assert ("tool-graphs:/tool-graphs:ro" in volumes) is reads, name
     assert "tool-graphs" in compose["volumes"]
 
 
-def test_there_are_four_questions(compose):
+def test_there_are_three_questions(compose):
     """The accuracy on held-out projects is a section of the table of RQ1,
-    not a question: the questions are RQ1 to RQ4, each with one directory.
+    not a question: the questions are RQ1 to RQ3, each with one directory.
     The trace service takes only NAME."""
     questions = {n for n in compose["services"] if n.startswith("rq")}
     assert questions == set(QUESTIONS)
@@ -195,7 +195,6 @@ def test_there_are_four_questions(compose):
         "rq1-accuracy",
         "rq2-causes",
         "rq3-scale",
-        "rq4-test-selection",
     ]
     assert compose["services"]["trace"]["entrypoint"][4:] == ["${NAME:-unset}"]
     assert "SET" not in re.findall(r"\$\{(\w+)", COMPOSE.read_text())
@@ -214,18 +213,16 @@ def test_the_trace_service_cannot_write_a_table(compose):
     assert (EVALUATION / "results" / "trace" / ".gitkeep").is_file()
 
 
-def test_rq3_and_rq4_have_one_memory_limit_for_every_tool(compose):
+def test_rq3_has_one_memory_limit_for_every_tool(compose):
     """The maintainer's number (2026-11-15): 16 GiB per analysis for PyCG and
-    for every prior tool on RQ3, RQ4 and the traces, each service above it."""
+    for every prior tool on RQ3 and the traces, each service above it."""
     limit = 16384
     entry = (EVALUATION / "container" / "question_entry.py").read_text()
     assert int(re.search(r"ANALYSIS_MEMORY_GIB = (\d+)", entry)[1]) * 1024 == limit
-    rts = (EVALUATION / "rq4-test-selection" / "rts.py").read_text()
-    assert int(re.search(r"DEFAULT_MEMORY_LIMIT_MIB = (\d+)", rts)[1]) == limit
     tool_job = (EVALUATION / "container" / "tool_job.py").read_text()
     limits = re.findall(r"\(1800, (\d+)\)", tool_job)
     assert limits and {int(found) for found in limits} == {limit}
-    questions = ("rq1-trace", "rq3", "rq3-pilot", "rq4", "rq4-pilot")
+    questions = ("rq1-trace", "rq3", "rq3-pilot")
     tools = ("pyan", "jarvis", "cpygraph", "pyanalyzer")
     for name in (*questions, *tools):
         # EVAL_MEMORY, for --jobs K; its default holds one analysis.

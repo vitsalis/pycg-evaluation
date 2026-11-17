@@ -39,8 +39,6 @@ STATED = {
     ("macro-benchmark/draw.py", "Internet.clone", "git"): MAINTAIN,
     ("macro-benchmark/draw.py", "_git", "git"): MAINTAIN,
     ("evaluation/rq3-scale/corpus.py", "<module>", "network"): FETCH,
-    ("evaluation/rq4-test-selection/rts.py", "git", "git"): FETCH,
-    ("evaluation/rq4-test-selection/rts.py", "clone", "git"): FETCH,
 }
 
 

@@ -7,7 +7,6 @@
 !macro-benchmark/trace.py
 !macro-benchmark/sites.py
 !macro-benchmark/ledger.py
-!macro-benchmark/draw.py
 !PyCG/micro-benchmark/validate.py
 !evaluation/common/
 !evaluation/container/fetch.py
@@ -18,6 +17,4 @@
 !evaluation/rq3-scale/robustness.py
 !evaluation/rq3-scale/table.py
 !evaluation/rq3-scale/corpus/
-!evaluation/rq4-test-selection/rts.py
-!evaluation/rq4-test-selection/corpus/
 **/__pycache__

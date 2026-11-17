@@ -40,16 +40,13 @@ RUN env -i PATH=/usr/local/bin:/usr/bin:/bin PIP_CONFIG_FILE=/dev/null \
 # From the inputs image, what the jobs of the tool read (container/tool_job.py):
 # rq1 the sources of the macro-benchmark; rq3, rq3-pilot and rq1-trace the
 # corpus, its archives (which robustness.plan checks) and its unpacked
-# trees; rq4 and rq4-pilot the file lists and blobs of the export. Not
-# DyPyBench's traces nor NameRTS's files: only the questions read them.
+# trees. Not DyPyBench's traces: only the question reads them.
 # Last, so that a change of them does not build the tool again.
 COPY --from=inputs /inputs/macro-benchmark /inputs/macro-benchmark
 COPY --from=inputs /inputs/corpus/cache /inputs/corpus/cache
 COPY --from=inputs /inputs/corpus/work /inputs/corpus/work
 COPY --from=inputs /inputs/corpus/dypybench /inputs/corpus/dypybench
 COPY --from=inputs /inputs/corpus/large /inputs/corpus/large
-COPY --from=inputs /inputs/rts/export/trees /inputs/rts/export/trees
-COPY --from=inputs /inputs/rts/export/blobs /inputs/rts/export/blobs
 
 USER 10001:10001
 WORKDIR /tmp

@@ -26,14 +26,10 @@ label, the mechanism that explains it. The table gives the share that
 falls under limits that the design states on purpose.
 
 **RQ3: does PyCG scale, and does it finish?** Each tool runs on a corpus
-of PyPI packages (the top 100 by downloads, and the DyPyBench projects)
-under a time and a memory limit. The table gives the share of packages
-that finish, and the time and the memory.
-
-**RQ4: is the call graph useful to a client?** Regression test selection
-on the NameRTS dataset: each tool's call graph selects the tests to run
-after a commit, and the selection is scored against the tests that the
-commit really affects.
+in three parts (the top 100 PyPI packages by downloads, the DyPyBench
+projects, and ten large projects) under a time and a memory limit. The
+table gives the share of packages that finish, and the time and the
+memory.
 
 The accuracy on packages that the analysis was not developed on is a
 section of the table of RQ1 (see "How the benchmark grew"), not a question
@@ -44,7 +40,7 @@ of its own.
 The tables are in `evaluation/results/`. The numbers below are those of
 the tables as committed. RQ1 and RQ2: PyCG at commit `c5c6a89` (the
 published main), on the ground truths after the audit of 2026-11-16. The
-trace recall of RQ1 and the pilots of RQ3 and RQ4 are still of the older
+trace recall of RQ1 and the pilot of RQ3 are still of the older
 PyCG commit `88ff2263ad`; their tables say so. The PyCG of 2021 is the 2021
 analysis, PyCG commit `046479e`, pinned by its full hash (`ORIGINAL`); the
 older tables name `8555f0590f`, an earlier commit with the same `pycg`
@@ -109,17 +105,6 @@ PyAnalyzer are not run yet:
 | PyCG of 2021 | 7 of 10 (3 crashes) | 1.3 s / 84 s | 286 MiB |
 | pyan3 | 10 of 10 | 0.3 s / 2.3 s | 113 MiB |
 
-**RQ4: a pilot of ten targets only** ([pilot table](evaluation/results/rq4-pilot.md)):
-one commit of each of the ten projects, the analysis only, with a memory
-limit of 6 GiB (the full run has 16 GiB). The selection is not scored yet.
-The rows of JARVIS, CPyGraph and PyAnalyzer are not run yet:
-
-| Tool | Analyses finished | Did not finish |
-|---|---|---|
-| PyCG | 7 of 10 | 3 over the memory limit |
-| PyCG of 2021 | 0 of 10 | 7 crashes, 3 timeouts |
-| pyan3 | 8 of 10 | 2 crashes |
-
 ## The structure
 
 ```
@@ -144,7 +129,7 @@ evaluation/
                           entries of the services
   tools/                  the adapters, images and pins of the prior tools
   results/                the tables, and the stored runs and graphs of the prior tools
-  rq1-accuracy/ rq2-causes/ rq3-scale/ rq4-test-selection/   each with a short README.md
+  rq1-accuracy/ rq2-causes/ rq3-scale/   each with a short README.md
 tests/                    the tests of the scripts
 pyproject.toml uv.lock .github/
 ```
@@ -175,22 +160,19 @@ $C run --rm rq1-trace   # RQ1: recall against execution traces
 $C run --rm rq2         # RQ2: the causes
 $C run --rm rq3-pilot   # RQ3 on ten packages, before the whole corpus
 $C run --rm rq3         # RQ3: scale and robustness
-$C run --rm rq4-pilot   # RQ4 on one target per project, before the whole dataset
-$C run --rm rq4         # RQ4: regression test selection
 ```
 
 **The inputs come with the images.** The build of the inputs image
 (`evaluation/container/Dockerfile.inputs`) fetches every input by its pin:
 each project of the macro-benchmark by its commit (or the SHA-256 of its
 sdist), the sources of the prior tools by their commits, the corpus of RQ3
-and DyPyBench's traces by SHA-256 and size, and the commits of RQ4's
-dataset. A source that is not its pin fails the build. Every other image
+and DyPyBench's traces by SHA-256 and size. A source that is not its pin fails the build. Every other image
 copies what it needs from the inputs image when it is built, so a run has
 no network and fetches nothing. Each image copies only the inputs that its
 services read. As built, the inputs image is 4.35 GB, the image of the
 questions 2.85 GB, the images of pyan3, JARVIS and PyAnalyzer about 2.7 GB
 each, CPyGraph's 4.26 GB and HeaderGen's 0.70 GB, most of each the corpus
-of RQ3: plan for about 25 GB of disk with Docker's build cache.
+of RQ3 (measured before its ten large projects were added): plan for about 25 GB of disk with Docker's build cache.
 
 Each command writes its table to `evaluation/results/`. These commands
 measure PyCG and the PyCG of 2021. The rows of the prior tools come from

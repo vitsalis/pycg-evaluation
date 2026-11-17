@@ -14,6 +14,6 @@ pytest               the scalability runs (its package _pytest)
 hypothesis           the scalability runs
 pygments             the scalability runs
 
-# The project of the test-selection client's pilot (evaluation/rq4-test-selection/rts.py): its
+# The project of the pilot of a test-selection client (later left out; evaluation/README.md): its
 # results were read while the client was built. Added before the first draw.
 loguru               the pilot of the test-selection client

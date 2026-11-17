@@ -63,8 +63,6 @@ SCRIPTS = {
     "rq2": ("rq2-causes/table.py",),
     "rq3": ("rq3-scale/table.py",),
     "rq3-pilot": ("rq3-scale/table.py", "--pilot"),
-    "rq4": ("rq4-test-selection/table.py",),
-    "rq4-pilot": ("rq4-test-selection/table.py", "--pilot"),
 }
 # The files that each question writes to /results, and nothing else.
 OUTPUTS = {
@@ -87,27 +85,23 @@ OUTPUTS = {
         "robustness-large-projects.md",
     ),
     "rq3-pilot": ("rq3-pilot.json", "rq3-pilot.md"),
-    "rq4": ("rq4-test-selection.json", "rq4-test-selection.md"),
-    "rq4-pilot": ("rq4-pilot.json", "rq4-pilot.md"),
 }
 # The script that runs first, with `--out /tmp/results`: the scores of the
 # prior tools' stored runs (results/tools/ and results/graphs/), which the
 # table of RQ1 reads.
 FIRST = {"rq1": "common/prior_tools.py"}
-NEEDS_PYCG = ("rq1", "rq1-trace", "rq3", "rq3-pilot", "rq4", "rq4-pilot")
+NEEDS_PYCG = ("rq1", "rq1-trace", "rq3", "rq3-pilot")
 # The input of a question (in the image, from the inputs image) and the
 # option that gives it to the script.
 INPUTS = {
     "rq1-trace": ("--work", "/inputs/corpus"),
     "rq3": ("--work", "/inputs/corpus"),
     "rq3-pilot": ("--work", "/inputs/corpus"),
-    "rq4": ("--export", "/inputs/rts/export"),
-    "rq4-pilot": ("--export", "/inputs/rts/export"),
 }
 # The questions whose script takes --jobs K: K analyses at a time, each with
 # its own limits (the service's memory must hold K of them: compose.yaml,
 # EVAL_MEMORY).
-JOBS = ("rq1-trace", "rq3", "rq3-pilot", "rq4", "rq4-pilot")
+JOBS = ("rq1-trace", "rq3", "rq3-pilot")
 # The memory of one analysis (GiB): under the service's mem_limit, so that
 # the watchdog of robustness.py records a run as over its limit before the
 # kernel kills the container.
@@ -139,7 +133,7 @@ def arguments(question, engines=ENGINES, original=True, jobs=1):
         args += ["--memory-limit", str(ANALYSIS_MEMORY_GIB)]
     if question == "rq1-trace":
         args += ["--graphs", "/tmp/graphs"]
-    elif question in ("rq1", "rq4", "rq4-pilot"):
+    elif question == "rq1":
         args += ["--work", "/tmp/work"]
     if question in FIRST:
         args += ["--prior-tools", str(SCRATCH_RESULTS / "prior-tools.json")]

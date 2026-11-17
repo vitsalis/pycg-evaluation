@@ -9,15 +9,13 @@
 #   /inputs/corpus/                           the corpus of RQ3 (corpus.py fetch): cache/ holds the
 #                                             archives, work/, dypybench/ and large/ the unpacked trees
 #   /inputs/corpus/dypybench-traces/          DyPyBench's traces (trace_recall.py fetch)
-#   /inputs/rts/export/                       the export of the NameRTS clones (rts.py fetch, export)
 #
 # Each input is a stage of its own, so that a change of one input fetches
 # only that input again. A step fails, and so the build, if a source is not
 # its pin: git checks the commit, the scripts the SHA-256 and size of each
 # file. git and the downloads run only here, as a user without rights, with
 # git's hooks, submodules and configuration off (fetch.py); nothing fetched
-# is installed, imported or run. The clones of RQ4 (with .git) stay in their
-# stage: only their export reaches the image.
+# is installed, imported or run.
 #
 # The context is the repository; Dockerfile.inputs.dockerignore lets in only
 # the files that the steps read. PYTHON_IMAGE is the Python image by digest:
@@ -87,16 +85,6 @@ COPY evaluation/rq3-scale/table.py evaluation/rq3-scale/robustness.py \
 COPY evaluation/rq1-accuracy/trace_recall.py evaluation/rq1-accuracy/
 RUN python3 -I -B evaluation/rq1-accuracy/trace_recall.py fetch --work /inputs/corpus
 
-FROM network AS rts
-USER 10001:10001
-COPY macro-benchmark/projects.py macro-benchmark/draw.py macro-benchmark/
-COPY evaluation/common/ evaluation/common/
-COPY evaluation/rq4-test-selection/rts.py evaluation/rq4-test-selection/
-COPY evaluation/rq4-test-selection/corpus/rts.json evaluation/rq4-test-selection/corpus/
-RUN python3 -I -B evaluation/rq4-test-selection/rts.py fetch --work /tmp/rts \
-    && python3 -I -B evaluation/rq4-test-selection/rts.py export --work /tmp/rts \
-        --out /inputs/rts/export
-
 # The image: the plain Python image (the base of the runner, so its layers
 # are shared) and the inputs, without git. Its shell and Python serve the
 # commands of the README that read the inputs (a copy of the sources for
@@ -106,5 +94,4 @@ COPY --from=macro /inputs/macro-benchmark /inputs/macro-benchmark
 COPY --from=tools /inputs/tools /inputs/tools
 COPY --from=corpus /inputs/corpus /inputs/corpus
 COPY --from=traces /inputs/corpus/dypybench-traces /inputs/corpus/dypybench-traces
-COPY --from=rts /inputs/rts/export /inputs/rts/export
 WORKDIR /repo

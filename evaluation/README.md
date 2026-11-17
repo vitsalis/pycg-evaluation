@@ -4,7 +4,7 @@ Scripts that run versions of PyCG and prior tools on the benchmarks and
 score their call graphs. Standard library only. The analysed sources are
 data: the tools read them, and no script imports or runs them.
 
-The evaluation answers four research questions. Each question has one
+The evaluation answers three research questions. Each question has one
 directory, one command and one table in `results/` (Markdown, with a JSON
 file beside it). How the accuracy holds on projects that the analysis was
 not developed on is a section of the table of RQ1 (see "How the benchmark
@@ -15,14 +15,13 @@ grew"), not a question of its own.
 | RQ1 accuracy | `rq1-accuracy/` | `docker compose -f evaluation/compose.yaml run --rm rq1` and `rq1-trace` | `results/rq1-accuracy.md`, `results/rq1-trace-recall.md` |
 | RQ2 causes | `rq2-causes/` | `docker compose -f evaluation/compose.yaml run --rm rq2` | `results/rq2-causes.md` |
 | RQ3 scale and robustness | `rq3-scale/` | `docker compose -f evaluation/compose.yaml run --rm rq3` (first `rq3-pilot`) | `results/rq3-scale.md` |
-| RQ4 regression test selection | `rq4-test-selection/` | `docker compose -f evaluation/compose.yaml run --rm rq4` (first `rq4-pilot`) | `results/rq4-test-selection.md` |
 
 Each command is a service of `evaluation/compose.yaml` (see "Docker
 Compose"): Docker is the only program that the evaluation needs on the
 host. Each service runs one entry script, `rqN-<name>/table.py`, which
 calls the code described below.
 
-The tables of RQ1, RQ3 and RQ4 have a row for each tool: PyCG (the
+The tables of RQ1 and RQ3 have a row for each tool: PyCG (the
 checkout under test), the original PyCG, pyan3, JARVIS, CPyGraph, HeaderGen
 and PyAnalyzer. RQ2 is about PyCG only: its rows are the causes. A tool that does not
 run has a row with the reason. A benchmark or an input that a command does
@@ -51,10 +50,7 @@ tool and no benchmark is left out without a reason.
 | `rq3-scale/table.py` | The table of RQ3 |
 | `rq3-scale/corpus.py` | A pinned corpus of PyPI packages: the manifest, the download and the unpacking as data, the analysis target of a package |
 | `rq3-scale/robustness.py` | Does a version finish on the corpus: one run per package under a time and a memory limit, and its report |
-| `rq3-scale/corpus/` | The manifests of the corpus (`pypi-top-<N>.json`, `dypybench.json`) |
-| `rq4-test-selection/table.py` | The table of RQ4 |
-| `rq4-test-selection/rts.py` | Regression test selection, the client task: selects test files with a call graph on NameRTS's dataset and scores the selection; exports what it reads from git as plain files |
-| `rq4-test-selection/corpus/rts.json` | The manifest of `rts.py`: the NameRTS commit, file hashes, projects and target commits |
+| `rq3-scale/corpus/` | The manifests of the corpus (`pypi-top-<N>.json`, `dypybench.json`, `large-projects.json`) |
 | `tools/` | One adapter per prior tool, the images of the tools and their build and pins (see "Prior tools") |
 | `compose.yaml`, `container/question_entry.py`, `container/Dockerfile.runner` | The services of the questions and their entry (see "Docker Compose") |
 | `container/trace_entry.py` | The entry of the `trace` service: re-traces one macro project (see "Docker Compose") |
@@ -112,7 +108,6 @@ without git:
 | `/inputs/tools/<name>` | The trees of the prior tools' images | `container/fetch.py tools` (github.com) | The commit of the adapter (git); the image of the tool checks the tree's SHA-256 of `tools/pins.json` |
 | `/inputs/corpus/cache`, `work`, `dypybench`, `large` | The corpus of RQ3: the archives, and their unpacked trees (`CORPUS_WORK` below) | `rq3-scale/corpus.py fetch` (pypi.org, files.pythonhosted.org, codeload.github.com) | The SHA-256 and size of each file of the manifests |
 | `/inputs/corpus/dypybench-traces` | DyPyBench's traces | `rq1-accuracy/trace_recall.py fetch` (raw.githubusercontent.com) | The SHA-256 and size of the zip |
-| `/inputs/rts/export` | The commits of RQ4's dataset as plain files | `rq4-test-selection/rts.py fetch` and `export` (github.com) | The commits and file lists of `corpus/rts.json` |
 
 A step fails, and so the build, if a source is not its pin. `fetch.py`
 fetches a git source at its pinned commit (a bare repository, `git fetch
@@ -121,9 +116,7 @@ user or the system, every object checked by git) and writes the plain
 files of the commit's tree, without `.git`; no checkout runs, so no
 attribute or filter of the fetched repository applies. An sdist is
 downloaded, checked against the SHA-256 of `projects.toml` and unpacked
-with tarfile's `data` filter; the archive is not kept. The clones of RQ4,
-with their `.git`, stay in their stage: only their export reaches the
-image. Nothing that the build fetches is installed, imported or run.
+with tarfile's `data` filter; the archive is not kept. Nothing that the build fetches is installed, imported or run.
 `container/Dockerfile.inputs.dockerignore` lets in only the files that the
 steps read, so a change of another file fetches nothing again; a change of
 one input fetches only that input again.
@@ -146,8 +139,8 @@ builds the inputs image first). The paths stay those of the inputs image.
 
 | Image | What it copies | Read by |
 |---|---|---|
-| The runner (every question) | The sources of the macro-benchmark; the whole corpus (`cache`, `work`, `dypybench`, `dypybench-traces`); the whole export of RQ4 | RQ1 the sources and the traces; RQ3 and rq1-trace the corpus (`robustness.plan` checks each archive against its unpacked tree); RQ4 the file lists, blobs and NameRTS's files of the export |
-| pyan3, JARVIS, CPyGraph, PyAnalyzer | Its own trees; the sources of the macro-benchmark; the corpus without DyPyBench's traces; the file lists and blobs of the export (`trees`, `blobs`) | rq1; rq3, rq3-pilot and rq1-trace; rq4 and rq4-pilot (`container/tool_job.py`). One image serves every question of the tool, so it holds the inputs of all of them |
+| The runner (every question) | The sources of the macro-benchmark; the whole corpus (`cache`, `work`, `dypybench`, `large`, `dypybench-traces`) | RQ1 the sources and the traces; RQ3 and rq1-trace the corpus (`robustness.plan` checks each archive against its unpacked tree) |
+| pyan3, JARVIS, CPyGraph, PyAnalyzer | Its own trees; the sources of the macro-benchmark; the corpus without DyPyBench's traces | rq1; rq3, rq3-pilot and rq1-trace (`container/tool_job.py`). One image serves every question of the tool, so it holds the inputs of all of them |
 | HeaderGen (and `headergen-deps`, on it) | Its own trees; the sources of the macro-benchmark | rq1 only |
 | The trace image of a project | That project's source | The trace |
 
@@ -156,7 +149,8 @@ A run has no network and mounts no input from the host.
 `/inputs/macro-benchmark/projects` when the image has them, else in
 `macro-benchmark/projects/` (`projects.sources`).
 
-**Size** (as built, 2026-11-15): the inputs image 4.35 GB; the runner
+**Size** (as built, 2026-11-15, before the ten large projects joined the
+corpus of RQ3): the inputs image 4.35 GB; the runner
 2.85 GB; pyan3, JARVIS and PyAnalyzer about 2.7 GB each and CPyGraph
 4.26 GB (the full Python image and its build), most of each the corpus
 of RQ3; HeaderGen 0.70 GB. About 20 GB in all, and Docker's build cache
@@ -177,8 +171,7 @@ fetched. A defence against a compromised build is not a goal.
 **Maintenance.** The commands that write a pin or a manifest need the
 network: `tools/pin.py requirements` and `deps` (uv, pypi.org),
 `macro-benchmark/draw.py` (its clones and its requests to PyPI and
-GitHub), `rq3-scale/corpus.py manifest` and `pin`, and
-`rq4-test-selection/rts.py manifest`. They run in the target `maintain` of `Dockerfile.inputs` (git,
+GitHub), and `rq3-scale/corpus.py manifest` and `pin`. They run in the target `maintain` of `Dockerfile.inputs` (git,
 the CA certificates and uv), with the repository read-only and the one
 directory that the command writes mounted writable. `pin.py trees` reads
 the trees of the inputs image and runs in the `inputs` service;
@@ -214,13 +207,13 @@ user, read-only inputs, and a `--dry-run` that prints the docker command.
 | The inputs image (`container/Dockerfile.inputs`: the Python image pinned in `compose.yaml`) | Every pinned input (see "The inputs image") | The build of every other image | the service `inputs` |
 | The runner (`container/Dockerfile.runner`: the Python image pinned in `compose.yaml`, and git) | CPython, git and the inputs of the questions; PyCG, the runner and the scorer come from read-only mounts | Every question: the PyCG rows and every table | the services of `compose.yaml` |
 | The trace image of a project (`Dockerfile.trace` on that Python image, with the hash-pinned test requirements of one project) | The test environment of one project, and its source from the inputs image | The traces of the macro-benchmark (RQ1) | the `trace` service; `container/trace.sh` |
-| One image per prior tool: pyan3, JARVIS, CPyGraph, HeaderGen (and one per macro project with runtime dependencies), PyAnalyzer | The tool's environment, and the inputs of the questions from the inputs image | The prior-tool rows of RQ1, RQ3 and RQ4 (the tool's service, its jobs one after another: `container/tool_job.py`) | the services of `compose.yaml`; see "Prior tools" for the pins |
+| One image per prior tool: pyan3, JARVIS, CPyGraph, HeaderGen (and one per macro project with runtime dependencies), PyAnalyzer | The tool's environment, and the inputs of the questions from the inputs image | The prior-tool rows of RQ1 and RQ3 (the tool's service, its jobs one after another: `container/tool_job.py`) | the services of `compose.yaml`; see "Prior tools" for the pins |
 
 HeaderGen executes code of the analysed project (it imports the modules
 that the code imports): its jobs run in its service without network,
 each a child process on an export of the analysed source. It never runs on a corpus
-that no security scan covered: the RQ3 corpus and the RQ4 dataset give it
-a stated row instead.
+that no security scan covered: the RQ3 corpus gives it a stated row
+instead.
 
 ## Docker Compose
 
@@ -235,8 +228,6 @@ docker compose -f evaluation/compose.yaml run --rm rq1        # PyCG on the micr
 docker compose -f evaluation/compose.yaml run --rm rq1-trace  # recall against DyPyBench's traces (/inputs/corpus)
 docker compose -f evaluation/compose.yaml run --rm rq3-pilot  # ten packages of the corpus, before rq3
 docker compose -f evaluation/compose.yaml run --rm rq3        # the whole corpus (/inputs/corpus)
-docker compose -f evaluation/compose.yaml run --rm rq4-pilot  # one target per project, before rq4
-docker compose -f evaluation/compose.yaml run --rm rq4        # the export of the NameRTS clones (/inputs/rts/export)
 ```
 
 **What a service is.** The runner image (`container/Dockerfile.runner`):
@@ -244,15 +235,14 @@ the Python image, pinned by digest once in `compose.yaml`, and git. Every
 service has no network, a read-only root, no capability, no new
 privileges, the caller's user (`EVAL_UID`, `EVAL_GID`; default
 `1000:1000`), 512 processes, 4 CPUs, a memory limit without swap
-(6 GiB; 18 GiB for rq1-trace, rq3, rq3-pilot, rq4 and rq4-pilot, whose limit
+(6 GiB; 18 GiB for rq1-trace, rq3 and rq3-pilot, whose limit
 per analysis is 16 GiB, the maintainer's number for every tool), tmpfs at `/tmp` and
 `/pycg-evaluation`, and `PYTHONHASHSEED=0`. Its mounts: this repository
 read-only at `/repo`, and `evaluation/results` at `/results`, the only
 host path that it writes. Its inputs are in its image, from the inputs
 image: the sources of the macro-benchmark at
 `/inputs/macro-benchmark/projects`, the corpus at `/inputs/corpus` (for
-rq1-trace, rq3 and rq3-pilot), the export of RQ4 at `/inputs/rts/export`
-(for rq4 and rq4-pilot). No service holds the Docker socket. On a Linux host
+rq1-trace, rq3 and rq3-pilot). No service holds the Docker socket. On a Linux host
 where your user is not 1000:1000, `export EVAL_UID=$(id -u)
 EVAL_GID=$(id -g)` first, so that a service can write
 `evaluation/results` and the files are yours.
@@ -320,7 +310,7 @@ the Compose plugin, from the root of a clean checkout. Nothing else runs on
 the host. `C` stands for `docker compose -f evaluation/compose.yaml`. A
 `run --rm` without a terminal (in the background, under `nohup`, from a
 script) needs `-T`, which gives the service no pseudo-terminal: for example
-`nohup $C run --rm -T rq3 --jobs 3 > rq3.log 2>&1 &`.
+`nohup $C run --rm -T rq3 > rq3.log 2>&1 &`.
 
 ```sh
 export EVAL_UID=$(id -u) EVAL_GID=$(id -g)
@@ -342,18 +332,15 @@ done
 
 # 3. The prior tools, one service run at a time (rq1: the micro-benchmark
 #    and the macro-benchmark; rq3-pilot, then rq3: the corpus; rq1-trace:
-#    DyPyBench's traced projects; rq4-pilot, then rq4: the parent commits
-#    of RQ4's targets). rq1 and rq3 write
+#    DyPyBench's traced projects). rq1 and rq3 write
 #    results/tools/<row>/<question>.json, and rq1 the graph of each macro
-#    project to results/graphs/<row>/<project>.json; rq1-trace and rq4
-#    write their graphs to the volume tool-graphs.
+#    project to results/graphs/<row>/<project>.json; rq1-trace writes its
+#    graphs to the volume tool-graphs.
 for tool in pyan jarvis cpygraph pyanalyzer; do
     $C run --rm $tool rq1
     $C run --rm $tool rq3-pilot
     $C run --rm $tool rq3
     $C run --rm $tool rq1-trace
-    $C run --rm $tool rq4-pilot
-    $C run --rm $tool rq4
 done
 $C run --rm headergen rq1                                     # rq1 only
 for name in aiocache bottle configargparse itables markdown2 marshmallow tenacity; do
@@ -366,46 +353,41 @@ $C run --rm rq2
 $C run --rm rq1-trace  # maps the traces, scores the tools' rq1-trace graphs
 $C run --rm rq3-pilot
 $C run --rm rq3        # reads results/tools/*/rq3.json
-$C run --rm rq4-pilot  # selects with the tools' rq4-pilot graphs
-$C run --rm rq4        # selects with the tools' rq4 graphs
 ```
 
 `$C run --rm jarvis rq1 --variant 2` runs one row of a tool (JARVIS has
 three rows, PyAnalyzer two). rq1 and rq1-trace run every row, as accuracy
-is what the variants change; rq3, rq3-pilot, rq4 and rq4-pilot run the
-headline row of each tool only (the first: JARVIS, PyAnalyzer), as the
-other variants would run the same tool again for the same time and memory
-or the same client, so their tables have one row per tool. A row without its result file is a row "not
+is what the variants change; rq3 and rq3-pilot run the headline row of
+each tool only (the first: JARVIS, PyAnalyzer), as the other variants
+would run the same tool again for the same time and memory, so their
+tables have one row per tool. A row without its result file is a row "not
 run" in the tables, with the command that runs it; a result whose inputs
 changed since it ran is "needs rerun". The graph of each macro project
 of rq1 is a committed file, `results/graphs/<row>/<project>.json`, so that
 a reader scores a tool again without running it (`$C run --rm rq1`). The
-graphs of rq1-trace, rq4 and
-rq4-pilot are intermediate data, not results, and they are large: they stay in the volume
-`tool-graphs`, which the tools' services write and rq1-trace, rq4 and
-rq4-pilot read (`docker volume rm pycg-evaluation_tool-graphs`).
+graphs of rq1-trace are intermediate data, not results, and they are
+large: they stay in the volume `tool-graphs`, which the tools' services
+write and rq1-trace reads (`docker volume rm pycg-evaluation_tool-graphs`).
 
 **Measurements and `--jobs K`.** The time and the memory of a run depend
-on the load of the machine. rq1-trace, rq3, rq3-pilot, rq4, rq4-pilot and
-every prior tool's service take `--jobs K` (default 1): K analyses at a
+on the load of the machine. rq1-trace, rq3, rq3-pilot and every prior
+tool's service take `--jobs K` (default 1): K analyses at a
 time, each with its own time and memory limit, each prior tool's job in a
 directory of its own (`/tmp/run`, `/tmp/run1`...). The records do not
 depend on K; the first error stops every analysis and starts no other
 (`run.run_tasks`). No per-analysis limit changes. The maintainer's rule
 (2026-11-15):
 - rq3 and rq3-pilot measure time and memory: run them for PyCG and for
-  every prior tool (`$C run --rm TOOL rq3`) at one K, so that the timings
-  compare, one service at a time, with nothing else on the machine. The
-  table writes the platform and K in its header, and a tool's run at
-  another K than PyCG's is "needs rerun".
-- rq4, rq4-pilot and rq1-trace may run at a higher K: their results are
-  selections and recall, not times. The table of RQ4 writes the platform
-  and K in its header; the times of its pilot are measured beside K - 1
-  others.
+  every prior tool (`$C run --rm TOOL rq3`) at K = 1 (the default), one
+  service at a time, with nothing else on the machine. The table writes
+  the platform and K in its header, and a tool's run at another K than
+  PyCG's is "needs rerun".
+- The prior tools' rq1 runs and rq1-trace may run at a higher K (the
+  maintainer uses 3): their results are edges and recall, not times.
 - The other tables count edges: they do not depend on the load, and the
   prior tools' rq1 runs may run beside each other.
 
-The memory and the CPUs of rq1, rq1-trace, the rq3 and rq4 services and
+The memory and the CPUs of rq1, rq1-trace, the rq3 services and
 the tools' services are `EVAL_MEMORY` (default `18g`: one analysis of 16 GiB
 and a margin) and `EVAL_CPUS` (default `4`). For K analyses at a time:
 - `EVAL_MEMORY` = K x 16 GiB + 2 GiB (`50g` for K = 3, `130g` for K = 8);
@@ -415,9 +397,9 @@ and a margin) and `EVAL_CPUS` (default `4`). For K analyses at a time:
   its own would want more. Docker refuses more CPUs than the host has.
 
 ```sh
-EVAL_MEMORY=50g $C run --rm rq3 --jobs 3                  # 4 CPUs, the default
-EVAL_MEMORY=130g EVAL_CPUS=8 $C run --rm rq4 --jobs 8
-EVAL_MEMORY=130g EVAL_CPUS=8 $C run --rm pyan rq4 --jobs 8
+EVAL_MEMORY=50g $C run --rm pyan rq1 --jobs 3         # 4 CPUs, the default
+EVAL_MEMORY=50g $C run --rm rq1-trace --jobs 3
+EVAL_MEMORY=50g $C run --rm pyan rq1-trace --jobs 3
 ```
 
 ## RQ1: accuracy
@@ -1176,327 +1158,15 @@ python -I evaluation/rq3-scale/robustness.py --manifest evaluation/rq3-scale/cor
 checkout with changes, as `run.py` does, and a manifest row that is not
 unpacked from its file. A memory limit needs Linux or macOS.
 
-## RQ4: regression test selection
+## A client that was left out
 
-**What is measured.** A client of the call graph: which test files must
-run again after a commit. NameRTS's metrics per tool: safe rate (by
-analysis and by fallback), test reduction and precision, the mean over the
-ten projects, with the rows of NameRTS's and BabelRTS's published
-selections.
-
-**Command.** `docker compose -f evaluation/compose.yaml run --rm rq4-pilot` to measure,
-then `docker compose -f evaluation/compose.yaml run --rm rq4` (the export:
-`/inputs/rts/export`, in the image; the build of the inputs image clones
-and then exports). `rq4-test-selection/table.py` runs
-`rts.py select` for each PyCG checkout and project, then `rts.py score`,
-and writes `results/rq4-test-selection.md` and `.json`. In the container
-it reads the export of the clones (`--export`), never the clones: the
-image has no git. Without `--export` (on the host) it reads the clones,
-and a clone that is not there is an error that names it; with it, a
-project that the export lacks is an error that names it. `--pilot`
-(the service `rq4-pilot`) selects the first target of each project only, prints
-the time and the peak memory of each analysis and writes
-`results/rq4-pilot.md` and `.json` instead of the table. On the host a
-full run with the same work directory reuses the pilot's graphs; the
-container's work directory is temporary and only the tables come out, so
-after `rq4-pilot` the full run analyses again.
-
-**The export** (`rts.py export`, run in the build of the inputs image,
-where git is; `select` and `score` read the clones with git unless given
-`--export`, so on the host they take `--export`). For each project, the file list of each target's parent and
-commit (`trees/<project>/<commit>.json`: path, mode and blob id), the
-blobs of their regular Python files (mode 100644 or 100755) under the
-analysis root (`blobs/<id[:2]>/<id>`, checked against their git blob id
-when they are read: a changed byte is an error) and NameRTS's files
-(`namerts/<path>`, checked against the manifest's SHA-256). A link is
-listed, never read or asked of the remote; a submodule (a gitlink) is not
-in the file lists at all, since `ls_tree` keeps blobs only; `select` treats a
-changed Python path that is not a regular file as a non-Python file, from
-the clone as from the export. The clones are partial: the export fetches
-the blobs they lack as git's own lazy fetch does, without negotiation (with
-it, GitHub refused a blob of dask: "bad revision"), in one request, else
-one blob at a time. A blob that the remote still refuses is not fatal: it
-goes to `unavailable.json` (project, target, commit, path, blob id), the
-export goes on, and `select` records that target as "not exported" with
-the reason. `score` leaves such a target out of every row of its project
-(the tools', the published selections' and the ground truth's), and the
-table lists it, with the reason, under "Targets left out of every row".
-`select` and `score` read exactly what they read from git, so a selection
-from the export equals one from the clone.
-
-**The trust anchor is the committed manifest, not the place where the
-export was made.** `rts.json` pins, per project and target commit, the
-digest of its file list (`trees`: the SHA-256 of the canonical JSON of
-`{path: [mode, blob id]}`, keys sorted, no space, ASCII; `rts.tree_digest`).
-`select` uses a file list only if its digest is the pinned one, and refuses
-a list with an entry substituted, left out, added or renamed, and a commit
-that the manifest does not pin; each blob is then checked against its id.
-The pins were computed from the export of 2026-11-14 (made on the host from
-the clones). The build of the inputs image derives each file list from the
-commit objects it fetches (the tree of the commit, blobs only, as
-`ls_tree`) and must reproduce these digests; a list that does not is
-refused here.
-Each row keeps the provenance of its tool from the report of `rts.py score`
-(its commit and the hash of its code). The means are kept unrounded in the
-JSON, each with the number of projects where its metric is defined; the
-Markdown rounds them and says "over n of N" when a metric is not defined on
-every project. The command has no `--allow-dirty`.
-
-**Inputs and their pins.** `rq4-test-selection/corpus/rts.json` pins the
-NameRTS commit, the SHA-256 of each file that is read from it, and the
-projects and target commits.
-
-**The prior tools.** Each row of pyan3, JARVIS, CPyGraph and PyAnalyzer
-runs in its service on the parent commit of each target (`docker compose
-run --rm TOOL rq4`, or `rq4-pilot` for the first target of each project,
-as PyCG's pilot), from the export, with rts.py's limits; it stores per
-parent commit its record, the key of its input (`rts.analysis_key`) and
-its graph in the volume `tool-graphs`. The rq4 services select with each
-stored graph (`rts.select` with `stored`: no analysis runs) and score it as
-PyCG's; the time of an analysis is the tool's. A row without its graphs is
-"not run" with the command; a graph of another input is "needs rerun".
-HeaderGen's row says "not run: the tool imports the analysed code, and the
-corpus is not scanned".
-
-**State today.** No selection is committed.
-
-### Regression test selection
-
-The client task (`rts.py`): a real job that takes a call graph as input.
-After a commit changes code, which test files must run again? The client
-selects the test files from which a changed definition is reachable in the
-call graph of the commit's parent. It runs once per version of PyCG, on the
-same commits, with the same rules.
-
-**Dataset.** NameRTS (Wang, Pradel, Liu, ISSTA 2026;
-github.com/ZJU-CTAG/NameRTS, Apache-2.0): 10 projects, 50 target commits
-each. A target is an entry `[direct_parent, true_parent, current, 1]` of
-`dataset/commit_pairs_<project>.json`. Its change is `true_parent..current`:
-NameRTS's `evaluate.py` runs the tests at `true_parent` and selects for
-`current`. On 221 of the 500 targets `true_parent` is older than the git
-parent, because the commits between them are not in the dataset. The ground
-truth (`ground truth/gt_<project>.json`) gives, per commit, `tests_to_run`,
-the test files that ran a changed function, and `total_tests`, the number
-of test files. NameRTS found the affected files by instrumenting the
-changed functions and running each test file; it traced changed global
-variables to their functions with a language server, and removed by hand
-the test files that ran a change only while importing. 51 targets have an
-empty `tests_to_run`: every selection is safe on them.
-
-`rq4-test-selection/corpus/rts.json` pins the NameRTS commit, the SHA-256 of each file that
-is read from it, the repository, analysis root, package and targets of
-each project, and the checks (`notes`). The checks compare the dataset with
-the ground truth (entries, parents, target flags), look up every target
-and parent in the clone, check that the parent is an ancestor, count the
-test files of each target against `total_tests`, and check that each file
-of `tests_to_run` is a test file of the commit. All of them pass.
-
-**The analysis.** For each target, the Python files under the analysis
-root of the parent commit are read from git's object store (no checkout)
-and written to a scratch directory. The analysis root is the directory from
-which the package is imported: the repository, or `lib` for matplotlib.
-The entry points are the files of the package (`packages` in the
-manifest), every test file and every `conftest.py` under the root; other
-Python files (test data, examples) are analysed if an entry point imports
-them. A test file is recognised by NameRTS's own rule
-(`is_test_file_pytest`): a `.py` file whose name starts with `test_` or
-`unittest_`, in a directory below one named `tests` or `testing`. With
-this rule our count equals `total_tests` on all 500 targets. Every command
-after `manifest` reads the root and the package from the manifest. The
-analysis runs in a child process through `run.py`'s runner (the same
-isolation, time limit, memory limit and hash seed).
-
-The tool runs from a snapshot: a copy of the source files of its `pycg/`
-(no bytecode) in `WORK/tools/<their SHA-256>/`. The child writes no
-bytecode (`-B`), so the hash names the code that runs, whatever bytecode
-the checkout holds. The interpreter is resolved once to an absolute path
-(on `PATH` if it is a bare name), and that path is both probed for its
-version and launched.
-
-A graph, or a failure, is kept in `WORK/graphs/<tool>/<project>/` under a
-key of everything that the analysis depends on: the tool's code (the
-snapshot's hash), its API, the interpreter and its version, the hash seed,
-the time and memory limits, the code of the runner and of the preparation
-of its input, and the input itself (the path and the SHA-256 of the bytes
-of each file given to the analysis, the entry points, the root). A target
-reuses the graph of its parent only under the same key. A run that says
-nothing about the tool (its memory could not be measured, its process group
-could not be killed) is not kept.
-
-**Changed definitions.** The mapping compares the two versions of each
-changed Python file under the root as text: decoded with their declared
-encoding (a byte-order mark is the codec's; a second one is text, and
-invalid), every line ending (`\r\n`, `\r`, `\n`) as one, line by line with
-`difflib`. Git's diff options and settings play no part. It reads both
-versions with `ast` and `tokenize` of the interpreter that runs `rts.py`
-(recorded; `score` requires one for every selection) and names definitions
-as PyCG names them (`pkg.mod.Class.method`, `pkg.mod.f.inner`). The
-mapping is the same for every tool, so the tools differ only in their
-edges; the 2021 PyCG writes no definitions or lines, so the `definitions`
-of `docs/format.md` cannot serve both.
-
-- A removed line belongs to the innermost function or class of the parent
-  that holds it, decorators included. An added line belongs to the
-  innermost one of the commit that holds it and that the parent has too,
-  so a new function belongs to the function, class or module around it. A
-  line in no such scope belongs to the module.
-- A function's body belongs to the function. The lines of its decorators
-  and of its signature (defaults, annotations) belong to the function and
-  to the scope around it, which runs the `def` statement.
-- A line of a class body outside its methods (an attribute, a base, a
-  decorator, a new or deleted method) belongs to the class and to the
-  function or module that runs the class body. The new engine has no class
-  node: it gives the calls of a class body to the scope around the class.
-  The original engine has one (in module `m`, the caller `m.C` makes the
-  calls of the body of `class C`), so the class's name stays among the
-  changed names.
-- A line that holds no token of code (blank, or only a comment) changes
-  nothing; a line inside a string is code. A new declared encoding changes
-  the lines whose text it changes. If a version cannot be decoded (invalid
-  text), the module changes when the file's bytes do. If it decodes but
-  does not parse (a syntax error, a NUL byte), a changed line of code in it
-  changes the module, and a changed comment changes nothing; when the text
-  does not tokenize either, every line counts as code.
-
-**Selection.** A test file is selected if its module, or a node of its
-module (a node belongs to the longest module that prefixes its name),
-reaches a changed definition or module in the call graph; a path of
-length zero counts, so a change inside a test file selects it. A failed
-analysis (crash, timeout, memory limit) selects every test file of its
-commit. Three client rules follow from Python's and pytest's semantics;
-each is measured separately (the variants `no r1`, `no r2`, `no r3` drop
-one rule, `no rule` all three):
-
-- **r1**: the `conftest.py` files of a test file's directory and of every
-  directory above it are part of the test file, and a new `conftest.py`
-  selects every test file below it. Pytest loads them and passes their
-  fixtures by parameter name, which no call edge shows. NameRTS's client
-  does the same (`conftests_for_test_file`).
-- **r2**: each node has an edge to its module, and each module an edge to
-  the nearest module above it (across a namespace directory without
-  `__init__.py`). A function runs only after the code of its module ran,
-  and importing a module runs its packages' `__init__.py` first. So a
-  change of module-level code selects every test file that reaches a
-  definition of the module, and the calls of a module's code are reached
-  by every test file that reaches a definition of the module. Neither
-  engine writes an edge for an import (a module node is only a caller), so
-  a rule that counts only edges to the module node would select nothing.
-- **r3**: a test file that the commit adds or changes is selected. A new
-  test file has no node in the parent's graph. NameRTS's client selects
-  changed test files too.
-
-A deleted file changes each definition that held one of its lines. A
-deleted test file is not selected: the commit lacks it.
-
-**What this client cannot see.** These are limits, not rules: where one
-applies, the client can select too little; such a commit is listed among
-the unsafe commits and lowers the safe rate. The two safety figures of the
-table are measured against NameRTS's ground truth, not guaranteed. This
-README is where each limit is stated, in the list below; the table counts
-what they cost as unsafe commits.
-
-- A change of a class body (an attribute, a base, a new or deleted method)
-  that changes what an inherited or an inheriting method does: the graph
-  reaches the methods, not the class.
-- A new or deleted module that changes what an import finds: an optional
-  import that now succeeds, a new or deleted `__init__.py`, a module that
-  shadows another, an import by a computed name. A file that the parent
-  lacks has no node in the parent's graph, and adding one changes no line
-  of the parent.
-- What collecting a new test module or a new `conftest.py` does beyond the
-  file itself and the test files below the conftest: code that pytest runs
-  while it imports them (a function of the package replaced, for example).
-- Fixtures that a test takes by name from a plugin or anywhere but a
-  conftest, parametrisation through such fixtures, and plugins loaded by
-  entry point.
-- Scripts that a test runs in a subprocess (loguru's
-  `tests/exceptions/source/`).
-- Files that are not Python (data, stubs, C, settings) and Python files
-  outside the analysis root: they map to no changed definition (a changed
-  test file outside the root still selects itself, by r3). The report
-  counts the commits that change a file of each kind.
-- Calls for which the graph has no edge: implicit calls (`format(x)` calls
-  `__format__`; so does `str.format` with a format string held in a
-  variable), calls made by extension modules or by libraries outside the
-  root, attributes with computed names.
-- Code that an import runs, in a module none of whose definitions a test
-  reaches (a module that only holds constants that its code computes).
-
-An analysis that finishes need not have parsed every module: the new
-engine keeps a module that does not parse as `failed`.
-
-**Metrics**, as NameRTS defines them (its section 4.1), per project over
-its targets. *Safe rate*: the share of commits whose every file of
-`tests_to_run` is selected, split into *safe by fallback* (the analysis
-failed, so every test file was selected) and *safe by analysis* (the
-others). *Test reduction* (skipped): (Tall - Tsel) / Tall, with Tall the
-sum of `total_tests` and Tsel the number of selected test files, both
-summed over the commits. *Precision*: Taff / Tsel, Taff the selected files
-that are in `tests_to_run`. The mean over projects is the mean of the
-projects' values, as in NameRTS's Table 2; where a value is undefined for
-a project (a precision without any selected file), the report says over
-how many projects the mean is. The report adds rows computed by the same
-code from the published selections of NameRTS and BabelRTS
-(`results/rq1/`); with every target kept they reproduce Table 2 to the
-last digit (a target left out of every row of a project, as an unavailable
-file makes it, changes these rows too). Not measured:
-NameRTS's time reduction, which needs the test suites to run.
-
-`score` scores one experiment or nothing. It needs the selection of every
-tool on every project that it is given (`--project` names a subset; the
-report then covers that subset, in every row). It refuses a selection made
-by another version of the client (`rts.py`, `run.py`, `analyse.py`), on
-another manifest or project layout, with a target missing, twice or with
-another parent than the manifest's, or with a record of another analysis
-than the file's; the selections of one tool that were analysed with other
-settings on two projects; and selections whose lines were mapped by more
-than one Python.
-
-**Commands.** WORK is outside the repository; the ten clones take about
-260 MB, since no blob is fetched before it is read. `fetch` and `manifest`
-need the network and git: they run in the build of the inputs image and
-in the maintenance image (see "The inputs image"), never on the host.
-
-```sh
-python -I evaluation/rq4-test-selection/rts.py fetch --work "$WORK"     # or --project NAME
-python -I evaluation/rq4-test-selection/rts.py manifest --work "$WORK"  # rewrites corpus/rts.json
-python -I evaluation/rq4-test-selection/rts.py select --work "$WORK" --project loguru \
-    --tool new-engine:new:"$TMPDIR/tools/new-engine" --timeout 1800 --memory-limit 16384
-python -I evaluation/rq4-test-selection/rts.py select --work "$WORK" --project loguru \
-    --tool original-engine:original:"$TMPDIR/tools/original-engine" --timeout 300
-python -I evaluation/rq4-test-selection/rts.py score --work "$WORK" --tool new-engine --tool original-engine
-```
-
-`select` writes `WORK/selections/<tool>/<project>.json`: the experiment
-(the tool's commit and code, the settings, the client, the dataset, the
-layout, the Python of the mapping) and, per target, the changed
-definitions, the selection of each variant, and the run.
-It refuses a checkout with changes, as `run.py` does (`--allow-dirty`);
-`--limit N` selects for the first N targets only, to try a project.
-`--memory-limit` is 16384 MiB unless given. `score` writes
-`WORK/report/rts.json` and `rts.md` (`--out DIR`). A project name and a
-tool label must each be one path component (a letter or digit, then
-letters, digits, `.`, `_`, `-`), and a target a 40-digit commit id. The
-clones (`WORK/NameRTS`, `WORK/repos/`), the tool snapshots, the graphs, the
-selections and the default report are written only where they stay inside
-WORK, links resolved. Two destinations are the user's to choose and are not
-checked: the report of `score --out DIR`, and the manifest that `manifest`
-writes (`--manifest`, by default `evaluation/rq4-test-selection/corpus/rts.json`).
-
-`fetch` clones from github.com over https only: `git clone --no-checkout
---no-recurse-submodules --template= --filter=blob:none`. Every git command
-runs in the environment of `macro-benchmark/draw.py`'s `git_environment`:
-no `GIT_*` variable of the caller, of the caller's settings only `http.*`
-(a proxy's), neither the user's nor the system's configuration, no prompt,
-no LFS download; and `GIT_ALLOW_PROTOCOL=https`, `GIT_NO_REPLACE_OBJECTS=1`.
-A clone in WORK is used, by every command that reads it (also `score`'s
-reads of NameRTS), only if it is as `fetch` makes it: its own `.git`
-directory; no hook, replacement ref, grafts, alternates, `commondir` or
-`shallow` file; and only the local settings of a clone, each once and with
-its value, the remote that of the manifest. Nothing is checked out, so no
-hook or filter runs. Files are read with `git ls-tree` and `git cat-file`;
-the blobs that one commit needs are fetched in one request. `fetch` and
-`score` check the SHA-256 of each NameRTS file against the manifest.
+A regression test selection client was built and piloted on the ten
+projects of NameRTS (Wang, Pradel, Liu, ISSTA 2026): a call graph of a
+commit's parent selected the test files to run again after the commit.
+The maintainer left it out on 2026-11-17: its result depends on the
+client's rules as much as on the call graph. The ten projects stay in the
+evaluation as the third part of RQ3's corpus (see "The large projects").
+The client's code is in the history of this repository.
 
 ## What the questions share
 
@@ -1786,8 +1456,8 @@ docker compose -f evaluation/compose.yaml run --rm rq1       # scores them, then
 ```
 
 The entry (`container/tool_job.py TOOL QUESTION [--variant N]`) runs the
-jobs of the question for each row of the tool (rq3 and rq4: its headline
-row only), one after another: rq1, the
+jobs of the question for each row of the tool (rq3: its headline row
+only), one after another: rq1, the
 micro cases up to the oldest Python of the tools' bases (3.12, HeaderGen)
 and the 30 projects of the macro-benchmark (not run if a project has no
 source); rq3-pilot, the sample of the PyCG
@@ -2029,7 +1699,7 @@ inputs image").
 every question, of PyCG, of the PyCG of 2021 and of each prior tool, has
 30 minutes and 16 GiB of resident memory for its process group
 (`tool_job.LIMITS`, which `rq1-accuracy/table.py` uses for PyCG; the same
-numbers in `robustness.py`, `trace_recall.py` and `rts.py`). RQ1 had
+numbers in `robustness.py` and `trace_recall.py`). RQ1 had
 600 s and 2 GiB until then: CPyGraph on pypinyin finishes in 725 s alone,
 so its committed "ok" was a run just under 600 s, and other runs of the
 2021 PyCG and of PyAnalyzer ended at that limit. The prior tools' stored
@@ -2103,8 +1773,6 @@ by one:
 | `rq2-causes.md`, `.json` | `rq2` | - |
 | `rq3-pilot.md`, `.json` | `rq3-pilot` | - |
 | `rq3-scale.md`, `.json`, `robustness-*.md`, `.json` | `rq3` (not run yet: the files are not there) | - |
-| `rq4-pilot.md`, `.json` | `rq4-pilot` | - |
-| `rq4-test-selection.md`, `.json` | `rq4` (not run yet: the files are not there) | - |
 | `tools/<row>/rq1.json`, `rq1-<project>.json` | `TOOL rq1`, `headergen-deps rq1`: the record of each job and the graphs of the micro cases | `rq1` |
 | `graphs/<row>/<project>.json` | `TOOL rq1`: the graph of each macro project | `rq1` |
 | `tools/<row>/rq3-pilot.json`, `rq3.json` | `TOOL rq3-pilot`, `TOOL rq3` | `rq3-pilot`, `rq3` |
