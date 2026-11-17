@@ -444,15 +444,15 @@ def main(argv=None):
     parts = {}
     stopped = False  # a cleanup failed: no run starts in a later part
     for label, path, directory in PARTS:
-        argv = ["--manifest", str(path), "--work", str(args.work / directory)]
+        command = ["--manifest", str(path), "--work", str(args.work / directory)]
         if stopped:
-            argv.append("--stopped")
+            command.append("--stopped")
         for name, flavour, checkout in tools:
-            argv += ["--tool", f"{name.replace(' ', '-')}:{flavour}:{checkout}"]
-        argv += ["--timeout", str(args.timeout)]
-        argv += ["--memory-limit", str(args.memory_limit), "--jobs", str(args.jobs)]
-        argv += ["--results", str(out), "--python", args.python]
-        robustness.main(argv)
+            command += ["--tool", f"{name.replace(' ', '-')}:{flavour}:{checkout}"]
+        command += ["--timeout", str(args.timeout)]
+        command += ["--memory-limit", str(args.memory_limit), "--jobs", str(args.jobs)]
+        command += ["--results", str(out), "--python", args.python]
+        robustness.main(command)
         parts[label] = json.loads(
             (out / f"robustness-{path.stem}.json").read_text(encoding="utf-8")
         )

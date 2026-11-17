@@ -586,10 +586,11 @@ def run_table(tmp_path, monkeypatch, *extra):
     return data, (results / "rq1-trace-recall.md").read_text()
 
 
+@pytest.mark.parametrize("jobs", ["1", "3"])
 def test_the_table_scores_each_traced_project_and_states_the_others(
-    tmp_path, monkeypatch
+    tmp_path, monkeypatch, jobs
 ):
-    data, markdown = run_table(tmp_path, monkeypatch)
+    data, markdown = run_table(tmp_path, monkeypatch, "--jobs", jobs)
     demo = data["projects"]["demo"]
     assert demo["trace"] == 7
     assert demo["unmapped"] == {"callee: not a name": 1}

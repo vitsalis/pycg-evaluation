@@ -99,6 +99,19 @@ def test_a_refused_archive_is_a_package_without_a_run(tmp_path):
     assert data["packages"]["fine"]["runs"]["fake"]["status"] == "ok"
 
 
+def test_k_runs_at_a_time_write_the_report_of_one_at_a_time(tmp_path):
+    behaviours = {"a": "ok", "b": "crash", "c": "ok", "d": None, "e": "ok"}
+    manifest, work = make_corpus(tmp_path, behaviours)
+    one, _ = run_main(tmp_path, manifest, work, results="one")
+    three, _ = run_main(tmp_path, manifest, work, "--jobs", "3", results="three")
+    assert three["measured"]["jobs"] == 3
+    assert unmeasured(three) == unmeasured(one) | {"tools": unmeasured(three)["tools"]}
+    statuses = {n: p.get("runs", {}).get("fake", {}).get("status")
+                for n, p in three["packages"].items()}  # fmt: skip
+    assert statuses == {"a": "ok", "b": "crash", "c": "ok", "d": None, "e": "ok",
+                        "gone": None}  # fmt: skip
+
+
 # --------------------------------------------------------------------------
 # The report
 # --------------------------------------------------------------------------

@@ -781,14 +781,14 @@ def rq3(tool, pilot=False, results=RESULTS, work=CORPUS, jobs=1):
             if job is not None
         ]
         keys = [(label, name) for label, name, _ in tasks]
-        results = dict(zip(keys, parallel(tasks, one, jobs)))
+        outcomes = dict(zip(keys, parallel(tasks, one, jobs)))
         parts = {}
         for label, (digest, entries) in planned.items():
             packages = {}
             for name, (entry, job) in entries.items():
                 packages[name] = dict(entry)
                 if job is not None:
-                    packages[name]["runs"] = {row: results[label, name]}
+                    packages[name]["runs"] = {row: outcomes[label, name]}
             parts[label] = {"sha256": digest, "packages": packages}
         data = {
             "question": question,
