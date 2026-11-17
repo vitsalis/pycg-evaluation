@@ -1,1 +1,12 @@
+__pycache__/
 *.pyc
+.venv/
+
+# A copy of the sources of the macro-benchmark, for reading only, out of
+# the inputs image (README.md). The directory itself is in git, with a
+# .gitkeep, so that a checkout has it.
+/macro-benchmark/projects/*
+# What the trace service writes (a new trace of a project; the committed
+# traces are in macro-benchmark/dynamic/)
+/evaluation/results/trace/*
+!.gitkeep

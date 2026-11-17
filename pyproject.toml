@@ -1,0 +1,30 @@
+# The test setup of the evaluation's scripts. There is no package to build:
+# the scripts run by path, and PyCG is the submodule `PyCG`.
+[project]
+name = "pycg-evaluation"
+version = "0"
+description = "The evaluation of PyCG: benchmarks, scripts and tables"
+requires-python = ">=3.12"
+dependencies = []
+
+# The same pins as PyCG's pyproject.toml.
+[dependency-groups]
+dev = ["hypothesis==6.170.12", "pytest>=9.2", "ruff==0.17.4"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# `import pycg` is the submodule's package.
+pythonpath = ["PyCG"]
+filterwarnings = ["error"]
+empty_parameter_set_mark = "fail_at_collect"
+
+# The settings of PyCG's pyproject.toml: the same code stays formatted.
+[tool.ruff]
+line-length = 88
+extend-exclude = ["macro-benchmark/projects"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
