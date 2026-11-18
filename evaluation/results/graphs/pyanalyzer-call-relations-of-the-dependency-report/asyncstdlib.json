@@ -1,0 +1,172 @@
+{
+"asyncstdlib._core.Awaitify.__call__": [
+"asyncstdlib._core.await_value",
+"asyncstdlib._core.force_async"
+],
+"asyncstdlib._core.ScopedIter.__init__": [
+"asyncstdlib._core.aiter"
+],
+"asyncstdlib._core.aiter": [
+"asyncstdlib._core._aiter_sync"
+],
+"asyncstdlib._lrucache": [
+"asyncstdlib._utility.public_module",
+"asyncstdlib._utility.public_module.decorator"
+],
+"asyncstdlib._lrucache.CachedLRUAsyncCallable.__call__": [
+"asyncstdlib._lrucache.CallKey.from_call"
+],
+"asyncstdlib._lrucache.CachedLRUAsyncCallable.cache_discard": [
+"asyncstdlib._lrucache.CallKey.from_call"
+],
+"asyncstdlib._lrucache.MemoizedLRUAsyncCallable.__call__": [
+"asyncstdlib._lrucache.CallKey.from_call"
+],
+"asyncstdlib._lrucache.MemoizedLRUAsyncCallable.cache_discard": [
+"asyncstdlib._lrucache.CallKey.from_call"
+],
+"asyncstdlib.asynctools._BorrowedAsyncIterator.aclose": [
+"asyncstdlib.asynctools._BorrowedAsyncIterator._aclose_wrapper"
+],
+"asyncstdlib.asynctools._ScopedAsyncIteratorContext.__aexit__": [
+"asyncstdlib.asynctools._BorrowedAsyncIterator._aclose_wrapper"
+],
+"asyncstdlib.asynctools.scoped_iter": [
+"asyncstdlib._core.aiter"
+],
+"asyncstdlib.builtins._min_max": [
+"asyncstdlib.builtins.anext"
+],
+"asyncstdlib.builtins._zip_inner": [
+"asyncstdlib.builtins.anext"
+],
+"asyncstdlib.builtins._zip_inner_strict": [
+"asyncstdlib.builtins.anext",
+"asyncstdlib.builtins.enumerate"
+],
+"asyncstdlib.builtins.dict": [
+"asyncstdlib._core.aiter"
+],
+"asyncstdlib.builtins.iter": [
+"asyncstdlib._core.aiter",
+"asyncstdlib.builtins.acallable_iterator"
+],
+"asyncstdlib.builtins.list": [
+"asyncstdlib._core.aiter"
+],
+"asyncstdlib.builtins.map": [
+"asyncstdlib.builtins.zip"
+],
+"asyncstdlib.builtins.max": [
+"asyncstdlib.builtins._min_max"
+],
+"asyncstdlib.builtins.min": [
+"asyncstdlib.builtins._min_max"
+],
+"asyncstdlib.builtins.set": [
+"asyncstdlib._core.aiter"
+],
+"asyncstdlib.builtins.sorted": [
+"asyncstdlib._core.aiter",
+"asyncstdlib.builtins.sorted"
+],
+"asyncstdlib.builtins.sum": [
+"asyncstdlib._core.aiter"
+],
+"asyncstdlib.builtins.tuple": [
+"asyncstdlib._core.aiter"
+],
+"asyncstdlib.builtins.zip": [
+"asyncstdlib._core.aiter",
+"asyncstdlib.builtins._zip_inner",
+"asyncstdlib.builtins._zip_inner_strict"
+],
+"asyncstdlib.contextlib.ExitStack.__aexit__": [
+"asyncstdlib.contextlib.ExitStack._stitch_context"
+],
+"asyncstdlib.contextlib.ExitStack.aclose": [
+"asyncstdlib.contextlib.ExitStack.__aexit__"
+],
+"asyncstdlib.contextlib.ExitStack.callback": [
+"asyncstdlib._core.awaitify"
+],
+"asyncstdlib.contextlib.ExitStack.enter_context": [
+"asyncstdlib._core.awaitify"
+],
+"asyncstdlib.contextlib.ExitStack.push": [
+"asyncstdlib._core.awaitify"
+],
+"asyncstdlib.functools._FutureCachedPropertyValue.__await__": [
+"asyncstdlib.functools._FutureCachedPropertyValue._await_impl"
+],
+"asyncstdlib.functools._FutureCachedPropertyValue._await_impl": [
+"asyncstdlib.functools._FutureCachedPropertyValue._get_attribute"
+],
+"asyncstdlib.functools.cache": [
+"asyncstdlib._lrucache.lru_cache",
+"asyncstdlib._lrucache.lru_cache.lru_decorator"
+],
+"asyncstdlib.functools.reduce": [
+"asyncstdlib.builtins.anext"
+],
+"asyncstdlib.heapq._KeyIter.from_iters": [
+"asyncstdlib._core.aiter"
+],
+"asyncstdlib.heapq._largest": [
+"asyncstdlib._core.borrow",
+"asyncstdlib.heapq._identity",
+"asyncstdlib.heapq._largest.<lambda1>"
+],
+"asyncstdlib.heapq.merge": [
+"asyncstdlib._core.awaitify",
+"asyncstdlib.heapq._KeyIter.from_iters",
+"asyncstdlib.heapq._KeyIter.pull_head"
+],
+"asyncstdlib.heapq.nlargest": [
+"asyncstdlib._core.awaitify",
+"asyncstdlib.heapq._largest"
+],
+"asyncstdlib.heapq.nsmallest": [
+"asyncstdlib._core.awaitify",
+"asyncstdlib.heapq._largest"
+],
+"asyncstdlib.itertools.GroupBy.__anext__": [
+"asyncstdlib.itertools._GroupByState.maybe_step",
+"asyncstdlib.itertools._GroupByState.step"
+],
+"asyncstdlib.itertools.Tee.__aexit__": [
+"asyncstdlib.itertools.Tee.aclose"
+],
+"asyncstdlib.itertools.TeePeer.__anext__": [
+"asyncstdlib.itertools.TeePeer._extend_buffer"
+],
+"asyncstdlib.itertools._GroupByState.maybe_step": [
+"asyncstdlib.itertools._GroupByState.step"
+],
+"asyncstdlib.itertools._GroupByState.step": [
+"asyncstdlib.builtins.anext"
+],
+"asyncstdlib.itertools._Grouper.__anext__": [
+"asyncstdlib.itertools._GroupByState.consume_value",
+"asyncstdlib.itertools._GroupByState.maybe_step"
+],
+"asyncstdlib.itertools.accumulate": [
+"asyncstdlib.builtins.anext"
+],
+"asyncstdlib.itertools.batched": [
+"asyncstdlib.builtins.anext"
+],
+"asyncstdlib.itertools.chain.__init__": [
+"asyncstdlib.itertools.chain._chain_iterator"
+],
+"asyncstdlib.itertools.compress": [
+"asyncstdlib.builtins.zip"
+],
+"asyncstdlib.itertools.pairwise": [
+"asyncstdlib.builtins.anext"
+],
+"asyncstdlib.itertools.zip_longest": [
+"asyncstdlib.builtins.anext",
+"asyncstdlib.itertools._repeat"
+]
+}

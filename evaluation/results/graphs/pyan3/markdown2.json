@@ -1,0 +1,482 @@
+{
+"markdown2": [
+"markdown2.Extra.register",
+"markdown2.main"
+],
+"markdown2.Admonitions.run": [
+"markdown2.Admonitions.sub"
+],
+"markdown2.Admonitions.sub": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.Alerts.run": [
+"markdown2.Alerts.sub"
+],
+"markdown2.CodeFriendly.__init__": [
+"markdown2.Extra.__init__"
+],
+"markdown2.CodeFriendly._hash_text": [
+"markdown2.CodeFriendly.__init__",
+"markdown2.CodeFriendly._hash_text"
+],
+"markdown2.CodeFriendly.process_span": [
+"markdown2.CodeFriendly._hash_text",
+"markdown2.GFMItalicAndBoldProcessor.process_span"
+],
+"markdown2.CodeFriendly.run": [
+"markdown2.CodeFriendly.__init__",
+"markdown2.GFMItalicAndBoldProcessor.run"
+],
+"markdown2.CodeFriendly.test": [
+"markdown2.GFMItalicAndBoldProcessor.test"
+],
+"markdown2.Extra.deregister": [
+"markdown2.Extra.__init__"
+],
+"markdown2.Extra.register": [
+"markdown2.Extra.__init__"
+],
+"markdown2.FencedCodeBlocks._code_block_with_lexer_sub": [
+"markdown2.FencedCodeBlocks._code_block_with_lexer_sub.unhash_code",
+"markdown2.Markdown.__init__"
+],
+"markdown2.FencedCodeBlocks._code_block_with_lexer_sub.unhash_code": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.FencedCodeBlocks.run": [
+"markdown2.FencedCodeBlocks.sub"
+],
+"markdown2.FencedCodeBlocks.sub": [
+"markdown2.FencedCodeBlocks._code_block_with_lexer_sub",
+"markdown2.FencedCodeBlocks.tags",
+"markdown2.Markdown.__init__"
+],
+"markdown2.FencedCodeBlocks.tags": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.GFMItalicAndBoldProcessor._body_crosses_span_borders": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.GFMItalicAndBoldProcessor._next_run": [
+"markdown2.GFMItalicAndBoldProcessor.delimiter_left_or_right"
+],
+"markdown2.GFMItalicAndBoldProcessor.body_crosses_span_borders": [
+"markdown2.GFMItalicAndBoldProcessor._body_crosses_span_borders"
+],
+"markdown2.GFMItalicAndBoldProcessor.delimiter_left_or_right": [
+"markdown2.GFMItalicAndBoldProcessor._delimiter_left_or_right",
+"markdown2.GFMItalicAndBoldProcessor.run"
+],
+"markdown2.GFMItalicAndBoldProcessor.has_middle": [
+"markdown2.GFMItalicAndBoldProcessor.body_crosses_span_borders"
+],
+"markdown2.GFMItalicAndBoldProcessor.run": [
+"markdown2.GFMItalicAndBoldProcessor._next_run",
+"markdown2.GFMItalicAndBoldProcessor.body_crosses_span_borders",
+"markdown2.GFMItalicAndBoldProcessor.has_middle",
+"markdown2.GFMItalicAndBoldProcessor.process_span",
+"markdown2.GFMItalicAndBoldProcessor.should_process_imbalanced_delimiter_runs",
+"markdown2._hash_text"
+],
+"markdown2.GFMItalicAndBoldProcessor.should_process_imbalanced_delimiter_runs": [
+"markdown2.GFMItalicAndBoldProcessor.delimiter_left_or_right"
+],
+"markdown2.ItalicAndBoldProcessor.__init__": [
+"markdown2.Extra.__init__"
+],
+"markdown2.ItalicAndBoldProcessor.run": [
+"markdown2.ItalicAndBoldProcessor.__init__",
+"markdown2.ItalicAndBoldProcessor.sub"
+],
+"markdown2.ItalicAndBoldProcessor.sub_hash": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.Latex.run": [
+"markdown2.Latex._convert_double_match",
+"markdown2.Latex._convert_single_match",
+"markdown2.Latex.code_placeholder"
+],
+"markdown2.LinkPatterns.run": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.LinkProcessor.__init__": [
+"markdown2.Extra.__init__"
+],
+"markdown2.LinkProcessor.parse_inline_anchor_or_image": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.LinkProcessor.parse_ref_anchor_or_ref_image": [
+"markdown2.LinkProcessor.process_link_shortrefs",
+"markdown2.Markdown.__init__"
+],
+"markdown2.LinkProcessor.process_anchor": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.LinkProcessor.process_image": [
+"markdown2.Markdown.__init__",
+"markdown2._xml_escape_attr"
+],
+"markdown2.LinkProcessor.process_link_shortrefs": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.LinkProcessor.run": [
+"markdown2.LinkProcessor.__init__",
+"markdown2.LinkProcessor.parse_inline_anchor_or_image",
+"markdown2.LinkProcessor.parse_ref_anchor_or_ref_image",
+"markdown2.LinkProcessor.process_anchor",
+"markdown2.LinkProcessor.process_image",
+"markdown2.Markdown.__init__",
+"markdown2._xml_escape_attr"
+],
+"markdown2.Markdown": [
+"markdown2.mark_stage"
+],
+"markdown2.Markdown.__init__": [
+"markdown2._hash_text"
+],
+"markdown2.Markdown._add_footnotes": [
+"markdown2.Markdown.__init__",
+"markdown2.Markdown._do_footnote_marker",
+"markdown2.Markdown._run_block_gamut"
+],
+"markdown2.Markdown._auto_email_link_sub": [
+"markdown2.Markdown._encode_email_address",
+"markdown2.Markdown._unescape_special_chars"
+],
+"markdown2.Markdown._auto_link_sub": [
+"markdown2.Markdown._protect_url"
+],
+"markdown2.Markdown._block_quote_sub": [
+"markdown2.Markdown._dedent_two_spaces_sub",
+"markdown2.Markdown._run_block_gamut"
+],
+"markdown2.Markdown._code_block_sub": [
+"markdown2.Markdown._detab",
+"markdown2.Markdown._encode_code",
+"markdown2.Markdown._html_class_str_from_tag",
+"markdown2.Markdown._outdent"
+],
+"markdown2.Markdown._code_span_sub": [
+"markdown2.Markdown._encode_code",
+"markdown2.Markdown._html_class_str_from_tag"
+],
+"markdown2.Markdown._color_with_pygments.HtmlCodeFormatter.wrap": [
+"markdown2.Markdown._color_with_pygments.HtmlCodeFormatter._add_newline",
+"markdown2.Markdown._color_with_pygments.HtmlCodeFormatter._wrap_code"
+],
+"markdown2.Markdown._detab": [
+"markdown2.Markdown._detab_line"
+],
+"markdown2.Markdown._detab_line": [
+"markdown2.Markdown._detab_line"
+],
+"markdown2.Markdown._do_auto_links": [
+"markdown2.Markdown._auto_email_link_sub",
+"markdown2.Markdown._auto_link_sub"
+],
+"markdown2.Markdown._do_block_quotes": [
+"markdown2.Markdown._block_quote_sub",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._do_code_blocks": [
+"markdown2.Markdown._code_block_sub",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._do_code_spans": [
+"markdown2.Markdown._code_span_sub",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._do_footnote_marker": [
+"markdown2.Markdown._do_footnote_marker.footnote_sub",
+"markdown2._hash_text"
+],
+"markdown2.Markdown._do_footnote_marker.footnote_sub": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.Markdown._do_headers": [
+"markdown2.Markdown._h_sub",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._do_italics_and_bold": [
+"markdown2.GFMItalicAndBoldProcessor.run",
+"markdown2.GFMItalicAndBoldProcessor.test",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._do_links": [
+"markdown2.LinkProcessor.__init__",
+"markdown2.LinkProcessor.run",
+"markdown2.LinkProcessor.test",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._do_lists": [
+"markdown2.Markdown._list_sub",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._encode_code": [
+"markdown2._hash_text"
+],
+"markdown2.Markdown._encode_email_address": [
+"markdown2._xml_encode_email_char_at_random"
+],
+"markdown2.Markdown._encode_incomplete_tags": [
+"markdown2.Markdown._encode_incomplete_tags.incomplete_tags_sub",
+"markdown2.Markdown._is_auto_link"
+],
+"markdown2.Markdown._escape_special_chars": [
+"markdown2.Markdown._encode_backslash_escapes",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._extract_footnote_def_sub": [
+"markdown2._dedent"
+],
+"markdown2.Markdown._extract_link_def_sub": [
+"markdown2.Markdown._encode_amps_and_angles"
+],
+"markdown2.Markdown._extract_metadata": [
+"markdown2.Markdown._extract_metadata.parse_structured_value",
+"markdown2._dedent"
+],
+"markdown2.Markdown._extract_metadata.parse_structured_value": [
+"markdown2.Markdown._extract_metadata.parse_structured_value"
+],
+"markdown2.Markdown._form_paragraphs": [
+"markdown2.Markdown._do_lists",
+"markdown2.Markdown._html_class_str_from_tag",
+"markdown2.Markdown._run_span_gamut",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._h_sub": [
+"markdown2.Markdown._run_span_gamut",
+"markdown2.Markdown._toc_add_entry",
+"markdown2.Markdown.header_id_from_text"
+],
+"markdown2.Markdown._h_tag_sub": [
+"markdown2.Markdown._header_id_exists",
+"markdown2.Markdown._toc_add_entry",
+"markdown2.Markdown.header_id_from_text"
+],
+"markdown2.Markdown._hash_html_block_sub": [
+"markdown2.Markdown._h_tag_sub",
+"markdown2.Markdown._sanitize_html",
+"markdown2._hash_text"
+],
+"markdown2.Markdown._hash_html_blocks": [
+"markdown2.Markdown._hash_html_block_sub",
+"markdown2.Markdown._run_span_gamut",
+"markdown2.Markdown._sanitize_html",
+"markdown2.Markdown._strict_tag_block_sub",
+"markdown2._curry",
+"markdown2._hash_text",
+"markdown2._hr_tag_re_from_tab_width",
+"markdown2._memoized.__init__",
+"markdown2._xml_oneliner_re_from_tab_width",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._hash_html_spans": [
+"markdown2.Markdown._encode_incomplete_tags",
+"markdown2.Markdown._escape_special_chars",
+"markdown2.Markdown._hash_html_spans._is_code_span",
+"markdown2.Markdown._hash_html_spans._is_comment",
+"markdown2.Markdown._hash_span",
+"markdown2.Markdown._is_auto_link",
+"markdown2.Markdown._sanitize_html",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._hash_span": [
+"markdown2._hash_text"
+],
+"markdown2.Markdown._header_id_exists": [
+"markdown2._slugify"
+],
+"markdown2.Markdown._list_item_sub": [
+"markdown2.Markdown._do_lists",
+"markdown2.Markdown._run_block_gamut",
+"markdown2.Markdown._run_span_gamut",
+"markdown2.Markdown._task_list_item_sub",
+"markdown2.Markdown._uniform_outdent"
+],
+"markdown2.Markdown._list_sub": [
+"markdown2.Markdown._html_class_str_from_tag",
+"markdown2.Markdown._process_list_items"
+],
+"markdown2.Markdown._process_list_items": [
+"markdown2.Markdown._list_item_sub"
+],
+"markdown2.Markdown._protect_url": [
+"markdown2._hash_text",
+"markdown2._html_escape_url"
+],
+"markdown2.Markdown._run_block_gamut": [
+"markdown2.Markdown._do_block_quotes",
+"markdown2.Markdown._do_code_blocks",
+"markdown2.Markdown._do_headers",
+"markdown2.Markdown._do_lists",
+"markdown2.Markdown._form_paragraphs",
+"markdown2.Markdown._hash_html_blocks",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._run_span_gamut": [
+"markdown2.Markdown._do_auto_links",
+"markdown2.Markdown._do_code_spans",
+"markdown2.Markdown._do_italics_and_bold",
+"markdown2.Markdown._do_links",
+"markdown2.Markdown._encode_amps_and_angles",
+"markdown2.Markdown._escape_special_chars",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._setup_extras": [
+"markdown2.Extra.__init__",
+"markdown2._hash_text"
+],
+"markdown2.Markdown._strict_tag_block_sub": [
+"markdown2.Markdown._tag_is_closed"
+],
+"markdown2.Markdown._strip_footnote_definitions": [
+"markdown2.Markdown._extract_footnote_def_sub"
+],
+"markdown2.Markdown._strip_link_definitions": [
+"markdown2.Markdown._extract_link_def_sub",
+"markdown2.mark_stage"
+],
+"markdown2.Markdown._toc_add_entry": [
+"markdown2.Markdown.__init__",
+"markdown2.Markdown._unescape_special_chars"
+],
+"markdown2.Markdown._unescape_special_chars": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.Markdown._unhash_html_spans": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.Markdown.convert": [
+"markdown2.Markdown.__init__",
+"markdown2.Markdown._add_footnotes",
+"markdown2.Markdown._detab",
+"markdown2.Markdown._do_footnote_marker",
+"markdown2.Markdown._emacs_vars_oneliner_sub",
+"markdown2.Markdown._extract_metadata",
+"markdown2.Markdown._get_emacs_vars",
+"markdown2.Markdown._hash_html_blocks",
+"markdown2.Markdown._hash_html_spans",
+"markdown2.Markdown._run_block_gamut",
+"markdown2.Markdown._setup_extras",
+"markdown2.Markdown._strip_footnote_definitions",
+"markdown2.Markdown._strip_link_definitions",
+"markdown2.Markdown._unescape_special_chars",
+"markdown2.Markdown._unhash_html_spans",
+"markdown2.Markdown.convert.toc_sort",
+"markdown2.Markdown.postprocess",
+"markdown2.Markdown.preprocess",
+"markdown2.Markdown.reset",
+"markdown2.calculate_toc_html"
+],
+"markdown2.Markdown.header_id_from_text": [
+"markdown2._slugify"
+],
+"markdown2.Markdown.postprocess": [
+"markdown2.mark_stage"
+],
+"markdown2.Markdown.preprocess": [
+"markdown2.mark_stage"
+],
+"markdown2.Markdown.reset": [
+"markdown2.Markdown._setup_extras"
+],
+"markdown2.MarkdownFileLinks.__init__": [
+"markdown2.LinkProcessor.__init__"
+],
+"markdown2.MarkdownFileLinks.parse_inline_anchor_or_image": [
+"markdown2.LinkProcessor.parse_inline_anchor_or_image"
+],
+"markdown2.MarkdownFileLinks.run": [
+"markdown2.LinkProcessor.run",
+"markdown2.Markdown.__init__",
+"markdown2.MarkdownFileLinks.__init__"
+],
+"markdown2.MarkdownFileLinks.test": [
+"markdown2.LinkProcessor.test"
+],
+"markdown2.MarkdownInHTML.run": [
+"markdown2.Markdown.__init__",
+"markdown2.MarkdownInHTML.run.callback"
+],
+"markdown2.MarkdownInHTML.run.callback": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.Mermaid.tags": [
+"markdown2.FencedCodeBlocks.tags"
+],
+"markdown2.MiddleWordEm.__init__": [
+"markdown2.Extra.__init__",
+"markdown2._hash_text"
+],
+"markdown2.MiddleWordEm.run": [
+"markdown2.MiddleWordEm.sub"
+],
+"markdown2.MiddleWordEm.test": [
+"markdown2.GFMItalicAndBoldProcessor.test"
+],
+"markdown2.PyShell.run": [
+"markdown2.PyShell.sub"
+],
+"markdown2.PyShell.sub": [
+"markdown2._dedent",
+"markdown2._dedentlines"
+],
+"markdown2.SmartyPants.run": [
+"markdown2.SmartyPants.contractions"
+],
+"markdown2.Tables.run": [
+"markdown2.Tables.sub"
+],
+"markdown2.Tables.sub": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.Wavedrom.run": [
+"markdown2.Wavedrom.sub"
+],
+"markdown2.Wavedrom.sub": [
+"markdown2.Markdown.__init__",
+"markdown2._hash_text"
+],
+"markdown2.WikiTables.run": [
+"markdown2.WikiTables.sub"
+],
+"markdown2.WikiTables.sub": [
+"markdown2.Markdown.__init__",
+"markdown2.WikiTables.sub.add_hline",
+"markdown2.WikiTables.sub.format_cell"
+],
+"markdown2.WikiTables.sub.format_cell": [
+"markdown2.Markdown.__init__"
+],
+"markdown2._curry": [
+"markdown2._curry.result"
+],
+"markdown2._dedent": [
+"markdown2._dedentlines"
+],
+"markdown2._memoized.__repr__": [
+"markdown2._memoized.__init__"
+],
+"markdown2.calculate_toc_html": [
+"markdown2.calculate_toc_html.indent"
+],
+"markdown2.main": [
+"markdown2._regex_from_encoded_pattern",
+"markdown2._test",
+"markdown2.markdown"
+],
+"markdown2.mark_stage": [
+"markdown2.mark_stage.wrapper"
+],
+"markdown2.mark_stage.wrapper": [
+"markdown2.mark_stage.wrapper.inner"
+],
+"markdown2.markdown": [
+"markdown2.Markdown.__init__"
+],
+"markdown2.markdown_path": [
+"markdown2.Markdown.__init__"
+]
+}

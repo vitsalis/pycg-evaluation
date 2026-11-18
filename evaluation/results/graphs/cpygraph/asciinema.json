@@ -1,0 +1,42 @@
+{
+"asciinema.__main__": [
+"asciinema.__main__.main"
+],
+"asciinema.__main__.main": [
+"asciinema.__main__.maybe_str",
+"asciinema.config.Config.play_idle_time_limit",
+"asciinema.config.Config.play_speed",
+"asciinema.config.Config.record_command",
+"asciinema.config.Config.record_env",
+"asciinema.config.Config.record_idle_time_limit",
+"asciinema.config.Config.record_quiet",
+"asciinema.config.Config.record_stdin",
+"asciinema.config.Config.record_yes",
+"asciinema.config.load"
+],
+"asciinema.config.Config.__init__": [
+"<builtin>.str.join"
+],
+"asciinema.config.Config.__save_install_id": [
+"asciinema.config.Config.__create_config_home"
+],
+"asciinema.config.Config.install_id": [
+"asciinema.config.Config.__read_install_id"
+],
+"asciinema.config.Config.upgrade": [
+"<builtin>.dict.items",
+"asciinema.config.Config.__api_token",
+"asciinema.config.Config.__gen_install_id",
+"asciinema.config.Config.__save_install_id",
+"asciinema.config.Config.__user_token",
+"asciinema.config.Config.install_id"
+],
+"asciinema.config.get_config_home": [
+"<builtin>.str.join"
+],
+"asciinema.config.load": [
+"asciinema.config.Config.__init__",
+"asciinema.config.Config.upgrade",
+"asciinema.config.get_config_home"
+]
+}

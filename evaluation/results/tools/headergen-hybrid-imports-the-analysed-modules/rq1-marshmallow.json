@@ -1,0 +1,50 @@
+{
+"absent": {},
+"cohort": "3.12",
+"only": "marshmallow",
+"question": "rq1",
+"row": "HeaderGen (hybrid: imports the analysed modules)",
+"sets": {
+"macro": {
+"runs": {
+"macro/marshmallow": {
+"dependencies": "installed: tools/headergen-deps/marshmallow.txt",
+"graph_sha256": "d73e6d9b75fd10a08618d2ac97630e88c2db0b2000c029096df085142924a2e1",
+"input_sha256": "e1b5bdff90d2daa9caa7f374569ee23f95e5ee49b70dd1a8db9467736fae484f",
+"notes": {
+"merged: callers equal once line numbers are stripped": 56
+},
+"peak_rss_mib": 255.8,
+"status": "ok",
+"wall_seconds": 12.747
+}
+}
+}
+},
+"settings": {
+"deps": "/opt/deps",
+"lib": "/opt/tool/lib",
+"shim": "/opt/tool/shim",
+"source": "/opt/tool/headergen"
+},
+"tool": {
+"image": "pycg-tool-headergen",
+"limits": {
+"memory_mib": 16384,
+"seconds": 1800
+},
+"memory_mib": 16384,
+"note": "a shim of 15 lines replaces its framework_models package: the same check_alias over the pinned aliases/*.json, without the classifier, its pickles and the nltk download; HeaderGen imports the analysed modules and the libraries that they name, so each macro project with runtime dependencies runs in an image that has them (README, Prior tools)",
+"pin": {
+"commit": "1ea52265ca4e76bb202a2deb26f3b9394d3caa95",
+"name": "HeaderGen",
+"repository": "https://github.com/secure-software-engineering/HeaderGen",
+"source": "git archive of the pinned commit (pycg_extended, beniget, typestub-database, framework_models/aliases) and of its typeshed submodule (stdlib, stubs)",
+"typeshed": "be0ef211679fabf020dcc79cd4b5c43af0fa1839",
+"version": "1ea5226"
+},
+"python": "3.12.16",
+"tool": "headergen",
+"version": "1ea5226 (1ea52265ca)"
+}
+}

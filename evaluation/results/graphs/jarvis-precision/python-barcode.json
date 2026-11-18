@@ -1,0 +1,388 @@
+{
+"<builtin>.NotImplementedError": [],
+"<builtin>.RuntimeError": [],
+"<builtin>.TypeError": [],
+"<builtin>.ValueError": [],
+"<builtin>.abs": [],
+"<builtin>.dict": [],
+"<builtin>.dict.update": [],
+"<builtin>.enumerate": [],
+"<builtin>.hasattr": [],
+"<builtin>.int": [],
+"<builtin>.isinstance": [],
+"<builtin>.len": [],
+"<builtin>.list": [],
+"<builtin>.open": [],
+"<builtin>.print": [],
+"<builtin>.property": [],
+"<builtin>.range": [],
+"<builtin>.reversed": [],
+"<builtin>.set": [],
+"<builtin>.setattr": [],
+"<builtin>.str.format": [],
+"<builtin>.str.isdigit": [],
+"<builtin>.str.join": [],
+"<builtin>.str.lower": [],
+"<builtin>.str.replace": [],
+"<builtin>.str.split": [],
+"<builtin>.str.splitlines": [],
+"<builtin>.str.upper": [],
+"<builtin>.sum": [],
+"<builtin>.super": [],
+"<builtin>.tuple": [],
+"<builtin>.zip": [],
+"append": [],
+"barcode": [
+"<builtin>.list"
+],
+"barcode.base": [],
+"barcode.base.Barcode.__repr__": [
+"barcode.base.Barcode.get_fullcode"
+],
+"barcode.base.Barcode.build": [],
+"barcode.base.Barcode.get_fullcode": [],
+"barcode.base.Barcode.render": [
+"<builtin>.RuntimeError",
+"<builtin>.len",
+"barcode.base.Barcode.build",
+"barcode.base.Barcode.get_fullcode"
+],
+"barcode.base.Barcode.save": [
+"barcode.base.Barcode.render"
+],
+"barcode.base.Barcode.to_ascii": [
+"<builtin>.RuntimeError",
+"<builtin>.len",
+"barcode.base.Barcode.build"
+],
+"barcode.base.Barcode.write": [
+"barcode.base.Barcode.render"
+],
+"barcode.charsets": [],
+"barcode.charsets.codabar": [],
+"barcode.charsets.code128": [
+"<builtin>.enumerate",
+"<builtin>.set",
+"<builtin>.tuple"
+],
+"barcode.charsets.code39": [
+"<builtin>.dict",
+"<builtin>.enumerate",
+"<builtin>.tuple",
+"<builtin>.zip"
+],
+"barcode.charsets.ean": [],
+"barcode.charsets.itf": [],
+"barcode.charsets.upc": [],
+"barcode.codabar": [],
+"barcode.codabar.CODABAR.__init__": [
+"barcode.writer.SVGWriter.__init__"
+],
+"barcode.codabar.CODABAR.build": [
+"barcode.errors.BarcodeError.__init__"
+],
+"barcode.codex": [],
+"barcode.codex.Code128": [
+"<builtin>.property"
+],
+"barcode.codex.Code128.__init__": [
+"barcode.codex.check_code",
+"barcode.writer.SVGWriter.__init__"
+],
+"barcode.codex.Code128._build": [
+"<builtin>.enumerate",
+"<builtin>.len",
+"barcode.codex.Code128._convert",
+"barcode.codex.Code128._maybe_switch_charset",
+"barcode.codex.Code128._new_charset",
+"barcode.codex.Code128._try_to_optimize"
+],
+"barcode.codex.Code128._calculate_checksum": [
+"<builtin>.enumerate",
+"<builtin>.sum",
+"append"
+],
+"barcode.codex.Code128._convert": [
+"<builtin>.RuntimeError",
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.str.isdigit"
+],
+"barcode.codex.Code128._is_char_fnc1_char": [],
+"barcode.codex.Code128._maybe_switch_charset": [
+"<builtin>.len",
+"append",
+"barcode.codex.Code128._is_char_fnc1_char",
+"barcode.codex.Code128._maybe_switch_charset.look_next",
+"barcode.codex.Code128._new_charset"
+],
+"barcode.codex.Code128._maybe_switch_charset.look_next": [],
+"barcode.codex.Code128._new_charset": [
+"<builtin>.ValueError",
+"barcode.codex.Code128._convert"
+],
+"barcode.codex.Code128._try_to_optimize": [],
+"barcode.codex.Code128.build": [
+"barcode.codex.Code128._build",
+"barcode.codex.Code128._calculate_checksum"
+],
+"barcode.codex.Code128.encoded": [
+"barcode.codex.Code128._build"
+],
+"barcode.codex.Code128.render": [
+"<builtin>.dict.update",
+"<builtin>.super"
+],
+"barcode.codex.Code39.__init__": [
+"barcode.codex.Code39.calculate_checksum",
+"barcode.codex.check_code",
+"barcode.writer.SVGWriter.__init__"
+],
+"barcode.codex.Code39.build": [
+"append"
+],
+"barcode.codex.Code39.calculate_checksum": [
+"<builtin>.sum"
+],
+"barcode.codex.Code39.render": [
+"<builtin>.dict.update",
+"<builtin>.super"
+],
+"barcode.codex.Gs1_128.__init__": [
+"<builtin>.super"
+],
+"barcode.codex.Gs1_128.get_fullcode": [
+"<builtin>.super"
+],
+"barcode.codex.PZN7.__init__": [
+"<builtin>.len",
+"<builtin>.super",
+"barcode.codex.PZN7.calculate_checksum",
+"barcode.errors.BarcodeError.__init__"
+],
+"barcode.codex.PZN7.calculate_checksum": [
+"<builtin>.enumerate",
+"<builtin>.int",
+"<builtin>.sum",
+"barcode.errors.BarcodeError.__init__"
+],
+"barcode.codex.check_code": [
+"<builtin>.str.format",
+"append",
+"barcode.errors.BarcodeError.__init__"
+],
+"barcode.ean": [],
+"barcode.ean.EuropeanArticleNumber13.__init__": [
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.str.replace",
+"barcode.ean.EuropeanArticleNumber13.calculate_checksum",
+"barcode.errors.BarcodeError.__init__",
+"barcode.writer.SVGWriter.__init__"
+],
+"barcode.ean.EuropeanArticleNumber13.build": [
+"<builtin>.enumerate",
+"<builtin>.int"
+],
+"barcode.ean.EuropeanArticleNumber13.calculate_checksum": [
+"<builtin>.int",
+"<builtin>.sum"
+],
+"barcode.ean.EuropeanArticleNumber13.render": [
+"<builtin>.dict.update",
+"<builtin>.super"
+],
+"barcode.ean.EuropeanArticleNumber13.to_ascii": [
+"<builtin>.RuntimeError",
+"<builtin>.len",
+"barcode.ean.EuropeanArticleNumber13.build"
+],
+"barcode.ean.EuropeanArticleNumber13WithGuard.__init__": [
+"<builtin>.super"
+],
+"barcode.ean.EuropeanArticleNumber14.calculate_checksum": [
+"<builtin>.int",
+"<builtin>.sum"
+],
+"barcode.ean.EuropeanArticleNumber8.build": [
+"<builtin>.int"
+],
+"barcode.ean.EuropeanArticleNumber8WithGuard.__init__": [
+"<builtin>.super"
+],
+"barcode.ean.JapanArticleNumber": [
+"<builtin>.list",
+"<builtin>.range"
+],
+"barcode.ean.JapanArticleNumber.__init__": [
+"<builtin>.int",
+"<builtin>.super",
+"barcode.errors.BarcodeError.__init__"
+],
+"barcode.errors": [],
+"barcode.errors.BarcodeError.__init__": [],
+"barcode.generate": [
+"<builtin>.TypeError",
+"<builtin>.isinstance",
+"<builtin>.open",
+"barcode.get",
+"barcode.writer.SVGWriter.__init__"
+],
+"barcode.get": [],
+"barcode.get_class": [
+"barcode.get"
+],
+"barcode.isxn": [],
+"barcode.isxn.InternationalStandardBookNumber10.__init__": [
+"<builtin>.super",
+"barcode.isxn.InternationalStandardBookNumber10._calculate_checksum"
+],
+"barcode.isxn.InternationalStandardBookNumber10._calculate_checksum": [
+"<builtin>.enumerate",
+"<builtin>.int",
+"<builtin>.sum"
+],
+"barcode.isxn.InternationalStandardBookNumber13.__init__": [
+"<builtin>.super",
+"barcode.errors.BarcodeError.__init__"
+],
+"barcode.isxn.InternationalStandardSerialNumber.__init__": [
+"<builtin>.super",
+"barcode.isxn.InternationalStandardSerialNumber._calculate_checksum",
+"barcode.isxn.InternationalStandardSerialNumber.make_ean"
+],
+"barcode.isxn.InternationalStandardSerialNumber._calculate_checksum": [
+"<builtin>.enumerate",
+"<builtin>.int",
+"<builtin>.reversed",
+"<builtin>.sum"
+],
+"barcode.isxn.InternationalStandardSerialNumber.make_ean": [
+"barcode.isxn.InternationalStandardSerialNumber._calculate_checksum"
+],
+"barcode.itf": [],
+"barcode.itf.ITF.__init__": [
+"<builtin>.len",
+"barcode.errors.BarcodeError.__init__",
+"barcode.writer.SVGWriter.__init__"
+],
+"barcode.itf.ITF.build": [
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.range"
+],
+"barcode.itf.ITF.render": [
+"<builtin>.dict.update",
+"<builtin>.super"
+],
+"barcode.pybarcode": [
+"barcode.pybarcode.main"
+],
+"barcode.pybarcode.create_barcode": [
+"<builtin>.print",
+"barcode.generate",
+"barcode.writer.ImageWriter.__init__",
+"barcode.writer.SVGWriter.__init__"
+],
+"barcode.pybarcode.list_types": [
+"<builtin>.print"
+],
+"barcode.pybarcode.main": [
+"<builtin>.str.join",
+"append"
+],
+"barcode.upc": [],
+"barcode.upc.UniversalProductCodeA.__init__": [
+"<builtin>.len",
+"barcode.errors.BarcodeError.__init__",
+"barcode.upc.UniversalProductCodeA.calculate_checksum",
+"barcode.writer.SVGWriter.__init__"
+],
+"barcode.upc.UniversalProductCodeA.build": [
+"<builtin>.enumerate",
+"<builtin>.int"
+],
+"barcode.upc.UniversalProductCodeA.calculate_checksum": [],
+"barcode.upc.UniversalProductCodeA.render": [
+"<builtin>.dict.update",
+"<builtin>.super"
+],
+"barcode.upc.UniversalProductCodeA.to_ascii": [
+"<builtin>.RuntimeError",
+"<builtin>.len",
+"barcode.upc.UniversalProductCodeA.build"
+],
+"barcode.version": [],
+"barcode.writer": [],
+"barcode.writer.BaseWriter.calculate_size": [
+"<builtin>.len",
+"<builtin>.str.splitlines",
+"barcode.writer.pt2mm"
+],
+"barcode.writer.BaseWriter.packed": [
+"<builtin>.len",
+"<builtin>.range"
+],
+"barcode.writer.BaseWriter.render": [
+"<builtin>.NotImplementedError",
+"<builtin>.abs",
+"<builtin>.len",
+"<builtin>.str.split",
+"<builtin>.zip",
+"barcode.writer.BaseWriter.packed",
+"barcode.writer.pt2mm"
+],
+"barcode.writer.BaseWriter.set_options": [
+"<builtin>.hasattr",
+"<builtin>.setattr"
+],
+"barcode.writer.ImageWriter.__init__": [
+"<builtin>.super"
+],
+"barcode.writer.ImageWriter._init": [
+"<builtin>.NotImplementedError",
+"<builtin>.RuntimeError",
+"<builtin>.int",
+"<builtin>.len",
+"barcode.writer.BaseWriter.calculate_size",
+"barcode.writer.mm2px"
+],
+"barcode.writer.ImageWriter._paint_module": [
+"barcode.writer.mm2px"
+],
+"barcode.writer.ImageWriter._paint_text": [
+"<builtin>.int",
+"barcode.writer.mm2px",
+"barcode.writer.pt2mm"
+],
+"barcode.writer.ImageWriter.save": [
+"<builtin>.str.lower",
+"<builtin>.str.upper"
+],
+"barcode.writer.SVGWriter.__init__": [
+"<builtin>.super"
+],
+"barcode.writer.SVGWriter._create_module": [
+"barcode.writer._set_attributes"
+],
+"barcode.writer.SVGWriter._create_text": [
+"barcode.writer._set_attributes",
+"barcode.writer.pt2mm"
+],
+"barcode.writer.SVGWriter._init": [
+"<builtin>.NotImplementedError",
+"<builtin>.len",
+"barcode.writer.BaseWriter.calculate_size",
+"barcode.writer._set_attributes",
+"barcode.writer.create_svg_object"
+],
+"barcode.writer.SVGWriter.save": [
+"<builtin>.open"
+],
+"barcode.writer._set_attributes": [],
+"barcode.writer.create_svg_object": [
+"barcode.writer._set_attributes"
+],
+"barcode.writer.mm2px": [],
+"barcode.writer.pt2mm": []
+}

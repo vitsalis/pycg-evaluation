@@ -1,0 +1,744 @@
+{
+"<builtin>.RuntimeError": [],
+"<builtin>.TypeError": [],
+"<builtin>.ValueError": [],
+"<builtin>.all": [],
+"<builtin>.any": [],
+"<builtin>.bool": [],
+"<builtin>.callable": [],
+"<builtin>.float": [],
+"<builtin>.getattr": [],
+"<builtin>.hasattr": [],
+"<builtin>.id": [],
+"<builtin>.isinstance": [],
+"<builtin>.len": [],
+"<builtin>.list.append": [],
+"<builtin>.list.insert": [],
+"<builtin>.max": [],
+"<builtin>.min": [],
+"<builtin>.object": [],
+"<builtin>.repr": [],
+"<builtin>.round": [],
+"<builtin>.set": [],
+"<builtin>.str": [],
+"<builtin>.sum": [],
+"<builtin>.super": [],
+"<builtin>.type": [],
+"_thread._local": [],
+"abc.ABC.__class__": [],
+"abc.ABC.__init__": [],
+"abc.abstractmethod": [],
+"abc.mappingproxy.items": [],
+"asyncio.tasks.sleep": [],
+"classmethod": [],
+"contextlib.suppress": [],
+"dataclasses.field": [],
+"float": [],
+"float.__init__": [],
+"functools.wraps": [],
+"inspect.isclass": [],
+"inspect.iscoroutinefunction": [],
+"math.isfinite": [],
+"math.log": [],
+"property": [],
+"random.Random.random": [],
+"random.Random.uniform": [],
+"re.compile": [],
+"sniffio._impl.current_async_library": [],
+"sys.exc_info": [],
+"tenacity": [
+"<builtin>.object",
+"tenacity._has_tornado",
+"typing.ParamSpec",
+"typing.TypeVar",
+"typing.overload"
+],
+"tenacity.AttemptManager": [],
+"tenacity.AttemptManager.__aenter__": [],
+"tenacity.AttemptManager.__aexit__": [],
+"tenacity.AttemptManager.__enter__": [],
+"tenacity.AttemptManager.__exit__": [
+"tenacity.RetryCallState.set_exception",
+"tenacity.RetryCallState.set_result"
+],
+"tenacity.AttemptManager.__init__": [],
+"tenacity.BaseAction": [
+"typing.override"
+],
+"tenacity.BaseAction.__repr__": [
+"<builtin>.getattr"
+],
+"tenacity.BaseAction.__str__": [
+"<builtin>.repr"
+],
+"tenacity.BaseRetrying": [
+"abc.abstractmethod",
+"property",
+"typing.override"
+],
+"tenacity.BaseRetrying.__call__": [],
+"tenacity.BaseRetrying.__getstate__": [
+"abc.mappingproxy.items"
+],
+"tenacity.BaseRetrying.__init__": [
+"_thread._local",
+"tenacity._is_no_wait",
+"tenacity.wait.wait_none.__init__"
+],
+"tenacity.BaseRetrying.__iter__": [
+"<builtin>.isinstance",
+"tenacity.AttemptManager.__init__",
+"tenacity.BaseRetrying.begin",
+"tenacity.BaseRetrying.iter",
+"tenacity.RetryCallState.__init__",
+"tenacity.RetryCallState.prepare_for_next_attempt",
+"tenacity.nap.sleep"
+],
+"tenacity.BaseRetrying.__repr__": [
+"<builtin>.id"
+],
+"tenacity.BaseRetrying.__setstate__": [
+"_thread._local"
+],
+"tenacity.BaseRetrying.__str__": [],
+"tenacity.BaseRetrying._add_action_func": [],
+"tenacity.BaseRetrying._begin_iter": [
+"<builtin>.isinstance",
+"tenacity.BaseRetrying._add_action_func"
+],
+"tenacity.BaseRetrying._begin_iter.<lambda1>": [],
+"tenacity.BaseRetrying._post_retry_check_actions": [
+"tenacity.BaseRetrying._add_action_func"
+],
+"tenacity.BaseRetrying._post_retry_check_actions.<lambda1>": [],
+"tenacity.BaseRetrying._post_stop_check_actions": [
+"tenacity.BaseRetrying._add_action_func"
+],
+"tenacity.BaseRetrying._post_stop_check_actions.<lambda1>": [
+"float.__init__"
+],
+"tenacity.BaseRetrying._post_stop_check_actions.exc_check": [
+"tenacity.RetryError.__init__",
+"tenacity.RetryError.reraise",
+"typing.cast"
+],
+"tenacity.BaseRetrying._post_stop_check_actions.next_action": [
+"tenacity.RetryAction.__init__"
+],
+"tenacity.BaseRetrying._run_retry": [
+"tenacity.retry.retry_if_exception_type.__init__"
+],
+"tenacity.BaseRetrying._run_stop": [
+"abc.ABC.__init__"
+],
+"tenacity.BaseRetrying._run_wait": [],
+"tenacity.BaseRetrying.begin": [
+"time.monotonic"
+],
+"tenacity.BaseRetrying.copy": [
+"abc.ABC.__class__",
+"tenacity._first_set"
+],
+"tenacity.BaseRetrying.iter": [
+"tenacity.BaseRetrying._begin_iter"
+],
+"tenacity.BaseRetrying.iter_state": [
+"<builtin>.hasattr"
+],
+"tenacity.BaseRetrying.statistics": [
+"<builtin>.hasattr",
+"typing.cast"
+],
+"tenacity.BaseRetrying.wraps": [
+"functools.wraps",
+"typing.cast"
+],
+"tenacity.BaseRetrying.wraps.retry_with": [
+"tenacity.BaseRetrying.copy"
+],
+"tenacity.BaseRetrying.wraps.wrapped_f": [
+"abc.ABC.__class__",
+"tenacity.BaseRetrying.copy"
+],
+"tenacity.Future": [
+"classmethod",
+"property"
+],
+"tenacity.Future.__init__": [
+"<builtin>.super"
+],
+"tenacity.Future.construct": [
+"tenacity.Future.__init__"
+],
+"tenacity.Future.failed": [],
+"tenacity.IterState": [
+"dataclasses.field"
+],
+"tenacity.IterState.reset": [],
+"tenacity.RetryAction.__init__": [
+"<builtin>.float"
+],
+"tenacity.RetryCallState": [
+"property",
+"typing.override"
+],
+"tenacity.RetryCallState.__init__": [
+"time.monotonic"
+],
+"tenacity.RetryCallState.__repr__": [
+"<builtin>.float",
+"<builtin>.id",
+"<builtin>.round"
+],
+"tenacity.RetryCallState.get_fn_name": [
+"<builtin>.str",
+"tenacity._utils.get_callback_name"
+],
+"tenacity.RetryCallState.prepare_for_next_attempt": [],
+"tenacity.RetryCallState.seconds_since_start": [],
+"tenacity.RetryCallState.set_exception": [
+"tenacity.Future.__init__",
+"time.monotonic"
+],
+"tenacity.RetryCallState.set_result": [
+"tenacity.Future.__init__",
+"time.monotonic"
+],
+"tenacity.RetryError": [
+"typing.override"
+],
+"tenacity.RetryError.__init__": [
+"<builtin>.super"
+],
+"tenacity.RetryError.__str__": [],
+"tenacity.RetryError.reraise": [
+"<builtin>.isinstance",
+"tenacity.RetryError.__init__"
+],
+"tenacity.Retrying": [
+"typing.override"
+],
+"tenacity.Retrying.__call__": [
+"<builtin>.isinstance",
+"sys.exc_info",
+"tenacity.BaseRetrying.begin",
+"tenacity.BaseRetrying.iter",
+"tenacity.RetryCallState.__init__",
+"tenacity.RetryCallState.prepare_for_next_attempt",
+"tenacity.RetryCallState.set_exception",
+"tenacity.RetryCallState.set_result",
+"tenacity.nap.sleep"
+],
+"tenacity._AsyncRetryDecorator": [
+"typing.overload"
+],
+"tenacity._AsyncRetryDecorator.__call__": [],
+"tenacity._RetryDecorated": [
+"typing.overload"
+],
+"tenacity._RetryDecorated.__call__": [],
+"tenacity._RetryDecorated.__get__": [],
+"tenacity._RetryDecorated.retry_with": [],
+"tenacity._first_set": [],
+"tenacity._has_tornado": [],
+"tenacity._is_no_wait": [],
+"tenacity._utils": [
+"typing.TypeVar"
+],
+"tenacity._utils.LoggerProtocol.log": [],
+"tenacity._utils.find_ordinal": [
+"tenacity._utils.find_ordinal"
+],
+"tenacity._utils.get_callback_name": [
+"<builtin>.list.append",
+"<builtin>.list.insert",
+"<builtin>.repr",
+"contextlib.suppress"
+],
+"tenacity._utils.is_coroutine_callable": [
+"<builtin>.getattr",
+"<builtin>.isinstance",
+"inspect.isclass",
+"inspect.iscoroutinefunction"
+],
+"tenacity._utils.override": [
+"contextlib.suppress"
+],
+"tenacity._utils.to_ordinal": [
+"tenacity._utils.find_ordinal"
+],
+"tenacity._utils.to_seconds": [
+"<builtin>.float",
+"<builtin>.isinstance"
+],
+"tenacity._utils.wrap_to_async_func": [
+"tenacity._utils.is_coroutine_callable"
+],
+"tenacity._utils.wrap_to_async_func.inner": [],
+"tenacity.after": [],
+"tenacity.after.after_log": [],
+"tenacity.after.after_log.log_it": [
+"tenacity._utils.to_ordinal"
+],
+"tenacity.after.after_nothing": [],
+"tenacity.asyncio": [
+"typing.ParamSpec",
+"typing.TypeVar"
+],
+"tenacity.asyncio.AsyncRetrying": [
+"typing.override"
+],
+"tenacity.asyncio.AsyncRetrying.__aiter__": [
+"tenacity.BaseRetrying.begin",
+"tenacity.RetryCallState"
+],
+"tenacity.asyncio.AsyncRetrying.__anext__": [
+"<builtin>.isinstance",
+"tenacity.AttemptManager"
+],
+"tenacity.asyncio.AsyncRetrying.__call__": [
+"<builtin>.isinstance",
+"sys.exc_info",
+"tenacity.RetryCallState",
+"tenacity._utils.is_coroutine_callable"
+],
+"tenacity.asyncio.AsyncRetrying.__init__": [
+"<builtin>.super"
+],
+"tenacity.asyncio.AsyncRetrying.__iter__": [
+"<builtin>.TypeError"
+],
+"tenacity.asyncio.AsyncRetrying._add_action_func": [
+"tenacity._utils.wrap_to_async_func"
+],
+"tenacity.asyncio.AsyncRetrying._run_retry": [
+"tenacity._utils.wrap_to_async_func"
+],
+"tenacity.asyncio.AsyncRetrying._run_stop": [
+"tenacity._utils.wrap_to_async_func"
+],
+"tenacity.asyncio.AsyncRetrying._run_wait": [
+"tenacity._utils.wrap_to_async_func"
+],
+"tenacity.asyncio.AsyncRetrying.iter": [],
+"tenacity.asyncio.AsyncRetrying.wraps": [
+"<builtin>.super",
+"functools.wraps",
+"typing.cast"
+],
+"tenacity.asyncio.AsyncRetrying.wraps.async_wrapped": [
+"tenacity.BaseRetrying.copy"
+],
+"tenacity.asyncio._portable_async_sleep": [
+"asyncio.tasks.sleep",
+"sniffio._impl.current_async_library",
+"trio.sleep"
+],
+"tenacity.asyncio.retry": [],
+"tenacity.asyncio.retry.async_retry_base": [
+"abc.abstractmethod",
+"typing.override"
+],
+"tenacity.asyncio.retry.async_retry_base.__and__": [
+"tenacity.asyncio.retry.retry_all.__init__"
+],
+"tenacity.asyncio.retry.async_retry_base.__call__": [],
+"tenacity.asyncio.retry.async_retry_base.__or__": [
+"tenacity.asyncio.retry.retry_any.__init__"
+],
+"tenacity.asyncio.retry.async_retry_base.__rand__": [
+"tenacity.asyncio.retry.retry_all.__init__"
+],
+"tenacity.asyncio.retry.async_retry_base.__ror__": [
+"tenacity.asyncio.retry.retry_any.__init__"
+],
+"tenacity.asyncio.retry.retry_all": [
+"typing.override"
+],
+"tenacity.asyncio.retry.retry_all.__call__": [
+"tenacity._utils.wrap_to_async_func"
+],
+"tenacity.asyncio.retry.retry_all.__init__": [],
+"tenacity.asyncio.retry.retry_all.__rand__": [
+"<builtin>.isinstance",
+"tenacity.asyncio.retry.retry_all.__init__"
+],
+"tenacity.asyncio.retry.retry_any": [
+"typing.override"
+],
+"tenacity.asyncio.retry.retry_any.__call__": [
+"tenacity._utils.wrap_to_async_func"
+],
+"tenacity.asyncio.retry.retry_any.__init__": [],
+"tenacity.asyncio.retry.retry_any.__ror__": [
+"<builtin>.isinstance",
+"tenacity.asyncio.retry.retry_any.__init__"
+],
+"tenacity.asyncio.retry.retry_if_exception": [
+"typing.override"
+],
+"tenacity.asyncio.retry.retry_if_exception.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.asyncio.retry.retry_if_exception.__init__": [],
+"tenacity.asyncio.retry.retry_if_result": [
+"typing.override"
+],
+"tenacity.asyncio.retry.retry_if_result.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.asyncio.retry.retry_if_result.__init__": [],
+"tenacity.before": [],
+"tenacity.before.before_log": [],
+"tenacity.before.before_log.log_it": [
+"tenacity._utils.to_ordinal"
+],
+"tenacity.before.before_nothing": [],
+"tenacity.before_sleep": [],
+"tenacity.before_sleep.before_sleep_log": [],
+"tenacity.before_sleep.before_sleep_log.log_it": [
+"<builtin>.RuntimeError",
+"<builtin>.type",
+"traceback.format_exception"
+],
+"tenacity.before_sleep.before_sleep_nothing": [],
+"tenacity.nap": [],
+"tenacity.nap.sleep": [
+"time.sleep"
+],
+"tenacity.nap.sleep_using_event.__call__": [],
+"tenacity.nap.sleep_using_event.__init__": [],
+"tenacity.retry": [
+"<builtin>.callable",
+"<builtin>.len",
+"abc.ABC.__init__",
+"tenacity.asyncio.AsyncRetrying.wraps",
+"tenacity.retry",
+"tenacity.retry.wrap",
+"typing.cast"
+],
+"tenacity.retry._retry_always": [
+"typing.override"
+],
+"tenacity.retry._retry_always.__call__": [],
+"tenacity.retry._retry_never": [
+"typing.override"
+],
+"tenacity.retry._retry_never.__call__": [],
+"tenacity.retry.retry_all": [
+"typing.override"
+],
+"tenacity.retry.retry_all.__call__": [
+"<builtin>.all"
+],
+"tenacity.retry.retry_all.__init__": [],
+"tenacity.retry.retry_all.__rand__": [
+"<builtin>.isinstance",
+"tenacity.retry.retry_all.__init__"
+],
+"tenacity.retry.retry_any": [
+"typing.override"
+],
+"tenacity.retry.retry_any.__call__": [
+"<builtin>.any"
+],
+"tenacity.retry.retry_any.__init__": [],
+"tenacity.retry.retry_any.__ror__": [
+"<builtin>.isinstance",
+"tenacity.retry.retry_any.__init__"
+],
+"tenacity.retry.retry_base": [
+"abc.abstractmethod"
+],
+"tenacity.retry.retry_base.__and__": [
+"<builtin>.isinstance",
+"tenacity.retry.retry_all.__init__"
+],
+"tenacity.retry.retry_base.__call__": [],
+"tenacity.retry.retry_base.__or__": [
+"<builtin>.isinstance",
+"tenacity.retry.retry_any.__init__"
+],
+"tenacity.retry.retry_base.__rand__": [
+"<builtin>.isinstance",
+"tenacity.retry.retry_all.__init__"
+],
+"tenacity.retry.retry_base.__ror__": [
+"<builtin>.isinstance",
+"tenacity.retry.retry_any.__init__"
+],
+"tenacity.retry.retry_if_exception": [
+"typing.override"
+],
+"tenacity.retry.retry_if_exception.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.retry.retry_if_exception.__init__": [],
+"tenacity.retry.retry_if_exception_cause_type": [
+"typing.override"
+],
+"tenacity.retry.retry_if_exception_cause_type.__call__": [
+"<builtin>.RuntimeError",
+"<builtin>.id",
+"<builtin>.isinstance",
+"<builtin>.set"
+],
+"tenacity.retry.retry_if_exception_cause_type.__init__": [],
+"tenacity.retry.retry_if_exception_message.__init__": [
+"<builtin>.TypeError",
+"<builtin>.super",
+"re.compile"
+],
+"tenacity.retry.retry_if_exception_message._check": [
+"<builtin>.bool",
+"<builtin>.str"
+],
+"tenacity.retry.retry_if_exception_type.__init__": [
+"<builtin>.super"
+],
+"tenacity.retry.retry_if_exception_type._check": [
+"<builtin>.isinstance"
+],
+"tenacity.retry.retry_if_not_exception_message": [
+"typing.override"
+],
+"tenacity.retry.retry_if_not_exception_message.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.retry.retry_if_not_exception_message._check": [
+"<builtin>.super"
+],
+"tenacity.retry.retry_if_not_exception_type.__init__": [
+"<builtin>.super"
+],
+"tenacity.retry.retry_if_not_exception_type._check": [
+"<builtin>.isinstance"
+],
+"tenacity.retry.retry_if_not_result": [
+"typing.override"
+],
+"tenacity.retry.retry_if_not_result.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.retry.retry_if_not_result.__init__": [],
+"tenacity.retry.retry_if_result": [
+"typing.override"
+],
+"tenacity.retry.retry_if_result.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.retry.retry_if_result.__init__": [],
+"tenacity.retry.retry_unless_exception_type": [
+"typing.override"
+],
+"tenacity.retry.retry_unless_exception_type.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.retry.retry_unless_exception_type.__init__": [
+"<builtin>.super"
+],
+"tenacity.retry.retry_unless_exception_type._check": [
+"<builtin>.isinstance"
+],
+"tenacity.retry.wrap": [
+"<builtin>.hasattr",
+"<builtin>.isinstance",
+"tenacity.BaseRetrying.__init__",
+"tenacity.BaseRetrying.wraps",
+"tenacity._has_tornado",
+"tenacity._utils.is_coroutine_callable",
+"tenacity.asyncio.AsyncRetrying",
+"tenacity.asyncio.AsyncRetrying.wraps",
+"tenacity.tornadoweb.TornadoRetrying",
+"tornado.gen.is_coroutine_function",
+"warnings.warn"
+],
+"tenacity.stop": [
+"abc.ABC.__init__"
+],
+"tenacity.stop._stop_never": [
+"typing.override"
+],
+"tenacity.stop._stop_never.__call__": [],
+"tenacity.stop.stop_after_attempt": [
+"typing.override"
+],
+"tenacity.stop.stop_after_attempt.__call__": [],
+"tenacity.stop.stop_after_attempt.__init__": [],
+"tenacity.stop.stop_after_delay": [
+"typing.override"
+],
+"tenacity.stop.stop_after_delay.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.stop.stop_after_delay.__init__": [
+"tenacity._utils.to_seconds"
+],
+"tenacity.stop.stop_all": [
+"typing.override"
+],
+"tenacity.stop.stop_all.__call__": [
+"<builtin>.all"
+],
+"tenacity.stop.stop_all.__init__": [],
+"tenacity.stop.stop_any": [
+"typing.override"
+],
+"tenacity.stop.stop_any.__call__": [
+"<builtin>.any"
+],
+"tenacity.stop.stop_any.__init__": [],
+"tenacity.stop.stop_base": [
+"abc.abstractmethod"
+],
+"tenacity.stop.stop_base.__and__": [
+"tenacity.stop.stop_all.__init__"
+],
+"tenacity.stop.stop_base.__call__": [],
+"tenacity.stop.stop_base.__or__": [
+"tenacity.stop.stop_any.__init__"
+],
+"tenacity.stop.stop_before_delay": [
+"typing.override"
+],
+"tenacity.stop.stop_before_delay.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.stop.stop_before_delay.__init__": [
+"tenacity._utils.to_seconds"
+],
+"tenacity.stop.stop_when_event_set": [
+"typing.override"
+],
+"tenacity.stop.stop_when_event_set.__call__": [],
+"tenacity.stop.stop_when_event_set.__init__": [],
+"tenacity.tornadoweb": [
+"typing.TypeVar"
+],
+"tenacity.tornadoweb.TornadoRetrying": [
+"typing.override"
+],
+"tenacity.tornadoweb.TornadoRetrying.__call__": [
+"<builtin>.isinstance",
+"sys.exc_info",
+"tenacity.BaseRetrying.begin",
+"tenacity.BaseRetrying.iter",
+"tenacity.RetryCallState",
+"tenacity.RetryCallState.prepare_for_next_attempt",
+"tenacity.RetryCallState.set_exception",
+"tenacity.RetryCallState.set_result",
+"tornado.gen.Return"
+],
+"tenacity.tornadoweb.TornadoRetrying.__init__": [
+"<builtin>.super"
+],
+"tenacity.wait": [],
+"tenacity.wait.wait_base": [
+"abc.abstractmethod"
+],
+"tenacity.wait.wait_base.__add__": [
+"tenacity.wait.wait_combine.__init__"
+],
+"tenacity.wait.wait_base.__call__": [],
+"tenacity.wait.wait_base.__radd__": [
+"<builtin>.isinstance",
+"tenacity.wait.wait_combine.__init__"
+],
+"tenacity.wait.wait_chain": [
+"typing.override"
+],
+"tenacity.wait.wait_chain.__call__": [
+"<builtin>.len",
+"<builtin>.max",
+"<builtin>.min"
+],
+"tenacity.wait.wait_chain.__init__": [
+"<builtin>.ValueError"
+],
+"tenacity.wait.wait_combine": [
+"typing.override"
+],
+"tenacity.wait.wait_combine.__call__": [
+"<builtin>.float",
+"<builtin>.sum"
+],
+"tenacity.wait.wait_combine.__init__": [],
+"tenacity.wait.wait_exception": [
+"typing.override"
+],
+"tenacity.wait.wait_exception.__call__": [
+"<builtin>.RuntimeError"
+],
+"tenacity.wait.wait_exception.__init__": [],
+"tenacity.wait.wait_exponential": [
+"typing.override"
+],
+"tenacity.wait.wait_exponential.__call__": [
+"float",
+"math.isfinite",
+"math.log"
+],
+"tenacity.wait.wait_exponential.__init__": [
+"tenacity._utils.to_seconds"
+],
+"tenacity.wait.wait_exponential_jitter": [
+"typing.override"
+],
+"tenacity.wait.wait_exponential_jitter.__call__": [
+"float",
+"random.Random.uniform"
+],
+"tenacity.wait.wait_exponential_jitter.__init__": [
+"<builtin>.ValueError",
+"tenacity._utils.to_seconds",
+"warnings.warn"
+],
+"tenacity.wait.wait_fixed": [
+"typing.override"
+],
+"tenacity.wait.wait_fixed.__call__": [],
+"tenacity.wait.wait_fixed.__init__": [
+"tenacity._utils.to_seconds"
+],
+"tenacity.wait.wait_incrementing": [
+"typing.override"
+],
+"tenacity.wait.wait_incrementing.__call__": [
+"<builtin>.min",
+"float"
+],
+"tenacity.wait.wait_incrementing.__init__": [
+"tenacity._utils.to_seconds"
+],
+"tenacity.wait.wait_none.__init__": [
+"<builtin>.super"
+],
+"tenacity.wait.wait_random": [
+"typing.override"
+],
+"tenacity.wait.wait_random.__call__": [
+"random.Random.random"
+],
+"tenacity.wait.wait_random.__init__": [
+"tenacity._utils.to_seconds"
+],
+"tenacity.wait.wait_random_exponential": [
+"typing.override"
+],
+"tenacity.wait.wait_random_exponential.__call__": [
+"<builtin>.super",
+"random.Random.uniform"
+],
+"time.monotonic": [],
+"time.sleep": [],
+"tornado.gen.Return": [],
+"tornado.gen.is_coroutine_function": [],
+"traceback.format_exception": [],
+"trio.sleep": [],
+"typing.ParamSpec": [],
+"typing.TypeVar": [],
+"typing.cast": [],
+"typing.overload": [],
+"typing.override": [],
+"warnings.warn": []
+}

@@ -1,0 +1,498 @@
+{
+"<builtin>.Exception": [],
+"<builtin>.ImportError": [],
+"<builtin>.classmethod": [],
+"<builtin>.dict": [],
+"<builtin>.dict.copy": [],
+"<builtin>.dict.get": [],
+"<builtin>.dict.items": [],
+"<builtin>.dict.update": [],
+"<builtin>.filter": [],
+"<builtin>.float": [],
+"<builtin>.hasattr": [],
+"<builtin>.int": [],
+"<builtin>.isinstance": [],
+"<builtin>.iter": [],
+"<builtin>.len": [],
+"<builtin>.map": [],
+"<builtin>.min": [],
+"<builtin>.open": [],
+"<builtin>.print": [],
+"<builtin>.property": [],
+"<builtin>.round": [],
+"<builtin>.str": [],
+"<builtin>.str.encode": [],
+"<builtin>.str.format": [],
+"<builtin>.str.startswith": [],
+"<builtin>.type": [],
+"append": [],
+"asciinema": [
+"<builtin>.ImportError",
+"asciinema.recorder"
+],
+"asciinema.__main__": [
+"asciinema",
+"asciinema.__main__.main",
+"asciinema.commands.auth",
+"asciinema.commands.cat",
+"asciinema.commands.play",
+"asciinema.commands.record",
+"asciinema.commands.upload",
+"asciinema.config"
+],
+"asciinema.__main__.main": [
+"<builtin>.hasattr",
+"<builtin>.print",
+"<builtin>.str",
+"asciinema.__main__.maybe_str",
+"asciinema.config.load"
+],
+"asciinema.__main__.maybe_str": [
+"<builtin>.str"
+],
+"asciinema.__main__.positive_float": [
+"<builtin>.float"
+],
+"asciinema.api": [
+"asciinema",
+"asciinema.http_adapter",
+"asciinema.urllib_http_adapter"
+],
+"asciinema.api.APIError": [],
+"asciinema.api.Api": [],
+"asciinema.api.Api.__init__": [],
+"asciinema.api.Api._handle_error": [
+"<builtin>.dict.get"
+],
+"asciinema.api.Api._headers": [
+"asciinema.api.Api._user_agent"
+],
+"asciinema.api.Api._user_agent": [],
+"asciinema.api.Api.auth_url": [],
+"asciinema.api.Api.hostname": [
+"urllib.parse.urlparse"
+],
+"asciinema.api.Api.upload_asciicast": [
+"<builtin>.open",
+"<builtin>.str",
+"asciinema.api.Api._handle_error",
+"asciinema.api.Api._headers",
+"asciinema.api.Api.upload_url"
+],
+"asciinema.api.Api.upload_url": [
+"<builtin>.str.format"
+],
+"asciinema.asciicast": [
+"asciinema.asciicast.v1",
+"asciinema.asciicast.v2"
+],
+"asciinema.asciicast.LoadError": [],
+"asciinema.asciicast.Parser": [],
+"asciinema.asciicast.Parser.__init__": [],
+"asciinema.asciicast.Parser.handle_starttag": [
+"<builtin>.dict.get"
+],
+"asciinema.asciicast.events": [],
+"asciinema.asciicast.events.adjust_speed": [],
+"asciinema.asciicast.events.cap_relative_time": [
+"<builtin>.min"
+],
+"asciinema.asciicast.events.to_absolute_time": [],
+"asciinema.asciicast.events.to_relative_time": [],
+"asciinema.asciicast.open_from_url": [],
+"asciinema.asciicast.open_from_url.__enter__": [
+"<builtin>.str",
+"asciinema.asciicast.open_url",
+"asciinema.asciicast.v1.open_from_file.__enter__",
+"asciinema.asciicast.v1.open_from_file.__init__",
+"asciinema.asciicast.v2.open_from_file.__enter__",
+"asciinema.asciicast.v2.open_from_file.__init__"
+],
+"asciinema.asciicast.open_from_url.__exit__": [
+"asciinema.asciicast.v1.open_from_file.__exit__",
+"asciinema.asciicast.v2.open_from_file.__exit__"
+],
+"asciinema.asciicast.open_from_url.__init__": [],
+"asciinema.asciicast.open_url": [
+"<builtin>.open",
+"<builtin>.str.startswith",
+"asciinema.asciicast.Parser.__init__",
+"asciinema.asciicast.open_url",
+"urllib.parse.urlparse",
+"urllib.parse.urlunparse",
+"urllib.request.Request",
+"urllib.request.urlopen"
+],
+"asciinema.asciicast.raw": [],
+"asciinema.asciicast.raw.writer": [],
+"asciinema.asciicast.raw.writer.__enter__": [
+"<builtin>.open"
+],
+"asciinema.asciicast.v1": [
+"asciinema.asciicast.events"
+],
+"asciinema.asciicast.v1.Asciicast": [
+"<builtin>.property"
+],
+"asciinema.asciicast.v1.Asciicast.__init__": [],
+"asciinema.asciicast.v1.Asciicast.__stdout_events": [],
+"asciinema.asciicast.v1.Asciicast.events": [
+"asciinema.asciicast.v1.Asciicast.stdout_events"
+],
+"asciinema.asciicast.v1.Asciicast.stdout_events": [
+"asciinema.asciicast.events.to_absolute_time",
+"asciinema.asciicast.v1.Asciicast.__stdout_events"
+],
+"asciinema.asciicast.v1.LoadError": [],
+"asciinema.asciicast.v1.open_from_file": [],
+"asciinema.asciicast.v1.open_from_file.__enter__": [
+"asciinema.asciicast.v1.Asciicast.__init__"
+],
+"asciinema.asciicast.v1.open_from_file.__exit__": [],
+"asciinema.asciicast.v1.open_from_file.__init__": [],
+"asciinema.asciicast.v2": [],
+"asciinema.asciicast.v2.Asciicast": [],
+"asciinema.asciicast.v2.Asciicast.__init__": [],
+"asciinema.asciicast.v2.Asciicast.events": [],
+"asciinema.asciicast.v2.Asciicast.stdout_events": [
+"asciinema.asciicast.v2.Asciicast.events"
+],
+"asciinema.asciicast.v2.LoadError": [],
+"asciinema.asciicast.v2.build_from_header_and_file": [
+"asciinema.asciicast.v2.Asciicast.__init__"
+],
+"asciinema.asciicast.v2.build_header": [
+"<builtin>.dict.update",
+"<builtin>.type"
+],
+"asciinema.asciicast.v2.get_duration": [
+"<builtin>.open",
+"asciinema.asciicast.v2.Asciicast.stdout_events",
+"asciinema.asciicast.v2.open_from_file.__enter__",
+"asciinema.asciicast.v2.open_from_file.__exit__",
+"asciinema.asciicast.v2.open_from_file.__init__"
+],
+"asciinema.asciicast.v2.open_from_file": [],
+"asciinema.asciicast.v2.open_from_file.__enter__": [
+"asciinema.asciicast.v2.build_from_header_and_file"
+],
+"asciinema.asciicast.v2.open_from_file.__exit__": [],
+"asciinema.asciicast.v2.open_from_file.__init__": [],
+"asciinema.asciicast.v2.writer": [],
+"asciinema.asciicast.v2.writer.__enter__": [
+"<builtin>.open",
+"asciinema.asciicast.v2.writer.__write_line"
+],
+"asciinema.asciicast.v2.writer.__init__": [
+"asciinema.asciicast.v2.build_header"
+],
+"asciinema.asciicast.v2.writer.__write_event": [
+"<builtin>.round",
+"asciinema.asciicast.v2.writer.__write_line"
+],
+"asciinema.asciicast.v2.writer.__write_line": [],
+"asciinema.asciicast.v2.writer.write_stdin": [
+"<builtin>.type",
+"asciinema.asciicast.v2.writer.__write_event"
+],
+"asciinema.asciicast.v2.writer.write_stdout": [
+"<builtin>.type",
+"asciinema.asciicast.v2.writer.__write_event"
+],
+"asciinema.async_worker": [],
+"asciinema.async_worker.async_worker": [],
+"asciinema.async_worker.async_worker.__enter__": [
+"multiprocessing.Process",
+"threading.Thread"
+],
+"asciinema.async_worker.async_worker.__exit__": [],
+"asciinema.async_worker.async_worker.__init__": [
+"multiprocessing.Queue",
+"queue.Queue"
+],
+"asciinema.async_worker.async_worker.enqueue": [],
+"asciinema.async_worker.async_worker.run": [
+"<builtin>.iter",
+"asciinema.recorder.async_notifier.perform"
+],
+"asciinema.commands": [],
+"asciinema.commands.auth": [
+"asciinema.commands.command"
+],
+"asciinema.commands.auth.AuthCommand": [],
+"asciinema.commands.auth.AuthCommand.__init__": [
+"asciinema.commands.command.Command.__init__"
+],
+"asciinema.commands.auth.AuthCommand.execute": [
+"asciinema.api.Api.auth_url",
+"asciinema.api.Api.hostname",
+"asciinema.commands.command.Command.print"
+],
+"asciinema.commands.cat": [
+"asciinema.asciicast",
+"asciinema.commands.command"
+],
+"asciinema.commands.cat.CatCommand": [],
+"asciinema.commands.cat.CatCommand.__init__": [
+"asciinema.commands.command.Command.__init__"
+],
+"asciinema.commands.cat.CatCommand.execute": [
+"<builtin>.str",
+"asciinema.asciicast.open_from_url.__init__",
+"asciinema.commands.command.Command.print_error"
+],
+"asciinema.commands.command": [
+"asciinema.api"
+],
+"asciinema.commands.command.Command": [],
+"asciinema.commands.command.Command.__init__": [
+"asciinema.api.Api.__init__"
+],
+"asciinema.commands.command.Command.print": [
+"<builtin>.print"
+],
+"asciinema.commands.command.Command.print_error": [
+"asciinema.commands.command.Command.print"
+],
+"asciinema.commands.command.Command.print_info": [
+"asciinema.commands.command.Command.print"
+],
+"asciinema.commands.command.Command.print_warning": [
+"asciinema.commands.command.Command.print"
+],
+"asciinema.commands.play": [
+"asciinema.asciicast",
+"asciinema.commands.command",
+"asciinema.player"
+],
+"asciinema.commands.play.PlayCommand": [],
+"asciinema.commands.play.PlayCommand.__init__": [
+"asciinema.commands.command.Command.__init__"
+],
+"asciinema.commands.play.PlayCommand.execute": [
+"<builtin>.str",
+"asciinema.asciicast.open_from_url.__init__",
+"asciinema.commands.command.Command.print_error"
+],
+"asciinema.commands.record": [
+"asciinema.api",
+"asciinema.asciicast.raw",
+"asciinema.asciicast.v2",
+"asciinema.commands.command",
+"asciinema.notifier",
+"asciinema.recorder"
+],
+"asciinema.commands.record.RecordCommand": [],
+"asciinema.commands.record.RecordCommand.__init__": [
+"asciinema.commands.command.Command.__init__",
+"asciinema.notifier.get_notifier"
+],
+"asciinema.commands.record.RecordCommand.execute": [
+"<builtin>.filter",
+"<builtin>.map",
+"<builtin>.str",
+"asciinema.api.Api.hostname",
+"asciinema.api.Api.upload_asciicast",
+"asciinema.commands.command.Command.print",
+"asciinema.commands.command.Command.print_error",
+"asciinema.commands.command.Command.print_info",
+"asciinema.commands.command.Command.print_warning",
+"asciinema.commands.record._tmp_path",
+"asciinema.recorder.record"
+],
+"asciinema.commands.record._tmp_path": [],
+"asciinema.commands.upload": [
+"asciinema.api",
+"asciinema.commands.command"
+],
+"asciinema.commands.upload.UploadCommand": [],
+"asciinema.commands.upload.UploadCommand.__init__": [
+"asciinema.commands.command.Command.__init__"
+],
+"asciinema.commands.upload.UploadCommand.execute": [
+"<builtin>.str",
+"asciinema.api.Api.upload_asciicast",
+"asciinema.commands.command.Command.print",
+"asciinema.commands.command.Command.print_error",
+"asciinema.commands.command.Command.print_warning"
+],
+"asciinema.config": [],
+"asciinema.config.Config": [
+"<builtin>.property"
+],
+"asciinema.config.Config.__api_token": [],
+"asciinema.config.Config.__create_config_home": [],
+"asciinema.config.Config.__gen_install_id": [
+"<builtin>.str"
+],
+"asciinema.config.Config.__init__": [],
+"asciinema.config.Config.__read_install_id": [
+"<builtin>.open"
+],
+"asciinema.config.Config.__save_install_id": [
+"<builtin>.open",
+"asciinema.config.Config.__create_config_home"
+],
+"asciinema.config.Config.__user_token": [],
+"asciinema.config.Config.install_id": [
+"asciinema.config.Config.__read_install_id"
+],
+"asciinema.config.Config.upgrade": [
+"<builtin>.dict",
+"asciinema.config.Config.__api_token",
+"asciinema.config.Config.__gen_install_id",
+"asciinema.config.Config.__save_install_id",
+"asciinema.config.Config.__user_token"
+],
+"asciinema.config.ConfigError": [],
+"asciinema.config.get_config_home": [
+"<builtin>.Exception"
+],
+"asciinema.config.load": [
+"asciinema.config.Config.__init__",
+"asciinema.config.Config.upgrade",
+"asciinema.config.get_config_home"
+],
+"asciinema.http_adapter": [],
+"asciinema.http_adapter.HTTPConnectionError": [],
+"asciinema.notifier": [],
+"asciinema.notifier.AppleScriptNotifier": [],
+"asciinema.notifier.CustomCommandNotifier": [],
+"asciinema.notifier.CustomCommandNotifier.__init__": [],
+"asciinema.notifier.CustomCommandNotifier.notify": [
+"asciinema.notifier.Notifier.get_icon_path"
+],
+"asciinema.notifier.LibNotifyNotifier": [],
+"asciinema.notifier.LibNotifyNotifier.args": [
+"asciinema.notifier.Notifier.get_icon_path"
+],
+"asciinema.notifier.NoopNotifier": [],
+"asciinema.notifier.Notifier": [],
+"asciinema.notifier.Notifier.get_icon_path": [],
+"asciinema.notifier.TerminalNotifier": [],
+"asciinema.notifier.TerminalNotifier.args": [
+"asciinema.notifier.Notifier.get_icon_path"
+],
+"asciinema.notifier.get_notifier": [
+"asciinema.notifier.CustomCommandNotifier.__init__"
+],
+"asciinema.player": [
+"asciinema.asciicast.events",
+"asciinema.term"
+],
+"asciinema.player.Player": [],
+"asciinema.player.Player._play": [
+"asciinema.asciicast.events.adjust_speed",
+"asciinema.asciicast.events.cap_relative_time",
+"asciinema.asciicast.events.to_absolute_time",
+"asciinema.asciicast.events.to_relative_time",
+"asciinema.term.read_blocking"
+],
+"asciinema.player.Player.play": [
+"<builtin>.open",
+"asciinema.player.Player._play",
+"asciinema.term.raw.__init__"
+],
+"asciinema.pty": [
+"asciinema.term"
+],
+"asciinema.pty.record": [
+"<builtin>.map",
+"asciinema.pty.record._set_pty_size",
+"asciinema.pty.record._signals",
+"asciinema.term.raw.__init__"
+],
+"asciinema.pty.record._set_pty_size": [],
+"asciinema.pty.record._signals": [
+"append"
+],
+"asciinema.record_asciicast": [
+"asciinema.recorder.record"
+],
+"asciinema.recorder": [
+"asciinema.asciicast.v2",
+"asciinema.async_worker",
+"asciinema.pty",
+"asciinema.term"
+],
+"asciinema.recorder.async_notifier": [],
+"asciinema.recorder.async_notifier.__init__": [
+"asciinema.async_worker.async_worker.__init__"
+],
+"asciinema.recorder.async_notifier.notify": [
+"asciinema.async_worker.async_worker.enqueue"
+],
+"asciinema.recorder.async_notifier.perform": [],
+"asciinema.recorder.async_writer": [],
+"asciinema.recorder.async_writer.__init__": [
+"asciinema.async_worker.async_worker.__init__"
+],
+"asciinema.recorder.async_writer.run": [
+"<builtin>.iter",
+"asciinema.asciicast.v2.writer.__init__"
+],
+"asciinema.recorder.async_writer.write_stdin": [
+"asciinema.async_worker.async_worker.enqueue"
+],
+"asciinema.recorder.async_writer.write_stdout": [
+"asciinema.async_worker.async_worker.enqueue"
+],
+"asciinema.recorder.record": [
+"<builtin>.dict.update",
+"<builtin>.int",
+"asciinema.asciicast.v2.get_duration",
+"asciinema.async_worker.async_worker.__enter__",
+"asciinema.async_worker.async_worker.__exit__",
+"asciinema.pty.record",
+"asciinema.recorder.async_notifier.__init__",
+"asciinema.recorder.async_writer.__init__",
+"asciinema.term.get_size"
+],
+"asciinema.term": [],
+"asciinema.term.get_size": [
+"<builtin>.int"
+],
+"asciinema.term.raw": [],
+"asciinema.term.raw.__init__": [],
+"asciinema.term.read_blocking": [],
+"asciinema.urllib_http_adapter": [
+"asciinema.http_adapter"
+],
+"asciinema.urllib_http_adapter.MultipartFormdataEncoder": [
+"<builtin>.classmethod"
+],
+"asciinema.urllib_http_adapter.MultipartFormdataEncoder.__init__": [],
+"asciinema.urllib_http_adapter.MultipartFormdataEncoder.encode": [
+"asciinema.urllib_http_adapter.MultipartFormdataEncoder.iter"
+],
+"asciinema.urllib_http_adapter.MultipartFormdataEncoder.iter": [
+"<builtin>.dict.items",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.str",
+"asciinema.urllib_http_adapter.MultipartFormdataEncoder.u"
+],
+"asciinema.urllib_http_adapter.MultipartFormdataEncoder.u": [
+"<builtin>.isinstance"
+],
+"asciinema.urllib_http_adapter.URLLibHttpAdapter": [],
+"asciinema.urllib_http_adapter.URLLibHttpAdapter._parse_headers": [],
+"asciinema.urllib_http_adapter.URLLibHttpAdapter.post": [
+"<builtin>.dict.copy",
+"<builtin>.str",
+"<builtin>.str.encode",
+"asciinema.urllib_http_adapter.MultipartFormdataEncoder.__init__",
+"asciinema.urllib_http_adapter.MultipartFormdataEncoder.encode",
+"asciinema.urllib_http_adapter.URLLibHttpAdapter._parse_headers",
+"urllib.request.Request",
+"urllib.request.urlopen"
+],
+"multiprocessing.Process": [],
+"multiprocessing.Queue": [],
+"queue.Queue": [],
+"threading.Thread": [],
+"urllib.parse.urlparse": [],
+"urllib.parse.urlunparse": [],
+"urllib.request.Request": [],
+"urllib.request.urlopen": []
+}

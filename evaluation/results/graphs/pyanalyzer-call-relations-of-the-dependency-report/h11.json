@@ -1,0 +1,146 @@
+{
+"h11._connection.Connection.__init__": [
+"h11._connection.Connection._get_io_object"
+],
+"h11._connection.Connection._clean_up_response_headers_for_sending": [
+"h11._connection._body_framing",
+"h11._headers.get_comma_header",
+"h11._headers.set_comma_header"
+],
+"h11._connection.Connection._get_io_object": [
+"h11._connection._body_framing"
+],
+"h11._connection.Connection._process_error": [
+"h11._connection.Connection._respond_to_state_changes",
+"h11._state.ConnectionState.process_error"
+],
+"h11._connection.Connection._process_event": [
+"h11._connection.Connection._respond_to_state_changes",
+"h11._connection.Connection._server_switch_event",
+"h11._connection._keep_alive",
+"h11._headers.get_comma_header",
+"h11._headers.has_expect_100_continue",
+"h11._state.ConnectionState.process_client_switch_proposal",
+"h11._state.ConnectionState.process_event",
+"h11._state.ConnectionState.process_keep_alive_disabled"
+],
+"h11._connection.Connection._respond_to_state_changes": [
+"h11._connection.Connection._get_io_object"
+],
+"h11._connection.Connection.next_event": [
+"h11._connection.Connection._extract_next_receive_event",
+"h11._connection.Connection._process_error",
+"h11._connection.Connection._process_event",
+"h11._util.LocalProtocolError._reraise_as_remote_protocol_error"
+],
+"h11._connection.Connection.send": [
+"h11._connection.Connection.send_with_data_passthrough"
+],
+"h11._connection.Connection.send_failed": [
+"h11._connection.Connection._process_error"
+],
+"h11._connection.Connection.send_with_data_passthrough": [
+"h11._connection.Connection._clean_up_response_headers_for_sending",
+"h11._connection.Connection._process_error",
+"h11._connection.Connection._process_event"
+],
+"h11._connection.Connection.start_next_cycle": [
+"h11._connection.Connection._respond_to_state_changes"
+],
+"h11._connection._body_framing": [
+"h11._headers.get_comma_header"
+],
+"h11._connection._keep_alive": [
+"h11._headers.get_comma_header"
+],
+"h11._events.EndOfMessage.__init__": [
+"h11._headers.normalize_and_validate"
+],
+"h11._events.Request.__init__": [
+"h11._headers.normalize_and_validate",
+"h11._util.bytesify",
+"h11._util.validate"
+],
+"h11._events._ResponseBase.__init__": [
+"h11._events._ResponseBase.__post_init__",
+"h11._headers.normalize_and_validate",
+"h11._util.bytesify"
+],
+"h11._headers.has_expect_100_continue": [
+"h11._headers.get_comma_header"
+],
+"h11._headers.normalize_and_validate": [
+"h11._util.bytesify",
+"h11._util.validate"
+],
+"h11._headers.set_comma_header": [
+"h11._headers.normalize_and_validate"
+],
+"h11._readers.ChunkedReader.__call__": [
+"h11._readers._decode_header_lines",
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_at_most",
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_lines",
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_next_line",
+"h11._util.validate"
+],
+"h11._readers.ContentLengthReader.__call__": [
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_at_most"
+],
+"h11._readers.Http10Reader.__call__": [
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_at_most"
+],
+"h11._readers._decode_header_lines": [
+"h11._readers._obsolete_line_fold",
+"h11._util.validate"
+],
+"h11._readers.maybe_read_from_IDLE_client": [
+"h11._readers._decode_header_lines",
+"h11._receivebuffer.ReceiveBuffer.is_next_line_obviously_invalid_request_line",
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_lines",
+"h11._util.validate"
+],
+"h11._readers.maybe_read_from_SEND_RESPONSE_server": [
+"h11._readers._decode_header_lines",
+"h11._receivebuffer.ReceiveBuffer.is_next_line_obviously_invalid_request_line",
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_lines",
+"h11._util.validate"
+],
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_at_most": [
+"h11._receivebuffer.ReceiveBuffer._extract"
+],
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_lines": [
+"h11._receivebuffer.ReceiveBuffer._extract"
+],
+"h11._receivebuffer.ReceiveBuffer.maybe_extract_next_line": [
+"h11._receivebuffer.ReceiveBuffer._extract"
+],
+"h11._state.ConnectionState.process_client_switch_proposal": [
+"h11._state.ConnectionState._fire_state_triggered_transitions"
+],
+"h11._state.ConnectionState.process_error": [
+"h11._state.ConnectionState._fire_state_triggered_transitions"
+],
+"h11._state.ConnectionState.process_event": [
+"h11._state.ConnectionState._fire_event_triggered_transitions",
+"h11._state.ConnectionState._fire_state_triggered_transitions"
+],
+"h11._state.ConnectionState.process_keep_alive_disabled": [
+"h11._state.ConnectionState._fire_state_triggered_transitions"
+],
+"h11._util.Sentinel.__new__": [
+"h11._util.Sentinel.__new__"
+],
+"h11._writers.BodyWriter.__call__": [
+"h11._writers.BodyWriter.send_data",
+"h11._writers.BodyWriter.send_eom"
+],
+"h11._writers.ChunkedWriter.send_eom": [
+"h11._writers.write_headers"
+],
+"h11._writers.write_any_response": [
+"h11._writers.write_headers"
+],
+"h11._writers.write_request": [
+"h11._writers.write_headers"
+]
+}

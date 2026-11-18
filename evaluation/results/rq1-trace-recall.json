@@ -1,0 +1,1003 @@
+{
+ "reference": {
+  "url": "https://raw.githubusercontent.com/sola-st/DyPyBench/bccfda78e3b7e4d8a65dfa58d1b0cd3bd35c127d/experiments/DynaPyt_callgraphs.zip",
+  "sha256": "1b0c7d5551464ccd5bbd54864c7b45b89b1cd775cef374fd5330be5fa84b0c44",
+  "facts": {"traces": 50, "edges": 9602, "smallest": 3, "largest": 1438}
+ },
+ "corpus": {
+  "file": "dypybench.json",
+  "sha256": "427afc6fb2fbf00d412a92889fb313aafc75b1f691507873dec274c350da8fce",
+  "projects": {
+   "grab": {"commit": "2d170c31a3335c2e29578b42a5d62ef3efc5d7ee", "sha256": "0807fba37539f3f7de290c239b15ed37b18f853899ed210ae30edcd62e2b5fa2"},
+   "PythonRobotics": {"commit": "15ab19688b2f6c03ee91a853f1f8cc9def84d162", "sha256": "e2a73c4f1f35a6a3f76a213dd2dc955b9517ea4a4b759cc3ce00c1dfe2e58eb5"},
+   "flask-api": {"commit": "fdba680df667662e683bf69e0516e3ffef3f51bc", "sha256": "6f0a628407a3414a69e277ac8fcd3a8cbb7cebdaf8600a98b631bd92404ee9fb"},
+   "schedule": {"commit": "3eac646a8d2658929587d7454bd2c85696df254e", "sha256": "e7e070607f942de9241ce093a1c5b4e7d049438428e09ffdb94229b03cac21f1"},
+   "Pillow": {"commit": "bf0abdca27cd84dafd185bd44206c82b5c14330d", "sha256": "16811967e30ad4ad4b71c49f05860b6c1f7e7a3238cd83a71eea66a58f1bad9c"},
+   "supervisor": {"commit": "a7cb60d58b5eb610feb76c675208f87501d4bc4b", "sha256": "cbe4cdf2490a6b606a8185fad90fda099bbe6c9f8a716ed15cbbe7039a59f7c2"},
+   "streamparse": {"commit": "aabd9d057f0fbf568d29199e3d25a6d30d62f132", "sha256": "12ed80c6ac24739e3f64abb82cb3def8f9ea41580b92c1372c775bf0e6ad4854"},
+   "dh-virtualenv": {"commit": "9bd6d3fac3ea9b53e12bfedeef53f0a73c57b2cd", "sha256": "e3614d9865d2758e2a4163e97d0c9303b0101b899c600f3c58ba32a194345150"},
+   "pdoc": {"commit": "0550275026e2cf998545cdf472555a85e5909466", "sha256": "f7d696c6dbb169085f73965d1d9e8203a68528635fe0caa0e032124407587d74"},
+   "click": {"commit": "725e3e4a8da6f45441d48ec9f6a526583b6e162c", "sha256": "6f71b344d8a857264a2acf209a6f8d9e945be41e7030d2890fb8563217d92529"},
+   "delegator.py": {"commit": "194aa92543fbdbfbae0bcc24ca217819a7805da2", "sha256": "eddbed1458bd4183155aea6b4d735fa2fb2add33113740c6d704eb1bd4ceeaa9"},
+   "python-patterns": {"commit": "cc549613cec8fe824099c5b93aaba9b0639bbeb6", "sha256": "c3581c48f971da4e184a5db11c8fe13191807a90d524e08a5512f2e7bc110089"},
+   "uvicorn": {"commit": "2351d5ff2b068d7bcba6eaccde83bc90b0727c89", "sha256": "d3d29afb2f19311cd42ea6488ab253eaaa485ee932e88453b0ba38fa403a8bda"},
+   "pydub": {"commit": "996cec42e9621701edb83354232b2c0ca0121560", "sha256": "dd7c7ef67bf1e4ee8319dffec8cbe2e1d1cfc36f3a20263d5bdf0f7e379d5222"},
+   "pyjwt": {"commit": "0a99cc2427c751275ea0002acca9ba0c07c25834", "sha256": "6f0127e69acf14797e21117843a84d21ec9d31c65301261ded83ca035df759c3"},
+   "cerberus": {"commit": "8765b317442c002a84e556bd5d9677b868e6deb2", "sha256": "4ea5cb15747e5fbd3d78091e4fd57674c04c82f0856e8921a0f7cd238649216e"},
+   "errbot": {"commit": "1389003642e0e01990fa7d1fc3d9374fe27b7878", "sha256": "efd3cc431d75ca03c051c2906451b6bd7dc4749f56850149e470fa2f00115bc7"},
+   "black": {"commit": "7e6d3fac197395b0a2b380cc60811536fe23626b", "sha256": "d13725022243f62834396bfe024fe07978c635e4c3a03555b67a9db09b5407f0"},
+   "thefuck": {"commit": "ceeaeab94b5df5a4fe9d94d61e4f6b0bbea96378", "sha256": "8f39366064eb48bc17322c9dd929de0cb22d861c505313a2add414b3b2488bbc"},
+   "python-future": {"commit": "af1db970b0879b59e7aeb798c27a623144561cff", "sha256": "31f45734bf7f4caa0a6b646835bd4513fa71149f4e1a274064226853f9b17288"},
+   "python-decouple": {"commit": "9cc2f7e3b2f82d306b981975da2925f05a816f51", "sha256": "816497595133ff7c6faeee7a1d3662bd46300f4652f06e6356b41f85b0098e25"},
+   "arrow": {"commit": "74a759b88447b6ecd9fd5de610f272c8fb6130a2", "sha256": "ef8224860ffe263a97ea3e130a87832513d58d7cb3bd03ce0181230e19668d57"},
+   "pudb": {"commit": "cd27015ae203307cec09adf336cfe237d03cc076", "sha256": "9779fd60cd9544fca57308ada30f8b406ca7c96b18bd124f73d4a2ea955a10a0"},
+   "seaborn": {"commit": "a47b97e4b98c809db55cbd283de21acba89fe186", "sha256": "936e819a0f35a606b64ebc66ba270281beecec06654c32c88b073b73865ecccd"},
+   "pyfilesystem2": {"commit": "8ed9dc495d8ba2f83fbb2a1145d34d92e13644be", "sha256": "dea8475a0a119777e609f64b414869d838af193c1642f607dcd929eea0d1c080"},
+   "wtforms": {"commit": "96021e2574b82820a11a8ff6fa5367aebff88533", "sha256": "0a43e5287ef16276822e16596c9cdc26391ba79c2c3064ef157f13bf2ef44a5d"},
+   "funcy": {"commit": "5f23815f224e595b8a54822bcb330cd31a799c78", "sha256": "6ae0ed85c913b6bfc9e7e6cd9f7965ff708274207f961ccd6b6662db3900ef01"},
+   "graphene": {"commit": "52143473efad141f6700237ecce79b22e8ff4e41", "sha256": "4a02df2e85f52eea5b68b95bf8ba292fcc6e5f5760d33d0e1c7b797b0965ef36"},
+   "geopy": {"commit": "5e6e88839f8c1841e653dd2af620b2d63c601b7f", "sha256": "663af4b921916106134b822aa3aec63a73a398d4289de1933258f373115dc17f"},
+   "pyquery": {"commit": "ca860115ee15ad30367b6386ed6abc8f8801600e", "sha256": "acec844439efab2b1a6e73a846f3543dd1196bfa8458becf97da87d2ba0744db"},
+   "requests": {"commit": "61c324da43dd8b775d3930d76265538b3ca27bc1", "sha256": "e9cff8d02fb52d1469b6406428c4a2a7bcb95d0186547c7e4b2e24867c6157a3"},
+   "blinker": {"commit": "c074cdd06328b724bbe95c060373a57ff2e86b1f", "sha256": "3a157357c4dfc0d01ce2a718efe33f12b56fab0c995955254741fbe84e04f498"},
+   "zerorpc-python": {"commit": "be578354c09c43412d052c53de14745868bd0c4f", "sha256": "7ab9b1d9b4861e60bc9f94347db8bc868be7501f00d9a0947798a3ba750606d1"},
+   "elasticsearch-dsl-py": {"commit": "5874ff6bd5a7a77086539159f041eb979b5235cc", "sha256": "8d3ccb608d8eb69f68ea5df0351a081f7e62c87342b398c20fe0a7fd83864373"},
+   "marshmallow": {"commit": "b80adb0b09491324c9a5d99df63c10c2e5c767cc", "sha256": "7a1b60923558a5bc8235accc7f63626232a7fbad4cd96696b6e3cb02293d33fe"},
+   "pypdf": {"commit": "3560550eeef7a6e55a05c8d656d88b1dc05a1a2e", "sha256": "46b2ed2ff7ce10d00d1d35ed64fc39921435143a5ab0c94e8a355c8ed10d554d"},
+   "lektor": {"commit": "74bce9096116caffe27ab69327ed4ba274e66e1e", "sha256": "77a83e6887eb20ce953151e0939e956435c9f7c398cd8327e07a258469ee0dd8"},
+   "celery": {"commit": "e54780f8003a16295ff91009f6eb380d8c0e1a06", "sha256": "da6a3ebd4fb1060e15375b43c95e7f29284ba3e0c423615e79b508c9902ae864"},
+   "furl": {"commit": "774846234ff803606fdd289a7549f9b50b2b3677", "sha256": "5dde48a2e6009b1ef751ec4f7cf9e36df76a5bbb889417f25d86bef9d31ece32"},
+   "moviepy": {"commit": "6b8523079f55cd6c4acc466ac4006fcf060f8136", "sha256": "643d14762672c456aecbcae96f723efe8117b29d043a3aa035e0e451df16ecc5"},
+   "webassets": {"commit": "6370997d54a5c7729bf6c251e21ee7fd722397e7", "sha256": "cd348c441898b00d57d21b585d042ba30e6de6640a5bc7ed3c07772324e75fa2"},
+   "html2text": {"commit": "d51fb1dfb66774d4db339e03c452676cd73d44da", "sha256": "ef16826114f16c17826e4925fdbe20b3b120985e2fa14410b7312a6909559608"},
+   "gunicorn": {"commit": "48eda22a4b3399b0a65677619b4938503cc207cb", "sha256": "f3991d6fe9bc30cbfb032dc70c50ad0b9cf66dc5d8ded7c5be33fcff7d060640"},
+   "mezzanine": {"commit": "e719286e06b5a9e376896ab7e4c27410c80c1586", "sha256": "7f9cb8c73b8b27f2f5d9347920626afa7fb2f308f4f432cdf9c5ddc30dab2487"},
+   "code2flow": {"commit": "c2c22afe5e12f969cc256373bf8f4eec592dc762", "sha256": "294c229deab48b4bb0f7ea7b5f68a15358dcfd27ac6e4bf3e350288f9b7d8b07"},
+   "pickledb": {"commit": "fd3776366dad7d0a3fc8854920894e1b29bd3c58", "sha256": "e14df4bb17072a66614a6b392b857ef1dff52444fb6850bb850ee199da5d544e"},
+   "pyvips": {"commit": "f45a63fbf0ae8ff75ed5d8d121d54a0f78fc7860", "sha256": "293cc8b4d9f7764bf4025151a10d33810b7f5075f2b8083e19bfc5b500ca6d8b"},
+   "structlog": {"commit": "bcfc7f9e60640c150bffbdaeed6328e582f93d1e", "sha256": "bd33af7038d038220040d5cfd589ec36541398ce3a56994d44a8b88cb537bdf7"}
+  }
+ },
+ "scorer": {"table": "55e1e18ccd601300df7da71be50f1c386bb4b5ef735ab39be6adaf053195f6da", "python": "3.14.10", "implementation": "CPython", "platform": "linux x86_64"},
+ "python": "3.14.10",
+ "limits": {"seconds": 1800, "memory_mib": 16384.0},
+ "tools": {
+  "PyCG": {"name": "PyCG", "flavour": "new", "commit": "c5c6a8951ad7e662aa7dcd64b9af8849d689bca3", "describe": "c5c6a89", "dirty": false},
+  "original PyCG": {"name": "original PyCG", "flavour": "original", "commit": "046479ebcbc27a3ff7a7fa45cc08336726fb0bc9", "describe": "the 2021 analysis", "dirty": false},
+  "pyan3": {"name": "pyan3", "commit": "8e8bd90646de039696b91fdf2d970e02fe8d1f62", "repository": "https://github.com/Technologicat/pyan", "source": "PyPI wheel pyan3==2.9.0 (pyan-requirements.txt)", "version": "v2.9.0"},
+  "JARVIS": {"name": "JARVIS", "commit": "8871b86494a1aec0095686ffa543994a7361af88", "repository": "https://github.com/pythonJaRvis/pythonJaRvis.github.io", "source": "git archive of the pinned commit, directory Jarvis/tool/Jarvis", "version": "8871b86"},
+  "JARVIS, class edges dropped": {"name": "JARVIS", "commit": "8871b86494a1aec0095686ffa543994a7361af88", "repository": "https://github.com/pythonJaRvis/pythonJaRvis.github.io", "source": "git archive of the pinned commit, directory Jarvis/tool/Jarvis", "version": "8871b86"},
+  "JARVIS --precision": {"name": "JARVIS", "commit": "8871b86494a1aec0095686ffa543994a7361af88", "repository": "https://github.com/pythonJaRvis/pythonJaRvis.github.io", "source": "git archive of the pinned commit, directory Jarvis/tool/Jarvis", "version": "8871b86"},
+  "CPyGraph": {"name": "CPyGraph", "commit": "984d34ed2f6b81eecb60b975723ad20394ec4a69", "repository": "https://github.com/awen-li/CPyGraph", "source": "git archive of the pinned commit, built with CMake", "version": "v0.1.0"},
+  "PyAnalyzer": {"name": "PyAnalyzer", "commit": "ea143ef8bdec2b5f8841bb600b348f0975b90349", "licence": "none in the repository; ENRE-py tag zdh-stable (eb6d0f6, MIT) is the same code but 15 lines", "repository": "https://github.com/2024icse/PyAnalyzer", "source": "git archive of the pinned commit, directory SourceCode/pyanalyzer only (never its .exe, .jar files, Scripts/ or Data/)", "version": "ea143ef"},
+  "PyAnalyzer (call relations of the dependency report)": {"name": "PyAnalyzer", "commit": "ea143ef8bdec2b5f8841bb600b348f0975b90349", "licence": "none in the repository; ENRE-py tag zdh-stable (eb6d0f6, MIT) is the same code but 15 lines", "repository": "https://github.com/2024icse/PyAnalyzer", "source": "git archive of the pinned commit, directory SourceCode/pyanalyzer only (never its .exe, .jar files, Scripts/ or Data/)", "version": "ea143ef"}
+ },
+ "rows": [
+  {
+   "tool": "PyCG",
+   "version": "c5c6a8951a",
+   "finished": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 2640, "all": 8207, "all_found": 6919, "callers": 2931, "callers_found": 2931, "callees": 4361, "callees_found": 3640, "inside_callees": 1969, "inside_callees_found": 1806, "projects": 48},
+   "all": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 2640, "all": 8207, "all_found": 6919, "callers": 2931, "callers_found": 2931, "callees": 4361, "callees_found": 3640, "inside_callees": 1969, "inside_callees_found": 1806, "projects": 48}
+  },
+  {
+   "tool": "original PyCG",
+   "version": "046479ebcb",
+   "finished": {"dynamic": 6546, "unmapped": 905, "inside": 2168, "inside_found": 1427, "all": 5627, "all_found": 3217, "callers": 2036, "callers_found": 2036, "callees": 3094, "callees_found": 1874, "inside_callees": 1371, "inside_callees_found": 999, "projects": 38},
+   "all": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 1427, "all": 8207, "all_found": 3217, "callers": 2931, "callers_found": 2036, "callees": 4361, "callees_found": 1874, "inside_callees": 1969, "inside_callees_found": 999, "projects": 48}
+  },
+  {
+   "tool": "pyan3",
+   "version": "8e8bd90646",
+   "finished": {"dynamic": 9400, "unmapped": 1252, "inside": 2901, "inside_found": 2168, "all": 8118, "all_found": 2168, "callers": 2897, "callers_found": 2501, "callees": 4305, "callees_found": 1598, "inside_callees": 1954, "inside_callees_found": 1598, "projects": 46},
+   "all": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 2168, "all": 8207, "all_found": 2168, "callers": 2931, "callers_found": 2501, "callees": 4361, "callees_found": 1598, "inside_callees": 1969, "inside_callees_found": 1598, "projects": 48}
+  },
+  {
+   "tool": "JARVIS",
+   "version": "8871b86494",
+   "finished": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 2003, "all": 8207, "all_found": 4322, "callers": 2931, "callers_found": 2786, "callees": 4361, "callees_found": 2594, "inside_callees": 1969, "inside_callees_found": 1518, "projects": 48},
+   "all": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 2003, "all": 8207, "all_found": 4322, "callers": 2931, "callers_found": 2786, "callees": 4361, "callees_found": 2594, "inside_callees": 1969, "inside_callees_found": 1518, "projects": 48}
+  },
+  {
+   "tool": "JARVIS, class edges dropped",
+   "version": "8871b86494",
+   "finished": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 2003, "all": 8207, "all_found": 4322, "callers": 2931, "callers_found": 2786, "callees": 4361, "callees_found": 2594, "inside_callees": 1969, "inside_callees_found": 1518, "projects": 48},
+   "all": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 2003, "all": 8207, "all_found": 4322, "callers": 2931, "callers_found": 2786, "callees": 4361, "callees_found": 2594, "inside_callees": 1969, "inside_callees_found": 1518, "projects": 48}
+  },
+  {
+   "tool": "JARVIS --precision",
+   "version": "8871b86494",
+   "finished": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 1938, "all": 8207, "all_found": 3910, "callers": 2931, "callers_found": 2750, "callees": 4361, "callees_found": 2322, "inside_callees": 1969, "inside_callees_found": 1481, "projects": 48},
+   "all": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 1938, "all": 8207, "all_found": 3910, "callers": 2931, "callers_found": 2750, "callees": 4361, "callees_found": 2322, "inside_callees": 1969, "inside_callees_found": 1481, "projects": 48}
+  },
+  {
+   "tool": "CPyGraph",
+   "version": "984d34ed2f",
+   "finished": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 845, "all": 8207, "all_found": 1123, "callers": 2931, "callers_found": 961, "callees": 4361, "callees_found": 769, "inside_callees": 1969, "inside_callees_found": 664, "projects": 48},
+   "all": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 845, "all": 8207, "all_found": 1123, "callers": 2931, "callers_found": 961, "callees": 4361, "callees_found": 769, "inside_callees": 1969, "inside_callees_found": 664, "projects": 48}
+  },
+  {
+   "tool": "HeaderGen (hybrid: imports the analysed modules)",
+   "cell": {"status": "missing", "reason": "not run: the tool imports the analysed code, and the corpus is not scanned"}
+  },
+  {
+   "tool": "PyAnalyzer",
+   "version": "ea143ef8bd",
+   "finished": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 1431, "all": 8207, "all_found": 1431, "callers": 2931, "callers_found": 1712, "callees": 4361, "callees_found": 1110, "inside_callees": 1969, "inside_callees_found": 1110, "projects": 48},
+   "all": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 1431, "all": 8207, "all_found": 1431, "callers": 2931, "callers_found": 1712, "callees": 4361, "callees_found": 1110, "inside_callees": 1969, "inside_callees_found": 1110, "projects": 48}
+  },
+  {
+   "tool": "PyAnalyzer (call relations of the dependency report)",
+   "version": "ea143ef8bd",
+   "finished": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 1770, "all": 8207, "all_found": 1770, "callers": 2931, "callers_found": 2058, "callees": 4361, "callees_found": 1321, "inside_callees": 1969, "inside_callees_found": 1321, "projects": 48},
+   "all": {"dynamic": 9495, "unmapped": 1258, "inside": 2919, "inside_found": 1770, "all": 8207, "all_found": 1770, "callers": 2931, "callers_found": 2058, "callees": 4361, "callees_found": 1321, "inside_callees": 1969, "inside_callees_found": 1321, "projects": 48}
+  }
+ ],
+ "projects": {
+  "grab": {
+   "rank": 1,
+   "trace": 1,
+   "edges": 367,
+   "unmapped": {"callee: no module": 4, "class: __set_name__ in the project": 23, "class: base not proved": 4, "class: not at the top level": 5},
+   "rules": {"caller: function": 23, "caller: method": 297, "caller: module": 11, "inside: function": 126, "module: source root": 126, "outside: as written": 107, "outside: builtin type": 37, "outside: builtins": 61},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 367, "unmapped": 36, "inside": 126, "inside_found": 117, "all": 331, "all_found": 286, "callers": 116, "callers_found": 116, "callees": 202, "callees_found": 164, "inside_callees": 95, "inside_callees_found": 86},
+    "original PyCG": {"status": "ok", "dynamic": 367, "unmapped": 36, "inside": 126, "inside_found": 78, "all": 331, "all_found": 194, "callers": 116, "callers_found": 116, "callees": 202, "callees_found": 116, "inside_callees": 95, "inside_callees_found": 61},
+    "pyan3": {"status": "ok", "dynamic": 367, "unmapped": 36, "inside": 126, "inside_found": 80, "all": 331, "all_found": 80, "callers": 116, "callers_found": 96, "callees": 202, "callees_found": 67, "inside_callees": 95, "inside_callees_found": 67},
+    "JARVIS": {"status": "ok", "dynamic": 367, "unmapped": 36, "inside": 126, "inside_found": 71, "all": 331, "all_found": 161, "callers": 116, "callers_found": 105, "callees": 202, "callees_found": 96, "inside_callees": 95, "inside_callees_found": 54},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 367, "unmapped": 36, "inside": 126, "inside_found": 71, "all": 331, "all_found": 161, "callers": 116, "callers_found": 105, "callees": 202, "callees_found": 96, "inside_callees": 95, "inside_callees_found": 54},
+    "JARVIS --precision": {"status": "ok", "dynamic": 367, "unmapped": 36, "inside": 126, "inside_found": 70, "all": 331, "all_found": 128, "callers": 116, "callers_found": 102, "callees": 202, "callees_found": 79, "inside_callees": 95, "inside_callees_found": 54},
+    "CPyGraph": {"status": "ok", "dynamic": 367, "unmapped": 36, "inside": 126, "inside_found": 0, "all": 331, "all_found": 0, "callers": 116, "callers_found": 2, "callees": 202, "callees_found": 0, "inside_callees": 95, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 367, "unmapped": 36, "inside": 126, "inside_found": 20, "all": 331, "all_found": 20, "callers": 116, "callers_found": 29, "callees": 202, "callees_found": 13, "inside_callees": 95, "inside_callees_found": 13},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 367, "unmapped": 36, "inside": 126, "inside_found": 78, "all": 331, "all_found": 78, "callers": 116, "callers_found": 89, "callees": 202, "callees_found": 57, "inside_callees": 95, "inside_callees_found": 57}
+   }
+  },
+  "PythonRobotics": {
+   "rank": 2,
+   "trace": 2,
+   "edges": 1438,
+   "unmapped": {"callee: class without __init__": 1, "callee: no module": 23, "callee: not a name": 141, "callee: one of several lambdas": 1, "class: base not proved": 7, "class: not at the top level": 17},
+   "rules": {"caller: function": 719, "caller: method": 403, "caller: module": 126, "inside: class, own __init__": 37, "inside: function": 288, "module: source root": 325, "outside: as written": 507, "outside: builtin type": 94, "outside: builtins": 322},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 1438, "unmapped": 190, "inside": 325, "inside_found": 324, "all": 1248, "all_found": 1111, "callers": 385, "callers_found": 385, "callees": 470, "callees_found": 393, "inside_callees": 288, "inside_callees_found": 288},
+    "original PyCG": {"status": "timeout", "dynamic": 1438, "unmapped": 190, "inside": 325, "inside_found": 0, "all": 1248, "all_found": 0, "callers": 385, "callers_found": 0, "callees": 470, "callees_found": 0, "inside_callees": 288, "inside_callees_found": 0},
+    "pyan3": {"status": "ok", "dynamic": 1438, "unmapped": 190, "inside": 325, "inside_found": 317, "all": 1248, "all_found": 317, "callers": 385, "callers_found": 380, "callees": 470, "callees_found": 286, "inside_callees": 288, "inside_callees_found": 286},
+    "JARVIS": {"status": "ok", "dynamic": 1438, "unmapped": 190, "inside": 325, "inside_found": 312, "all": 1248, "all_found": 663, "callers": 385, "callers_found": 383, "callees": 470, "callees_found": 318, "inside_callees": 288, "inside_callees_found": 278},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 1438, "unmapped": 190, "inside": 325, "inside_found": 312, "all": 1248, "all_found": 663, "callers": 385, "callers_found": 383, "callees": 470, "callees_found": 318, "inside_callees": 288, "inside_callees_found": 278},
+    "JARVIS --precision": {"status": "ok", "dynamic": 1438, "unmapped": 190, "inside": 325, "inside_found": 312, "all": 1248, "all_found": 629, "callers": 385, "callers_found": 383, "callees": 470, "callees_found": 302, "inside_callees": 288, "inside_callees_found": 278},
+    "CPyGraph": {"status": "ok", "dynamic": 1438, "unmapped": 190, "inside": 325, "inside_found": 319, "all": 1248, "all_found": 448, "callers": 385, "callers_found": 372, "callees": 470, "callees_found": 290, "inside_callees": 288, "inside_callees_found": 287},
+    "PyAnalyzer": {"status": "ok", "dynamic": 1438, "unmapped": 190, "inside": 325, "inside_found": 268, "all": 1248, "all_found": 268, "callers": 385, "callers_found": 363, "callees": 470, "callees_found": 247, "inside_callees": 288, "inside_callees_found": 247},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 1438, "unmapped": 190, "inside": 325, "inside_found": 277, "all": 1248, "all_found": 277, "callers": 385, "callers_found": 364, "callees": 470, "callees_found": 246, "inside_callees": 288, "inside_callees_found": 246}
+   }
+  },
+  "flask-api": {
+   "rank": 3,
+   "trace": 3,
+   "edges": 169,
+   "unmapped": {"callee: class without __init__": 10, "callee: no module": 3, "caller: several functions": 7, "class: base not proved": 2, "class: not at the top level": 4},
+   "rules": {"caller: function": 18, "caller: method": 123, "caller: module": 2, "inside: class, inherited __init__": 4, "inside: class, own __init__": 6, "inside: function": 34, "module: source root": 44, "outside: as written": 31, "outside: builtin type": 28, "outside: builtins": 40},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 169, "unmapped": 26, "inside": 44, "inside_found": 33, "all": 143, "all_found": 109, "callers": 49, "callers_found": 49, "callees": 90, "callees_found": 64, "inside_callees": 30, "inside_callees_found": 23},
+    "original PyCG": {"status": "ok", "dynamic": 169, "unmapped": 26, "inside": 44, "inside_found": 32, "all": 143, "all_found": 85, "callers": 49, "callers_found": 49, "callees": 90, "callees_found": 51, "inside_callees": 30, "inside_callees_found": 23},
+    "pyan3": {"status": "ok", "dynamic": 169, "unmapped": 26, "inside": 44, "inside_found": 26, "all": 143, "all_found": 26, "callers": 49, "callers_found": 45, "callees": 90, "callees_found": 22, "inside_callees": 30, "inside_callees_found": 22},
+    "JARVIS": {"status": "ok", "dynamic": 169, "unmapped": 26, "inside": 44, "inside_found": 32, "all": 143, "all_found": 82, "callers": 49, "callers_found": 46, "callees": 90, "callees_found": 47, "inside_callees": 30, "inside_callees_found": 22},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 169, "unmapped": 26, "inside": 44, "inside_found": 32, "all": 143, "all_found": 82, "callers": 49, "callers_found": 46, "callees": 90, "callees_found": 47, "inside_callees": 30, "inside_callees_found": 22},
+    "JARVIS --precision": {"status": "ok", "dynamic": 169, "unmapped": 26, "inside": 44, "inside_found": 32, "all": 143, "all_found": 75, "callers": 49, "callers_found": 45, "callees": 90, "callees_found": 42, "inside_callees": 30, "inside_callees_found": 22},
+    "CPyGraph": {"status": "ok", "dynamic": 169, "unmapped": 26, "inside": 44, "inside_found": 6, "all": 143, "all_found": 9, "callers": 49, "callers_found": 6, "callees": 90, "callees_found": 6, "inside_callees": 30, "inside_callees_found": 3},
+    "PyAnalyzer": {"status": "ok", "dynamic": 169, "unmapped": 26, "inside": 44, "inside_found": 15, "all": 143, "all_found": 15, "callers": 49, "callers_found": 18, "callees": 90, "callees_found": 11, "inside_callees": 30, "inside_callees_found": 11},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 169, "unmapped": 26, "inside": 44, "inside_found": 21, "all": 143, "all_found": 21, "callers": 49, "callers_found": 32, "callees": 90, "callees_found": 17, "inside_callees": 30, "inside_callees_found": 17}
+   }
+  },
+  "schedule": {
+   "rank": 4,
+   "trace": 4,
+   "edges": 105,
+   "unmapped": {"callee: constructor not in the project": 13, "callee: not a name": 9},
+   "rules": {"caller: function": 8, "caller: method": 72, "caller: module": 3, "inside: class, own __init__": 2, "inside: function": 27, "module: source root": 29, "outside: as written": 26, "outside: builtin type": 9, "outside: builtins": 19},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 105, "unmapped": 22, "inside": 29, "inside_found": 19, "all": 83, "all_found": 60, "callers": 29, "callers_found": 29, "callees": 62, "callees_found": 45, "inside_callees": 21, "inside_callees_found": 15},
+    "original PyCG": {"status": "ok", "dynamic": 105, "unmapped": 22, "inside": 29, "inside_found": 18, "all": 83, "all_found": 44, "callers": 29, "callers_found": 29, "callees": 62, "callees_found": 34, "inside_callees": 21, "inside_callees_found": 14},
+    "pyan3": {"status": "ok", "dynamic": 105, "unmapped": 22, "inside": 29, "inside_found": 17, "all": 83, "all_found": 17, "callers": 29, "callers_found": 25, "callees": 62, "callees_found": 14, "inside_callees": 21, "inside_callees_found": 14},
+    "JARVIS": {"status": "ok", "dynamic": 105, "unmapped": 22, "inside": 29, "inside_found": 18, "all": 83, "all_found": 38, "callers": 29, "callers_found": 26, "callees": 62, "callees_found": 28, "inside_callees": 21, "inside_callees_found": 14},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 105, "unmapped": 22, "inside": 29, "inside_found": 18, "all": 83, "all_found": 38, "callers": 29, "callers_found": 26, "callees": 62, "callees_found": 28, "inside_callees": 21, "inside_callees_found": 14},
+    "JARVIS --precision": {"status": "ok", "dynamic": 105, "unmapped": 22, "inside": 29, "inside_found": 18, "all": 83, "all_found": 38, "callers": 29, "callers_found": 26, "callees": 62, "callees_found": 28, "inside_callees": 21, "inside_callees_found": 14},
+    "CPyGraph": {"status": "ok", "dynamic": 105, "unmapped": 22, "inside": 29, "inside_found": 1, "all": 83, "all_found": 1, "callers": 29, "callers_found": 1, "callees": 62, "callees_found": 1, "inside_callees": 21, "inside_callees_found": 1},
+    "PyAnalyzer": {"status": "ok", "dynamic": 105, "unmapped": 22, "inside": 29, "inside_found": 15, "all": 83, "all_found": 15, "callers": 29, "callers_found": 19, "callees": 62, "callees_found": 12, "inside_callees": 21, "inside_callees_found": 12},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 105, "unmapped": 22, "inside": 29, "inside_found": 18, "all": 83, "all_found": 18, "callers": 29, "callers_found": 22, "callees": 62, "callees_found": 14, "inside_callees": 21, "inside_callees_found": 14}
+   }
+  },
+  "Pillow": {
+   "rank": 5,
+   "trace": 5,
+   "edges": 321,
+   "unmapped": {"callee: class without __init__": 1, "callee: no module": 25, "callee: not a definition": 4, "class: attribute set": 4, "class: base not proved": 1, "class: namespace access": 2},
+   "rules": {"caller: function": 99, "caller: method": 37, "caller: module": 148, "inside: class, own __init__": 2, "inside: function": 177, "module: source root": 179, "outside: as written": 24, "outside: builtin type": 31, "outside: builtins": 50},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 321, "unmapped": 37, "inside": 179, "inside_found": 179, "all": 284, "all_found": 272, "callers": 101, "callers_found": 101, "callees": 109, "callees_found": 103, "inside_callees": 65, "inside_callees_found": 65},
+    "original PyCG": {"status": "ok", "dynamic": 321, "unmapped": 37, "inside": 179, "inside_found": 34, "all": 284, "all_found": 93, "callers": 101, "callers_found": 101, "callees": 109, "callees_found": 67, "inside_callees": 65, "inside_callees_found": 44},
+    "pyan3": {"status": "ok", "dynamic": 321, "unmapped": 37, "inside": 179, "inside_found": 145, "all": 284, "all_found": 145, "callers": 101, "callers_found": 95, "callees": 109, "callees_found": 58, "inside_callees": 65, "inside_callees_found": 58},
+    "JARVIS": {"status": "ok", "dynamic": 321, "unmapped": 37, "inside": 179, "inside_found": 34, "all": 284, "all_found": 85, "callers": 101, "callers_found": 97, "callees": 109, "callees_found": 68, "inside_callees": 65, "inside_callees_found": 44},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 321, "unmapped": 37, "inside": 179, "inside_found": 34, "all": 284, "all_found": 85, "callers": 101, "callers_found": 97, "callees": 109, "callees_found": 68, "inside_callees": 65, "inside_callees_found": 44},
+    "JARVIS --precision": {"status": "ok", "dynamic": 321, "unmapped": 37, "inside": 179, "inside_found": 34, "all": 284, "all_found": 84, "callers": 101, "callers_found": 97, "callees": 109, "callees_found": 66, "inside_callees": 65, "inside_callees_found": 44},
+    "CPyGraph": {"status": "ok", "dynamic": 321, "unmapped": 37, "inside": 179, "inside_found": 151, "all": 284, "all_found": 166, "callers": 101, "callers_found": 86, "callees": 109, "callees_found": 45, "inside_callees": 65, "inside_callees_found": 41},
+    "PyAnalyzer": {"status": "ok", "dynamic": 321, "unmapped": 37, "inside": 179, "inside_found": 19, "all": 284, "all_found": 19, "callers": 101, "callers_found": 42, "callees": 109, "callees_found": 37, "inside_callees": 65, "inside_callees_found": 37},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 321, "unmapped": 37, "inside": 179, "inside_found": 26, "all": 284, "all_found": 26, "callers": 101, "callers_found": 52, "callees": 109, "callees_found": 39, "inside_callees": 65, "inside_callees_found": 39}
+   }
+  },
+  "supervisor": {
+   "rank": 6,
+   "trace": 6,
+   "edges": 26,
+   "unmapped": {"callee: no module": 1},
+   "rules": {"caller: function": 11, "caller: method": 2, "caller: module": 12, "inside: class, own __init__": 2, "inside: function": 5, "module: source root": 7, "outside: as written": 6, "outside: builtin type": 5, "outside: builtins": 7},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 7, "inside_found": 7, "all": 25, "all_found": 20, "callers": 13, "callers_found": 13, "callees": 21, "callees_found": 16, "inside_callees": 7, "inside_callees_found": 7},
+    "original PyCG": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 7, "inside_found": 7, "all": 25, "all_found": 12, "callers": 13, "callers_found": 13, "callees": 21, "callees_found": 13, "inside_callees": 7, "inside_callees_found": 7},
+    "pyan3": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 7, "inside_found": 2, "all": 25, "all_found": 2, "callers": 13, "callers_found": 10, "callees": 21, "callees_found": 7, "inside_callees": 7, "inside_callees_found": 7},
+    "JARVIS": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 7, "inside_found": 7, "all": 25, "all_found": 13, "callers": 13, "callers_found": 13, "callees": 21, "callees_found": 15, "inside_callees": 7, "inside_callees_found": 7},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 7, "inside_found": 7, "all": 25, "all_found": 13, "callers": 13, "callers_found": 13, "callees": 21, "callees_found": 15, "inside_callees": 7, "inside_callees_found": 7},
+    "JARVIS --precision": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 7, "inside_found": 7, "all": 25, "all_found": 13, "callers": 13, "callers_found": 13, "callees": 21, "callees_found": 15, "inside_callees": 7, "inside_callees_found": 7},
+    "CPyGraph": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 7, "inside_found": 7, "all": 25, "all_found": 8, "callers": 13, "callers_found": 12, "callees": 21, "callees_found": 8, "inside_callees": 7, "inside_callees_found": 7},
+    "PyAnalyzer": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 7, "inside_found": 7, "all": 25, "all_found": 7, "callers": 13, "callers_found": 12, "callees": 21, "callees_found": 7, "inside_callees": 7, "inside_callees_found": 7},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 7, "inside_found": 5, "all": 25, "all_found": 5, "callers": 13, "callers_found": 11, "callees": 21, "callees_found": 5, "inside_callees": 7, "inside_callees_found": 5}
+   }
+  },
+  "streamparse": {
+   "rank": 7,
+   "trace": 7,
+   "edges": 287,
+   "unmapped": {"callee: no module": 1, "callee: not a name": 13, "class: name not bound once": 2},
+   "rules": {"caller: function": 156, "caller: method": 101, "caller: module": 14, "inside: class, own __init__": 7, "inside: function": 92, "module: source root": 99, "outside: as written": 78, "outside: builtin type": 44, "outside: builtins": 50},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 287, "unmapped": 16, "inside": 99, "inside_found": 88, "all": 271, "all_found": 188, "callers": 72, "callers_found": 72, "callees": 111, "callees_found": 83, "inside_callees": 48, "inside_callees_found": 37},
+    "original PyCG": {"status": "ok", "dynamic": 287, "unmapped": 16, "inside": 99, "inside_found": 82, "all": 271, "all_found": 145, "callers": 72, "callers_found": 72, "callees": 111, "callees_found": 61, "inside_callees": 48, "inside_callees_found": 34},
+    "pyan3": {"status": "ok", "dynamic": 287, "unmapped": 16, "inside": 99, "inside_found": 86, "all": 271, "all_found": 86, "callers": 72, "callers_found": 59, "callees": 111, "callees_found": 36, "inside_callees": 48, "inside_callees_found": 36},
+    "JARVIS": {"status": "ok", "dynamic": 287, "unmapped": 16, "inside": 99, "inside_found": 82, "all": 271, "all_found": 143, "callers": 72, "callers_found": 71, "callees": 111, "callees_found": 60, "inside_callees": 48, "inside_callees_found": 34},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 287, "unmapped": 16, "inside": 99, "inside_found": 82, "all": 271, "all_found": 143, "callers": 72, "callers_found": 71, "callees": 111, "callees_found": 60, "inside_callees": 48, "inside_callees_found": 34},
+    "JARVIS --precision": {"status": "ok", "dynamic": 287, "unmapped": 16, "inside": 99, "inside_found": 82, "all": 271, "all_found": 141, "callers": 72, "callers_found": 70, "callees": 111, "callees_found": 57, "inside_callees": 48, "inside_callees_found": 34},
+    "CPyGraph": {"status": "ok", "dynamic": 287, "unmapped": 16, "inside": 99, "inside_found": 2, "all": 271, "all_found": 8, "callers": 72, "callers_found": 7, "callees": 111, "callees_found": 6, "inside_callees": 48, "inside_callees_found": 2},
+    "PyAnalyzer": {"status": "ok", "dynamic": 287, "unmapped": 16, "inside": 99, "inside_found": 76, "all": 271, "all_found": 76, "callers": 72, "callers_found": 53, "callees": 111, "callees_found": 28, "inside_callees": 48, "inside_callees_found": 28},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 287, "unmapped": 16, "inside": 99, "inside_found": 76, "all": 271, "all_found": 76, "callers": 72, "callers_found": 50, "callees": 111, "callees_found": 30, "inside_callees": 48, "inside_callees_found": 30}
+   }
+  },
+  "dh-virtualenv": {
+   "rank": 8,
+   "trace": 8,
+   "edges": 94,
+   "unmapped": {"callee: class without __init__": 1, "callee: no module": 5, "callee: not a name": 27, "callee: one of several lambdas": 2, "class: base not proved": 1},
+   "rules": {"caller: function": 9, "caller: method": 48, "caller: module": 1, "inside: class, own __init__": 1, "inside: function": 7, "module: source root": 8, "outside: as written": 30, "outside: builtin type": 16, "outside: builtins": 4},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 94, "unmapped": 36, "inside": 8, "inside_found": 8, "all": 58, "all_found": 45, "callers": 18, "callers_found": 18, "callees": 36, "callees_found": 29, "inside_callees": 5, "inside_callees_found": 5},
+    "original PyCG": {"status": "ok", "dynamic": 94, "unmapped": 36, "inside": 8, "inside_found": 8, "all": 58, "all_found": 26, "callers": 18, "callers_found": 18, "callees": 36, "callees_found": 19, "inside_callees": 5, "inside_callees_found": 5},
+    "pyan3": {"status": "ok", "dynamic": 94, "unmapped": 36, "inside": 8, "inside_found": 8, "all": 58, "all_found": 8, "callers": 18, "callers_found": 16, "callees": 36, "callees_found": 5, "inside_callees": 5, "inside_callees_found": 5},
+    "JARVIS": {"status": "ok", "dynamic": 94, "unmapped": 36, "inside": 8, "inside_found": 8, "all": 58, "all_found": 17, "callers": 18, "callers_found": 16, "callees": 36, "callees_found": 13, "inside_callees": 5, "inside_callees_found": 5},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 94, "unmapped": 36, "inside": 8, "inside_found": 8, "all": 58, "all_found": 17, "callers": 18, "callers_found": 16, "callees": 36, "callees_found": 13, "inside_callees": 5, "inside_callees_found": 5},
+    "JARVIS --precision": {"status": "ok", "dynamic": 94, "unmapped": 36, "inside": 8, "inside_found": 8, "all": 58, "all_found": 14, "callers": 18, "callers_found": 14, "callees": 36, "callees_found": 12, "inside_callees": 5, "inside_callees_found": 5},
+    "CPyGraph": {"status": "ok", "dynamic": 94, "unmapped": 36, "inside": 8, "inside_found": 0, "all": 58, "all_found": 1, "callers": 18, "callers_found": 1, "callees": 36, "callees_found": 1, "inside_callees": 5, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 94, "unmapped": 36, "inside": 8, "inside_found": 0, "all": 58, "all_found": 0, "callers": 18, "callers_found": 0, "callees": 36, "callees_found": 0, "inside_callees": 5, "inside_callees_found": 0},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 94, "unmapped": 36, "inside": 8, "inside_found": 7, "all": 58, "all_found": 7, "callers": 18, "callers_found": 11, "callees": 36, "callees_found": 4, "inside_callees": 5, "inside_callees_found": 4}
+   }
+  },
+  "pdoc": {
+   "rank": 9,
+   "trace": 9,
+   "edges": 279,
+   "unmapped": {"callee: no module": 4, "callee: not a name": 8, "class: __set_name__ in the project": 2, "class: base not proved": 5, "class: decorator": 1},
+   "rules": {"caller: function": 167, "caller: method": 68, "caller: module": 24, "inside: function": 59, "inside: lambda": 3, "module: source root": 62, "outside: as written": 99, "outside: builtin type": 50, "outside: builtins": 48},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 279, "unmapped": 20, "inside": 62, "inside_found": 59, "all": 259, "all_found": 222, "callers": 84, "callers_found": 84, "callees": 161, "callees_found": 138, "inside_callees": 44, "inside_callees_found": 41},
+    "original PyCG": {"status": "ok", "dynamic": 279, "unmapped": 20, "inside": 62, "inside_found": 53, "all": 259, "all_found": 163, "callers": 84, "callers_found": 84, "callees": 161, "callees_found": 105, "inside_callees": 44, "inside_callees_found": 38},
+    "pyan3": {"status": "ok", "dynamic": 279, "unmapped": 20, "inside": 62, "inside_found": 51, "all": 259, "all_found": 51, "callers": 84, "callers_found": 75, "callees": 161, "callees_found": 38, "inside_callees": 44, "inside_callees_found": 38},
+    "JARVIS": {"status": "ok", "dynamic": 279, "unmapped": 20, "inside": 62, "inside_found": 46, "all": 259, "all_found": 115, "callers": 84, "callers_found": 80, "callees": 161, "callees_found": 79, "inside_callees": 44, "inside_callees_found": 38},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 279, "unmapped": 20, "inside": 62, "inside_found": 46, "all": 259, "all_found": 115, "callers": 84, "callers_found": 80, "callees": 161, "callees_found": 79, "inside_callees": 44, "inside_callees_found": 38},
+    "JARVIS --precision": {"status": "ok", "dynamic": 279, "unmapped": 20, "inside": 62, "inside_found": 45, "all": 259, "all_found": 101, "callers": 84, "callers_found": 79, "callees": 161, "callees_found": 70, "inside_callees": 44, "inside_callees_found": 37},
+    "CPyGraph": {"status": "ok", "dynamic": 279, "unmapped": 20, "inside": 62, "inside_found": 14, "all": 259, "all_found": 17, "callers": 84, "callers_found": 18, "callees": 161, "callees_found": 16, "inside_callees": 44, "inside_callees_found": 11},
+    "PyAnalyzer": {"status": "ok", "dynamic": 279, "unmapped": 20, "inside": 62, "inside_found": 42, "all": 259, "all_found": 42, "callers": 84, "callers_found": 63, "callees": 161, "callees_found": 34, "inside_callees": 44, "inside_callees_found": 34},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 279, "unmapped": 20, "inside": 62, "inside_found": 46, "all": 259, "all_found": 46, "callers": 84, "callers_found": 68, "callees": 161, "callees_found": 34, "inside_callees": 44, "inside_callees_found": 34}
+   }
+  },
+  "click": {
+   "rank": 10,
+   "trace": 10,
+   "edges": 384,
+   "unmapped": {"callee: class without __init__": 6, "callee: constructor not in the project": 1, "callee: no module": 17, "callee: one of several lambdas": 1, "callee: outside the analysis root": 4, "caller: several functions": 21, "class: base not proved": 3},
+   "rules": {"caller: function": 177, "caller: method": 144, "caller: module": 10, "inside: class, inherited __init__": 3, "inside: class, own __init__": 8, "inside: function": 113, "module: source root": 124, "outside: as written": 75, "outside: builtin type": 66, "outside: builtins": 66},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 384, "unmapped": 53, "inside": 122, "inside_found": 122, "all": 329, "all_found": 295, "callers": 129, "callers_found": 129, "callees": 193, "callees_found": 168, "inside_callees": 90, "inside_callees_found": 90},
+    "original PyCG": {"status": "timeout", "dynamic": 384, "unmapped": 53, "inside": 122, "inside_found": 0, "all": 329, "all_found": 0, "callers": 129, "callers_found": 0, "callees": 193, "callees_found": 0, "inside_callees": 90, "inside_callees_found": 0},
+    "pyan3": {"status": "ok", "dynamic": 384, "unmapped": 53, "inside": 122, "inside_found": 106, "all": 329, "all_found": 106, "callers": 129, "callers_found": 112, "callees": 193, "callees_found": 85, "inside_callees": 90, "inside_callees_found": 85},
+    "JARVIS": {"status": "ok", "dynamic": 384, "unmapped": 53, "inside": 122, "inside_found": 96, "all": 329, "all_found": 174, "callers": 129, "callers_found": 122, "callees": 193, "callees_found": 117, "inside_callees": 90, "inside_callees_found": 76},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 384, "unmapped": 53, "inside": 122, "inside_found": 96, "all": 329, "all_found": 174, "callers": 129, "callers_found": 122, "callees": 193, "callees_found": 117, "inside_callees": 90, "inside_callees_found": 76},
+    "JARVIS --precision": {"status": "ok", "dynamic": 384, "unmapped": 53, "inside": 122, "inside_found": 94, "all": 329, "all_found": 160, "callers": 129, "callers_found": 118, "callees": 193, "callees_found": 107, "inside_callees": 90, "inside_callees_found": 74},
+    "CPyGraph": {"status": "ok", "dynamic": 384, "unmapped": 53, "inside": 122, "inside_found": 1, "all": 329, "all_found": 1, "callers": 129, "callers_found": 2, "callees": 193, "callees_found": 1, "inside_callees": 90, "inside_callees_found": 1},
+    "PyAnalyzer": {"status": "ok", "dynamic": 384, "unmapped": 53, "inside": 122, "inside_found": 70, "all": 329, "all_found": 70, "callers": 129, "callers_found": 77, "callees": 193, "callees_found": 53, "inside_callees": 90, "inside_callees_found": 53},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 384, "unmapped": 53, "inside": 122, "inside_found": 90, "all": 329, "all_found": 90, "callers": 129, "callers_found": 98, "callees": 193, "callees_found": 69, "inside_callees": 90, "inside_callees_found": 69}
+   }
+  },
+  "delegator.py": {
+   "rank": 11,
+   "trace": 11,
+   "edges": 19,
+   "unmapped": {},
+   "rules": {"caller: function": 12, "caller: method": 7, "inside: class, own __init__": 1, "inside: function": 4, "module: source root": 5, "outside: as written": 7, "outside: builtin type": 3, "outside: builtins": 4},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 19, "unmapped": 0, "inside": 5, "inside_found": 5, "all": 19, "all_found": 18, "callers": 9, "callers_found": 9, "callees": 18, "callees_found": 17, "inside_callees": 5, "inside_callees_found": 5},
+    "original PyCG": {"status": "ok", "dynamic": 19, "unmapped": 0, "inside": 5, "inside_found": 5, "all": 19, "all_found": 13, "callers": 9, "callers_found": 9, "callees": 18, "callees_found": 12, "inside_callees": 5, "inside_callees_found": 5},
+    "pyan3": {"status": "ok", "dynamic": 19, "unmapped": 0, "inside": 5, "inside_found": 4, "all": 19, "all_found": 4, "callers": 9, "callers_found": 9, "callees": 18, "callees_found": 5, "inside_callees": 5, "inside_callees_found": 5},
+    "JARVIS": {"status": "ok", "dynamic": 19, "unmapped": 0, "inside": 5, "inside_found": 5, "all": 19, "all_found": 10, "callers": 9, "callers_found": 7, "callees": 18, "callees_found": 9, "inside_callees": 5, "inside_callees_found": 5},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 19, "unmapped": 0, "inside": 5, "inside_found": 5, "all": 19, "all_found": 10, "callers": 9, "callers_found": 7, "callees": 18, "callees_found": 9, "inside_callees": 5, "inside_callees_found": 5},
+    "JARVIS --precision": {"status": "ok", "dynamic": 19, "unmapped": 0, "inside": 5, "inside_found": 5, "all": 19, "all_found": 9, "callers": 9, "callers_found": 7, "callees": 18, "callees_found": 8, "inside_callees": 5, "inside_callees_found": 5},
+    "CPyGraph": {"status": "ok", "dynamic": 19, "unmapped": 0, "inside": 5, "inside_found": 0, "all": 19, "all_found": 0, "callers": 9, "callers_found": 0, "callees": 18, "callees_found": 0, "inside_callees": 5, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 19, "unmapped": 0, "inside": 5, "inside_found": 4, "all": 19, "all_found": 4, "callers": 9, "callers_found": 6, "callees": 18, "callees_found": 5, "inside_callees": 5, "inside_callees_found": 5},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 19, "unmapped": 0, "inside": 5, "inside_found": 4, "all": 19, "all_found": 4, "callers": 9, "callers_found": 6, "callees": 18, "callees_found": 5, "inside_callees": 5, "inside_callees_found": 5}
+   }
+  },
+  "python-patterns": {
+   "rank": 12,
+   "trace": 12,
+   "edges": 92,
+   "unmapped": {"callee: not a name": 9, "class: __set_name__ in the project": 11},
+   "rules": {"caller: function": 7, "caller: method": 64, "caller: module": 1, "inside: function": 40, "module: source root": 40, "outside: as written": 6, "outside: builtin type": 11, "outside: builtins": 15},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 92, "unmapped": 20, "inside": 40, "inside_found": 33, "all": 72, "all_found": 62, "callers": 43, "callers_found": 43, "callees": 53, "callees_found": 46, "inside_callees": 36, "inside_callees_found": 31},
+    "original PyCG": {"status": "ok", "dynamic": 92, "unmapped": 20, "inside": 40, "inside_found": 13, "all": 72, "all_found": 31, "callers": 43, "callers_found": 43, "callees": 53, "callees_found": 21, "inside_callees": 36, "inside_callees_found": 12},
+    "pyan3": {"status": "ok", "dynamic": 92, "unmapped": 20, "inside": 40, "inside_found": 12, "all": 72, "all_found": 12, "callers": 43, "callers_found": 37, "callees": 53, "callees_found": 17, "inside_callees": 36, "inside_callees_found": 17},
+    "JARVIS": {"status": "ok", "dynamic": 92, "unmapped": 20, "inside": 40, "inside_found": 12, "all": 72, "all_found": 32, "callers": 43, "callers_found": 25, "callees": 53, "callees_found": 22, "inside_callees": 36, "inside_callees_found": 11},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 92, "unmapped": 20, "inside": 40, "inside_found": 12, "all": 72, "all_found": 32, "callers": 43, "callers_found": 25, "callees": 53, "callees_found": 22, "inside_callees": 36, "inside_callees_found": 11},
+    "JARVIS --precision": {"status": "ok", "dynamic": 92, "unmapped": 20, "inside": 40, "inside_found": 6, "all": 72, "all_found": 24, "callers": 43, "callers_found": 22, "callees": 53, "callees_found": 15, "inside_callees": 36, "inside_callees_found": 6},
+    "CPyGraph": {"status": "ok", "dynamic": 92, "unmapped": 20, "inside": 40, "inside_found": 0, "all": 72, "all_found": 0, "callers": 43, "callers_found": 1, "callees": 53, "callees_found": 0, "inside_callees": 36, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 92, "unmapped": 20, "inside": 40, "inside_found": 0, "all": 72, "all_found": 0, "callers": 43, "callers_found": 1, "callees": 53, "callees_found": 0, "inside_callees": 36, "inside_callees_found": 0},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 92, "unmapped": 20, "inside": 40, "inside_found": 9, "all": 72, "all_found": 9, "callers": 43, "callers_found": 12, "callees": 53, "callees_found": 8, "inside_callees": 36, "inside_callees_found": 8}
+   }
+  },
+  "uvicorn": {
+   "rank": 13,
+   "trace": 13,
+   "edges": 17,
+   "unmapped": {},
+   "rules": {"caller: function": 4, "caller: module": 13, "inside: function": 1, "module: source root": 1, "outside: as written": 10, "outside: builtin type": 3, "outside: builtins": 3},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 17, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 17, "all_found": 14, "callers": 8, "callers_found": 8, "callees": 13, "callees_found": 10, "inside_callees": 1, "inside_callees_found": 1},
+    "original PyCG": {"status": "ok", "dynamic": 17, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 17, "all_found": 10, "callers": 8, "callers_found": 8, "callees": 13, "callees_found": 7, "inside_callees": 1, "inside_callees_found": 1},
+    "pyan3": {"status": "ok", "dynamic": 17, "unmapped": 0, "inside": 1, "inside_found": 0, "all": 17, "all_found": 0, "callers": 8, "callers_found": 1, "callees": 13, "callees_found": 0, "inside_callees": 1, "inside_callees_found": 0},
+    "JARVIS": {"status": "ok", "dynamic": 17, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 17, "all_found": 4, "callers": 8, "callers_found": 8, "callees": 13, "callees_found": 6, "inside_callees": 1, "inside_callees_found": 1},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 17, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 17, "all_found": 4, "callers": 8, "callers_found": 8, "callees": 13, "callees_found": 6, "inside_callees": 1, "inside_callees_found": 1},
+    "JARVIS --precision": {"status": "ok", "dynamic": 17, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 17, "all_found": 4, "callers": 8, "callers_found": 8, "callees": 13, "callees_found": 6, "inside_callees": 1, "inside_callees_found": 1},
+    "CPyGraph": {"status": "ok", "dynamic": 17, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 17, "all_found": 2, "callers": 8, "callers_found": 2, "callees": 13, "callees_found": 2, "inside_callees": 1, "inside_callees_found": 1},
+    "PyAnalyzer": {"status": "ok", "dynamic": 17, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 17, "all_found": 1, "callers": 8, "callers_found": 3, "callees": 13, "callees_found": 1, "inside_callees": 1, "inside_callees_found": 1},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 17, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 17, "all_found": 1, "callers": 8, "callers_found": 3, "callees": 13, "callees_found": 1, "inside_callees": 1, "inside_callees_found": 1}
+   }
+  },
+  "pydub": {
+   "rank": 14,
+   "trace": 14,
+   "edges": 123,
+   "unmapped": {"callee: no module": 9, "caller: several functions": 3},
+   "rules": {"caller: function": 60, "caller: method": 48, "caller: module": 3, "inside: class, own __init__": 5, "inside: function": 28, "module: source root": 33, "outside: as written": 26, "outside: builtin type": 16, "outside: builtins": 36},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 123, "unmapped": 12, "inside": 33, "inside_found": 32, "all": 111, "all_found": 100, "callers": 34, "callers_found": 34, "callees": 69, "callees_found": 60, "inside_callees": 22, "inside_callees_found": 22},
+    "original PyCG": {"status": "ok", "dynamic": 123, "unmapped": 12, "inside": 33, "inside_found": 31, "all": 111, "all_found": 82, "callers": 34, "callers_found": 34, "callees": 69, "callees_found": 48, "inside_callees": 22, "inside_callees_found": 22},
+    "pyan3": {"status": "ok", "dynamic": 123, "unmapped": 12, "inside": 33, "inside_found": 31, "all": 111, "all_found": 31, "callers": 34, "callers_found": 31, "callees": 69, "callees_found": 22, "inside_callees": 22, "inside_callees_found": 22},
+    "JARVIS": {"status": "ok", "dynamic": 123, "unmapped": 12, "inside": 33, "inside_found": 31, "all": 111, "all_found": 74, "callers": 34, "callers_found": 33, "callees": 69, "callees_found": 43, "inside_callees": 22, "inside_callees_found": 22},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 123, "unmapped": 12, "inside": 33, "inside_found": 31, "all": 111, "all_found": 74, "callers": 34, "callers_found": 33, "callees": 69, "callees_found": 43, "inside_callees": 22, "inside_callees_found": 22},
+    "JARVIS --precision": {"status": "ok", "dynamic": 123, "unmapped": 12, "inside": 33, "inside_found": 31, "all": 111, "all_found": 70, "callers": 34, "callers_found": 33, "callees": 69, "callees_found": 40, "inside_callees": 22, "inside_callees_found": 22},
+    "CPyGraph": {"status": "ok", "dynamic": 123, "unmapped": 12, "inside": 33, "inside_found": 2, "all": 111, "all_found": 3, "callers": 34, "callers_found": 5, "callees": 69, "callees_found": 4, "inside_callees": 22, "inside_callees_found": 3},
+    "PyAnalyzer": {"status": "ok", "dynamic": 123, "unmapped": 12, "inside": 33, "inside_found": 20, "all": 111, "all_found": 20, "callers": 34, "callers_found": 21, "callees": 69, "callees_found": 17, "inside_callees": 22, "inside_callees_found": 17},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 123, "unmapped": 12, "inside": 33, "inside_found": 26, "all": 111, "all_found": 26, "callers": 34, "callers_found": 31, "callees": 69, "callees_found": 20, "inside_callees": 22, "inside_callees_found": 20}
+   }
+  },
+  "pyjwt": {
+   "rank": 15,
+   "trace": 15,
+   "edges": 146,
+   "unmapped": {"callee: class without __init__": 1, "callee: constructor not in the project": 16, "callee: no module": 2},
+   "rules": {"caller: function": 18, "caller: method": 105, "caller: module": 4, "inside: class, own __init__": 6, "inside: function": 47, "module: source root": 53, "outside: as written": 20, "outside: builtin type": 27, "outside: builtins": 27},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 146, "unmapped": 19, "inside": 53, "inside_found": 52, "all": 127, "all_found": 118, "callers": 43, "callers_found": 43, "callees": 78, "callees_found": 72, "inside_callees": 37, "inside_callees_found": 36},
+    "original PyCG": {"status": "ok", "dynamic": 146, "unmapped": 19, "inside": 53, "inside_found": 42, "all": 127, "all_found": 80, "callers": 43, "callers_found": 43, "callees": 78, "callees_found": 49, "inside_callees": 37, "inside_callees_found": 30},
+    "pyan3": {"status": "ok", "dynamic": 146, "unmapped": 19, "inside": 53, "inside_found": 43, "all": 127, "all_found": 43, "callers": 43, "callers_found": 40, "callees": 78, "callees_found": 31, "inside_callees": 37, "inside_callees_found": 31},
+    "JARVIS": {"status": "ok", "dynamic": 146, "unmapped": 19, "inside": 53, "inside_found": 42, "all": 127, "all_found": 72, "callers": 43, "callers_found": 43, "callees": 78, "callees_found": 47, "inside_callees": 37, "inside_callees_found": 29},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 146, "unmapped": 19, "inside": 53, "inside_found": 42, "all": 127, "all_found": 72, "callers": 43, "callers_found": 43, "callees": 78, "callees_found": 47, "inside_callees": 37, "inside_callees_found": 29},
+    "JARVIS --precision": {"status": "ok", "dynamic": 146, "unmapped": 19, "inside": 53, "inside_found": 42, "all": 127, "all_found": 70, "callers": 43, "callers_found": 43, "callees": 78, "callees_found": 45, "inside_callees": 37, "inside_callees_found": 29},
+    "CPyGraph": {"status": "ok", "dynamic": 146, "unmapped": 19, "inside": 53, "inside_found": 6, "all": 127, "all_found": 6, "callers": 43, "callers_found": 6, "callees": 78, "callees_found": 6, "inside_callees": 37, "inside_callees_found": 6},
+    "PyAnalyzer": {"status": "ok", "dynamic": 146, "unmapped": 19, "inside": 53, "inside_found": 22, "all": 127, "all_found": 22, "callers": 43, "callers_found": 20, "callees": 78, "callees_found": 13, "inside_callees": 37, "inside_callees_found": 13},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 146, "unmapped": 19, "inside": 53, "inside_found": 36, "all": 127, "all_found": 36, "callers": 43, "callers_found": 36, "callees": 78, "callees_found": 26, "inside_callees": 37, "inside_callees_found": 26}
+   }
+  },
+  "cerberus": {
+   "rank": 16,
+   "trace": 16,
+   "edges": 59,
+   "unmapped": {"class: base not proved": 2},
+   "rules": {"caller: function": 28, "caller: method": 15, "caller: module": 14, "inside: class, inherited __init__": 1, "inside: class, own __init__": 1, "inside: function": 14, "module: source root": 16, "outside: as written": 7, "outside: builtin type": 16, "outside: builtins": 18},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 59, "unmapped": 2, "inside": 16, "inside_found": 16, "all": 57, "all_found": 54, "callers": 18, "callers_found": 18, "callees": 42, "callees_found": 41, "inside_callees": 14, "inside_callees_found": 14},
+    "original PyCG": {"status": "ok", "dynamic": 59, "unmapped": 2, "inside": 16, "inside_found": 15, "all": 57, "all_found": 35, "callers": 18, "callers_found": 18, "callees": 42, "callees_found": 31, "inside_callees": 14, "inside_callees_found": 14},
+    "pyan3": {"status": "ok", "dynamic": 59, "unmapped": 2, "inside": 16, "inside_found": 14, "all": 57, "all_found": 14, "callers": 18, "callers_found": 14, "callees": 42, "callees_found": 13, "inside_callees": 14, "inside_callees_found": 13},
+    "JARVIS": {"status": "ok", "dynamic": 59, "unmapped": 2, "inside": 16, "inside_found": 14, "all": 57, "all_found": 38, "callers": 18, "callers_found": 18, "callees": 42, "callees_found": 34, "inside_callees": 14, "inside_callees_found": 13},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 59, "unmapped": 2, "inside": 16, "inside_found": 14, "all": 57, "all_found": 38, "callers": 18, "callers_found": 18, "callees": 42, "callees_found": 34, "inside_callees": 14, "inside_callees_found": 13},
+    "JARVIS --precision": {"status": "ok", "dynamic": 59, "unmapped": 2, "inside": 16, "inside_found": 14, "all": 57, "all_found": 31, "callers": 18, "callers_found": 18, "callees": 42, "callees_found": 30, "inside_callees": 14, "inside_callees_found": 13},
+    "CPyGraph": {"status": "ok", "dynamic": 59, "unmapped": 2, "inside": 16, "inside_found": 3, "all": 57, "all_found": 4, "callers": 18, "callers_found": 4, "callees": 42, "callees_found": 6, "inside_callees": 14, "inside_callees_found": 4},
+    "PyAnalyzer": {"status": "ok", "dynamic": 59, "unmapped": 2, "inside": 16, "inside_found": 12, "all": 57, "all_found": 12, "callers": 18, "callers_found": 12, "callees": 42, "callees_found": 12, "inside_callees": 14, "inside_callees_found": 12},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 59, "unmapped": 2, "inside": 16, "inside_found": 13, "all": 57, "all_found": 13, "callers": 18, "callers_found": 14, "callees": 42, "callees_found": 12, "inside_callees": 14, "inside_callees_found": 12}
+   }
+  },
+  "python-diskcache": {"rank": 17, "reason": "no trace: DyPyBench published no dynamic call graph of the project"},
+  "errbot": {
+   "rank": 18,
+   "trace": 18,
+   "edges": 300,
+   "unmapped": {"callee: class without __init__": 2, "callee: constructor not in the project": 2, "callee: no module": 16, "caller: several functions": 6, "class: attribute set": 1, "class: base not proved": 5, "class: decorator": 1},
+   "rules": {"caller: function": 103, "caller: method": 117, "caller: module": 47, "inside: class, inherited __init__": 2, "inside: class, own __init__": 5, "inside: function": 52, "inside: lambda": 2, "module: source root": 61, "outside: as written": 125, "outside: builtin type": 33, "outside: builtins": 48},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 300, "unmapped": 33, "inside": 61, "inside_found": 57, "all": 267, "all_found": 225, "callers": 96, "callers_found": 96, "callees": 160, "callees_found": 133, "inside_callees": 51, "inside_callees_found": 49},
+    "original PyCG": {"status": "ok", "dynamic": 300, "unmapped": 33, "inside": 61, "inside_found": 43, "all": 267, "all_found": 154, "callers": 96, "callers_found": 96, "callees": 160, "callees_found": 103, "inside_callees": 51, "inside_callees_found": 41},
+    "pyan3": {"status": "ok", "dynamic": 300, "unmapped": 33, "inside": 61, "inside_found": 46, "all": 267, "all_found": 46, "callers": 96, "callers_found": 73, "callees": 160, "callees_found": 46, "inside_callees": 51, "inside_callees_found": 46},
+    "JARVIS": {"status": "ok", "dynamic": 300, "unmapped": 33, "inside": 61, "inside_found": 41, "all": 267, "all_found": 115, "callers": 96, "callers_found": 87, "callees": 160, "callees_found": 90, "inside_callees": 51, "inside_callees_found": 39},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 300, "unmapped": 33, "inside": 61, "inside_found": 41, "all": 267, "all_found": 115, "callers": 96, "callers_found": 87, "callees": 160, "callees_found": 90, "inside_callees": 51, "inside_callees_found": 39},
+    "JARVIS --precision": {"status": "ok", "dynamic": 300, "unmapped": 33, "inside": 61, "inside_found": 40, "all": 267, "all_found": 91, "callers": 96, "callers_found": 82, "callees": 160, "callees_found": 67, "inside_callees": 51, "inside_callees_found": 38},
+    "CPyGraph": {"status": "ok", "dynamic": 300, "unmapped": 33, "inside": 61, "inside_found": 19, "all": 267, "all_found": 26, "callers": 96, "callers_found": 32, "callees": 160, "callees_found": 25, "inside_callees": 51, "inside_callees_found": 19},
+    "PyAnalyzer": {"status": "ok", "dynamic": 300, "unmapped": 33, "inside": 61, "inside_found": 35, "all": 267, "all_found": 35, "callers": 96, "callers_found": 57, "callees": 160, "callees_found": 36, "inside_callees": 51, "inside_callees_found": 36},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 300, "unmapped": 33, "inside": 61, "inside_found": 38, "all": 267, "all_found": 38, "callers": 96, "callers_found": 58, "callees": 160, "callees_found": 34, "inside_callees": 51, "inside_callees_found": 34}
+   }
+  },
+  "black": {
+   "rank": 19,
+   "trace": 19,
+   "edges": 100,
+   "unmapped": {"callee: no module": 3, "class: namespace access": 4},
+   "rules": {"caller: function": 25, "caller: method": 49, "caller: module": 19, "inside: function": 39, "module: source root": 39, "outside: as written": 19, "outside: builtin type": 15, "outside: builtins": 20},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 100, "unmapped": 7, "inside": 39, "inside_found": 39, "all": 93, "all_found": 85, "callers": 37, "callers_found": 37, "callees": 62, "callees_found": 56, "inside_callees": 26, "inside_callees_found": 26},
+    "original PyCG": {"status": "ok", "dynamic": 100, "unmapped": 7, "inside": 39, "inside_found": 34, "all": 93, "all_found": 61, "callers": 37, "callers_found": 37, "callees": 62, "callees_found": 43, "inside_callees": 26, "inside_callees_found": 24},
+    "pyan3": {"status": "ok", "dynamic": 100, "unmapped": 7, "inside": 39, "inside_found": 34, "all": 93, "all_found": 34, "callers": 37, "callers_found": 31, "callees": 62, "callees_found": 25, "inside_callees": 26, "inside_callees_found": 25},
+    "JARVIS": {"status": "ok", "dynamic": 100, "unmapped": 7, "inside": 39, "inside_found": 33, "all": 93, "all_found": 63, "callers": 37, "callers_found": 37, "callees": 62, "callees_found": 47, "inside_callees": 26, "inside_callees_found": 23},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 100, "unmapped": 7, "inside": 39, "inside_found": 33, "all": 93, "all_found": 63, "callers": 37, "callers_found": 37, "callees": 62, "callees_found": 47, "inside_callees": 26, "inside_callees_found": 23},
+    "JARVIS --precision": {"status": "ok", "dynamic": 100, "unmapped": 7, "inside": 39, "inside_found": 33, "all": 93, "all_found": 59, "callers": 37, "callers_found": 37, "callees": 62, "callees_found": 41, "inside_callees": 26, "inside_callees_found": 23},
+    "CPyGraph": {"status": "ok", "dynamic": 100, "unmapped": 7, "inside": 39, "inside_found": 39, "all": 93, "all_found": 52, "callers": 37, "callers_found": 34, "callees": 62, "callees_found": 32, "inside_callees": 26, "inside_callees_found": 26},
+    "PyAnalyzer": {"status": "ok", "dynamic": 100, "unmapped": 7, "inside": 39, "inside_found": 29, "all": 93, "all_found": 29, "callers": 37, "callers_found": 28, "callees": 62, "callees_found": 20, "inside_callees": 26, "inside_callees_found": 20},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 100, "unmapped": 7, "inside": 39, "inside_found": 35, "all": 93, "all_found": 35, "callers": 37, "callers_found": 29, "callees": 62, "callees_found": 23, "inside_callees": 26, "inside_callees_found": 23}
+   }
+  },
+  "thefuck": {
+   "rank": 20,
+   "trace": 20,
+   "edges": 57,
+   "unmapped": {"callee: class without __init__": 1, "callee: constructor not in the project": 1, "caller: several functions": 2},
+   "rules": {"caller: function": 12, "caller: module": 41, "inside: class, own __init__": 2, "inside: function": 21, "module: source root": 23, "outside: as written": 20, "outside: builtin type": 1, "outside: builtins": 9},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 57, "unmapped": 4, "inside": 23, "inside_found": 8, "all": 53, "all_found": 34, "callers": 37, "callers_found": 37, "callees": 22, "callees_found": 19, "inside_callees": 7, "inside_callees_found": 7},
+    "original PyCG": {"status": "ok", "dynamic": 57, "unmapped": 4, "inside": 23, "inside_found": 23, "all": 53, "all_found": 47, "callers": 37, "callers_found": 37, "callees": 22, "callees_found": 17, "inside_callees": 7, "inside_callees_found": 7},
+    "pyan3": {"status": "ok", "dynamic": 57, "unmapped": 4, "inside": 23, "inside_found": 20, "all": 53, "all_found": 20, "callers": 37, "callers_found": 26, "callees": 22, "callees_found": 6, "inside_callees": 7, "inside_callees_found": 6},
+    "JARVIS": {"status": "ok", "dynamic": 57, "unmapped": 4, "inside": 23, "inside_found": 22, "all": 53, "all_found": 36, "callers": 37, "callers_found": 37, "callees": 22, "callees_found": 14, "inside_callees": 7, "inside_callees_found": 7},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 57, "unmapped": 4, "inside": 23, "inside_found": 22, "all": 53, "all_found": 36, "callers": 37, "callers_found": 37, "callees": 22, "callees_found": 14, "inside_callees": 7, "inside_callees_found": 7},
+    "JARVIS --precision": {"status": "ok", "dynamic": 57, "unmapped": 4, "inside": 23, "inside_found": 22, "all": 53, "all_found": 31, "callers": 37, "callers_found": 37, "callees": 22, "callees_found": 10, "inside_callees": 7, "inside_callees_found": 7},
+    "CPyGraph": {"status": "ok", "dynamic": 57, "unmapped": 4, "inside": 23, "inside_found": 8, "all": 53, "all_found": 8, "callers": 37, "callers_found": 29, "callees": 22, "callees_found": 6, "inside_callees": 7, "inside_callees_found": 6},
+    "PyAnalyzer": {"status": "ok", "dynamic": 57, "unmapped": 4, "inside": 23, "inside_found": 22, "all": 53, "all_found": 22, "callers": 37, "callers_found": 33, "callees": 22, "callees_found": 7, "inside_callees": 7, "inside_callees_found": 7},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 57, "unmapped": 4, "inside": 23, "inside_found": 20, "all": 53, "all_found": 20, "callers": 37, "callers_found": 32, "callees": 22, "callees_found": 5, "inside_callees": 7, "inside_callees_found": 5}
+   }
+  },
+  "python-future": {
+   "rank": 21,
+   "trace": 21,
+   "edges": 127,
+   "unmapped": {"callee: constructor not in the project": 1, "callee: no module": 2, "class: base not proved": 3, "class: decorator": 1, "class: namespace access": 1, "class: not at the top level": 2},
+   "rules": {"caller: function": 23, "caller: method": 23, "caller: module": 71, "inside: class, own __init__": 3, "inside: function": 15, "module: source root": 18, "outside: as written": 38, "outside: builtin type": 22, "outside: builtins": 39},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 127, "unmapped": 10, "inside": 18, "inside_found": 18, "all": 117, "all_found": 104, "callers": 47, "callers_found": 47, "callees": 74, "callees_found": 63, "inside_callees": 15, "inside_callees_found": 15},
+    "original PyCG": {"status": "timeout", "dynamic": 127, "unmapped": 10, "inside": 18, "inside_found": 0, "all": 117, "all_found": 0, "callers": 47, "callers_found": 0, "callees": 74, "callees_found": 0, "inside_callees": 15, "inside_callees_found": 0},
+    "pyan3": {"status": "ok", "dynamic": 127, "unmapped": 10, "inside": 18, "inside_found": 12, "all": 117, "all_found": 12, "callers": 47, "callers_found": 33, "callees": 74, "callees_found": 15, "inside_callees": 15, "inside_callees_found": 15},
+    "JARVIS": {"status": "ok", "dynamic": 127, "unmapped": 10, "inside": 18, "inside_found": 18, "all": 117, "all_found": 59, "callers": 47, "callers_found": 44, "callees": 74, "callees_found": 47, "inside_callees": 15, "inside_callees_found": 15},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 127, "unmapped": 10, "inside": 18, "inside_found": 18, "all": 117, "all_found": 59, "callers": 47, "callers_found": 44, "callees": 74, "callees_found": 47, "inside_callees": 15, "inside_callees_found": 15},
+    "JARVIS --precision": {"status": "ok", "dynamic": 127, "unmapped": 10, "inside": 18, "inside_found": 18, "all": 117, "all_found": 57, "callers": 47, "callers_found": 44, "callees": 74, "callees_found": 44, "inside_callees": 15, "inside_callees_found": 15},
+    "CPyGraph": {"status": "ok", "dynamic": 127, "unmapped": 10, "inside": 18, "inside_found": 15, "all": 117, "all_found": 21, "callers": 47, "callers_found": 28, "callees": 74, "callees_found": 21, "inside_callees": 15, "inside_callees_found": 15},
+    "PyAnalyzer": {"status": "ok", "dynamic": 127, "unmapped": 10, "inside": 18, "inside_found": 17, "all": 117, "all_found": 17, "callers": 47, "callers_found": 26, "callees": 74, "callees_found": 15, "inside_callees": 15, "inside_callees_found": 15},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 127, "unmapped": 10, "inside": 18, "inside_found": 14, "all": 117, "all_found": 14, "callers": 47, "callers_found": 24, "callees": 74, "callees_found": 12, "inside_callees": 15, "inside_callees_found": 12}
+   }
+  },
+  "python-decouple": {
+   "rank": 22,
+   "trace": 22,
+   "edges": 81,
+   "unmapped": {"callee: class without __init__": 1, "callee: constructor not in the project": 1, "callee: no module": 2, "callee: not a name": 22, "callee: one of several lambdas": 1},
+   "rules": {"caller: function": 3, "caller: method": 48, "caller: module": 3, "inside: class, own __init__": 5, "inside: function": 8, "inside: lambda": 2, "module: source root": 15, "outside: as written": 19, "outside: builtin type": 8, "outside: builtins": 12},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 81, "unmapped": 27, "inside": 15, "inside_found": 14, "all": 54, "all_found": 37, "callers": 17, "callers_found": 17, "callees": 41, "callees_found": 30, "inside_callees": 14, "inside_callees_found": 13},
+    "original PyCG": {"status": "ok", "dynamic": 81, "unmapped": 27, "inside": 15, "inside_found": 11, "all": 54, "all_found": 24, "callers": 17, "callers_found": 17, "callees": 41, "callees_found": 20, "inside_callees": 14, "inside_callees_found": 10},
+    "pyan3": {"status": "ok", "dynamic": 81, "unmapped": 27, "inside": 15, "inside_found": 10, "all": 54, "all_found": 10, "callers": 17, "callers_found": 10, "callees": 41, "callees_found": 9, "inside_callees": 14, "inside_callees_found": 9},
+    "JARVIS": {"status": "ok", "dynamic": 81, "unmapped": 27, "inside": 15, "inside_found": 11, "all": 54, "all_found": 21, "callers": 17, "callers_found": 15, "callees": 41, "callees_found": 19, "inside_callees": 14, "inside_callees_found": 10},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 81, "unmapped": 27, "inside": 15, "inside_found": 11, "all": 54, "all_found": 21, "callers": 17, "callers_found": 15, "callees": 41, "callees_found": 19, "inside_callees": 14, "inside_callees_found": 10},
+    "JARVIS --precision": {"status": "ok", "dynamic": 81, "unmapped": 27, "inside": 15, "inside_found": 11, "all": 54, "all_found": 19, "callers": 17, "callers_found": 15, "callees": 41, "callees_found": 16, "inside_callees": 14, "inside_callees_found": 10},
+    "CPyGraph": {"status": "ok", "dynamic": 81, "unmapped": 27, "inside": 15, "inside_found": 1, "all": 54, "all_found": 1, "callers": 17, "callers_found": 1, "callees": 41, "callees_found": 1, "inside_callees": 14, "inside_callees_found": 1},
+    "PyAnalyzer": {"status": "ok", "dynamic": 81, "unmapped": 27, "inside": 15, "inside_found": 4, "all": 54, "all_found": 4, "callers": 17, "callers_found": 6, "callees": 41, "callees_found": 4, "inside_callees": 14, "inside_callees_found": 4},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 81, "unmapped": 27, "inside": 15, "inside_found": 7, "all": 54, "all_found": 7, "callers": 17, "callers_found": 11, "callees": 41, "callees_found": 6, "inside_callees": 14, "inside_callees_found": 6}
+   }
+  },
+  "arrow": {
+   "rank": 23,
+   "trace": 23,
+   "edges": 16,
+   "unmapped": {},
+   "rules": {"caller: method": 9, "caller: module": 7, "inside: class, own __init__": 2, "inside: function": 1, "module: source root": 3, "outside: as written": 6, "outside: builtin type": 4, "outside: builtins": 3},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 16, "unmapped": 0, "inside": 3, "inside_found": 3, "all": 16, "all_found": 13, "callers": 9, "callers_found": 9, "callees": 15, "callees_found": 12, "inside_callees": 3, "inside_callees_found": 3},
+    "original PyCG": {"status": "ok", "dynamic": 16, "unmapped": 0, "inside": 3, "inside_found": 3, "all": 16, "all_found": 7, "callers": 9, "callers_found": 9, "callees": 15, "callees_found": 8, "inside_callees": 3, "inside_callees_found": 3},
+    "pyan3": {"status": "ok", "dynamic": 16, "unmapped": 0, "inside": 3, "inside_found": 1, "all": 16, "all_found": 1, "callers": 9, "callers_found": 6, "callees": 15, "callees_found": 3, "inside_callees": 3, "inside_callees_found": 3},
+    "JARVIS": {"status": "ok", "dynamic": 16, "unmapped": 0, "inside": 3, "inside_found": 3, "all": 16, "all_found": 7, "callers": 9, "callers_found": 9, "callees": 15, "callees_found": 11, "inside_callees": 3, "inside_callees_found": 3},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 16, "unmapped": 0, "inside": 3, "inside_found": 3, "all": 16, "all_found": 7, "callers": 9, "callers_found": 9, "callees": 15, "callees_found": 11, "inside_callees": 3, "inside_callees_found": 3},
+    "JARVIS --precision": {"status": "ok", "dynamic": 16, "unmapped": 0, "inside": 3, "inside_found": 3, "all": 16, "all_found": 6, "callers": 9, "callers_found": 9, "callees": 15, "callees_found": 10, "inside_callees": 3, "inside_callees_found": 3},
+    "CPyGraph": {"status": "ok", "dynamic": 16, "unmapped": 0, "inside": 3, "inside_found": 3, "all": 16, "all_found": 3, "callers": 9, "callers_found": 4, "callees": 15, "callees_found": 3, "inside_callees": 3, "inside_callees_found": 3},
+    "PyAnalyzer": {"status": "ok", "dynamic": 16, "unmapped": 0, "inside": 3, "inside_found": 1, "all": 16, "all_found": 1, "callers": 9, "callers_found": 1, "callees": 15, "callees_found": 1, "inside_callees": 3, "inside_callees_found": 1},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 16, "unmapped": 0, "inside": 3, "inside_found": 1, "all": 16, "all_found": 1, "callers": 9, "callers_found": 4, "callees": 15, "callees_found": 1, "inside_callees": 3, "inside_callees_found": 1}
+   }
+  },
+  "pudb": {
+   "rank": 24,
+   "trace": 24,
+   "edges": 186,
+   "unmapped": {"callee: no module": 2, "callee: not a name": 12, "class: base not proved": 5, "class: name not bound once": 1, "class: namespace access": 2},
+   "rules": {"caller: function": 93, "caller: method": 58, "caller: module": 13, "inside: class, own __init__": 1, "inside: function": 39, "module: source root": 40, "outside: as written": 44, "outside: builtin type": 29, "outside: builtins": 51},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 186, "unmapped": 22, "inside": 40, "inside_found": 37, "all": 164, "all_found": 133, "callers": 49, "callers_found": 49, "callees": 112, "callees_found": 91, "inside_callees": 35, "inside_callees_found": 33},
+    "original PyCG": {"status": "ok", "dynamic": 186, "unmapped": 22, "inside": 40, "inside_found": 34, "all": 164, "all_found": 105, "callers": 49, "callers_found": 49, "callees": 112, "callees_found": 69, "inside_callees": 35, "inside_callees_found": 30},
+    "pyan3": {"status": "ok", "dynamic": 186, "unmapped": 22, "inside": 40, "inside_found": 28, "all": 164, "all_found": 28, "callers": 49, "callers_found": 41, "callees": 112, "callees_found": 29, "inside_callees": 35, "inside_callees_found": 29},
+    "JARVIS": {"status": "ok", "dynamic": 186, "unmapped": 22, "inside": 40, "inside_found": 30, "all": 164, "all_found": 87, "callers": 49, "callers_found": 45, "callees": 112, "callees_found": 58, "inside_callees": 35, "inside_callees_found": 26},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 186, "unmapped": 22, "inside": 40, "inside_found": 30, "all": 164, "all_found": 87, "callers": 49, "callers_found": 45, "callees": 112, "callees_found": 58, "inside_callees": 35, "inside_callees_found": 26},
+    "JARVIS --precision": {"status": "ok", "dynamic": 186, "unmapped": 22, "inside": 40, "inside_found": 28, "all": 164, "all_found": 80, "callers": 49, "callers_found": 45, "callees": 112, "callees_found": 51, "inside_callees": 35, "inside_callees_found": 25},
+    "CPyGraph": {"status": "ok", "dynamic": 186, "unmapped": 22, "inside": 40, "inside_found": 27, "all": 164, "all_found": 29, "callers": 49, "callers_found": 34, "callees": 112, "callees_found": 25, "inside_callees": 35, "inside_callees_found": 23},
+    "PyAnalyzer": {"status": "ok", "dynamic": 186, "unmapped": 22, "inside": 40, "inside_found": 27, "all": 164, "all_found": 27, "callers": 49, "callers_found": 38, "callees": 112, "callees_found": 25, "inside_callees": 35, "inside_callees_found": 25},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 186, "unmapped": 22, "inside": 40, "inside_found": 32, "all": 164, "all_found": 32, "callers": 49, "callers_found": 39, "callees": 112, "callees_found": 28, "inside_callees": 35, "inside_callees_found": 28}
+   }
+  },
+  "akshare": {"rank": 25, "reason": "not recoverable: no commit of the repository before 2023-01-18 (its oldest commit is of 2025-03-31), and no release on PyPI before 2025-04-05"},
+  "seaborn": {
+   "rank": 26,
+   "trace": 26,
+   "edges": 203,
+   "unmapped": {"callee: class without __init__": 4, "callee: constructor not in the project": 4, "callee: no module": 4, "callee: not a name": 2, "caller: several functions": 1, "class: base not proved": 1},
+   "rules": {"caller: function": 42, "caller: method": 84, "caller: module": 61, "inside: class, inherited __init__": 14, "inside: class, own __init__": 14, "inside: function": 41, "module: source root": 69, "outside: as written": 26, "outside: builtin type": 53, "outside: builtins": 39},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 203, "unmapped": 16, "inside": 55, "inside_found": 55, "all": 173, "all_found": 169, "callers": 51, "callers_found": 51, "callees": 84, "callees_found": 81, "inside_callees": 33, "inside_callees_found": 33},
+    "original PyCG": {"status": "crash", "error": "IndexError: list index out of range", "where": "pycg/processing/preprocessor.py:59 in _get_fun_defaults", "dynamic": 203, "unmapped": 16, "inside": 55, "inside_found": 0, "all": 173, "all_found": 0, "callers": 51, "callers_found": 0, "callees": 84, "callees_found": 0, "inside_callees": 33, "inside_callees_found": 0},
+    "pyan3": {"status": "ok", "dynamic": 203, "unmapped": 16, "inside": 55, "inside_found": 45, "all": 173, "all_found": 45, "callers": 51, "callers_found": 38, "callees": 84, "callees_found": 33, "inside_callees": 33, "inside_callees_found": 33},
+    "JARVIS": {"status": "ok", "dynamic": 203, "unmapped": 16, "inside": 55, "inside_found": 48, "all": 173, "all_found": 115, "callers": 51, "callers_found": 51, "callees": 84, "callees_found": 67, "inside_callees": 33, "inside_callees_found": 33},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 203, "unmapped": 16, "inside": 55, "inside_found": 48, "all": 173, "all_found": 115, "callers": 51, "callers_found": 51, "callees": 84, "callees_found": 67, "inside_callees": 33, "inside_callees_found": 33},
+    "JARVIS --precision": {"status": "ok", "dynamic": 203, "unmapped": 16, "inside": 55, "inside_found": 48, "all": 173, "all_found": 110, "callers": 51, "callers_found": 51, "callees": 84, "callees_found": 60, "inside_callees": 33, "inside_callees_found": 33},
+    "CPyGraph": {"status": "ok", "dynamic": 203, "unmapped": 16, "inside": 55, "inside_found": 43, "all": 173, "all_found": 70, "callers": 51, "callers_found": 40, "callees": 84, "callees_found": 35, "inside_callees": 33, "inside_callees_found": 29},
+    "PyAnalyzer": {"status": "ok", "dynamic": 203, "unmapped": 16, "inside": 55, "inside_found": 46, "all": 173, "all_found": 46, "callers": 51, "callers_found": 33, "callees": 84, "callees_found": 33, "inside_callees": 33, "inside_callees_found": 33},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 203, "unmapped": 16, "inside": 55, "inside_found": 40, "all": 173, "all_found": 40, "callers": 51, "callers_found": 34, "callees": 84, "callees_found": 28, "inside_callees": 33, "inside_callees_found": 28}
+   }
+  },
+  "pyfilesystem2": {
+   "rank": 27,
+   "trace": 27,
+   "edges": 159,
+   "unmapped": {"callee: no module": 9, "class: base not proved": 3, "class: decorator": 14},
+   "rules": {"caller: function": 13, "caller: method": 91, "caller: module": 29, "inside: class, own __init__": 4, "inside: function": 54, "module: source root": 58, "outside: as written": 36, "outside: builtin type": 25, "outside: builtins": 14},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 159, "unmapped": 26, "inside": 58, "inside_found": 58, "all": 133, "all_found": 124, "callers": 69, "callers_found": 69, "callees": 80, "callees_found": 74, "inside_callees": 40, "inside_callees_found": 40},
+    "original PyCG": {"status": "timeout", "dynamic": 159, "unmapped": 26, "inside": 58, "inside_found": 0, "all": 133, "all_found": 0, "callers": 69, "callers_found": 0, "callees": 80, "callees_found": 0, "inside_callees": 40, "inside_callees_found": 0},
+    "pyan3": {"status": "ok", "dynamic": 159, "unmapped": 26, "inside": 58, "inside_found": 41, "all": 133, "all_found": 41, "callers": 69, "callers_found": 50, "callees": 80, "callees_found": 33, "inside_callees": 40, "inside_callees_found": 33},
+    "JARVIS": {"status": "ok", "dynamic": 159, "unmapped": 26, "inside": 58, "inside_found": 32, "all": 133, "all_found": 63, "callers": 69, "callers_found": 65, "callees": 80, "callees_found": 52, "inside_callees": 40, "inside_callees_found": 30},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 159, "unmapped": 26, "inside": 58, "inside_found": 32, "all": 133, "all_found": 63, "callers": 69, "callers_found": 65, "callees": 80, "callees_found": 52, "inside_callees": 40, "inside_callees_found": 30},
+    "JARVIS --precision": {"status": "ok", "dynamic": 159, "unmapped": 26, "inside": 58, "inside_found": 28, "all": 133, "all_found": 47, "callers": 69, "callers_found": 65, "callees": 80, "callees_found": 42, "inside_callees": 40, "inside_callees_found": 28},
+    "CPyGraph": {"status": "ok", "dynamic": 159, "unmapped": 26, "inside": 58, "inside_found": 2, "all": 133, "all_found": 4, "callers": 69, "callers_found": 12, "callees": 80, "callees_found": 8, "inside_callees": 40, "inside_callees_found": 6},
+    "PyAnalyzer": {"status": "ok", "dynamic": 159, "unmapped": 26, "inside": 58, "inside_found": 34, "all": 133, "all_found": 34, "callers": 69, "callers_found": 33, "callees": 80, "callees_found": 25, "inside_callees": 40, "inside_callees_found": 25},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 159, "unmapped": 26, "inside": 58, "inside_found": 41, "all": 133, "all_found": 41, "callers": 69, "callers_found": 35, "callees": 80, "callees_found": 30, "inside_callees": 40, "inside_callees_found": 30}
+   }
+  },
+  "wtforms": {
+   "rank": 28,
+   "trace": 28,
+   "edges": 539,
+   "unmapped": {"callee: class without __init__": 10, "callee: no module": 19, "callee: not a definition": 1, "callee: not a name": 47, "callee: one of several lambdas": 2, "callee: outside the analysis root": 34, "class: __new__ or __init_subclass__": 25, "class: name not bound once": 4, "class: not at the top level": 2},
+   "rules": {"caller: function": 19, "caller: method": 348, "caller: module": 28, "inside: class, inherited __init__": 15, "inside: class, own __init__": 28, "inside: function": 126, "module: source root": 169, "outside: as written": 47, "outside: builtin type": 69, "outside: builtins": 110},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 539, "unmapped": 144, "inside": 158, "inside_found": 139, "all": 384, "all_found": 332, "callers": 145, "callers_found": 145, "callees": 174, "callees_found": 153, "inside_callees": 96, "inside_callees_found": 90},
+    "original PyCG": {"status": "ok", "dynamic": 539, "unmapped": 144, "inside": 158, "inside_found": 69, "all": 384, "all_found": 195, "callers": 145, "callers_found": 145, "callees": 174, "callees_found": 86, "inside_callees": 96, "inside_callees_found": 46},
+    "pyan3": {"status": "ok", "dynamic": 539, "unmapped": 144, "inside": 158, "inside_found": 94, "all": 384, "all_found": 94, "callers": 145, "callers_found": 110, "callees": 174, "callees_found": 60, "inside_callees": 96, "inside_callees_found": 60},
+    "JARVIS": {"status": "ok", "dynamic": 539, "unmapped": 144, "inside": 158, "inside_found": 69, "all": 384, "all_found": 180, "callers": 145, "callers_found": 137, "callees": 174, "callees_found": 85, "inside_callees": 96, "inside_callees_found": 54},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 539, "unmapped": 144, "inside": 158, "inside_found": 69, "all": 384, "all_found": 180, "callers": 145, "callers_found": 137, "callees": 174, "callees_found": 85, "inside_callees": 96, "inside_callees_found": 54},
+    "JARVIS --precision": {"status": "ok", "dynamic": 539, "unmapped": 144, "inside": 158, "inside_found": 65, "all": 384, "all_found": 167, "callers": 145, "callers_found": 137, "callees": 174, "callees_found": 78, "inside_callees": 96, "inside_callees_found": 50},
+    "CPyGraph": {"status": "ok", "dynamic": 539, "unmapped": 144, "inside": 158, "inside_found": 2, "all": 384, "all_found": 2, "callers": 145, "callers_found": 2, "callees": 174, "callees_found": 9, "inside_callees": 96, "inside_callees_found": 9},
+    "PyAnalyzer": {"status": "ok", "dynamic": 539, "unmapped": 144, "inside": 158, "inside_found": 25, "all": 384, "all_found": 25, "callers": 145, "callers_found": 32, "callees": 174, "callees_found": 13, "inside_callees": 96, "inside_callees_found": 13},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 539, "unmapped": 144, "inside": 158, "inside_found": 47, "all": 384, "all_found": 47, "callers": 145, "callers_found": 60, "callees": 174, "callees_found": 33, "inside_callees": 96, "inside_callees_found": 33}
+   }
+  },
+  "funcy": {
+   "rank": 29,
+   "trace": 29,
+   "edges": 756,
+   "unmapped": {"callee: class without __init__": 1, "callee: constructor not in the project": 1, "callee: no module": 5, "callee: not a name": 68, "callee: one of several lambdas": 15, "caller: not a function of the file": 1, "caller: several functions": 52, "class: not at the top level": 2},
+   "rules": {"caller: function": 517, "caller: method": 70, "caller: module": 24, "inside: class, own __init__": 6, "inside: function": 225, "inside: lambda": 22, "module: source root": 253, "outside: as written": 94, "outside: builtin type": 62, "outside: builtins": 202},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 756, "unmapped": 145, "inside": 253, "inside_found": 183, "all": 611, "all_found": 430, "callers": 200, "callers_found": 200, "callees": 267, "callees_found": 184, "inside_callees": 158, "inside_callees_found": 106},
+    "original PyCG": {"status": "ok", "dynamic": 756, "unmapped": 145, "inside": 253, "inside_found": 181, "all": 611, "all_found": 378, "callers": 200, "callers_found": 200, "callees": 267, "callees_found": 159, "inside_callees": 158, "inside_callees_found": 103},
+    "pyan3": {"status": "ok", "dynamic": 756, "unmapped": 145, "inside": 253, "inside_found": 165, "all": 611, "all_found": 165, "callers": 200, "callers_found": 193, "callees": 267, "callees_found": 105, "inside_callees": 158, "inside_callees_found": 105},
+    "JARVIS": {"status": "ok", "dynamic": 756, "unmapped": 145, "inside": 253, "inside_found": 165, "all": 611, "all_found": 367, "callers": 200, "callers_found": 189, "callees": 267, "callees_found": 147, "inside_callees": 158, "inside_callees_found": 93},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 756, "unmapped": 145, "inside": 253, "inside_found": 165, "all": 611, "all_found": 367, "callers": 200, "callers_found": 189, "callees": 267, "callees_found": 147, "inside_callees": 158, "inside_callees_found": 93},
+    "JARVIS --precision": {"status": "ok", "dynamic": 756, "unmapped": 145, "inside": 253, "inside_found": 164, "all": 611, "all_found": 322, "callers": 200, "callers_found": 185, "callees": 267, "callees_found": 125, "inside_callees": 158, "inside_callees_found": 92},
+    "CPyGraph": {"status": "ok", "dynamic": 756, "unmapped": 145, "inside": 253, "inside_found": 11, "all": 611, "all_found": 16, "callers": 200, "callers_found": 15, "callees": 267, "callees_found": 15, "inside_callees": 158, "inside_callees_found": 12},
+    "PyAnalyzer": {"status": "ok", "dynamic": 756, "unmapped": 145, "inside": 253, "inside_found": 143, "all": 611, "all_found": 143, "callers": 200, "callers_found": 149, "callees": 267, "callees_found": 81, "inside_callees": 158, "inside_callees_found": 81},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 756, "unmapped": 145, "inside": 253, "inside_found": 163, "all": 611, "all_found": 163, "callers": 200, "callers_found": 168, "callees": 267, "callees_found": 94, "inside_callees": 158, "inside_callees_found": 94}
+   }
+  },
+  "graphene": {
+   "rank": 30,
+   "trace": 30,
+   "edges": 193,
+   "unmapped": {"callee: no module": 1, "class: __set_name__ in the project": 17, "class: attribute set": 1, "class: base not proved": 3},
+   "rules": {"caller: function": 34, "caller: method": 132, "caller: module": 5, "inside: function": 69, "module: source root": 69, "outside: as written": 28, "outside: builtin type": 19, "outside: builtins": 55},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 193, "unmapped": 22, "inside": 69, "inside_found": 69, "all": 171, "all_found": 158, "callers": 63, "callers_found": 63, "callees": 93, "callees_found": 81, "inside_callees": 47, "inside_callees_found": 47},
+    "original PyCG": {"status": "memory", "dynamic": 193, "unmapped": 22, "inside": 69, "inside_found": 0, "all": 171, "all_found": 0, "callers": 63, "callers_found": 0, "callees": 93, "callees_found": 0, "inside_callees": 47, "inside_callees_found": 0},
+    "pyan3": {"status": "ok", "dynamic": 193, "unmapped": 22, "inside": 69, "inside_found": 46, "all": 171, "all_found": 46, "callers": 63, "callers_found": 55, "callees": 93, "callees_found": 37, "inside_callees": 47, "inside_callees_found": 37},
+    "JARVIS": {"status": "ok", "dynamic": 193, "unmapped": 22, "inside": 69, "inside_found": 33, "all": 171, "all_found": 105, "callers": 63, "callers_found": 63, "callees": 93, "callees_found": 56, "inside_callees": 47, "inside_callees_found": 30},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 193, "unmapped": 22, "inside": 69, "inside_found": 33, "all": 171, "all_found": 105, "callers": 63, "callers_found": 63, "callees": 93, "callees_found": 56, "inside_callees": 47, "inside_callees_found": 30},
+    "JARVIS --precision": {"status": "ok", "dynamic": 193, "unmapped": 22, "inside": 69, "inside_found": 31, "all": 171, "all_found": 92, "callers": 63, "callers_found": 63, "callees": 93, "callees_found": 47, "inside_callees": 47, "inside_callees_found": 27},
+    "CPyGraph": {"status": "ok", "dynamic": 193, "unmapped": 22, "inside": 69, "inside_found": 17, "all": 171, "all_found": 19, "callers": 63, "callers_found": 25, "callees": 93, "callees_found": 18, "inside_callees": 47, "inside_callees_found": 15},
+    "PyAnalyzer": {"status": "ok", "dynamic": 193, "unmapped": 22, "inside": 69, "inside_found": 29, "all": 171, "all_found": 29, "callers": 63, "callers_found": 46, "callees": 93, "callees_found": 23, "inside_callees": 47, "inside_callees_found": 23},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 193, "unmapped": 22, "inside": 69, "inside_found": 35, "all": 171, "all_found": 35, "callers": 63, "callers_found": 42, "callees": 93, "callees_found": 26, "inside_callees": 47, "inside_callees_found": 26}
+   }
+  },
+  "geopy": {
+   "rank": 31,
+   "trace": 31,
+   "edges": 205,
+   "unmapped": {"callee: constructor not in the project": 2, "callee: no module": 2, "callee: not a name": 2, "callee: one of several lambdas": 2, "class: __new__ or __init_subclass__": 9},
+   "rules": {"caller: function": 33, "caller: method": 147, "caller: module": 8, "inside: class, own __init__": 21, "inside: function": 61, "module: source root": 82, "outside: as written": 32, "outside: builtin type": 16, "outside: builtins": 58},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 205, "unmapped": 17, "inside": 82, "inside_found": 80, "all": 188, "all_found": 175, "callers": 77, "callers_found": 77, "callees": 86, "callees_found": 79, "inside_callees": 34, "inside_callees_found": 34},
+    "original PyCG": {"status": "ok", "dynamic": 205, "unmapped": 17, "inside": 82, "inside_found": 44, "all": 188, "all_found": 127, "callers": 77, "callers_found": 77, "callees": 86, "callees_found": 65, "inside_callees": 34, "inside_callees_found": 26},
+    "pyan3": {"status": "ok", "dynamic": 205, "unmapped": 17, "inside": 82, "inside_found": 65, "all": 188, "all_found": 65, "callers": 77, "callers_found": 69, "callees": 86, "callees_found": 30, "inside_callees": 34, "inside_callees_found": 30},
+    "JARVIS": {"status": "ok", "dynamic": 205, "unmapped": 17, "inside": 82, "inside_found": 41, "all": 188, "all_found": 116, "callers": 77, "callers_found": 76, "callees": 86, "callees_found": 58, "inside_callees": 34, "inside_callees_found": 24},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 205, "unmapped": 17, "inside": 82, "inside_found": 41, "all": 188, "all_found": 116, "callers": 77, "callers_found": 76, "callees": 86, "callees_found": 58, "inside_callees": 34, "inside_callees_found": 24},
+    "JARVIS --precision": {"status": "ok", "dynamic": 205, "unmapped": 17, "inside": 82, "inside_found": 41, "all": 188, "all_found": 100, "callers": 77, "callers_found": 76, "callees": 86, "callees_found": 46, "inside_callees": 34, "inside_callees_found": 24},
+    "CPyGraph": {"status": "ok", "dynamic": 205, "unmapped": 17, "inside": 82, "inside_found": 0, "all": 188, "all_found": 0, "callers": 77, "callers_found": 0, "callees": 86, "callees_found": 0, "inside_callees": 34, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 205, "unmapped": 17, "inside": 82, "inside_found": 18, "all": 188, "all_found": 18, "callers": 77, "callers_found": 23, "callees": 86, "callees_found": 14, "inside_callees": 34, "inside_callees_found": 14},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 205, "unmapped": 17, "inside": 82, "inside_found": 33, "all": 188, "all_found": 33, "callers": 77, "callers_found": 40, "callees": 86, "callees_found": 23, "inside_callees": 34, "inside_callees_found": 23}
+   }
+  },
+  "pyquery": {
+   "rank": 32,
+   "trace": 32,
+   "edges": 51,
+   "unmapped": {"callee: no module": 1},
+   "rules": {"caller: function": 32, "caller: method": 17, "caller: module": 1, "inside: function": 17, "module: source root": 17, "outside: as written": 14, "outside: builtin type": 12, "outside: builtins": 7},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 51, "unmapped": 1, "inside": 17, "inside_found": 12, "all": 50, "all_found": 36, "callers": 22, "callers_found": 22, "callees": 32, "callees_found": 27, "inside_callees": 10, "inside_callees_found": 9},
+    "original PyCG": {"status": "ok", "dynamic": 51, "unmapped": 1, "inside": 17, "inside_found": 12, "all": 50, "all_found": 24, "callers": 22, "callers_found": 22, "callees": 32, "callees_found": 19, "inside_callees": 10, "inside_callees_found": 9},
+    "pyan3": {"status": "ok", "dynamic": 51, "unmapped": 1, "inside": 17, "inside_found": 12, "all": 50, "all_found": 12, "callers": 22, "callers_found": 10, "callees": 32, "callees_found": 9, "inside_callees": 10, "inside_callees_found": 9},
+    "JARVIS": {"status": "ok", "dynamic": 51, "unmapped": 1, "inside": 17, "inside_found": 11, "all": 50, "all_found": 21, "callers": 22, "callers_found": 13, "callees": 32, "callees_found": 19, "inside_callees": 10, "inside_callees_found": 9},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 51, "unmapped": 1, "inside": 17, "inside_found": 11, "all": 50, "all_found": 21, "callers": 22, "callers_found": 13, "callees": 32, "callees_found": 19, "inside_callees": 10, "inside_callees_found": 9},
+    "JARVIS --precision": {"status": "ok", "dynamic": 51, "unmapped": 1, "inside": 17, "inside_found": 11, "all": 50, "all_found": 19, "callers": 22, "callers_found": 12, "callees": 32, "callees_found": 17, "inside_callees": 10, "inside_callees_found": 9},
+    "CPyGraph": {"status": "ok", "dynamic": 51, "unmapped": 1, "inside": 17, "inside_found": 0, "all": 50, "all_found": 0, "callers": 22, "callers_found": 0, "callees": 32, "callees_found": 1, "inside_callees": 10, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 51, "unmapped": 1, "inside": 17, "inside_found": 11, "all": 50, "all_found": 11, "callers": 22, "callers_found": 9, "callees": 32, "callees_found": 8, "inside_callees": 10, "inside_callees_found": 8},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 51, "unmapped": 1, "inside": 17, "inside_found": 17, "all": 50, "all_found": 17, "callers": 22, "callers_found": 16, "callees": 32, "callees_found": 10, "inside_callees": 10, "inside_callees_found": 10}
+   }
+  },
+  "requests": {
+   "rank": 33,
+   "trace": 33,
+   "edges": 492,
+   "unmapped": {"callee: constructor not in the project": 1, "callee: no module": 28, "callee: not a name": 14, "class: base not proved": 11},
+   "rules": {"caller: function": 180, "caller: method": 238, "caller: module": 20, "inside: class, inherited __init__": 10, "inside: class, own __init__": 12, "inside: function": 122, "inside: lambda": 1, "module: source root": 145, "outside: as written": 108, "outside: builtin type": 98, "outside: builtins": 87},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 492, "unmapped": 54, "inside": 142, "inside_found": 135, "all": 435, "all_found": 374, "callers": 143, "callers_found": 143, "callees": 231, "callees_found": 193, "inside_callees": 103, "inside_callees_found": 96},
+    "original PyCG": {"status": "ok", "dynamic": 492, "unmapped": 54, "inside": 142, "inside_found": 131, "all": 435, "all_found": 278, "callers": 143, "callers_found": 143, "callees": 231, "callees_found": 162, "inside_callees": 103, "inside_callees_found": 93},
+    "pyan3": {"status": "ok", "dynamic": 492, "unmapped": 54, "inside": 142, "inside_found": 125, "all": 435, "all_found": 125, "callers": 143, "callers_found": 128, "callees": 231, "callees_found": 94, "inside_callees": 103, "inside_callees_found": 94},
+    "JARVIS": {"status": "ok", "dynamic": 492, "unmapped": 54, "inside": 142, "inside_found": 131, "all": 435, "all_found": 267, "callers": 143, "callers_found": 134, "callees": 231, "callees_found": 145, "inside_callees": 103, "inside_callees_found": 93},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 492, "unmapped": 54, "inside": 142, "inside_found": 131, "all": 435, "all_found": 267, "callers": 143, "callers_found": 134, "callees": 231, "callees_found": 145, "inside_callees": 103, "inside_callees_found": 93},
+    "JARVIS --precision": {"status": "ok", "dynamic": 492, "unmapped": 54, "inside": 142, "inside_found": 131, "all": 435, "all_found": 234, "callers": 143, "callers_found": 133, "callees": 231, "callees_found": 124, "inside_callees": 103, "inside_callees_found": 93},
+    "CPyGraph": {"status": "ok", "dynamic": 492, "unmapped": 54, "inside": 142, "inside_found": 4, "all": 435, "all_found": 9, "callers": 143, "callers_found": 9, "callees": 231, "callees_found": 9, "inside_callees": 103, "inside_callees_found": 4},
+    "PyAnalyzer": {"status": "ok", "dynamic": 492, "unmapped": 54, "inside": 142, "inside_found": 95, "all": 435, "all_found": 95, "callers": 143, "callers_found": 97, "callees": 231, "callees_found": 70, "inside_callees": 103, "inside_callees_found": 70},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 492, "unmapped": 54, "inside": 142, "inside_found": 113, "all": 435, "all_found": 113, "callers": 143, "callers_found": 121, "callees": 231, "callees_found": 85, "inside_callees": 103, "inside_callees_found": 85}
+   }
+  },
+  "blinker": {
+   "rank": 34,
+   "trace": 35,
+   "edges": 95,
+   "unmapped": {"callee: constructor not in the project": 1, "callee: no module": 1, "callee: not a name": 21, "class: __new__ or __init_subclass__": 2},
+   "rules": {"caller: function": 1, "caller: method": 65, "caller: module": 4, "inside: class, own __init__": 5, "inside: function": 28, "inside: lambda": 3, "module: source root": 36, "outside: as written": 13, "outside: builtin type": 13, "outside: builtins": 8},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 95, "unmapped": 25, "inside": 36, "inside_found": 24, "all": 70, "all_found": 49, "callers": 28, "callers_found": 28, "callees": 53, "callees_found": 34, "inside_callees": 24, "inside_callees_found": 12},
+    "original PyCG": {"status": "ok", "dynamic": 95, "unmapped": 25, "inside": 36, "inside_found": 20, "all": 70, "all_found": 30, "callers": 28, "callers_found": 28, "callees": 53, "callees_found": 22, "inside_callees": 24, "inside_callees_found": 10},
+    "pyan3": {"status": "ok", "dynamic": 95, "unmapped": 25, "inside": 36, "inside_found": 19, "all": 70, "all_found": 19, "callers": 28, "callers_found": 25, "callees": 53, "callees_found": 11, "inside_callees": 24, "inside_callees_found": 11},
+    "JARVIS": {"status": "ok", "dynamic": 95, "unmapped": 25, "inside": 36, "inside_found": 19, "all": 70, "all_found": 30, "callers": 28, "callers_found": 24, "callees": 53, "callees_found": 23, "inside_callees": 24, "inside_callees_found": 10},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 95, "unmapped": 25, "inside": 36, "inside_found": 19, "all": 70, "all_found": 30, "callers": 28, "callers_found": 24, "callees": 53, "callees_found": 23, "inside_callees": 24, "inside_callees_found": 10},
+    "JARVIS --precision": {"status": "ok", "dynamic": 95, "unmapped": 25, "inside": 36, "inside_found": 19, "all": 70, "all_found": 30, "callers": 28, "callers_found": 24, "callees": 53, "callees_found": 23, "inside_callees": 24, "inside_callees_found": 10},
+    "CPyGraph": {"status": "ok", "dynamic": 95, "unmapped": 25, "inside": 36, "inside_found": 1, "all": 70, "all_found": 1, "callers": 28, "callers_found": 2, "callees": 53, "callees_found": 1, "inside_callees": 24, "inside_callees_found": 1},
+    "PyAnalyzer": {"status": "ok", "dynamic": 95, "unmapped": 25, "inside": 36, "inside_found": 13, "all": 70, "all_found": 13, "callers": 28, "callers_found": 16, "callees": 53, "callees_found": 7, "inside_callees": 24, "inside_callees_found": 7},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 95, "unmapped": 25, "inside": 36, "inside_found": 17, "all": 70, "all_found": 17, "callers": 28, "callers_found": 17, "callees": 53, "callees_found": 9, "inside_callees": 24, "inside_callees_found": 9}
+   }
+  },
+  "zerorpc-python": {
+   "rank": 35,
+   "trace": 36,
+   "edges": 135,
+   "unmapped": {"callee: class without __init__": 4, "callee: no module": 3, "callee: not a name": 4, "class: name not bound once": 2},
+   "rules": {"caller: method": 118, "caller: module": 4, "inside: class, own __init__": 5, "inside: function": 37, "module: source root": 42, "outside: as written": 65, "outside: builtin type": 7, "outside: builtins": 8},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 135, "unmapped": 13, "inside": 42, "inside_found": 40, "all": 122, "all_found": 69, "callers": 57, "callers_found": 57, "callees": 80, "callees_found": 52, "inside_callees": 36, "inside_callees_found": 36},
+    "original PyCG": {"status": "ok", "dynamic": 135, "unmapped": 13, "inside": 42, "inside_found": 31, "all": 122, "all_found": 47, "callers": 57, "callers_found": 57, "callees": 80, "callees_found": 39, "inside_callees": 36, "inside_callees_found": 30},
+    "pyan3": {"status": "ok", "dynamic": 135, "unmapped": 13, "inside": 42, "inside_found": 17, "all": 122, "all_found": 17, "callers": 57, "callers_found": 52, "callees": 80, "callees_found": 15, "inside_callees": 36, "inside_callees_found": 15},
+    "JARVIS": {"status": "ok", "dynamic": 135, "unmapped": 13, "inside": 42, "inside_found": 20, "all": 122, "all_found": 33, "callers": 57, "callers_found": 55, "callees": 80, "callees_found": 34, "inside_callees": 36, "inside_callees_found": 24},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 135, "unmapped": 13, "inside": 42, "inside_found": 20, "all": 122, "all_found": 33, "callers": 57, "callers_found": 55, "callees": 80, "callees_found": 34, "inside_callees": 36, "inside_callees_found": 24},
+    "JARVIS --precision": {"status": "ok", "dynamic": 135, "unmapped": 13, "inside": 42, "inside_found": 19, "all": 122, "all_found": 28, "callers": 57, "callers_found": 54, "callees": 80, "callees_found": 29, "inside_callees": 36, "inside_callees_found": 21},
+    "CPyGraph": {"status": "ok", "dynamic": 135, "unmapped": 13, "inside": 42, "inside_found": 0, "all": 122, "all_found": 0, "callers": 57, "callers_found": 0, "callees": 80, "callees_found": 0, "inside_callees": 36, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 135, "unmapped": 13, "inside": 42, "inside_found": 13, "all": 122, "all_found": 13, "callers": 57, "callers_found": 28, "callees": 80, "callees_found": 15, "inside_callees": 36, "inside_callees_found": 15},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 135, "unmapped": 13, "inside": 42, "inside_found": 21, "all": 122, "all_found": 21, "callers": 57, "callers_found": 33, "callees": 80, "callees_found": 20, "inside_callees": 36, "inside_callees_found": 20}
+   }
+  },
+  "elasticsearch-dsl-py": {
+   "rank": 36,
+   "trace": 37,
+   "edges": 525,
+   "unmapped": {"callee: constructor not in the project": 5, "callee: not a name": 6, "class: base not proved": 1, "class: keyword": 59},
+   "rules": {"caller: function": 31, "caller: method": 412, "caller: module": 11, "inside: class, inherited __init__": 2, "inside: class, own __init__": 30, "inside: function": 195, "module: source root": 227, "outside: as written": 21, "outside: builtin type": 98, "outside: builtins": 108},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 525, "unmapped": 71, "inside": 227, "inside_found": 169, "all": 454, "all_found": 366, "callers": 192, "callers_found": 192, "callees": 186, "callees_found": 152, "inside_callees": 134, "inside_callees_found": 109},
+    "original PyCG": {"status": "ok", "dynamic": 525, "unmapped": 71, "inside": 227, "inside_found": 112, "all": 454, "all_found": 225, "callers": 192, "callers_found": 192, "callees": 186, "callees_found": 108, "inside_callees": 134, "inside_callees_found": 81},
+    "pyan3": {"status": "ok", "dynamic": 525, "unmapped": 71, "inside": 227, "inside_found": 136, "all": 454, "all_found": 136, "callers": 192, "callers_found": 159, "callees": 186, "callees_found": 103, "inside_callees": 134, "inside_callees_found": 103},
+    "JARVIS": {"status": "ok", "dynamic": 525, "unmapped": 71, "inside": 227, "inside_found": 100, "all": 454, "all_found": 228, "callers": 192, "callers_found": 181, "callees": 186, "callees_found": 111, "inside_callees": 134, "inside_callees_found": 78},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 525, "unmapped": 71, "inside": 227, "inside_found": 100, "all": 454, "all_found": 228, "callers": 192, "callers_found": 181, "callees": 186, "callees_found": 111, "inside_callees": 134, "inside_callees_found": 78},
+    "JARVIS --precision": {"status": "ok", "dynamic": 525, "unmapped": 71, "inside": 227, "inside_found": 97, "all": 454, "all_found": 216, "callers": 192, "callers_found": 175, "callees": 186, "callees_found": 103, "inside_callees": 134, "inside_callees_found": 73},
+    "CPyGraph": {"status": "ok", "dynamic": 525, "unmapped": 71, "inside": 227, "inside_found": 5, "all": 454, "all_found": 8, "callers": 192, "callers_found": 8, "callees": 186, "callees_found": 16, "inside_callees": 134, "inside_callees_found": 12},
+    "PyAnalyzer": {"status": "ok", "dynamic": 525, "unmapped": 71, "inside": 227, "inside_found": 46, "all": 454, "all_found": 46, "callers": 192, "callers_found": 55, "callees": 186, "callees_found": 26, "inside_callees": 134, "inside_callees_found": 26},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 525, "unmapped": 71, "inside": 227, "inside_found": 77, "all": 454, "all_found": 77, "callers": 192, "callers_found": 90, "callees": 186, "callees_found": 54, "inside_callees": 134, "inside_callees_found": 54}
+   }
+  },
+  "marshmallow": {
+   "rank": 37,
+   "trace": 38,
+   "edges": 56,
+   "unmapped": {"callee: class without __init__": 1, "class: not at the top level": 1},
+   "rules": {"caller: function": 11, "caller: method": 37, "caller: module": 6, "inside: class, own __init__": 3, "inside: function": 16, "module: source root": 19, "outside: as written": 10, "outside: builtin type": 11, "outside: builtins": 14},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 56, "unmapped": 2, "inside": 19, "inside_found": 19, "all": 54, "all_found": 53, "callers": 23, "callers_found": 23, "callees": 35, "callees_found": 34, "inside_callees": 12, "inside_callees_found": 12},
+    "original PyCG": {"status": "ok", "dynamic": 56, "unmapped": 2, "inside": 19, "inside_found": 10, "all": 54, "all_found": 31, "callers": 23, "callers_found": 23, "callees": 35, "callees_found": 23, "inside_callees": 12, "inside_callees_found": 10},
+    "pyan3": {"status": "ok", "dynamic": 56, "unmapped": 2, "inside": 19, "inside_found": 18, "all": 54, "all_found": 18, "callers": 23, "callers_found": 20, "callees": 35, "callees_found": 11, "inside_callees": 12, "inside_callees_found": 11},
+    "JARVIS": {"status": "ok", "dynamic": 56, "unmapped": 2, "inside": 19, "inside_found": 10, "all": 54, "all_found": 26, "callers": 23, "callers_found": 23, "callees": 35, "callees_found": 25, "inside_callees": 12, "inside_callees_found": 10},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 56, "unmapped": 2, "inside": 19, "inside_found": 10, "all": 54, "all_found": 26, "callers": 23, "callers_found": 23, "callees": 35, "callees_found": 25, "inside_callees": 12, "inside_callees_found": 10},
+    "JARVIS --precision": {"status": "ok", "dynamic": 56, "unmapped": 2, "inside": 19, "inside_found": 10, "all": 54, "all_found": 24, "callers": 23, "callers_found": 23, "callees": 35, "callees_found": 23, "inside_callees": 12, "inside_callees_found": 10},
+    "CPyGraph": {"status": "ok", "dynamic": 56, "unmapped": 2, "inside": 19, "inside_found": 0, "all": 54, "all_found": 0, "callers": 23, "callers_found": 0, "callees": 35, "callees_found": 0, "inside_callees": 12, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 56, "unmapped": 2, "inside": 19, "inside_found": 2, "all": 54, "all_found": 2, "callers": 23, "callers_found": 4, "callees": 35, "callees_found": 4, "inside_callees": 12, "inside_callees_found": 4},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 56, "unmapped": 2, "inside": 19, "inside_found": 7, "all": 54, "all_found": 7, "callers": 23, "callers_found": 8, "callees": 35, "callees_found": 6, "inside_callees": 12, "inside_callees_found": 6}
+   }
+  },
+  "pypdf": {
+   "rank": 38,
+   "trace": 39,
+   "edges": 3,
+   "unmapped": {},
+   "rules": {"caller: function": 2, "caller: module": 1, "inside: function": 1, "module: source root": 1, "outside: builtins": 2},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 3, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 3, "all_found": 3, "callers": 2, "callers_found": 2, "callees": 3, "callees_found": 3, "inside_callees": 1, "inside_callees_found": 1},
+    "original PyCG": {"status": "timeout", "dynamic": 3, "unmapped": 0, "inside": 1, "inside_found": 0, "all": 3, "all_found": 0, "callers": 2, "callers_found": 0, "callees": 3, "callees_found": 0, "inside_callees": 1, "inside_callees_found": 0},
+    "pyan3": {"status": "crash", "error": "exit status 1: KeyError: 'pypdf.generic._data_structures.Destination.top'", "dynamic": 3, "unmapped": 0, "inside": 1, "inside_found": 0, "all": 3, "all_found": 0, "callers": 2, "callers_found": 0, "callees": 3, "callees_found": 0, "inside_callees": 1, "inside_callees_found": 0},
+    "JARVIS": {"status": "ok", "dynamic": 3, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 3, "all_found": 3, "callers": 2, "callers_found": 2, "callees": 3, "callees_found": 3, "inside_callees": 1, "inside_callees_found": 1},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 3, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 3, "all_found": 3, "callers": 2, "callers_found": 2, "callees": 3, "callees_found": 3, "inside_callees": 1, "inside_callees_found": 1},
+    "JARVIS --precision": {"status": "ok", "dynamic": 3, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 3, "all_found": 3, "callers": 2, "callers_found": 2, "callees": 3, "callees_found": 3, "inside_callees": 1, "inside_callees_found": 1},
+    "CPyGraph": {"status": "ok", "dynamic": 3, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 3, "all_found": 2, "callers": 2, "callers_found": 2, "callees": 3, "callees_found": 2, "inside_callees": 1, "inside_callees_found": 1},
+    "PyAnalyzer": {"status": "ok", "dynamic": 3, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 3, "all_found": 1, "callers": 2, "callers_found": 2, "callees": 3, "callees_found": 1, "inside_callees": 1, "inside_callees_found": 1},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 3, "unmapped": 0, "inside": 1, "inside_found": 1, "all": 3, "all_found": 1, "callers": 2, "callers_found": 2, "callees": 3, "callees_found": 1, "inside_callees": 1, "inside_callees_found": 1}
+   }
+  },
+  "lektor": {
+   "rank": 39,
+   "trace": 40,
+   "edges": 143,
+   "unmapped": {"callee: class without __init__": 2, "callee: no module": 4, "class: base not proved": 1, "class: decorator": 1, "class: namespace access": 1},
+   "rules": {"caller: function": 52, "caller: method": 38, "caller: module": 44, "inside: class, inherited __init__": 1, "inside: class, own __init__": 4, "inside: function": 14, "module: source root": 19, "outside: as written": 77, "outside: builtin type": 25, "outside: builtins": 13},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 143, "unmapped": 9, "inside": 19, "inside_found": 19, "all": 134, "all_found": 85, "callers": 48, "callers_found": 48, "callees": 94, "callees_found": 67, "inside_callees": 19, "inside_callees_found": 19},
+    "original PyCG": {"status": "timeout", "dynamic": 143, "unmapped": 9, "inside": 19, "inside_found": 0, "all": 134, "all_found": 0, "callers": 48, "callers_found": 0, "callees": 94, "callees_found": 0, "inside_callees": 19, "inside_callees_found": 0},
+    "pyan3": {"status": "ok", "dynamic": 143, "unmapped": 9, "inside": 19, "inside_found": 15, "all": 134, "all_found": 15, "callers": 48, "callers_found": 33, "callees": 94, "callees_found": 17, "inside_callees": 19, "inside_callees_found": 17},
+    "JARVIS": {"status": "ok", "dynamic": 143, "unmapped": 9, "inside": 19, "inside_found": 18, "all": 134, "all_found": 46, "callers": 48, "callers_found": 47, "callees": 94, "callees_found": 49, "inside_callees": 19, "inside_callees_found": 19},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 143, "unmapped": 9, "inside": 19, "inside_found": 18, "all": 134, "all_found": 46, "callers": 48, "callers_found": 47, "callees": 94, "callees_found": 49, "inside_callees": 19, "inside_callees_found": 19},
+    "JARVIS --precision": {"status": "ok", "dynamic": 143, "unmapped": 9, "inside": 19, "inside_found": 18, "all": 134, "all_found": 30, "callers": 48, "callers_found": 47, "callees": 94, "callees_found": 38, "inside_callees": 19, "inside_callees_found": 19},
+    "CPyGraph": {"status": "ok", "dynamic": 143, "unmapped": 9, "inside": 19, "inside_found": 5, "all": 134, "all_found": 7, "callers": 48, "callers_found": 19, "callees": 94, "callees_found": 7, "inside_callees": 19, "inside_callees_found": 5},
+    "PyAnalyzer": {"status": "ok", "dynamic": 143, "unmapped": 9, "inside": 19, "inside_found": 13, "all": 134, "all_found": 13, "callers": 48, "callers_found": 30, "callees": 94, "callees_found": 15, "inside_callees": 19, "inside_callees_found": 15},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 143, "unmapped": 9, "inside": 19, "inside_found": 14, "all": 134, "all_found": 14, "callers": 48, "callers_found": 31, "callees": 94, "callees_found": 15, "inside_callees": 19, "inside_callees_found": 15}
+   }
+  },
+  "celery": {
+   "rank": 40,
+   "trace": 41,
+   "edges": 92,
+   "unmapped": {"callee: class without __init__": 2, "callee: not a definition": 1, "class: base not proved": 1, "class: namespace access": 2},
+   "rules": {"caller: function": 19, "caller: method": 7, "caller: module": 60, "inside: class, own __init__": 3, "inside: function": 14, "module: source root": 17, "outside: as written": 30, "outside: builtin type": 13, "outside: builtins": 26},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 92, "unmapped": 6, "inside": 17, "inside_found": 17, "all": 86, "all_found": 78, "callers": 32, "callers_found": 32, "callees": 53, "callees_found": 45, "inside_callees": 14, "inside_callees_found": 14},
+    "original PyCG": {"status": "timeout", "dynamic": 92, "unmapped": 6, "inside": 17, "inside_found": 0, "all": 86, "all_found": 0, "callers": 32, "callers_found": 0, "callees": 53, "callees_found": 0, "inside_callees": 14, "inside_callees_found": 0},
+    "pyan3": {"status": "crash", "error": "exit status 1: KeyError: 'celery.utils.threads._LocalStack.top'", "dynamic": 92, "unmapped": 6, "inside": 17, "inside_found": 0, "all": 86, "all_found": 0, "callers": 32, "callers_found": 0, "callees": 53, "callees_found": 0, "inside_callees": 14, "inside_callees_found": 0},
+    "JARVIS": {"status": "ok", "dynamic": 92, "unmapped": 6, "inside": 17, "inside_found": 16, "all": 86, "all_found": 50, "callers": 32, "callers_found": 31, "callees": 53, "callees_found": 40, "inside_callees": 14, "inside_callees_found": 14},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 92, "unmapped": 6, "inside": 17, "inside_found": 16, "all": 86, "all_found": 50, "callers": 32, "callers_found": 31, "callees": 53, "callees_found": 40, "inside_callees": 14, "inside_callees_found": 14},
+    "JARVIS --precision": {"status": "ok", "dynamic": 92, "unmapped": 6, "inside": 17, "inside_found": 16, "all": 86, "all_found": 40, "callers": 32, "callers_found": 31, "callees": 53, "callees_found": 33, "inside_callees": 14, "inside_callees_found": 14},
+    "CPyGraph": {"status": "ok", "dynamic": 92, "unmapped": 6, "inside": 17, "inside_found": 16, "all": 86, "all_found": 24, "callers": 32, "callers_found": 23, "callees": 53, "callees_found": 17, "inside_callees": 14, "inside_callees_found": 14},
+    "PyAnalyzer": {"status": "ok", "dynamic": 92, "unmapped": 6, "inside": 17, "inside_found": 12, "all": 86, "all_found": 12, "callers": 32, "callers_found": 19, "callees": 53, "callees_found": 13, "inside_callees": 14, "inside_callees_found": 13},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 92, "unmapped": 6, "inside": 17, "inside_found": 13, "all": 86, "all_found": 13, "callers": 32, "callers_found": 15, "callees": 53, "callees_found": 10, "inside_callees": 14, "inside_callees_found": 10}
+   }
+  },
+  "furl": {
+   "rank": 41,
+   "trace": 45,
+   "edges": 131,
+   "unmapped": {"callee: no module": 5, "class: base not proved": 1, "class: decorator": 1},
+   "rules": {"caller: function": 33, "caller: method": 87, "caller: module": 4, "inside: class, own __init__": 2, "inside: function": 53, "inside: lambda": 2, "module: source root": 57, "outside: as written": 12, "outside: builtin type": 27, "outside: builtins": 28},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 131, "unmapped": 7, "inside": 57, "inside_found": 55, "all": 124, "all_found": 107, "callers": 52, "callers_found": 52, "callees": 73, "callees_found": 61, "inside_callees": 34, "inside_callees_found": 33},
+    "original PyCG": {"status": "ok", "dynamic": 131, "unmapped": 7, "inside": 57, "inside_found": 52, "all": 124, "all_found": 82, "callers": 52, "callers_found": 52, "callees": 73, "callees_found": 45, "inside_callees": 34, "inside_callees_found": 31},
+    "pyan3": {"status": "ok", "dynamic": 131, "unmapped": 7, "inside": 57, "inside_found": 50, "all": 124, "all_found": 50, "callers": 52, "callers_found": 48, "callees": 73, "callees_found": 30, "inside_callees": 34, "inside_callees_found": 30},
+    "JARVIS": {"status": "ok", "dynamic": 131, "unmapped": 7, "inside": 57, "inside_found": 52, "all": 124, "all_found": 88, "callers": 52, "callers_found": 51, "callees": 73, "callees_found": 48, "inside_callees": 34, "inside_callees_found": 31},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 131, "unmapped": 7, "inside": 57, "inside_found": 52, "all": 124, "all_found": 88, "callers": 52, "callers_found": 51, "callees": 73, "callees_found": 48, "inside_callees": 34, "inside_callees_found": 31},
+    "JARVIS --precision": {"status": "ok", "dynamic": 131, "unmapped": 7, "inside": 57, "inside_found": 52, "all": 124, "all_found": 87, "callers": 52, "callers_found": 50, "callees": 73, "callees_found": 47, "inside_callees": 34, "inside_callees_found": 31},
+    "CPyGraph": {"status": "ok", "dynamic": 131, "unmapped": 7, "inside": 57, "inside_found": 0, "all": 124, "all_found": 1, "callers": 52, "callers_found": 2, "callees": 73, "callees_found": 1, "inside_callees": 34, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 131, "unmapped": 7, "inside": 57, "inside_found": 42, "all": 124, "all_found": 42, "callers": 52, "callers_found": 35, "callees": 73, "callees_found": 28, "inside_callees": 34, "inside_callees_found": 28},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 131, "unmapped": 7, "inside": 57, "inside_found": 47, "all": 124, "all_found": 47, "callers": 52, "callers_found": 42, "callees": 73, "callees_found": 28, "inside_callees": 34, "inside_callees_found": 28}
+   }
+  },
+  "moviepy": {
+   "rank": 42,
+   "trace": 46,
+   "edges": 171,
+   "unmapped": {"callee: no module": 9, "callee: one of several lambdas": 1, "class: __init__ not one def": 1, "class: attribute set": 1},
+   "rules": {"caller: function": 40, "caller: method": 109, "caller: module": 10, "inside: class, own __init__": 3, "inside: function": 60, "inside: lambda": 5, "module: source root": 68, "outside: as written": 27, "outside: builtin type": 24, "outside: builtins": 40},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 171, "unmapped": 12, "inside": 68, "inside_found": 56, "all": 159, "all_found": 142, "callers": 46, "callers_found": 46, "callees": 100, "callees_found": 93, "inside_callees": 49, "inside_callees_found": 46},
+    "original PyCG": {"status": "ok", "dynamic": 171, "unmapped": 12, "inside": 68, "inside_found": 44, "all": 159, "all_found": 107, "callers": 46, "callers_found": 46, "callees": 100, "callees_found": 70, "inside_callees": 49, "inside_callees_found": 39},
+    "pyan3": {"status": "ok", "dynamic": 171, "unmapped": 12, "inside": 68, "inside_found": 46, "all": 159, "all_found": 46, "callers": 46, "callers_found": 44, "callees": 100, "callees_found": 40, "inside_callees": 49, "inside_callees_found": 40},
+    "JARVIS": {"status": "ok", "dynamic": 171, "unmapped": 12, "inside": 68, "inside_found": 49, "all": 159, "all_found": 95, "callers": 46, "callers_found": 46, "callees": 100, "callees_found": 65, "inside_callees": 49, "inside_callees_found": 43},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 171, "unmapped": 12, "inside": 68, "inside_found": 49, "all": 159, "all_found": 95, "callers": 46, "callers_found": 46, "callees": 100, "callees_found": 65, "inside_callees": 49, "inside_callees_found": 43},
+    "JARVIS --precision": {"status": "ok", "dynamic": 171, "unmapped": 12, "inside": 68, "inside_found": 46, "all": 159, "all_found": 90, "callers": 46, "callers_found": 46, "callees": 100, "callees_found": 60, "inside_callees": 49, "inside_callees_found": 40},
+    "CPyGraph": {"status": "ok", "dynamic": 171, "unmapped": 12, "inside": 68, "inside_found": 7, "all": 159, "all_found": 9, "callers": 46, "callers_found": 8, "callees": 100, "callees_found": 8, "inside_callees": 49, "inside_callees_found": 6},
+    "PyAnalyzer": {"status": "ok", "dynamic": 171, "unmapped": 12, "inside": 68, "inside_found": 49, "all": 159, "all_found": 49, "callers": 46, "callers_found": 40, "callees": 100, "callees_found": 39, "inside_callees": 49, "inside_callees_found": 39},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 171, "unmapped": 12, "inside": 68, "inside_found": 48, "all": 159, "all_found": 48, "callers": 46, "callers_found": 42, "callees": 100, "callees_found": 37, "inside_callees": 49, "inside_callees_found": 37}
+   }
+  },
+  "webassets": {
+   "rank": 43,
+   "trace": 47,
+   "edges": 207,
+   "unmapped": {"callee: no module": 12, "callee: one of several lambdas": 1, "caller: not a function of the file": 2, "class: __new__ or __init_subclass__": 2, "class: base not proved": 2, "class: namespace access": 2},
+   "rules": {"caller: function": 48, "caller: method": 120, "caller: module": 18, "inside: class, own __init__": 5, "inside: function": 61, "inside: lambda": 1, "module: source root": 67, "outside: as written": 42, "outside: builtin type": 31, "outside: builtins": 46},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 207, "unmapped": 21, "inside": 67, "inside_found": 67, "all": 186, "all_found": 168, "callers": 69, "callers_found": 69, "callees": 123, "callees_found": 113, "inside_callees": 51, "inside_callees_found": 51},
+    "original PyCG": {"status": "memory", "dynamic": 207, "unmapped": 21, "inside": 67, "inside_found": 0, "all": 186, "all_found": 0, "callers": 69, "callers_found": 0, "callees": 123, "callees_found": 0, "inside_callees": 51, "inside_callees_found": 0},
+    "pyan3": {"status": "ok", "dynamic": 207, "unmapped": 21, "inside": 67, "inside_found": 50, "all": 186, "all_found": 50, "callers": 69, "callers_found": 64, "callees": 123, "callees_found": 43, "inside_callees": 51, "inside_callees_found": 43},
+    "JARVIS": {"status": "ok", "dynamic": 207, "unmapped": 21, "inside": 67, "inside_found": 60, "all": 186, "all_found": 111, "callers": 69, "callers_found": 68, "callees": 123, "callees_found": 80, "inside_callees": 51, "inside_callees_found": 46},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 207, "unmapped": 21, "inside": 67, "inside_found": 60, "all": 186, "all_found": 111, "callers": 69, "callers_found": 68, "callees": 123, "callees_found": 80, "inside_callees": 51, "inside_callees_found": 46},
+    "JARVIS --precision": {"status": "ok", "dynamic": 207, "unmapped": 21, "inside": 67, "inside_found": 58, "all": 186, "all_found": 108, "callers": 69, "callers_found": 68, "callees": 123, "callees_found": 79, "inside_callees": 51, "inside_callees_found": 45},
+    "CPyGraph": {"status": "ok", "dynamic": 207, "unmapped": 21, "inside": 67, "inside_found": 39, "all": 186, "all_found": 45, "callers": 69, "callers_found": 36, "callees": 123, "callees_found": 42, "inside_callees": 51, "inside_callees_found": 35},
+    "PyAnalyzer": {"status": "ok", "dynamic": 207, "unmapped": 21, "inside": 67, "inside_found": 42, "all": 186, "all_found": 42, "callers": 69, "callers_found": 49, "callees": 123, "callees_found": 35, "inside_callees": 51, "inside_callees_found": 35},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 207, "unmapped": 21, "inside": 67, "inside_found": 51, "all": 186, "all_found": 51, "callers": 69, "callers_found": 56, "callees": 123, "callees_found": 41, "inside_callees": 51, "inside_callees_found": 41}
+   }
+  },
+  "html2text": {
+   "rank": 44,
+   "trace": 48,
+   "edges": 76,
+   "unmapped": {"callee: no module": 4, "class: name not bound once": 1},
+   "rules": {"caller: function": 6, "caller: method": 62, "caller: module": 3, "inside: class, own __init__": 2, "inside: function": 34, "module: source root": 36, "outside: as written": 10, "outside: builtin type": 16, "outside: builtins": 9},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 76, "unmapped": 5, "inside": 36, "inside_found": 35, "all": 71, "all_found": 70, "callers": 25, "callers_found": 25, "callees": 53, "callees_found": 52, "inside_callees": 27, "inside_callees_found": 26},
+    "original PyCG": {"status": "ok", "dynamic": 76, "unmapped": 5, "inside": 36, "inside_found": 35, "all": 71, "all_found": 52, "callers": 25, "callers_found": 25, "callees": 53, "callees_found": 38, "inside_callees": 27, "inside_callees_found": 26},
+    "pyan3": {"status": "ok", "dynamic": 76, "unmapped": 5, "inside": 36, "inside_found": 34, "all": 71, "all_found": 34, "callers": 25, "callers_found": 23, "callees": 53, "callees_found": 26, "inside_callees": 27, "inside_callees_found": 26},
+    "JARVIS": {"status": "ok", "dynamic": 76, "unmapped": 5, "inside": 36, "inside_found": 35, "all": 71, "all_found": 55, "callers": 25, "callers_found": 25, "callees": 53, "callees_found": 42, "inside_callees": 27, "inside_callees_found": 26},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 76, "unmapped": 5, "inside": 36, "inside_found": 35, "all": 71, "all_found": 55, "callers": 25, "callers_found": 25, "callees": 53, "callees_found": 42, "inside_callees": 27, "inside_callees_found": 26},
+    "JARVIS --precision": {"status": "ok", "dynamic": 76, "unmapped": 5, "inside": 36, "inside_found": 35, "all": 71, "all_found": 54, "callers": 25, "callers_found": 25, "callees": 53, "callees_found": 41, "inside_callees": 27, "inside_callees_found": 26},
+    "CPyGraph": {"status": "ok", "dynamic": 76, "unmapped": 5, "inside": 36, "inside_found": 7, "all": 71, "all_found": 11, "callers": 25, "callers_found": 9, "callees": 53, "callees_found": 12, "inside_callees": 27, "inside_callees_found": 8},
+    "PyAnalyzer": {"status": "ok", "dynamic": 76, "unmapped": 5, "inside": 36, "inside_found": 20, "all": 71, "all_found": 20, "callers": 25, "callers_found": 16, "callees": 53, "callees_found": 18, "inside_callees": 27, "inside_callees_found": 18},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 76, "unmapped": 5, "inside": 36, "inside_found": 33, "all": 71, "all_found": 33, "callers": 25, "callers_found": 22, "callees": 53, "callees_found": 24, "inside_callees": 27, "inside_callees_found": 24}
+   }
+  },
+  "gunicorn": {
+   "rank": 45,
+   "trace": 50,
+   "edges": 26,
+   "unmapped": {"class: base not proved": 1},
+   "rules": {"caller: method": 11, "caller: module": 14, "inside: function": 1, "module: source root": 1, "outside: as written": 3, "outside: builtin type": 11, "outside: builtins": 10},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 1, "inside_found": 0, "all": 25, "all_found": 24, "callers": 7, "callers_found": 7, "callees": 22, "callees_found": 21, "inside_callees": 1, "inside_callees_found": 0},
+    "original PyCG": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 1, "inside_found": 0, "all": 25, "all_found": 9, "callers": 7, "callers_found": 7, "callees": 22, "callees_found": 11, "inside_callees": 1, "inside_callees_found": 0},
+    "pyan3": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 1, "inside_found": 0, "all": 25, "all_found": 0, "callers": 7, "callers_found": 1, "callees": 22, "callees_found": 0, "inside_callees": 1, "inside_callees_found": 0},
+    "JARVIS": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 1, "inside_found": 0, "all": 25, "all_found": 9, "callers": 7, "callers_found": 7, "callees": 22, "callees_found": 16, "inside_callees": 1, "inside_callees_found": 0},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 1, "inside_found": 0, "all": 25, "all_found": 9, "callers": 7, "callers_found": 7, "callees": 22, "callees_found": 16, "inside_callees": 1, "inside_callees_found": 0},
+    "JARVIS --precision": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 1, "inside_found": 0, "all": 25, "all_found": 9, "callers": 7, "callers_found": 7, "callees": 22, "callees_found": 16, "inside_callees": 1, "inside_callees_found": 0},
+    "CPyGraph": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 1, "inside_found": 0, "all": 25, "all_found": 2, "callers": 7, "callers_found": 2, "callees": 22, "callees_found": 3, "inside_callees": 1, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 1, "inside_found": 0, "all": 25, "all_found": 0, "callers": 7, "callers_found": 0, "callees": 22, "callees_found": 0, "inside_callees": 1, "inside_callees_found": 0},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 26, "unmapped": 1, "inside": 1, "inside_found": 1, "all": 25, "all_found": 1, "callers": 7, "callers_found": 2, "callees": 22, "callees_found": 1, "inside_callees": 1, "inside_callees_found": 1}
+   }
+  },
+  "mezzanine": {
+   "rank": 46,
+   "trace": 52,
+   "edges": 62,
+   "unmapped": {"callee: class without __init__": 1, "callee: one of several lambdas": 1, "class: base not proved": 1, "class: not at the top level": 1},
+   "rules": {"caller: function": 25, "caller: module": 33, "inside: function": 8, "module: source root": 8, "outside: as written": 20, "outside: builtin type": 15, "outside: builtins": 15},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 62, "unmapped": 4, "inside": 8, "inside_found": 8, "all": 58, "all_found": 39, "callers": 14, "callers_found": 14, "callees": 38, "callees_found": 32, "inside_callees": 3, "inside_callees_found": 3},
+    "original PyCG": {"status": "ok", "dynamic": 62, "unmapped": 4, "inside": 8, "inside_found": 8, "all": 58, "all_found": 27, "callers": 14, "callers_found": 14, "callees": 38, "callees_found": 18, "inside_callees": 3, "inside_callees_found": 3},
+    "pyan3": {"status": "ok", "dynamic": 62, "unmapped": 4, "inside": 8, "inside_found": 7, "all": 58, "all_found": 7, "callers": 14, "callers_found": 13, "callees": 38, "callees_found": 3, "inside_callees": 3, "inside_callees_found": 3},
+    "JARVIS": {"status": "ok", "dynamic": 62, "unmapped": 4, "inside": 8, "inside_found": 7, "all": 58, "all_found": 28, "callers": 14, "callers_found": 14, "callees": 38, "callees_found": 23, "inside_callees": 3, "inside_callees_found": 2},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 62, "unmapped": 4, "inside": 8, "inside_found": 7, "all": 58, "all_found": 28, "callers": 14, "callers_found": 14, "callees": 38, "callees_found": 23, "inside_callees": 3, "inside_callees_found": 2},
+    "JARVIS --precision": {"status": "ok", "dynamic": 62, "unmapped": 4, "inside": 8, "inside_found": 7, "all": 58, "all_found": 25, "callers": 14, "callers_found": 14, "callees": 38, "callees_found": 19, "inside_callees": 3, "inside_callees_found": 2},
+    "CPyGraph": {"status": "ok", "dynamic": 62, "unmapped": 4, "inside": 8, "inside_found": 8, "all": 58, "all_found": 14, "callers": 14, "callers_found": 12, "callees": 38, "callees_found": 9, "inside_callees": 3, "inside_callees_found": 3},
+    "PyAnalyzer": {"status": "ok", "dynamic": 62, "unmapped": 4, "inside": 8, "inside_found": 6, "all": 58, "all_found": 6, "callers": 14, "callers_found": 11, "callees": 38, "callees_found": 1, "inside_callees": 3, "inside_callees_found": 1},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 62, "unmapped": 4, "inside": 8, "inside_found": 7, "all": 58, "all_found": 7, "callers": 14, "callers_found": 11, "callees": 38, "callees_found": 2, "inside_callees": 3, "inside_callees_found": 2}
+   }
+  },
+  "code2flow": {
+   "rank": 47,
+   "trace": 53,
+   "edges": 81,
+   "unmapped": {"callee: no module": 1},
+   "rules": {"caller: function": 59, "caller: method": 20, "caller: module": 1, "inside: class, own __init__": 4, "inside: function": 17, "module: source root": 21, "outside: as written": 24, "outside: builtin type": 18, "outside: builtins": 17},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 81, "unmapped": 1, "inside": 21, "inside_found": 21, "all": 80, "all_found": 69, "callers": 20, "callers_found": 20, "callees": 55, "callees_found": 49, "inside_callees": 17, "inside_callees_found": 17},
+    "original PyCG": {"status": "ok", "dynamic": 81, "unmapped": 1, "inside": 21, "inside_found": 14, "all": 80, "all_found": 44, "callers": 20, "callers_found": 20, "callees": 55, "callees_found": 32, "inside_callees": 17, "inside_callees_found": 11},
+    "pyan3": {"status": "ok", "dynamic": 81, "unmapped": 1, "inside": 21, "inside_found": 14, "all": 80, "all_found": 14, "callers": 20, "callers_found": 17, "callees": 55, "callees_found": 11, "inside_callees": 17, "inside_callees_found": 11},
+    "JARVIS": {"status": "ok", "dynamic": 81, "unmapped": 1, "inside": 21, "inside_found": 20, "all": 80, "all_found": 37, "callers": 20, "callers_found": 20, "callees": 55, "callees_found": 31, "inside_callees": 17, "inside_callees_found": 16},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 81, "unmapped": 1, "inside": 21, "inside_found": 20, "all": 80, "all_found": 37, "callers": 20, "callers_found": 20, "callees": 55, "callees_found": 31, "inside_callees": 17, "inside_callees_found": 16},
+    "JARVIS --precision": {"status": "ok", "dynamic": 81, "unmapped": 1, "inside": 21, "inside_found": 20, "all": 80, "all_found": 37, "callers": 20, "callers_found": 20, "callees": 55, "callees_found": 30, "inside_callees": 17, "inside_callees_found": 16},
+    "CPyGraph": {"status": "ok", "dynamic": 81, "unmapped": 1, "inside": 21, "inside_found": 1, "all": 80, "all_found": 2, "callers": 20, "callers_found": 2, "callees": 55, "callees_found": 2, "inside_callees": 17, "inside_callees_found": 1},
+    "PyAnalyzer": {"status": "ok", "dynamic": 81, "unmapped": 1, "inside": 21, "inside_found": 13, "all": 80, "all_found": 13, "callers": 20, "callers_found": 17, "callees": 55, "callees_found": 11, "inside_callees": 17, "inside_callees_found": 11},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 81, "unmapped": 1, "inside": 21, "inside_found": 10, "all": 80, "all_found": 10, "callers": 20, "callers_found": 13, "callees": 55, "callees_found": 8, "inside_callees": 17, "inside_callees_found": 8}
+   }
+  },
+  "pickledb": {
+   "rank": 48,
+   "trace": 56,
+   "edges": 26,
+   "unmapped": {},
+   "rules": {"caller: function": 1, "caller: method": 24, "caller: module": 1, "inside: class, own __init__": 1, "inside: function": 15, "module: source root": 16, "outside: as written": 3, "outside: builtin type": 2, "outside: builtins": 5},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 26, "unmapped": 0, "inside": 16, "inside_found": 16, "all": 26, "all_found": 24, "callers": 19, "callers_found": 19, "callees": 15, "callees_found": 13, "inside_callees": 7, "inside_callees_found": 7},
+    "original PyCG": {"status": "ok", "dynamic": 26, "unmapped": 0, "inside": 16, "inside_found": 16, "all": 26, "all_found": 21, "callers": 19, "callers_found": 19, "callees": 15, "callees_found": 11, "inside_callees": 7, "inside_callees_found": 7},
+    "pyan3": {"status": "ok", "dynamic": 26, "unmapped": 0, "inside": 16, "inside_found": 16, "all": 26, "all_found": 16, "callers": 19, "callers_found": 17, "callees": 15, "callees_found": 7, "inside_callees": 7, "inside_callees_found": 7},
+    "JARVIS": {"status": "ok", "dynamic": 26, "unmapped": 0, "inside": 16, "inside_found": 16, "all": 26, "all_found": 21, "callers": 19, "callers_found": 19, "callees": 15, "callees_found": 11, "inside_callees": 7, "inside_callees_found": 7},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 26, "unmapped": 0, "inside": 16, "inside_found": 16, "all": 26, "all_found": 21, "callers": 19, "callers_found": 19, "callees": 15, "callees_found": 11, "inside_callees": 7, "inside_callees_found": 7},
+    "JARVIS --precision": {"status": "ok", "dynamic": 26, "unmapped": 0, "inside": 16, "inside_found": 16, "all": 26, "all_found": 20, "callers": 19, "callers_found": 18, "callees": 15, "callees_found": 10, "inside_callees": 7, "inside_callees_found": 7},
+    "CPyGraph": {"status": "ok", "dynamic": 26, "unmapped": 0, "inside": 16, "inside_found": 0, "all": 26, "all_found": 0, "callers": 19, "callers_found": 0, "callees": 15, "callees_found": 0, "inside_callees": 7, "inside_callees_found": 0},
+    "PyAnalyzer": {"status": "ok", "dynamic": 26, "unmapped": 0, "inside": 16, "inside_found": 3, "all": 26, "all_found": 3, "callers": 19, "callers_found": 4, "callees": 15, "callees_found": 3, "inside_callees": 7, "inside_callees_found": 3},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 26, "unmapped": 0, "inside": 16, "inside_found": 15, "all": 26, "all_found": 15, "callers": 19, "callers_found": 16, "callees": 15, "callees_found": 6, "inside_callees": 7, "inside_callees_found": 6}
+   }
+  },
+  "pyvips": {
+   "rank": 49,
+   "trace": 57,
+   "edges": 238,
+   "unmapped": {"callee: not a name": 54, "class: base not proved": 1, "class: name not bound once": 4},
+   "rules": {"caller: function": 31, "caller: method": 121, "caller: module": 27, "inside: class, own __init__": 3, "inside: function": 87, "inside: lambda": 1, "module: source root": 91, "outside: as written": 46, "outside: builtin type": 17, "outside: builtins": 25},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 238, "unmapped": 59, "inside": 91, "inside_found": 80, "all": 179, "all_found": 139, "callers": 71, "callers_found": 71, "callees": 88, "callees_found": 67, "inside_callees": 49, "inside_callees_found": 42},
+    "original PyCG": {"status": "ok", "dynamic": 238, "unmapped": 59, "inside": 91, "inside_found": 70, "all": 179, "all_found": 107, "callers": 71, "callers_found": 71, "callees": 88, "callees_found": 50, "inside_callees": 49, "inside_callees_found": 38},
+    "pyan3": {"status": "ok", "dynamic": 238, "unmapped": 59, "inside": 91, "inside_found": 52, "all": 179, "all_found": 52, "callers": 71, "callers_found": 58, "callees": 88, "callees_found": 30, "inside_callees": 49, "inside_callees_found": 30},
+    "JARVIS": {"status": "ok", "dynamic": 238, "unmapped": 59, "inside": 91, "inside_found": 70, "all": 179, "all_found": 95, "callers": 71, "callers_found": 65, "callees": 88, "callees_found": 51, "inside_callees": 49, "inside_callees_found": 38},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 238, "unmapped": 59, "inside": 91, "inside_found": 70, "all": 179, "all_found": 95, "callers": 71, "callers_found": 65, "callees": 88, "callees_found": 51, "inside_callees": 49, "inside_callees_found": 38},
+    "JARVIS --precision": {"status": "ok", "dynamic": 238, "unmapped": 59, "inside": 91, "inside_found": 38, "all": 179, "all_found": 62, "callers": 71, "callers_found": 64, "callees": 88, "callees_found": 46, "inside_callees": 49, "inside_callees_found": 33},
+    "CPyGraph": {"status": "ok", "dynamic": 238, "unmapped": 59, "inside": 91, "inside_found": 40, "all": 179, "all_found": 48, "callers": 71, "callers_found": 37, "callees": 88, "callees_found": 36, "inside_callees": 49, "inside_callees_found": 32},
+    "PyAnalyzer": {"status": "ok", "dynamic": 238, "unmapped": 59, "inside": 91, "inside_found": 19, "all": 179, "all_found": 19, "callers": 71, "callers_found": 29, "callees": 88, "callees_found": 19, "inside_callees": 49, "inside_callees_found": 19},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 238, "unmapped": 59, "inside": 91, "inside_found": 33, "all": 179, "all_found": 33, "callers": 71, "callers_found": 39, "callees": 88, "callees_found": 28, "inside_callees": 49, "inside_callees_found": 28}
+   }
+  },
+  "structlog": {
+   "rank": 50,
+   "trace": 58,
+   "edges": 37,
+   "unmapped": {"callee: class without __init__": 1, "callee: no module": 1, "callee: not a definition": 1, "class: namespace access": 1},
+   "rules": {"caller: function": 7, "caller: method": 5, "caller: module": 21, "inside: class, own __init__": 5, "inside: function": 6, "module: source root": 11, "outside: as written": 6, "outside: builtin type": 7, "outside: builtins": 9},
+   "runs": {
+    "PyCG": {"status": "ok", "dynamic": 37, "unmapped": 4, "inside": 11, "inside_found": 11, "all": 33, "all_found": 31, "callers": 13, "callers_found": 13, "callees": 29, "callees_found": 27, "inside_callees": 11, "inside_callees_found": 11},
+    "original PyCG": {"status": "ok", "dynamic": 37, "unmapped": 4, "inside": 11, "inside_found": 11, "all": 33, "all_found": 22, "callers": 13, "callers_found": 13, "callees": 29, "callees_found": 22, "inside_callees": 11, "inside_callees_found": 11},
+    "pyan3": {"status": "ok", "dynamic": 37, "unmapped": 4, "inside": 11, "inside_found": 8, "all": 33, "all_found": 8, "callers": 13, "callers_found": 9, "callees": 29, "callees_found": 11, "inside_callees": 11, "inside_callees_found": 11},
+    "JARVIS": {"status": "ok", "dynamic": 37, "unmapped": 4, "inside": 11, "inside_found": 11, "all": 33, "all_found": 24, "callers": 13, "callers_found": 13, "callees": 29, "callees_found": 25, "inside_callees": 11, "inside_callees_found": 11},
+    "JARVIS, class edges dropped": {"status": "ok", "dynamic": 37, "unmapped": 4, "inside": 11, "inside_found": 11, "all": 33, "all_found": 24, "callers": 13, "callers_found": 13, "callees": 29, "callees_found": 25, "inside_callees": 11, "inside_callees_found": 11},
+    "JARVIS --precision": {"status": "ok", "dynamic": 37, "unmapped": 4, "inside": 11, "inside_found": 11, "all": 33, "all_found": 22, "callers": 13, "callers_found": 13, "callees": 29, "callees_found": 22, "inside_callees": 11, "inside_callees_found": 11},
+    "CPyGraph": {"status": "ok", "dynamic": 37, "unmapped": 4, "inside": 11, "inside_found": 11, "all": 33, "all_found": 15, "callers": 13, "callers_found": 9, "callees": 29, "callees_found": 13, "inside_callees": 11, "inside_callees_found": 11},
+    "PyAnalyzer": {"status": "ok", "dynamic": 37, "unmapped": 4, "inside": 11, "inside_found": 10, "all": 33, "all_found": 10, "callers": 13, "callers_found": 7, "callees": 29, "callees_found": 10, "inside_callees": 11, "inside_callees_found": 10},
+    "PyAnalyzer (call relations of the dependency report)": {"status": "ok", "dynamic": 37, "unmapped": 4, "inside": 11, "inside_found": 6, "all": 33, "all_found": 6, "callers": 13, "callers_found": 7, "callees": 29, "callees_found": 6, "inside_callees": 11, "inside_callees_found": 6}
+   }
+  }
+ }
+}

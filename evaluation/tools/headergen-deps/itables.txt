@@ -1,0 +1,6 @@
+# Written by evaluation/tools/pin.py deps: the runtime dependencies of
+# macro-benchmark/itables for HeaderGen, at the versions of macro-benchmark/requirements/itables.txt
+# and their closure, for CPython 3.12 on
+# aarch64-manylinux_2_28 and x86_64-manylinux_2_28; every file by SHA-256.
+# Not in the trace environment, not installed: _polars_runtime_32, dateutil
+# unavailable: no resolution against HeaderGen's own pins for CPython 3.12 on aarch64-manylinux_2_28: nd when resolving dependencies: ╰─▶ Because typeguard==4.5.2 depends on typing-extensions>=4.14.0 and you require typeguard==4.5.2, we can conclude that you require typing-extensions>=4.14.0. And because you require typing-extensions==4.12.2, we can conclude that your requirements are unsatisfiable.

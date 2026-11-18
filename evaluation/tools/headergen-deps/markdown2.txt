@@ -1,0 +1,11 @@
+# Written by evaluation/tools/pin.py deps: the runtime dependencies of
+# macro-benchmark/markdown2 for HeaderGen, at the versions of macro-benchmark/requirements/markdown2.txt
+# and their closure, for CPython 3.12 on
+# aarch64-manylinux_2_28 and x86_64-manylinux_2_28; every file by SHA-256.
+# The tool's environment wins; at another version than the trace's:
+latex2mathml==3.78.1 \
+    --hash=sha256:f089b6d75e85b937f99693c93e8c16c0804008672c3dd2a3d25affd36f238100 \
+    --hash=sha256:f941db80bf41db33f31df87b304e8b588f8166b813b0257c11c98f7a9d0aac71
+pygments==2.19.2 \
+    --hash=sha256:636cb2477cec7f8952536970bc533bc43743542f70392ae026374600add5b887 \
+    --hash=sha256:86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b

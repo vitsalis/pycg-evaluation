@@ -1,0 +1,213 @@
+{
+"cachetools.Cache.__getitem__": [
+"cachetools.Cache.__missing__"
+],
+"cachetools.Cache.__setitem__": [
+"cachetools.Cache.getsizeof"
+],
+"cachetools.FIFOCache.__init__": [
+"cachetools.Cache.__init__"
+],
+"cachetools.FIFOCache.clear": [
+"cachetools.Cache.clear"
+],
+"cachetools.FIFOCache.popitem": [
+"cachetools.Cache.__getitem__"
+],
+"cachetools.LFUCache.__getitem__": [
+"cachetools.LFUCache.__touch"
+],
+"cachetools.LFUCache.__init__": [
+"cachetools.Cache.__init__"
+],
+"cachetools.LFUCache.__setitem__": [
+"cachetools.LFUCache.__touch"
+],
+"cachetools.LFUCache.clear": [
+"cachetools.Cache.clear"
+],
+"cachetools.LFUCache.popitem": [
+"cachetools.Cache.__getitem__"
+],
+"cachetools.LRUCache.__init__": [
+"cachetools.Cache.__init__"
+],
+"cachetools.LRUCache.__setitem__": [
+"cachetools.LRUCache.__touch"
+],
+"cachetools.LRUCache.clear": [
+"cachetools.Cache.clear"
+],
+"cachetools.LRUCache.popitem": [
+"cachetools.Cache.__getitem__"
+],
+"cachetools.RRCache.__init__": [
+"cachetools.Cache.__init__"
+],
+"cachetools.RRCache.clear": [
+"cachetools.Cache.clear"
+],
+"cachetools.RRCache.popitem": [
+"cachetools.Cache.__getitem__"
+],
+"cachetools.TLRUCache.__contains__": [
+"cachetools._TimedCache.timer"
+],
+"cachetools.TLRUCache.__getitem__": [
+"cachetools.Cache.__missing__",
+"cachetools._TimedCache.timer"
+],
+"cachetools.TLRUCache.__init__": [
+"cachetools._TimedCache.__init__"
+],
+"cachetools.TLRUCache.__setitem__": [
+"cachetools.TLRUCache.__delitem",
+"cachetools.TLRUCache.expire"
+],
+"cachetools.TLRUCache.clear": [
+"cachetools._TimedCache.clear"
+],
+"cachetools.TLRUCache.expire": [
+"cachetools.Cache.__delitem__",
+"cachetools.Cache.__getitem__",
+"cachetools._TimedCache.timer"
+],
+"cachetools.TLRUCache.popitem": [
+"cachetools.Cache.__getitem__",
+"cachetools.TLRUCache.expire"
+],
+"cachetools.TTLCache.__contains__": [
+"cachetools._TimedCache.timer"
+],
+"cachetools.TTLCache.__delitem__": [
+"cachetools._TimedCache.timer"
+],
+"cachetools.TTLCache.__getitem__": [
+"cachetools.Cache.__missing__",
+"cachetools._TimedCache.timer"
+],
+"cachetools.TTLCache.__init__": [
+"cachetools._TimedCache.__init__"
+],
+"cachetools.TTLCache.__setitem__": [
+"cachetools.TTLCache._Link.unlink",
+"cachetools.TTLCache.expire"
+],
+"cachetools.TTLCache.__setstate__": [
+"cachetools.TTLCache.expire",
+"cachetools._TimedCache.timer"
+],
+"cachetools.TTLCache.clear": [
+"cachetools._TimedCache.clear"
+],
+"cachetools.TTLCache.expire": [
+"cachetools.Cache.__delitem__",
+"cachetools.Cache.__getitem__",
+"cachetools._TimedCache.timer"
+],
+"cachetools.TTLCache.popitem": [
+"cachetools.Cache.__getitem__",
+"cachetools.TTLCache.expire"
+],
+"cachetools._TimedCache.__init__": [
+"cachetools.Cache.__init__"
+],
+"cachetools._TimedCache.__len__": [
+"cachetools._TimedCache.expire"
+],
+"cachetools._TimedCache.__repr__": [
+"cachetools._TimedCache.expire"
+],
+"cachetools._TimedCache.clear": [
+"cachetools.Cache.clear"
+],
+"cachetools._TimedCache.currsize": [
+"cachetools._TimedCache.expire"
+],
+"cachetools._TimedCache.get": [
+"cachetools.Cache.get"
+],
+"cachetools._TimedCache.pop": [
+"cachetools.Cache.pop"
+],
+"cachetools._TimedCache.setdefault": [
+"cachetools.Cache.setdefault"
+],
+"cachetools._cached._BasicWrapper.__init__": [
+"cachetools._cached._WrapperBase.__init__",
+"cachetools._decorator._BasicMixin.__init__"
+],
+"cachetools._cached._ConditionInfoWrapper.__init__": [
+"cachetools._cached._WrapperBase.__init__",
+"cachetools._decorator._ConditionInfoMixin.__init__"
+],
+"cachetools._cached._ConditionWrapper.__init__": [
+"cachetools._cached._WrapperBase.__init__",
+"cachetools._decorator._ConditionMixin.__init__"
+],
+"cachetools._cached._InfoWrapper.__init__": [
+"cachetools._cached._WrapperBase.__init__",
+"cachetools._decorator._InfoMixin.__init__"
+],
+"cachetools._cached._LockedInfoWrapper.__init__": [
+"cachetools._cached._WrapperBase.__init__",
+"cachetools._decorator._LockedInfoMixin.__init__"
+],
+"cachetools._cached._LockedWrapper.__init__": [
+"cachetools._cached._WrapperBase.__init__",
+"cachetools._decorator._LockedMixin.__init__"
+],
+"cachetools._cachedmethod._BasicWrapper.__init__": [
+"cachetools._cachedmethod._WrapperBase.__init__",
+"cachetools._decorator._BasicMixin.__init__"
+],
+"cachetools._cachedmethod._ConditionInfoWrapper.__init__": [
+"cachetools._cachedmethod._WrapperBase.__init__",
+"cachetools._decorator._ConditionInfoMixin.__init__"
+],
+"cachetools._cachedmethod._ConditionWrapper.__init__": [
+"cachetools._cachedmethod._WrapperBase.__init__",
+"cachetools._decorator._ConditionMixin.__init__"
+],
+"cachetools._cachedmethod._InfoWrapper.__init__": [
+"cachetools._cachedmethod._WrapperBase.__init__",
+"cachetools._decorator._InfoMixin.__init__"
+],
+"cachetools._cachedmethod._LockedInfoWrapper.__init__": [
+"cachetools._cachedmethod._WrapperBase.__init__",
+"cachetools._decorator._LockedInfoMixin.__init__"
+],
+"cachetools._cachedmethod._LockedWrapper.__init__": [
+"cachetools._cachedmethod._WrapperBase.__init__",
+"cachetools._decorator._LockedMixin.__init__"
+],
+"cachetools._descriptor._MethodDescriptor.__get__": [
+"cachetools._descriptor._MethodDescriptor.__call__",
+"cachetools._descriptor._MethodDescriptor.__get_unbound",
+"cachetools._descriptor._MethodDescriptor.__instance_dict_error"
+],
+"cachetools._descriptor._Unbound.__call__": [
+"cachetools._descriptor._Unbound.__pop_receiver"
+],
+"cachetools.cached.decorator": [
+"cachetools._cached._wrapper"
+],
+"cachetools.cachedmethod.decorator": [
+"cachetools._cachedmethod._wrapper"
+],
+"cachetools.func.fifo_cache": [
+"cachetools.func._cache"
+],
+"cachetools.func.lfu_cache": [
+"cachetools.func._cache"
+],
+"cachetools.func.lru_cache": [
+"cachetools.func._cache"
+],
+"cachetools.func.rr_cache": [
+"cachetools.func._cache"
+],
+"cachetools.func.ttl_cache": [
+"cachetools.func._cache"
+]
+}

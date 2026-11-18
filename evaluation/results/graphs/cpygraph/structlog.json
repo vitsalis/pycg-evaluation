@@ -1,0 +1,53 @@
+{
+"structlog._config": [
+"structlog._native.make_filtering_bound_logger",
+"structlog._output.PrintLoggerFactory.__init__",
+"structlog.dev.ConsoleRenderer.__init__",
+"structlog.processors.StackInfoRenderer.__init__",
+"structlog.processors.TimeStamper.__init__"
+],
+"structlog._log_levels": [
+"<builtin>.dict.items"
+],
+"structlog._native": [
+"structlog._native._make_filtering_bound_logger"
+],
+"structlog._native._make_filtering_bound_logger": [
+"<builtin>.dict.items",
+"structlog._native._make_filtering_bound_logger.make_method"
+],
+"structlog.contextvars": [
+"<builtin>.len"
+],
+"structlog.dev.ConsoleRenderer.__init__": [
+"structlog.dev.ConsoleRenderer.__init__.add_meaningless_arg",
+"structlog.dev.ConsoleRenderer._configure_columns",
+"structlog.dev.ConsoleRenderer.columns",
+"structlog.dev.ConsoleRenderer.exception_formatter",
+"structlog.dev.ConsoleRenderer.get_default_column_styles",
+"structlog.dev.ConsoleRenderer.get_default_level_styles"
+],
+"structlog.dev.ConsoleRenderer._configure_columns": [
+"<builtin>.len",
+"structlog.dev.LogLevelColumnFormatter.__init__"
+],
+"structlog.dev.ConsoleRenderer.columns": [
+"<builtin>.len"
+],
+"structlog.dev.ConsoleRenderer.get_default_column_styles": [
+"structlog.dev._init_terminal"
+],
+"structlog.dev.LogLevelColumnFormatter.__init__": [
+"<builtin>.len"
+],
+"structlog.processors": [
+"structlog.processors.ExceptionRenderer.__init__",
+"structlog.tracebacks.ExceptionDictTransformer.__init__"
+],
+"structlog.processors.TimeStamper.__init__": [
+"structlog.processors._make_stamper"
+],
+"structlog.threadlocal": [
+"structlog.threadlocal._determine_threadlocal"
+]
+}

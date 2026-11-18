@@ -1,458 +1,375 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4457106.svg)](https://doi.org/10.5281/zenodo.4457106)
+# The evaluation of PyCG
 
+This repository holds the evaluation of [PyCG](https://github.com/vitsalis/PyCG),
+a call graph generator for Python that is fully static: the benchmarks with
+their ground truths, the scripts of each research question, and the tables.
+PyCG itself is the submodule `PyCG`, at the commit under test. PyCG was
+first published at ICSE 2021 ([the paper](https://arxiv.org/pdf/2103.00587.pdf));
+the artifact of that paper is the tag `evaluation-2021` of this repository
+(Zenodo DOI [10.5281/zenodo.4457106](https://doi.org/10.5281/zenodo.4457106)).
 
+## The research questions and their results
 
-# Artifact for "PyCG: Practicall Call Graph Generation in Python" (ICSE'21)
+The tables are files of the repository, in `evaluation/results/`: read
+them without running anything (see "Reading the results without running
+anything"). Every number below is read from those files. All rows are of
+one run, on the machine of "Reproducing the results": PyCG at commit
+`c5c6a89` (the submodule `PyCG`), the PyCG of 2021 (PyCG commit `046479e`,
+the 2021 analysis) and five prior tools, each pinned by its commit. The
+ground truths are those after the audit of 2026-11-16. P is precision, R
+is recall.
 
-This is the artifact for the ICSE'21 paper titled "PyCG: Practical Call Graph
-Generation in Python".
+### RQ1: how accurate is PyCG?
 
-An archived version of the artifact is also available on Zenodo.
-See https://doi.org/10.5281/zenodo.4457106
+Precision and recall of the call edges against three references: the
+micro-benchmark (one small program per language feature, in
+`PyCG/micro-benchmark`), the macro-benchmark (30 real packages with
+hand-written, audited ground truths) and, for recall only, the execution
+traces of 48 larger projects (DyPyBench).
 
+**The micro-benchmark and the 30 packages** ([full table](evaluation/results/rq1-accuracy.md)).
+Micro: the 622 cases that every tool can parse (up to Python 3.12),
+edges inside the case. The 30 packages: all projects together; *inside*
+counts the edges whose callee is in the analysed package (the headline),
+*outside* the edges to builtins, the standard library and other packages.
+A failed run counts every edge of its project as a false negative.
 
+| Tool | Micro, P / R | 30 packages, inside, P / R | 30 packages, outside, P / R | Runs |
+|---|---|---|---|---|
+| PyCG | 0.925 / 0.936 | 0.945 / 0.878 | 0.941 / 0.890 | - |
+| PyCG of 2021 | 0.868 / 0.605 | 0.913 / 0.397 | 0.670 / 0.445 | 3 failed runs |
+| pyan3 | 0.642 / 0.575 | 0.662 / 0.492 | names no outside callee | - |
+| JARVIS | 0.573 / 0.618 | 0.645 / 0.432 | 0.867 / 0.399 | - |
+| JARVIS, class edges dropped | 0.794 / 0.618 | 0.776 / 0.432 | 0.867 / 0.399 | - |
+| JARVIS --precision | 0.873 / 0.606 | 0.928 / 0.416 | 0.869 / 0.340 | - |
+| CPyGraph | 0.876 / 0.753 | 0.620 / 0.116 | 0.884 / 0.020 | - |
+| HeaderGen (hybrid: imports the analysed modules) | 0.884 / 0.571 | 0.901 / 0.351 | 0.793 / 0.509 | 22 of 30 projects measured, 2 failed runs |
+| PyAnalyzer | 0.846 / 0.619 | 0.935 / 0.224 | names no outside callee | 1 failed run |
+| PyAnalyzer (call relations of the dependency report) | 0.823 / 0.591 | 0.560 / 0.374 | names no outside callee | 1 failed run |
 
-# Artifact Elements
+JARVIS has three rows: the tool as published, the same graph without its
+edges to classes, and its `--precision` mode. PyAnalyzer has two: its call
+graph, and the call relations of its dependency report. HeaderGen imports
+the modules that it analyses, so a package needs its dependencies in
+HeaderGen's image: 22 of the 30 have them (`prior-tools.md` gives the
+reason for each of the other 8). pyan3 and PyAnalyzer name no
+callee outside the package, so their outside recall is 0.
 
-This artifact contains the following:
+**Recall against execution traces** ([full table](evaluation/results/rq1-trace-recall.md)).
+The traced calls of DyPyBench's projects (48 with a trace). A run that
+did not finish finds none of its project's edges. *Inside*: the traced
+edges whose callee is a definition of the project; *all*: every traced
+edge that maps to a name.
 
-1. The source code of our prototype implementation `PyCG` (provided as a Git
-   submodule).
-2. The source code of the tools we compare against`PyCG`, namely `Pyan` and
-   `Depends` (provided as Git submodules).
-    * We have made minimal modifications on these tools so that they can run
-      inside the Docker environment and produce output in JSON format. The
-      respective modifications can be found under the `data/modifications`
-      directory. 
-3. The data used to perform the comparison and the evaluation.
-    * A micro-benchmark of 112 minimal Python modules stored in
-      `data/micro-benchmark`.
-    * A macro-benchmark of 5 Python packages (provided as Git submodules)
-      stored in `data/macro-benchmark` along with their ground-truth call
-      graphs.
-    * Sample results of the evaluation stored in `data/results`.
-4. The source code used to perform the evaluation under the `scripts`
-   directory.
+| Tool | Projects finished | Recall, inside | Recall, all edges |
+|---|---|---|---|
+| PyCG | 48 of 48 | 90.4% | 84.3% |
+| PyCG of 2021 | 38 of 48 | 48.9% | 39.2% |
+| pyan3 | 46 of 48 | 74.3% | 26.4% |
+| JARVIS | 48 of 48 | 68.6% | 52.7% |
+| JARVIS, class edges dropped | 48 of 48 | 68.6% | 52.7% |
+| JARVIS --precision | 48 of 48 | 66.4% | 47.6% |
+| CPyGraph | 48 of 48 | 28.9% | 13.7% |
+| HeaderGen (hybrid: imports the analysed modules) | not run: it imports the analysed code | | |
+| PyAnalyzer | 48 of 48 | 49.0% | 17.4% |
+| PyAnalyzer (call relations of the dependency report) | 48 of 48 | 60.6% | 21.6% |
 
-Note that our prototype implementation `PyCG` is available as open-source
-software under the Apache 2.0 Licence, and can also be found in the
-following repository: https://github.com/vitsalis/pycg
+**Each batch at its first measurement** (PyCG, inside the package; the
+last section of [the table of RQ1](evaluation/results/rq1-accuracy.md)).
+The macro-benchmark grew in batches of five packages (see "How the
+benchmark grew"). Each batch was measured once by a frozen engine before
+anyone read its false positives and false negatives. This is a recorded
+history: the ground truths changed afterwards, so these numbers do not
+compare with the table above.
 
-The `PyCG` directory contains the following:
+| Batch | Frozen engine | Batches known then, P / R | The batch, P / R | Gap P | Gap R |
+|---|---|---|---|---|---|
+| 2 | `2bcc0b1d9a` | 0.922 / 0.888 | 0.933 / 0.749 | +0.011 | -0.138 |
+| 3 | `343541c8ae` (`freeze-round-1`) | 0.945 / 0.898 | 0.862 / 0.921 | -0.082 | +0.023 |
+| 4 | `b8469bd1b5` (`freeze-round-2`) | 0.950 / 0.921 | 0.864 / 0.912 | -0.087 | -0.008 |
+| 5 | `8ef722cadd` (`freeze-round-3`) | 0.953 / 0.919 | 0.902 / 0.817 | -0.051 | -0.102 |
 
-* `pycg/pycg.py`: The main module of `PyCG`. Initializes the analysis state and
-  invokes the iteration of the Abstract Syntax Tree (AST).
-* `pycg/processing`: Defines methods for iterating the AST of the input Python
-  files, while updating the analysis state data structures. In addition, it
-  implements the final iteration of the AST that leads to the
-  generation of the resulting call graph.
-* `pycg/machinery`: Contains the implemention of the data structures
-  that are used to represent the analysis state. Specifically:
-    * `pycg/machinery/classes.py`: Keeps track of classes and their Method
-      Resolution Order.
-    * `pycg/machinery/definitions.py`: Implements the storage of objects
-      as well as methods that handle the traversal of the assignment graph.
-    * `pycg/machinery/pointers.py`: Keeps track of the assignment relationships
-      between objects.
-    * `pycg/machinery/scopes.py`: Defines methods for creating and accessing
-      the scope tree.
-    * `pycg/machinery/modules.py`: Keeps track of the source modules identified
-      during analysis.
-    * `pycg/machinery/imports.py`: Implements the methods that allow `PyCG` to
-      discover the file locations of imported files.
-* `pycg/utils`: Defines common functions (e.g. joining two namespaces) and
-  constants.
-* `pycg/formats`: Contains JSON generators for different output formats.
+### RQ2: why is each false positive and each false negative there?
 
-# Requirements
+Every false positive and false negative of PyCG on the 30 packages has one
+label: the mechanism that explains it ([full table](evaluation/results/rq2-causes.md)).
+There are 3,056 of them, inside and outside the package.
 
-*Copied from REQUIREMENTS.md*
+| Group | False positives and false negatives | Share |
+|---|---|---|
+| Under a stated limit of the design | 2,834 | 92.7% |
+| Scorer artefacts (two names of one function, a naming convention) | 140 | 4.6% |
+| Ground-truth doubt | 1 | 0.0% |
+| A rule that was measured and is not built | 45 | 1.5% |
+| A gap: a mechanism that the design does not state as a limit | 36 | 1.2% |
 
-* A Unix-like operating system (tested on OSx).
-* A Docker installation.
-* A Git installation.
-* At least 5GB of available disk space.
+A stated limit is a kind of edge that the design leaves out on purpose
+(`PyCG/docs/design.md`). The full table lists the 44 stated limits, each
+with its count.
 
-# Installation
+### RQ3: does PyCG scale, and does it finish?
 
-*Copied from INSTALL.md*
+Each tool runs once on each package of a corpus in three parts: the top
+100 PyPI packages by downloads, the 50 projects of DyPyBench (49 with
+source to analyse) and ten large projects (the projects of the NameRTS
+dataset). That is 159 packages with a target. Each run has 30 minutes and
+16 GiB ([full table](evaluation/results/rq3-scale.md)). *Finished*: the
+run ended within both limits. Time and memory: median and maximum over the
+finished runs.
 
-To get the artifact run (estimated running time: ~1 minute)
+| Tool | Finished | PyPI top 100 | DyPyBench | Large projects | Did not finish | Time, median / max | Peak memory, median / max | Recall of RQ1 (30 packages, inside) |
+|---|---|---|---|---|---|---|---|---|
+| PyCG | 155 of 159 | 98 / 100 | 49 / 49 | 8 / 10 | memory 3, timeout 1 | 0.82 s / 599 s | 49.3 / 14,504 MiB | 0.878 |
+| PyCG of 2021 | 117 of 159 | 77 / 100 | 39 / 49 | 1 / 10 | crash 26, memory 2, timeout 14 | 1.28 s / 946 s | 48.8 / 362 MiB | 0.397 |
+| pyan3 | 152 of 159 | 96 / 100 | 47 / 49 | 9 / 10 | crash 7 | 0.56 s / 145 s | 41.6 / 1,368 MiB | 0.492 |
+| JARVIS | 150 of 159 | 96 / 100 | 49 / 49 | 5 / 10 | crash 3, memory 6 | 0.64 s / 68.5 s | 45.5 / 4,840 MiB | 0.432 |
+| CPyGraph | 158 of 159 | 100 / 100 | 49 / 49 | 9 / 10 | timeout 1 | 1.69 s / 458 s | 33.4 / 1,778 MiB | 0.116 |
+| HeaderGen (hybrid: imports the analysed modules) | not run: it imports the analysed code | | | | | | | |
+| PyAnalyzer | 153 of 159 | 96 / 100 | 49 / 49 | 8 / 10 | crash 5, memory 1 | 1.04 s / 720 s | 45.9 / 10,041 MiB | 0.224 |
 
-```bash
-git clone --recursive https://github.com/vitsalis/pycg-evaluation ~/pycg-evaluation
+Finishing is not accuracy: a tool that models less can finish more
+often. CPyGraph finishes the most packages (158 of 159) and PyCG 155, but
+on the 30 packages of RQ1 CPyGraph finds 0.116 of the edges inside the
+package and PyCG 0.878 (the last column). The four runs of PyCG that did
+not finish, with their time and peak memory:
+
+- numpy (timeout, 1,800 s, 7,073 MiB): at the time limit;
+- sqlalchemy (memory, 458 s, 16,393 MiB), scikit-learn (memory, 678 s, 16,385 MiB) and sympy (memory, 428 s, 16,510 MiB): over the memory limit.
+
+The PyCG of 2021 crashes on 26 packages. The time of a run depends on the
+machine (see "Reproducing the results").
+
+The accuracy on packages that the analysis was not developed on is a
+section of RQ1 (the first measurements above, and "How the benchmark
+grew"), not a question of its own.
+
+## Reading the results without running anything
+
+Everything that a table reads or writes is in the repository. Nothing
+must run to read the results.
+
+- **`evaluation/results/<table>.md`** is the table for a reader. Its first
+  lines say which script wrote it and the section of
+  `evaluation/README.md` that explains it. **`<table>.json`** beside it
+  holds the same data unrounded, with what the run was: the versions of the
+  tools, the Python, the platform, the limits, and the digests of the
+  inputs. The tables: `rq1-accuracy` (RQ1), `prior-tools` (the prior
+  tools' runs scored, which RQ1 reads), `rq1-trace-recall` (RQ1, traces),
+  `rq2-causes` (RQ2), `rq3-scale` (RQ3), and `robustness-<part>` (the run
+  of PyCG and the PyCG of 2021 on each part of RQ3's corpus, package by
+  package).
+- **`evaluation/results/tools/<row>/<question>.json`** is the stored run
+  of a prior tool: per job its status, its time, its peak memory and the
+  SHA-256 of its input and of its graph. `rq1.json` also holds the graphs
+  of the micro cases.
+- **`evaluation/results/graphs/<row>/<project>.json`** is the call graph of
+  each prior tool on each of the 30 packages, in the benchmark's names. A
+  reader can score a tool again from these files alone.
+- **`macro-benchmark/ground-truth/<name>.json`** is the ground truth of a
+  package. **`evaluation/rq2-causes/labels.json`** holds every false
+  positive and false negative of PyCG with its label and a note.
+
+The pilot of RQ3 (`rq3-pilot`, ten packages) checks that the question runs
+before the full run. It writes `results/rq3-pilot.*` and
+`results/tools/<row>/rq3-pilot.json`. These files are not results, and the
+repository does not keep them.
+
+## Reproducing the results
+
+**The machine of the committed run.** A Hetzner Cloud CCX43: 16 dedicated
+vCPUs, 64 GB of RAM, Ubuntu 26.04.1 LTS (linux x86_64), Docker Engine
+29.10.0 from Docker's apt repository. RQ1 and the trace recall
+ran at commit `f53515b` of this repository, RQ3 at commit `7d1e46a`. The
+Python of the runner is 3.14.10.
+
+**The limits.** Every run of every tool has 30 minutes and 16 GiB of
+resident memory. RQ1 and the trace recall ran the prior tools three jobs
+at a time (`--jobs 3`): their results are edges, not times. RQ3 ran one
+job at a time (K = 1), one service at a time, with nothing else on the
+machine: its results are times and memory.
+
+You need Docker with the Compose plugin and the network (the hosts that
+the builds reach are listed in `evaluation/README.md`, "The hosts of the
+builds"). Nothing else runs on your machine: no Python, no make, no git
+command on a repository of someone else. The images take about 25 GB of
+disk with Docker's build cache (measured before the ten large projects
+joined the corpus, which add to it).
+
+```sh
+git clone --recurse-submodules <this repository>
+cd pycg-evaluation
+C="docker compose -f evaluation/compose.yaml"
+export EVAL_UID=$(id -u) EVAL_GID=$(id -g)   # so that a service can write the results
 ```
 
-## Install Docker Images
+The commands, in this order:
 
-We provide a `Dockerfile` to build images that contain:
+```sh
+# 1. The images (20 to 30 minutes). Only the inputs image downloads
+#    third-party code; every other image copies its inputs from it.
+$C build inputs
+$C build rq1 pyan jarvis cpygraph pyanalyzer headergen
+for name in aiocache bottle configargparse itables markdown2 marshmallow tenacity; do
+    NAME=$name $C build headergen-deps
+done
 
-* An installation of Python version 3.5.
-* An installation of `PyCG`.
-* An installation of `Pyan`.
-* An installation of `Depends`.
-* A user named `pycg` with sudo priviledges.
+# 2. RQ1 and RQ2 (about 3 hours on the machine above, with the prior tools).
+for tool in pyan jarvis cpygraph pyanalyzer headergen; do
+    EVAL_MEMORY=50g $C run --rm $tool rq1 --jobs 3
+done
+for name in aiocache bottle configargparse itables markdown2 marshmallow tenacity; do
+    NAME=$name $C run --rm headergen-deps rq1
+done
+for tool in pyan jarvis cpygraph pyanalyzer; do
+    EVAL_MEMORY=50g $C run --rm $tool rq1-trace --jobs 3
+done
+$C run --rm rq1                               # results/rq1-accuracy.*, prior-tools.*
+$C run --rm rq2                               # results/rq2-causes.*
+EVAL_MEMORY=50g $C run --rm rq1-trace --jobs 3   # results/rq1-trace-recall.*
 
-### Build Images from Source
-
-**Note**:
-If you do not want to build the images on your own, please skip this step and
-proceed to the next section ("Pull Images from Dockerhub").
-
-To build the image named `pycg-eval`, run the following command (estimated running
-time: ~10 minutes):
-
-```bash
->>> cd ~/pycg-evaluation
->>> docker build -t pycg-eval -f Dockerfile .
+# 3. RQ3 (13 hours 20 minutes on the machine above), one service at a time,
+#    nothing else on the machine.
+for tool in pyan jarvis cpygraph pyanalyzer; do
+    $C run --rm $tool rq3
+done
+$C run --rm rq3                               # results/rq3-scale.*, robustness-*
 ```
 
-After building the Docker image successfully, please navigate to the root
-directory of the artifact:
-```bash
-cd ~/pycg-evaluation
+`$C run --rm rq3-pilot` runs the pilot of RQ3 first, if you want to check
+the question on ten packages. A run in the background needs `-T`
+(`nohup $C run --rm -T rq3 > rq3.log 2>&1 &`). `evaluation/README.md`,
+section "The full run", explains each step.
+
+**What must come out equal on any machine.** The counts of RQ1 and RQ2:
+every TP, FP and FN, and so every precision and recall. PyCG's analysis is
+deterministic: the same input gives the same graph, and the run on
+linux/aarch64 gave the same counts for PyCG as the committed run on
+x86_64. RQ2 counts committed labels. One prior tool can vary: PyAnalyzer
+hashes its heap objects by `id()`, and one of its rules depends on that
+order (`prior-tools.md` says where). The build of the inputs image checks each input against its pin,
+and the JSON of a table records the digest of the benchmark that it read
+(`inputs` in `prior-tools.json`).
+
+**What depends on the machine.** The times and the peak memory of RQ3,
+and with the times which runs end at the time limit: a run near 30
+minutes can finish on a faster machine. The counts of RQ3 (finished,
+failures) can therefore differ on another machine, and its times do.
+
+**"with changes" in a table.** A table names the commit of this
+repository that it read the benchmark from, and adds "with changes" when
+the checkout had uncommitted files. During a run, the result files of the
+run itself are not committed yet, so the committed `prior-tools.md` says
+"`macro-benchmark` at `f53515b300`, with changes". The digest of the
+inputs, not the commit, identifies the benchmark.
+
+## The structure
+
+```
+README.md                 this file
+PyCG/                     the tool (a submodule); PyCG/micro-benchmark is the micro-benchmark
+macro-benchmark/
+  README.md               how the benchmark was built, the conventions, how to re-record a trace
+  projects.toml           the 30 projects: pin, scope, test command, batch
+  projects/               empty; a copy of the sources, for reading only, goes here (not in git)
+  requirements/           the pinned test environment of each project (to re-record its trace)
+  dynamic/                the execution trace of each project
+  ground-truth/           per project: <name>.json (the call graph, what scoring reads) and its
+                          provenance (<name>.ledger, .md, .audit.md, .added.json, .rejected.json)
+  plugins/                pytest plugins that three traces need
+  selection/              how batches 3 to 5 were drawn
+  check.py trace.py projects.py draw.py sites.py ledger.py
+evaluation/
+  README.md               the reference
+  compose.yaml            every command
+  common/                 the runner of PyCG, the scorer, what the tables share
+  container/              the images of the inputs, the questions and the traces, and the
+                          entries of the services
+  tools/                  the adapters, images and pins of the prior tools
+  results/                the tables, and the stored runs and graphs of the prior tools
+  rq1-accuracy/ rq2-causes/ rq3-scale/   each with a short README.md
+tests/                    the tests of the scripts
+pyproject.toml uv.lock .github/
 ```
 
-### Pull Images from Dockerhub
+## The artifacts, and what you need them for
 
-You can also download the Docker images from Dockerhub by using the following
-commands:
+- **To score a tool** you need `macro-benchmark/projects.toml` (the
+  analysed packages of each project), `macro-benchmark/ground-truth/<name>.json`
+  (the call graph), `macro-benchmark/dynamic/<name>.json` (the trace: its
+  aliases match names) and the tool's graph. The graphs of the prior tools
+  are in `evaluation/results/graphs/<tool>/<project>.json`.
+- **To run a tool again** you also need the sources: the images hold
+  them (at `/inputs/macro-benchmark/projects/`), each checked against its
+  pin when the inputs image was built. To read them on your machine, copy
+  them out of that image into `macro-benchmark/projects/` (git ignores
+  them; no service reads that copy):
+  `$C run --rm -v "$PWD/macro-benchmark/projects:/repo/macro-benchmark/projects" inputs cp -RP /inputs/macro-benchmark/projects/. macro-benchmark/projects/`
+- **To record a trace again** you need `macro-benchmark/requirements/<name>.txt`
+  and the `trace` service: `NAME=<name> $C run --rm trace --compare` (see
+  "Re-recording a trace" in [`macro-benchmark/README.md`](macro-benchmark/README.md)).
+- **A ground truth is not regenerated by a command.** It is the trace of
+  the project's test suite, minus the edges that a reviewer rejected
+  (`.rejected.json`), plus the edges that a reviewer added by reading the
+  source (`.added.json`), and then audited blind (`.audit.md`). The ledger
+  (`.ledger`) holds every judgement, one entry per call site.
 
-```bash
-docker pull vitsalis/pycg-eval
-# Rename the image to be consistent with the scripts
-docker tag vitsalis/pycg-eval pycg-eval
+Everything is pinned: PyCG by the commit of the submodule; every benchmark
+project and every prior tool by a commit or the SHA-256 of an sdist; every
+Python image by a digest; every Python dependency by a hash.
+
+## What scoring is
+
+A call graph is a set of edges, each a pair (caller, callee) of names. An
+edge is *inside* if its callee is in the analysed package, else *outside*
+(builtins, the standard library, other packages). Inside is the headline;
+outside is reported apart. A tool's edge that the ground truth has is a
+true positive (TP); one that it does not have is a false positive (FP); a
+ground-truth edge that the tool does not report is a false negative (FN).
+Precision is TP / (TP + FP), recall is TP / (TP + FN). The counts of the
+projects are added first; precision and recall are computed from the sums.
+Names are compared as written, with two exceptions for outside callees: a
+name that the project's trace knows as another name of a traced function
+counts as that function (the trace's aliases), and a committed, reviewed
+table joins the names of one function of the standard library
+(`evaluation/common/same_function.json`). A run that fails (a crash, a
+timeout) counts every edge of its project as a false negative.
+
+## How the benchmark grew
+
+The macro-benchmark was built in batches of five packages (`batch` in
+`projects.toml`). Batch 1 is the five packages that the analysis was first
+developed on. Each later batch was measured once, by a frozen engine,
+before anyone read its false positives and false negatives: the table
+above. Then they were read, the analysis was improved on them, and the
+next batch was built. So every batch was used for development in the end.
+The five packages of the ICSE 2021 paper were added between batches 3 and
+4. The maintainer's rule to stop: when every rule that no decision blocks,
+measured together on the newest batch, gains less than one point of
+precision and of recall. Batch 5 met it (0.76 and 0.07 points), so it is
+the last.
+
+**The audit.** When the five batches were built, the 30 ground truths were
+audited in four rounds (2026-11-15 and 2026-11-16), all 30 each time,
+under one set of global rules for what is an edge and how it is named.
+The ground truths went from 17,618 to 18,121 edges; a correction after the
+audit removed two edges of fabric (18,119 now). The tables of RQ1 and
+RQ2 are of the audited ground truths. The audit records (reports,
+registers, patches, evidence) are kept outside the repository; see
+[`macro-benchmark/README.md`](macro-benchmark/README.md).
+
+## How to run the tests
+
+The tests of the evaluation's scripts are in `tests/`. A run of the
+evaluation does not need them: they are for work on the scripts. Install
+[uv](https://docs.astral.sh/uv/). Then, from the root directory:
+
+```sh
+uv run pytest                                                # all tests
+uv run ruff check evaluation tests macro-benchmark           # lint
+uv run ruff format --check evaluation tests macro-benchmark  # format check
 ```
 
-After downloading the Docker image, please navigate to the root
-directory of the artifact:
-```bash
-cd ~/pycg-evaluation
-```
-
-# Getting Started
-
-## Navigating through the Docker Image
-
-Before producing the results of the evaluation,
-let's explore the contents of our freshly-created Docker image (i.e.,
-`pycg-eval`).
-Run the following command to create and start the new container.
-```bash
-docker run -ti --rm pycg-eval
-```
-
-After executing the command you can enter the home directory (i.e.,
-`/home/pycg`) of the `pycg` user. `PyCG` is already installed in the Docker
-environment. However, if you want to build `PyCG` on your own, you can run:
-
-```bash
-pycg@3ddc263ed13a:~$ cd /pycg
-pycg@3ddc263ed13a:/pycg$ python3 setup.py clean
-pycg@3ddc263ed13a:/pycg$ sudo python3 setup.py install
-pycg@3ddc263ed13a:/pycg$ cd ~
-```
-
-### Usage
-
-With `PyCG` installed you can use it through the `pycg` command:
-
-```bash
-pycg@3ddc263ed13a:~$ pycg --help
-usage: pycg [-h] [--package PACKAGE] [--fasten] [--product PRODUCT]
-            [--forge FORGE] [--version VERSION] [--timestamp TIMESTAMP]
-            [-o OUTPUT]
-            [entry_point [entry_point ...]]
-
-positional arguments:
-  entry_point           Entry points to be processed
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --package PACKAGE     Package containing the code to be analyzed
-  --fasten              Produce call graph using the FASTEN format
-  --product PRODUCT     Package name
-  --forge FORGE         Source the product was downloaded from
-  --version VERSION     Version of the product
-  --timestamp TIMESTAMP
-                        Timestamp of the package's version
-  -o OUTPUT, --output OUTPUT
-                        Output path
-```
-
-`PyCG` takes as input a list of Python files to analyze.
-For Python files organized inside a package, the `--package` argument is
-required which specifies the root directory of the package under analysis.
-The optional `--fasten`, `--product`, `--forge`, `--version`, `--timestamp` arguments
-are related to a more descriptive call graph format and are not used for the
-purposes of the paper.
-
-## Generating an example call graph
-
-Let's see how we can generate call graphs for Python programs using `PyCG`.
-We wil use our previously created Docker image so that we can generate the call
-graphs in a fresh environment.
-
-We will investigate the `crypto` module described in Section 2 of the ICSE paper.
-The source code for the module can be retrieved from the file
-`scripts/crypto/crypto.py` of the artifact and has also been included under the
-`/example` directory of the Docker image.
-
-If you are not already inside the Docker environment, you can enter by executing
-the following:
-```bash
-docker run -ti --rm pycg-eval
-```
-
-Then, navigate to the `/example` directory and use `PyCG` to generate the
-call graph.
-
-```bash
-pycg@3ddc263ed13a:~$ cd /example
-pycg@3ddc263ed13a:/example$ pycg crypto.py | jq .
-{
-  "cryptops.decrypt": [],
-  "cryptops": [],
-  "crypto.Crypto.apply": [
-    "cryptops.encrypt",
-    "cryptops.decrypt"
-  ],
-  "crypto.Crypto.__init__": [],
-  "cryptops.encrypt": [],
-  "crypto": [
-    "crypto.Crypto.__init__",
-    "crypto.Crypto.apply"
-  ]
-}
-```
-
-`PyCG` outputs the call graph in JSON format. Note that we have used the `jq`
-utility to display JSON output in a human readable format.
-`PyCG` generates call graphs using the adjacency list graph format. In this
-format the keys of the JSON output correspond to the nodes of the graph.
-A list is assigned to every node. Each entry in the list corresponds to an edge stemming from
-the key and leading to the list entry.
-
-Note that the call graph generated by `PyCG`
-corresponds to the call graph depicted in Figure 2a of the paper.
-
-You can exit the container to proceed to the evaluation:
-
-```bash
-pycg@3ddc263ed13a:~$ exit
-```
-
-# Evaluation
-
-## Micro-Benchmark
-
-You can start by evaluating the micro-benchmark described in Section 5.1 of the
-paper. An overview of its contents can be viewed on Table 1.
-
-The source code of the micro-benchmark
-(i.e., `data/micro-benchmark`/) is structured as follows. First,
-the root directory contains 16 subdirectories, one for each category of
-Table 1. Then, each subdirectory contains directories for each one of
-the tests that it defines. Finally, each test directory contains the following
-files:
-
-* `main.py`: The entry-point Python module for the test case.
-* `README.md`: A short description of the test case.
-* `callgraph.json`: The ground-truth call graph in JSON format.
-* Other `*.py` files that are imported from the `main.py` module.
-
-In the following, we will produce the results of Table 3, by examining the
-completeness and soundness of the call graphs generated by `PyCG`, `Pyan` and
-`Depends`. To do so, create and enter the `pycg-eval` container:
-
-```bash
-docker run --rm -ti \
-    -v $(pwd)/data/micro-benchmark:/home/pycg/micro-benchmark/ \
-    -v $(pwd)/scripts:/home/pycg/scripts/ \
-    -v $(pwd)/data/results:/home/pycg/results/ pycg-eval
-```
-
-The `-v` option instructs Docker to mount a local volume inside the Docker
-container. This allows you to access the `data/micro-benchmark`, `scripts` and
-`data/results` directories from inside the Docker environment.
-
-For the purposes of this evaluation we have implemented a script
-residing in `scripts/micro_benchmark.py`
-that takes as input the path to the the micro-benchmark and
-generates Python call graphs for `PyCG`, `Pyan` and `Depends`.
-The script implements the following process for each tool:
-1. Iterate each test case of the micro-benchmark and produce a corresponding
-   call graph.
-2. If needed, convert the resulting call graph to the format used by the
-   micro-benchmark.
-3. Compare the resulting call graph with the ground-truth one in terms of
-   completeness and soundness.
-4. Store the overall results in a CSV file.
-
-Note that the results for each tool will be stored in
-CSV format in the files `pycg_micro_benchmark.csv`, `pyan_micro_benchmark.csv`,
-and `depends_micro_benchmark.csv` under the `data/results` directory for future
-reference.
-(estimated running time: 10 minutes)
-
-```bash
-pycg@b789f559b119:~$ python3 scripts/micro_benchmark.py \
-        micro-benchmark results /pyan/pyan.py /depends
-```
-
-Now, let's collect the previously generated results for the micro-benchmark
-evaluation and present them in a human readable format. The script `table3.py`
-does the job:
-
-```bash
-pycg@b789f559b119:~$ python3 scripts/table3.py results
-```
-
-The expected output of the above command is stored in the
-`data/results/table3.txt` file.
-
-Finally, let's exit the container and proceed to the macro-benchmark:
-
-```bash
-pycg@b789f559b119:~$ exit
-```
-
-### Macro-Benchmark
-
-Now, we will focus on the macro-benchmark described in Section 5.1 of the
-paper. An overview of its contents can be viewed in Table 2.
-
-The macro-benchmark directory contains two subdirectories:
-* `projects`: Contains the source code for the macro-benchmark projects (Table
-  2) as Git submodules.
-* `ground-truth-cgs`: Contains the ground truth call graphs for each of the
-  projects.
-
-We will start by generating the call graphs for each project using `PyCG`,
-`Pyan`, and `Depends` while keeping track of their execution times.
-To do that, please create and enter the Docker container:
-
-```bash
-docker run --rm -ti \
-    -v $(pwd)/data/macro-benchmark:/home/pycg/macro-benchmark/ \
-    -v $(pwd)/scripts:/home/pycg/scripts/ \
-    -v $(pwd)/data/results:/home/pycg/results/ pycg-eval
-```
-
-We have implemented corresponding scripts that generate call graphs using the
-three tools. These scripts take as parameters the location of the
-macro-benchmark, (if needed) a script that converts tool generated call graphs
-into the format used by the macro-benchmark, and a directory to store execution
-metrics results in CSV format.
-
-First, let's you can generate the `PyCG` call graphs. Note that the generated call
-graphs will be stored under `data/macro-benchmark/pycg-cgs` for further
-inspection:
-
-```bash
-pycg@2c5b63e7615b:~$ ./scripts/generate_pycg_cgs.sh macro-benchmark results
-```
-
-You can do the same for `Pyan`, passing a call graph convertion script as an
-argument. The generated call graphs will be stored under
-`data/macro-benchmark/pyan-cgs` for further inspection:
-
-```bash
-pycg@9bf0a9e35e86:~$ ./scripts/generate_pyan_cgs.sh macro-benchmark \
-        /pyan/pyan.py scripts/convert_pyan_cgs.py results
-```
-
-**Note**: Don't be alarmed if `Pyan` crashes for the `fabric` and `asciinema`
-projects. This is expected, and we have included their execution to
-demonstrate that Pyan cannot generate a call graph for them, as stated in
-Section 5.3. For example, you should expect something along the lines of
-the following error for `fabric`:
-
-```bash
-Generating call graph for: fabric
-=================================
-Traceback (most recent call last):
-  File "/pyan/pyan.py", line 11, in <module>
-    print(main())
-  File "/pyan/pyan/main.py", line 110, in main
-    v = CallGraphVisitor(filenames, logger)
-  File "/pyan/pyan/analyzer.py", line 77, in __init__
-    self.process()
-  File "/pyan/pyan/analyzer.py", line 84, in process
-    self.process_one(filename)
-  File "/pyan/pyan/analyzer.py", line 98, in process_one
-    self.visit(ast.parse(content, filename))
-  File "/usr/lib/python3.5/ast.py", line 245, in visit
-    return visitor(node)
-  File "/pyan/pyan/analyzer.py", line 175, in visit_Module
-    self.generic_visit(node)  # visit the **children** of node
-  File "/usr/lib/python3.5/ast.py", line 253, in generic_visit
-    self.visit(item)
-  File "/usr/lib/python3.5/ast.py", line 245, in visit
-    return visitor(node)
-  File "/pyan/pyan/analyzer.py", line 375, in visit_ImportFrom
-    if self.add_uses_edge(from_node, to_node):
-  File "/pyan/pyan/analyzer.py", line 1294, in add_uses_edge
-    self.remove_wild(from_node, to_node, to_node.name)
-  File "/pyan/pyan/analyzer.py", line 1321, in remove_wild
-    if to_node.get_name().find("^^^argument^^^") != -1:
-AttributeError: 'NoneType' object has no attribute 'find'
-```
-
-Finally, you can generate call graphs using `Depends`. The generated call graphs
-will be stored under `data/macro-benchmark/depends-cgs`.
-
-```bash
-pycg@9bf0a9e35e86:~$ ./scripts/generate_depends_cgs.sh macro-benchmark \
-    /depends scripts/convert_depends_cgs.py results
-```
-#### Precision & Recall
-
-Having generated the call graphs for the macro-benchmark projects, you can
-compare them against the ground-truth call graphs and generate the precision
-and recall metrics presented in Table 4 of the paper.
-
-To do so, we have implemented a script that takes as input the directory
-containing the tool generated call graphs for each tool and the directory containing the
-ground truth call graphs. Then, it examines the call graphs generated for each project
-producing precision and recall metrics which are then stored in a CSV file.
-Specifically, the macro-benchmark results for each tool are stored under the `data/results`
-directory with file names `pycg_macro_benchmark_eval.csv`,
-`pyan_macro_benchmark_eval.csv`, and `depends_macro_benchmark_eval.csv`
-corresponding to `PyCG`, `Pyan`, and `Depends` respectivelly:
-
-```bash
-pycg@9bf0a9e35e86:~$ python3 scripts/compare_macro_benchmark_cg.py \
-        macro-benchmark/pycg-cgs macro-benchmark/pyan-cgs \
-        macro-benchmark/depends-cgs macro-benchmark/ground-truth-cgs results
-```
-
-Let's combine the generated CSV files and present their results in a human
-readable format. To do so, you can employ the `table4.py` script:
-
-```bash
-pycg@9bf0a9e35e86:~$ python3 scripts/table4.py results
-```
-
-The results should correspond to the ones depicted on Table 4.
-Specifically, in terms of precision,
-`PyCG` is a little more precise than `Depends`, while
-`Pyan` lags behind. In terms of recall, `PyCG` achieves the highest
-marks followed by `Pyan` and `Depends`.
-A sample output is provided in the `data/results/table4.txt` file.
-
-#### Performance
-
-We will now combine the execution time metrics generated and present them in a
-human readable format. To do so, invoke:
-
-```bash
-pycg@9bf0a9e35e86:~$ python3 scripts/table5.py results
-```
-
-
-The output of this command should follow the trends depicted in Table
-5 of the paper.
-Specifically, `Pyan` should have the fastest execution
-times, followed by `PyCG`. `Depends` should have the slowest execution
-times. A sample output is provided in `data/results/table5.txt`.
+The tests import `pycg` from the submodule `PyCG`, so the checkout needs
+it. They run on Python 3.12 to 3.15. The tests of the scorer and of the
+tracer need Python 3.14 or later and skip themselves on an older Python.
+No test needs Docker, the network or the sources of the projects.

@@ -1,0 +1,66 @@
+{
+"autojump_data.entriefy": [
+"autojump_utils.is_python3"
+],
+"autojump_data.load": [
+"autojump_data.load_backup",
+"autojump_data.migrate_osx_xdg_data",
+"autojump_utils.is_osx"
+],
+"autojump_data.load_backup": [
+"autojump_data.load",
+"autojump_utils.move_file"
+],
+"autojump_data.migrate_osx_xdg_data": [
+"autojump_utils.is_osx",
+"autojump_utils.move_file"
+],
+"autojump_data.save": [
+"autojump_utils.create_dir",
+"autojump_utils.move_file",
+"autojump_utils.unico"
+],
+"autojump_match": [
+"autojump_utils.is_python3"
+],
+"autojump_match.match_fuzzy": [
+"autojump_utils.last"
+],
+"autojump_utils.encode_local": [
+"autojump_utils.is_python3"
+],
+"autojump_utils.first": [
+"autojump_utils.is_python3"
+],
+"autojump_utils.has_uppercase": [
+"autojump_utils.is_python3"
+],
+"autojump_utils.last": [
+"autojump_utils.is_python3"
+],
+"autojump_utils.move_file": [
+"autojump_utils.is_windows"
+],
+"autojump_utils.print_entry": [
+"autojump_utils.print_local"
+],
+"autojump_utils.print_local": [
+"autojump_utils.encode_local"
+],
+"autojump_utils.print_tab_menu": [
+"autojump_utils.print_local"
+],
+"autojump_utils.sanitize": [
+"autojump_utils.unico"
+],
+"autojump_utils.second": [
+"autojump_utils.is_python2",
+"autojump_utils.is_python3"
+],
+"autojump_utils.surround_quotes": [
+"autojump_utils.in_bash"
+],
+"autojump_utils.unico": [
+"autojump_utils.is_python2"
+]
+}

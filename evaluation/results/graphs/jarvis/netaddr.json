@@ -1,0 +1,1561 @@
+{
+"<builtin>.Exception": [],
+"<builtin>.IndexError": [],
+"<builtin>.NotImplementedError": [],
+"<builtin>.OSError": [],
+"<builtin>.RuntimeError": [],
+"<builtin>.TypeError": [],
+"<builtin>.ValueError": [],
+"<builtin>.any": [],
+"<builtin>.bin": [],
+"<builtin>.bool": [],
+"<builtin>.chr": [],
+"<builtin>.classmethod": [],
+"<builtin>.dict": [],
+"<builtin>.dict.items": [],
+"<builtin>.dict.keys": [],
+"<builtin>.dict.popitem": [],
+"<builtin>.dict.setdefault": [],
+"<builtin>.dict.update": [],
+"<builtin>.dir": [],
+"<builtin>.enumerate": [],
+"<builtin>.getattr": [],
+"<builtin>.globals": [],
+"<builtin>.hasattr": [],
+"<builtin>.hash": [],
+"<builtin>.hex": [],
+"<builtin>.int": [],
+"<builtin>.int.to_bytes": [],
+"<builtin>.isinstance": [],
+"<builtin>.iter": [],
+"<builtin>.len": [],
+"<builtin>.list": [],
+"<builtin>.locals": [],
+"<builtin>.max": [],
+"<builtin>.min": [],
+"<builtin>.next": [],
+"<builtin>.open": [],
+"<builtin>.ord": [],
+"<builtin>.print": [],
+"<builtin>.property": [],
+"<builtin>.range": [],
+"<builtin>.reversed": [],
+"<builtin>.set": [],
+"<builtin>.sorted": [],
+"<builtin>.str": [],
+"<builtin>.str.capitalize": [],
+"<builtin>.str.encode": [],
+"<builtin>.str.join": [],
+"<builtin>.str.lower": [],
+"<builtin>.str.replace": [],
+"<builtin>.str.split": [],
+"<builtin>.sum": [],
+"<builtin>.super": [],
+"<builtin>.tuple": [],
+"<builtin>.type": [],
+"<builtin>.zip": [],
+"IPython.terminal.embed.InteractiveShellEmbed": [],
+"_socket.inet_ntop": [],
+"_socket.inet_pton": [],
+"append": [],
+"extend": [],
+"insert": [],
+"netaddr": [
+"<builtin>.RuntimeError",
+"<builtin>.int",
+"<builtin>.str.split",
+"<builtin>.tuple",
+"netaddr.contrib.subnet_splitter",
+"netaddr.core",
+"netaddr.eui",
+"netaddr.ip",
+"netaddr.ip.glob",
+"netaddr.ip.nmap",
+"netaddr.ip.rfc1924",
+"netaddr.ip.sets",
+"netaddr.strategy.eui48",
+"netaddr.strategy.eui64",
+"netaddr.strategy.ipv4",
+"netaddr.strategy.ipv6"
+],
+"netaddr.cli": [
+"<builtin>.dir",
+"<builtin>.getattr",
+"netaddr",
+"netaddr.cli.main"
+],
+"netaddr.cli.info": [
+"<builtin>.dict.items",
+"<builtin>.hex",
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.max",
+"<builtin>.print",
+"<builtin>.str",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.cli.main": [
+"<builtin>.print",
+"netaddr.cli.info",
+"netaddr.cli.shell"
+],
+"netaddr.cli.shell": [
+"<builtin>.locals",
+"<builtin>.print",
+"netaddr.cli.shell.shell"
+],
+"netaddr.cli.shell.shell": [
+"IPython.terminal.embed.InteractiveShellEmbed"
+],
+"netaddr.compat": [
+"<builtin>.hasattr"
+],
+"netaddr.compat._open_binary": [],
+"netaddr.contrib": [],
+"netaddr.contrib.subnet_splitter": [
+"netaddr.contrib.subnet_splitter.SubnetSplitter",
+"netaddr.ip"
+],
+"netaddr.contrib.subnet_splitter.SubnetSplitter": [],
+"netaddr.contrib.subnet_splitter.SubnetSplitter.__init__": [
+"<builtin>.set",
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.contrib.subnet_splitter.SubnetSplitter.available_subnets": [
+"<builtin>.sorted"
+],
+"netaddr.contrib.subnet_splitter.SubnetSplitter.extract_subnet": [
+"<builtin>.list",
+"<builtin>.set",
+"netaddr.contrib.subnet_splitter.SubnetSplitter.available_subnets",
+"netaddr.contrib.subnet_splitter.SubnetSplitter.remove_subnet",
+"netaddr.ip.cidr_exclude",
+"netaddr.ip.cidr_merge"
+],
+"netaddr.contrib.subnet_splitter.SubnetSplitter.remove_subnet": [],
+"netaddr.core": [
+"netaddr.core.AddrConversionError",
+"netaddr.core.AddrFormatError",
+"netaddr.core.DictDotLookup",
+"netaddr.core.NotRegisteredError",
+"netaddr.core.PrettyPrinter",
+"netaddr.core.Publisher",
+"netaddr.core.Subscriber"
+],
+"netaddr.core.AddrConversionError": [],
+"netaddr.core.AddrFormatError": [],
+"netaddr.core.DictDotLookup": [],
+"netaddr.core.DictDotLookup.__init__": [
+"<builtin>.isinstance",
+"append",
+"netaddr.core.DictDotLookup.__init__"
+],
+"netaddr.core.NotRegisteredError": [],
+"netaddr.core.PrettyPrinter": [],
+"netaddr.core.Publisher": [],
+"netaddr.core.Publisher.attach": [
+"<builtin>.TypeError",
+"<builtin>.hasattr",
+"append"
+],
+"netaddr.core.Publisher.detach": [
+"remove"
+],
+"netaddr.core.Publisher.notify": [],
+"netaddr.core.Subscriber": [],
+"netaddr.core.Subscriber.update": [
+"<builtin>.NotImplementedError"
+],
+"netaddr.eui": [
+"netaddr.compat",
+"netaddr.core",
+"netaddr.eui.BaseIdentifier",
+"netaddr.eui.EUI",
+"netaddr.eui.IAB",
+"netaddr.eui.OUI",
+"netaddr.ip",
+"netaddr.strategy.eui48",
+"netaddr.strategy.eui64"
+],
+"netaddr.eui.BaseIdentifier": [],
+"netaddr.eui.EUI": [
+"<builtin>.property"
+],
+"netaddr.eui.EUI.__eq__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.EUI.__ge__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.EUI.__getitem__": [
+"<builtin>.IndexError",
+"<builtin>.TypeError",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.range",
+"netaddr.strategy.eui48.int_to_words",
+"netaddr.strategy.eui64.int_to_words"
+],
+"netaddr.eui.EUI.__gt__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.EUI.__hash__": [
+"<builtin>.hash"
+],
+"netaddr.eui.EUI.__init__": [
+"<builtin>.ValueError",
+"<builtin>.isinstance",
+"<builtin>.super"
+],
+"netaddr.eui.EUI.__le__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.EUI.__lt__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.EUI.__ne__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.EUI.__setitem__": [
+"<builtin>.IndexError",
+"<builtin>.NotImplementedError",
+"<builtin>.TypeError",
+"<builtin>.isinstance",
+"<builtin>.list",
+"netaddr.strategy.eui48.int_to_words",
+"netaddr.strategy.eui48.words_to_int",
+"netaddr.strategy.eui64.int_to_words",
+"netaddr.strategy.eui64.words_to_int"
+],
+"netaddr.eui.EUI.__setstate__": [
+"<builtin>.ValueError"
+],
+"netaddr.eui.EUI.__str__": [
+"netaddr.strategy.eui48.int_to_str",
+"netaddr.strategy.eui64.int_to_str"
+],
+"netaddr.eui.EUI._set_dialect": [
+"netaddr.eui.EUI._validate_dialect"
+],
+"netaddr.eui.EUI._set_value": [
+"<builtin>.int",
+"<builtin>.isinstance",
+"netaddr.strategy.eui48.str_to_int",
+"netaddr.strategy.eui64.str_to_int"
+],
+"netaddr.eui.EUI._validate_dialect": [
+"<builtin>.TypeError",
+"<builtin>.hasattr"
+],
+"netaddr.eui.EUI.bin": [
+"netaddr.strategy.eui48.int_to_bin",
+"netaddr.strategy.eui64.int_to_bin"
+],
+"netaddr.eui.EUI.bits": [
+"netaddr.strategy.eui48.int_to_bits",
+"netaddr.strategy.eui64.int_to_bits"
+],
+"netaddr.eui.EUI.ei": [
+"<builtin>.tuple"
+],
+"netaddr.eui.EUI.eui64": [],
+"netaddr.eui.EUI.format": [
+"netaddr.eui.EUI._validate_dialect",
+"netaddr.strategy.eui48.int_to_str",
+"netaddr.strategy.eui64.int_to_str"
+],
+"netaddr.eui.EUI.iab": [
+"netaddr.eui.EUI.is_iab",
+"netaddr.eui.IAB.__init__"
+],
+"netaddr.eui.EUI.info": [
+"netaddr.core.DictDotLookup.__init__",
+"netaddr.eui.EUI.is_iab"
+],
+"netaddr.eui.EUI.ipv6": [
+"<builtin>.int",
+"netaddr.eui.EUI.modified_eui64",
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.eui.EUI.ipv6_link_local": [
+"netaddr.eui.EUI.ipv6"
+],
+"netaddr.eui.EUI.is_iab": [],
+"netaddr.eui.EUI.modified_eui64": [
+"netaddr.eui.EUI.eui64"
+],
+"netaddr.eui.EUI.oui": [
+"netaddr.eui.OUI.__init__"
+],
+"netaddr.eui.EUI.packed": [
+"netaddr.strategy.eui48.int_to_packed",
+"netaddr.strategy.eui64.int_to_packed"
+],
+"netaddr.eui.EUI.words": [
+"netaddr.strategy.eui48.int_to_words",
+"netaddr.strategy.eui64.int_to_words"
+],
+"netaddr.eui.IAB": [
+"<builtin>.classmethod"
+],
+"netaddr.eui.IAB.__eq__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.IAB.__init__": [
+"<builtin>.TypeError",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.super",
+"netaddr.compat._open_binary",
+"netaddr.eui.IAB._parse_data",
+"netaddr.eui.IAB.split_iab_mac",
+"netaddr.eui.ieee"
+],
+"netaddr.eui.IAB.__ne__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.IAB._parse_data": [
+"<builtin>.str"
+],
+"netaddr.eui.IAB.registration": [
+"netaddr.core.DictDotLookup.__init__"
+],
+"netaddr.eui.IAB.split_iab_mac": [
+"<builtin>.ValueError",
+"<builtin>.hex"
+],
+"netaddr.eui.OUI": [
+"<builtin>.property"
+],
+"netaddr.eui.OUI.__eq__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.OUI.__hash__": [
+"<builtin>.hash"
+],
+"netaddr.eui.OUI.__init__": [
+"<builtin>.TypeError",
+"<builtin>.ValueError",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.super",
+"netaddr.compat._open_binary",
+"netaddr.eui.OUI._parse_data",
+"netaddr.eui.ieee"
+],
+"netaddr.eui.OUI.__ne__": [
+"<builtin>.isinstance"
+],
+"netaddr.eui.OUI._parse_data": [
+"<builtin>.str",
+"append"
+],
+"netaddr.eui.OUI.reg_count": [
+"<builtin>.len"
+],
+"netaddr.eui.OUI.registration": [
+"netaddr.core.DictDotLookup.__init__"
+],
+"netaddr.eui.ieee": [
+"netaddr.compat",
+"netaddr.core",
+"netaddr.eui.ieee.FileIndexer",
+"netaddr.eui.ieee.IABIndexParser",
+"netaddr.eui.ieee.OUIIndexParser",
+"netaddr.eui.ieee.create_indices",
+"netaddr.eui.ieee.load_indices"
+],
+"netaddr.eui.ieee.FileIndexer": [],
+"netaddr.eui.ieee.FileIndexer.__init__": [
+"<builtin>.hasattr",
+"<builtin>.open"
+],
+"netaddr.eui.ieee.IABIndexParser": [],
+"netaddr.eui.ieee.IABIndexParser.__init__": [
+"<builtin>.hasattr",
+"<builtin>.open",
+"<builtin>.super"
+],
+"netaddr.eui.ieee.IABIndexParser.parse": [
+"<builtin>.int",
+"<builtin>.len",
+"append",
+"netaddr.core.Publisher.notify"
+],
+"netaddr.eui.ieee.OUIIndexParser": [],
+"netaddr.eui.ieee.OUIIndexParser.__init__": [
+"<builtin>.hasattr",
+"<builtin>.open",
+"<builtin>.super"
+],
+"netaddr.eui.ieee.OUIIndexParser.parse": [
+"<builtin>.int",
+"<builtin>.len",
+"append",
+"netaddr.core.Publisher.notify"
+],
+"netaddr.eui.ieee.create_index_from_registry": [
+"netaddr.core.Publisher.attach",
+"netaddr.eui.ieee.FileIndexer.__init__",
+"netaddr.eui.ieee.IABIndexParser.__init__",
+"netaddr.eui.ieee.IABIndexParser.parse",
+"netaddr.eui.ieee.OUIIndexParser.__init__",
+"netaddr.eui.ieee.OUIIndexParser.parse"
+],
+"netaddr.eui.ieee.create_indices": [
+"netaddr.eui.ieee.create_index_from_registry"
+],
+"netaddr.eui.ieee.load_index": [
+"<builtin>.dict.setdefault",
+"<builtin>.int"
+],
+"netaddr.eui.ieee.load_indices": [
+"netaddr.compat._open_binary",
+"netaddr.eui.ieee.load_index"
+],
+"netaddr.fbsocket": [],
+"netaddr.fbsocket._compact_ipv6_tokens": [
+"<builtin>.enumerate",
+"<builtin>.len",
+"append",
+"insert",
+"sort"
+],
+"netaddr.fbsocket._inet_pton_af_inet": [
+"<builtin>.OSError",
+"<builtin>.TypeError",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.str.split",
+"<builtin>.type",
+"append"
+],
+"netaddr.fbsocket.inet_ntoa": [
+"<builtin>.TypeError",
+"<builtin>.ValueError",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.type",
+"struct.unpack"
+],
+"netaddr.fbsocket.inet_ntop": [
+"<builtin>.ValueError",
+"<builtin>.enumerate",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.list",
+"<builtin>.reversed",
+"netaddr.fbsocket._compact_ipv6_tokens",
+"netaddr.fbsocket.inet_ntoa",
+"struct.pack",
+"struct.unpack"
+],
+"netaddr.fbsocket.inet_pton": [
+"<builtin>.OSError",
+"<builtin>.TypeError",
+"<builtin>.ValueError",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.range",
+"<builtin>.str.encode",
+"<builtin>.str.lower",
+"<builtin>.str.split",
+"<builtin>.type",
+"append",
+"netaddr.fbsocket._inet_pton_af_inet",
+"pop",
+"struct.pack",
+"struct.unpack"
+],
+"netaddr.ip": [
+"netaddr.core",
+"netaddr.ip.BaseIP",
+"netaddr.ip.IPAddress",
+"netaddr.ip.IPListMixin",
+"netaddr.ip.IPNetwork",
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.IPRange",
+"netaddr.ip.IPRange.__init__",
+"netaddr.strategy.ipv4",
+"netaddr.strategy.ipv6"
+],
+"netaddr.ip.BaseIP": [
+"<builtin>.property"
+],
+"netaddr.ip.BaseIP.__eq__": [
+"netaddr.ip.BaseIP.key",
+"netaddr.ip.IPAddress.key",
+"netaddr.ip.IPNetwork.key"
+],
+"netaddr.ip.BaseIP.__ge__": [
+"netaddr.ip.BaseIP.sort_key",
+"netaddr.ip.IPAddress.sort_key",
+"netaddr.ip.IPNetwork.sort_key"
+],
+"netaddr.ip.BaseIP.__gt__": [
+"netaddr.ip.BaseIP.sort_key",
+"netaddr.ip.IPAddress.sort_key",
+"netaddr.ip.IPNetwork.sort_key"
+],
+"netaddr.ip.BaseIP.__hash__": [
+"<builtin>.hash",
+"netaddr.ip.BaseIP.key",
+"netaddr.ip.IPAddress.key",
+"netaddr.ip.IPNetwork.key"
+],
+"netaddr.ip.BaseIP.__le__": [
+"netaddr.ip.BaseIP.sort_key",
+"netaddr.ip.IPAddress.sort_key",
+"netaddr.ip.IPNetwork.sort_key"
+],
+"netaddr.ip.BaseIP.__lt__": [
+"netaddr.ip.BaseIP.sort_key",
+"netaddr.ip.IPAddress.sort_key",
+"netaddr.ip.IPNetwork.sort_key"
+],
+"netaddr.ip.BaseIP.__ne__": [
+"netaddr.ip.BaseIP.key",
+"netaddr.ip.IPAddress.key",
+"netaddr.ip.IPNetwork.key"
+],
+"netaddr.ip.BaseIP._set_value": [
+"<builtin>.TypeError",
+"<builtin>.isinstance",
+"<builtin>.type"
+],
+"netaddr.ip.BaseIP.info": [
+"netaddr.core.DictDotLookup.__init__",
+"netaddr.ip.iana",
+"netaddr.ip.iana.query"
+],
+"netaddr.ip.BaseIP.is_ipv4_mapped": [],
+"netaddr.ip.BaseIP.is_multicast": [],
+"netaddr.ip.BaseIP.is_unicast": [
+"netaddr.ip.BaseIP.is_multicast"
+],
+"netaddr.ip.BaseIP.key": [],
+"netaddr.ip.BaseIP.sort_key": [],
+"netaddr.ip.IPAddress": [
+"<builtin>.property"
+],
+"netaddr.ip.IPAddress.__add__": [
+"<builtin>.IndexError",
+"<builtin>.int"
+],
+"netaddr.ip.IPAddress.__and__": [
+"<builtin>.int"
+],
+"netaddr.ip.IPAddress.__bool__": [
+"<builtin>.bool"
+],
+"netaddr.ip.IPAddress.__bytes__": [
+"<builtin>.int.to_bytes"
+],
+"netaddr.ip.IPAddress.__iadd__": [
+"<builtin>.IndexError",
+"<builtin>.int"
+],
+"netaddr.ip.IPAddress.__init__": [
+"<builtin>.ValueError",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.super",
+"netaddr.strategy.ipv4.str_to_int",
+"netaddr.strategy.ipv6.str_to_int"
+],
+"netaddr.ip.IPAddress.__isub__": [
+"<builtin>.IndexError",
+"<builtin>.int"
+],
+"netaddr.ip.IPAddress.__or__": [
+"<builtin>.int"
+],
+"netaddr.ip.IPAddress.__rsub__": [
+"<builtin>.IndexError",
+"<builtin>.int"
+],
+"netaddr.ip.IPAddress.__setstate__": [
+"<builtin>.ValueError",
+"<builtin>.str"
+],
+"netaddr.ip.IPAddress.__str__": [
+"netaddr.strategy.ipv4.int_to_str",
+"netaddr.strategy.ipv6.int_to_str"
+],
+"netaddr.ip.IPAddress.__sub__": [
+"<builtin>.IndexError",
+"<builtin>.int"
+],
+"netaddr.ip.IPAddress.__xor__": [
+"<builtin>.int"
+],
+"netaddr.ip.IPAddress.bin": [
+"netaddr.strategy.ipv4.int_to_bin",
+"netaddr.strategy.ipv6.int_to_bin"
+],
+"netaddr.ip.IPAddress.bits": [
+"netaddr.strategy.ipv4.int_to_bits",
+"netaddr.strategy.ipv6.int_to_bits"
+],
+"netaddr.ip.IPAddress.format": [
+"<builtin>.TypeError",
+"<builtin>.hasattr",
+"netaddr.strategy.ipv4.int_to_str",
+"netaddr.strategy.ipv6.int_to_str"
+],
+"netaddr.ip.IPAddress.ipv4": [],
+"netaddr.ip.IPAddress.is_global": [
+"<builtin>.any"
+],
+"netaddr.ip.IPAddress.is_hostmask": [],
+"netaddr.ip.IPAddress.is_ipv4_private_use": [
+"<builtin>.any"
+],
+"netaddr.ip.IPAddress.is_netmask": [],
+"netaddr.ip.IPAddress.key": [],
+"netaddr.ip.IPAddress.netmask_bits": [
+"<builtin>.ValueError",
+"netaddr.ip.IPAddress.is_netmask"
+],
+"netaddr.ip.IPAddress.packed": [
+"netaddr.strategy.ipv4.int_to_packed",
+"netaddr.strategy.ipv6.int_to_packed"
+],
+"netaddr.ip.IPAddress.reverse_dns": [
+"netaddr.strategy.ipv4.int_to_arpa",
+"netaddr.strategy.ipv6.int_to_arpa"
+],
+"netaddr.ip.IPAddress.sort_key": [],
+"netaddr.ip.IPAddress.to_canonical": [
+"netaddr.ip.BaseIP.is_ipv4_mapped",
+"netaddr.ip.IPAddress.ipv4"
+],
+"netaddr.ip.IPAddress.words": [
+"netaddr.strategy.ipv4.int_to_words",
+"netaddr.strategy.ipv6.int_to_words"
+],
+"netaddr.ip.IPListMixin": [
+"<builtin>.property"
+],
+"netaddr.ip.IPListMixin.__contains__": [
+"<builtin>.isinstance",
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.IPListMixin.__getitem__": [
+"<builtin>.IndexError",
+"<builtin>.TypeError",
+"<builtin>.hasattr",
+"<builtin>.int",
+"<builtin>.iter",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.iter_iprange"
+],
+"netaddr.ip.IPListMixin.__iter__": [
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.iter_iprange"
+],
+"netaddr.ip.IPListMixin.__len__": [
+"<builtin>.IndexError"
+],
+"netaddr.ip.IPListMixin.size": [
+"<builtin>.int"
+],
+"netaddr.ip.IPNetwork": [
+"<builtin>.property"
+],
+"netaddr.ip.IPNetwork.__contains__": [
+"<builtin>.isinstance",
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.ip.IPNetwork.__iadd__": [
+"<builtin>.IndexError",
+"<builtin>.int"
+],
+"netaddr.ip.IPNetwork.__init__": [
+"<builtin>.ValueError",
+"<builtin>.hasattr",
+"<builtin>.super",
+"netaddr.ip.parse_ip_network"
+],
+"netaddr.ip.IPNetwork.__isub__": [
+"<builtin>.IndexError",
+"<builtin>.int"
+],
+"netaddr.ip.IPNetwork.__setstate__": [
+"<builtin>.ValueError"
+],
+"netaddr.ip.IPNetwork.__str__": [
+"netaddr.strategy.ipv4.int_to_str",
+"netaddr.strategy.ipv6.int_to_str"
+],
+"netaddr.ip.IPNetwork._set_prefixlen": [
+"<builtin>.TypeError",
+"<builtin>.isinstance",
+"<builtin>.type"
+],
+"netaddr.ip.IPNetwork._usable_range": [],
+"netaddr.ip.IPNetwork.broadcast": [
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.IPNetwork.cidr": [
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.ip.IPNetwork.hostmask": [
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.IPNetwork.ip": [
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.IPNetwork.ipv4": [
+"netaddr.strategy.ipv4.int_to_str"
+],
+"netaddr.ip.IPNetwork.iter_hosts": [
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork._usable_range",
+"netaddr.ip.iter_iprange"
+],
+"netaddr.ip.IPNetwork.key": [],
+"netaddr.ip.IPNetwork.netmask": [
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.IPNetwork.network": [
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.IPNetwork.next": [],
+"netaddr.ip.IPNetwork.previous": [],
+"netaddr.ip.IPNetwork.sort_key": [],
+"netaddr.ip.IPNetwork.subnet": [
+"<builtin>.ValueError",
+"netaddr.strategy.ipv4.int_to_str",
+"netaddr.strategy.ipv6.int_to_str"
+],
+"netaddr.ip.IPNetwork.supernet": [
+"<builtin>.ValueError",
+"append"
+],
+"netaddr.ip.IPRange": [
+"<builtin>.property"
+],
+"netaddr.ip.IPRange.__contains__": [
+"<builtin>.isinstance",
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.IPRange.__init__": [
+"<builtin>.int",
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.IPRange.__setstate__": [
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.IPRange.cidrs": [
+"netaddr.ip.iprange_to_cidrs"
+],
+"netaddr.ip.IPRange.first": [
+"<builtin>.int"
+],
+"netaddr.ip.IPRange.last": [
+"<builtin>.int"
+],
+"netaddr.ip.all_matching_cidrs": [
+"<builtin>.TypeError",
+"<builtin>.hasattr",
+"<builtin>.sorted",
+"append",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.ip.cidr_abbrev_to_verbose": [
+"<builtin>.ValueError",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.range",
+"netaddr.ip.cidr_abbrev_to_verbose.classful_prefix"
+],
+"netaddr.ip.cidr_abbrev_to_verbose.classful_prefix": [
+"<builtin>.IndexError",
+"<builtin>.int"
+],
+"netaddr.ip.cidr_exclude": [
+"netaddr.ip.cidr_partition"
+],
+"netaddr.ip.cidr_merge": [
+"<builtin>.ValueError",
+"<builtin>.hasattr",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.min",
+"append",
+"extend",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork.__init__",
+"sort"
+],
+"netaddr.ip.cidr_partition": [
+"append",
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.ip.glob": [
+"netaddr.core",
+"netaddr.ip",
+"netaddr.ip.glob.IPGlob"
+],
+"netaddr.ip.glob.IPGlob": [
+"<builtin>.property"
+],
+"netaddr.ip.glob.IPGlob.__getstate__": [
+"<builtin>.super"
+],
+"netaddr.ip.glob.IPGlob.__init__": [
+"<builtin>.super",
+"netaddr.ip.glob.glob_to_iptuple",
+"netaddr.ip.glob.iprange_to_globs"
+],
+"netaddr.ip.glob.IPGlob.__setstate__": [
+"<builtin>.super",
+"netaddr.ip.glob.iprange_to_globs"
+],
+"netaddr.ip.glob.IPGlob._set_glob": [
+"netaddr.ip.glob.glob_to_iptuple",
+"netaddr.ip.glob.iprange_to_globs"
+],
+"netaddr.ip.glob.cidr_to_glob": [
+"<builtin>.len",
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.glob.iprange_to_globs"
+],
+"netaddr.ip.glob.glob_to_cidrs": [
+"netaddr.ip.glob.glob_to_iptuple",
+"netaddr.ip.iprange_to_cidrs"
+],
+"netaddr.ip.glob.glob_to_iprange": [
+"append",
+"netaddr.ip.IPRange.__init__",
+"netaddr.ip.glob.valid_glob"
+],
+"netaddr.ip.glob.glob_to_iptuple": [
+"append",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.glob.valid_glob"
+],
+"netaddr.ip.glob.iprange_to_globs": [
+"append",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.glob.iprange_to_globs._iprange_to_glob",
+"netaddr.ip.glob.valid_glob",
+"netaddr.ip.iprange_to_cidrs"
+],
+"netaddr.ip.glob.iprange_to_globs._iprange_to_glob": [
+"<builtin>.int",
+"<builtin>.range",
+"<builtin>.str",
+"append"
+],
+"netaddr.ip.glob.valid_glob": [
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len"
+],
+"netaddr.ip.iana": [
+"netaddr.compat",
+"netaddr.core",
+"netaddr.ip",
+"netaddr.ip.iana.DictUpdater",
+"netaddr.ip.iana.IPv4Parser",
+"netaddr.ip.iana.IPv6Parser",
+"netaddr.ip.iana.IPv6UnicastParser",
+"netaddr.ip.iana.MulticastParser",
+"netaddr.ip.iana.SaxRecordParser",
+"netaddr.ip.iana.XMLRecordParser",
+"netaddr.ip.iana.load_info"
+],
+"netaddr.ip.iana.DictUpdater": [],
+"netaddr.ip.iana.DictUpdater.__init__": [],
+"netaddr.ip.iana.DictUpdater.update": [
+"<builtin>.len",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.IPRange.__init__",
+"netaddr.ip.IPRange.cidrs",
+"netaddr.ip.cidr_abbrev_to_verbose"
+],
+"netaddr.ip.iana.IPv4Parser": [],
+"netaddr.ip.iana.IPv4Parser.__init__": [
+"<builtin>.super"
+],
+"netaddr.ip.iana.IPv4Parser.process_record": [
+"<builtin>.int",
+"<builtin>.str",
+"<builtin>.str.capitalize",
+"<builtin>.str.split"
+],
+"netaddr.ip.iana.IPv6Parser": [],
+"netaddr.ip.iana.IPv6Parser.__init__": [
+"<builtin>.super"
+],
+"netaddr.ip.iana.IPv6Parser.process_record": [
+"<builtin>.str"
+],
+"netaddr.ip.iana.IPv6UnicastParser": [],
+"netaddr.ip.iana.IPv6UnicastParser.__init__": [
+"<builtin>.super"
+],
+"netaddr.ip.iana.IPv6UnicastParser.process_record": [
+"<builtin>.str"
+],
+"netaddr.ip.iana.MulticastParser": [],
+"netaddr.ip.iana.MulticastParser.__init__": [
+"<builtin>.super"
+],
+"netaddr.ip.iana.MulticastParser.normalise_addr": [
+"<builtin>.int",
+"<builtin>.str"
+],
+"netaddr.ip.iana.MulticastParser.process_record": [
+"<builtin>.str",
+"netaddr.ip.iana.MulticastParser.normalise_addr"
+],
+"netaddr.ip.iana.SaxRecordParser": [],
+"netaddr.ip.iana.SaxRecordParser.__init__": [],
+"netaddr.ip.iana.SaxRecordParser.characters": [
+"append"
+],
+"netaddr.ip.iana.SaxRecordParser.endElement": [
+"<builtin>.hasattr"
+],
+"netaddr.ip.iana.XMLRecordParser": [],
+"netaddr.ip.iana.XMLRecordParser.__init__": [
+"<builtin>.super",
+"netaddr.ip.iana.SaxRecordParser.__init__",
+"xml.sax.make_parser"
+],
+"netaddr.ip.iana.XMLRecordParser.consume_record": [
+"netaddr.core.Publisher.notify",
+"netaddr.ip.iana.IPv4Parser.process_record",
+"netaddr.ip.iana.IPv6Parser.process_record",
+"netaddr.ip.iana.IPv6UnicastParser.process_record",
+"netaddr.ip.iana.MulticastParser.process_record",
+"netaddr.ip.iana.XMLRecordParser.process_record"
+],
+"netaddr.ip.iana.XMLRecordParser.parse": [],
+"netaddr.ip.iana.XMLRecordParser.process_record": [],
+"netaddr.ip.iana._within_bounds": [
+"<builtin>.Exception",
+"<builtin>.hasattr"
+],
+"netaddr.ip.iana.load_info": [
+"netaddr.compat._open_binary",
+"netaddr.core.Publisher.attach",
+"netaddr.ip.iana.DictUpdater.__init__",
+"netaddr.ip.iana.IPv4Parser.__init__",
+"netaddr.ip.iana.IPv6Parser.__init__",
+"netaddr.ip.iana.IPv6UnicastParser.__init__",
+"netaddr.ip.iana.MulticastParser.__init__",
+"netaddr.ip.iana.XMLRecordParser.parse"
+],
+"netaddr.ip.iana.pprint_info": [
+"<builtin>.len",
+"<builtin>.sorted"
+],
+"netaddr.ip.iana.query": [
+"<builtin>.dict.setdefault",
+"netaddr.ip.BaseIP.is_multicast",
+"netaddr.ip.iana._within_bounds"
+],
+"netaddr.ip.iprange_to_cidrs": [
+"append",
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.cidr_partition",
+"netaddr.ip.spanning_cidr",
+"pop"
+],
+"netaddr.ip.iter_iprange": [
+"<builtin>.TypeError",
+"<builtin>.ValueError",
+"<builtin>.int",
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.iter_unique_ips": [
+"netaddr.ip.cidr_merge"
+],
+"netaddr.ip.largest_matching_cidr": [
+"<builtin>.TypeError",
+"<builtin>.hasattr",
+"<builtin>.sorted",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.ip.nmap": [
+"netaddr.core",
+"netaddr.ip"
+],
+"netaddr.ip.nmap._generate_nmap_octet_ranges": [
+"<builtin>.TypeError",
+"<builtin>.ValueError",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.type",
+"netaddr.ip.nmap._nmap_octet_target_values"
+],
+"netaddr.ip.nmap._nmap_octet_target_values": [
+"<builtin>.ValueError",
+"<builtin>.int",
+"<builtin>.range",
+"<builtin>.set",
+"<builtin>.sorted"
+],
+"netaddr.ip.nmap._parse_nmap_target_spec": [
+"<builtin>.int",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.nmap._generate_nmap_octet_ranges"
+],
+"netaddr.ip.nmap.iter_nmap_range": [
+"netaddr.ip.nmap._parse_nmap_target_spec"
+],
+"netaddr.ip.nmap.valid_nmap_range": [
+"<builtin>.next",
+"netaddr.ip.nmap._parse_nmap_target_spec"
+],
+"netaddr.ip.parse_ip_network": [
+"<builtin>.TypeError",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.str.split",
+"<builtin>.type",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPAddress.is_hostmask",
+"netaddr.ip.IPAddress.is_netmask",
+"netaddr.strategy.ipv4.expand_partial_address"
+],
+"netaddr.ip.rfc1924": [
+"<builtin>.dict",
+"<builtin>.range",
+"<builtin>.zip",
+"netaddr.core",
+"netaddr.ip",
+"netaddr.ip.rfc1924.chr_range"
+],
+"netaddr.ip.rfc1924.base85_to_ipv6": [
+"<builtin>.enumerate",
+"<builtin>.len",
+"<builtin>.list",
+"<builtin>.reversed",
+"<builtin>.str",
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.rfc1924.chr_range": [
+"<builtin>.chr",
+"<builtin>.ord",
+"<builtin>.range"
+],
+"netaddr.ip.rfc1924.ipv6_to_base85": [
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.reversed",
+"append",
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.sets": [
+"netaddr.ip",
+"netaddr.ip.sets.IPSet"
+],
+"netaddr.ip.sets.IPSet": [
+"<builtin>.property"
+],
+"netaddr.ip.sets.IPSet.__bool__": [
+"<builtin>.bool"
+],
+"netaddr.ip.sets.IPSet.__contains__": [
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.ip.sets.IPSet.__getstate__": [
+"<builtin>.tuple"
+],
+"netaddr.ip.sets.IPSet.__gt__": [
+"<builtin>.hasattr",
+"netaddr.ip.sets.IPSet.issuperset"
+],
+"netaddr.ip.sets.IPSet.__hash__": [
+"<builtin>.TypeError"
+],
+"netaddr.ip.sets.IPSet.__init__": [
+"<builtin>.isinstance",
+"append",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.cidr_merge",
+"netaddr.ip.iprange_to_cidrs"
+],
+"netaddr.ip.sets.IPSet.__iter__": [
+"<builtin>.sorted"
+],
+"netaddr.ip.sets.IPSet.__len__": [
+"<builtin>.IndexError"
+],
+"netaddr.ip.sets.IPSet.__lt__": [
+"<builtin>.hasattr",
+"netaddr.ip.sets.IPSet.issubset"
+],
+"netaddr.ip.sets.IPSet.__repr__": [
+"<builtin>.sorted",
+"<builtin>.str"
+],
+"netaddr.ip.sets.IPSet.__setstate__": [
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.ip.sets.IPSet._compact_single_network": [
+"append",
+"netaddr.ip.IPNetwork.next",
+"netaddr.ip.IPNetwork.previous",
+"netaddr.ip.IPNetwork.supernet"
+],
+"netaddr.ip.sets.IPSet.add": [
+"<builtin>.dict.update",
+"<builtin>.isinstance",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.iprange_to_cidrs",
+"netaddr.ip.sets.IPSet._compact_single_network",
+"netaddr.ip.sets.IPSet.compact"
+],
+"netaddr.ip.sets.IPSet.compact": [
+"netaddr.ip.cidr_merge"
+],
+"netaddr.ip.sets.IPSet.copy": [],
+"netaddr.ip.sets.IPSet.difference": [
+"<builtin>.len",
+"<builtin>.sorted",
+"netaddr.ip.iprange_to_cidrs",
+"netaddr.ip.sets.IPSet.__init__",
+"netaddr.ip.sets._iter_merged_ranges",
+"netaddr.ip.sets._subtract"
+],
+"netaddr.ip.sets.IPSet.intersection": [
+"<builtin>.len",
+"<builtin>.sorted",
+"netaddr.ip.sets.IPSet.__init__"
+],
+"netaddr.ip.sets.IPSet.iprange": [
+"<builtin>.ValueError",
+"netaddr.ip.IPRange.__init__",
+"netaddr.ip.sets.IPSet.iscontiguous",
+"netaddr.ip.sets.IPSet.iter_cidrs"
+],
+"netaddr.ip.sets.IPSet.iscontiguous": [
+"<builtin>.len",
+"netaddr.ip.sets.IPSet.iter_cidrs"
+],
+"netaddr.ip.sets.IPSet.isdisjoint": [
+"netaddr.ip.sets.IPSet.intersection"
+],
+"netaddr.ip.sets.IPSet.issubset": [],
+"netaddr.ip.sets.IPSet.issuperset": [
+"<builtin>.hasattr"
+],
+"netaddr.ip.sets.IPSet.iter_cidrs": [
+"<builtin>.sorted"
+],
+"netaddr.ip.sets.IPSet.iter_ipranges": [
+"netaddr.ip.IPRange.__init__",
+"netaddr.ip.sets.IPSet.iter_cidrs",
+"netaddr.ip.sets._iter_merged_ranges"
+],
+"netaddr.ip.sets.IPSet.pop": [
+"<builtin>.dict.popitem"
+],
+"netaddr.ip.sets.IPSet.remove": [
+"<builtin>.isinstance",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork.__init__",
+"netaddr.ip.cidr_exclude",
+"netaddr.ip.iprange_to_cidrs",
+"netaddr.ip.sets.IPSet.add",
+"netaddr.ip.sets.IPSet.remove"
+],
+"netaddr.ip.sets.IPSet.size": [
+"<builtin>.sum"
+],
+"netaddr.ip.sets.IPSet.symmetric_difference": [
+"<builtin>.len",
+"<builtin>.sorted",
+"append",
+"netaddr.ip.iprange_to_cidrs",
+"netaddr.ip.sets.IPSet.__init__",
+"netaddr.ip.sets._iter_merged_ranges",
+"netaddr.ip.sets._subtract"
+],
+"netaddr.ip.sets.IPSet.union": [
+"netaddr.ip.sets.IPSet.copy"
+],
+"netaddr.ip.sets.IPSet.update": [
+"<builtin>.TypeError",
+"<builtin>.dict.keys",
+"<builtin>.hasattr",
+"<builtin>.isinstance",
+"append",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.cidr_merge",
+"netaddr.ip.sets.IPSet.add",
+"netaddr.ip.sets.IPSet.compact"
+],
+"netaddr.ip.sets._iter_merged_ranges": [
+"netaddr.ip.IPAddress.__init__"
+],
+"netaddr.ip.sets._subtract": [
+"<builtin>.len",
+"append"
+],
+"netaddr.ip.smallest_matching_cidr": [
+"<builtin>.TypeError",
+"<builtin>.hasattr",
+"<builtin>.sorted",
+"netaddr.ip.IPAddress.__init__",
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.ip.spanning_cidr": [
+"<builtin>.TypeError",
+"<builtin>.ValueError",
+"<builtin>.iter",
+"<builtin>.next",
+"netaddr.ip.IPNetwork.__init__"
+],
+"netaddr.strategy": [
+"netaddr.strategy.bytes_to_bits"
+],
+"netaddr.strategy.bin_to_int": [
+"<builtin>.ValueError",
+"<builtin>.int",
+"netaddr.strategy.valid_bin"
+],
+"netaddr.strategy.bits_to_int": [
+"<builtin>.ValueError",
+"<builtin>.int",
+"netaddr.strategy.valid_bits"
+],
+"netaddr.strategy.bytes_to_bits": [
+"<builtin>.range",
+"append"
+],
+"netaddr.strategy.eui48": [
+"netaddr.core",
+"netaddr.strategy",
+"netaddr.strategy.eui48.mac_bare",
+"netaddr.strategy.eui48.mac_cisco",
+"netaddr.strategy.eui48.mac_eui48",
+"netaddr.strategy.eui48.mac_pgsql",
+"netaddr.strategy.eui48.mac_unix",
+"netaddr.strategy.eui48.mac_unix_expanded"
+],
+"netaddr.strategy.eui48.bin_to_int": [
+"netaddr.strategy.bin_to_int"
+],
+"netaddr.strategy.eui48.bits_to_int": [
+"netaddr.strategy.bits_to_int"
+],
+"netaddr.strategy.eui48.int_to_bin": [
+"netaddr.strategy.int_to_bin"
+],
+"netaddr.strategy.eui48.int_to_bits": [
+"netaddr.strategy.int_to_bits"
+],
+"netaddr.strategy.eui48.int_to_packed": [],
+"netaddr.strategy.eui48.int_to_str": [
+"netaddr.strategy.eui48.int_to_words"
+],
+"netaddr.strategy.eui48.int_to_words": [
+"netaddr.strategy.int_to_words"
+],
+"netaddr.strategy.eui48.mac_bare": [],
+"netaddr.strategy.eui48.mac_cisco": [],
+"netaddr.strategy.eui48.mac_eui48": [],
+"netaddr.strategy.eui48.mac_pgsql": [],
+"netaddr.strategy.eui48.mac_unix": [],
+"netaddr.strategy.eui48.mac_unix_expanded": [],
+"netaddr.strategy.eui48.packed_to_int": [
+"<builtin>.enumerate",
+"<builtin>.list",
+"<builtin>.reversed"
+],
+"netaddr.strategy.eui48.str_to_int": [
+"<builtin>.TypeError",
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len"
+],
+"netaddr.strategy.eui48.valid_bin": [
+"netaddr.strategy.valid_bin"
+],
+"netaddr.strategy.eui48.valid_bits": [
+"netaddr.strategy.valid_bits"
+],
+"netaddr.strategy.eui48.valid_str": [
+"<builtin>.len"
+],
+"netaddr.strategy.eui48.valid_words": [
+"netaddr.strategy.valid_words"
+],
+"netaddr.strategy.eui48.words_to_int": [
+"netaddr.strategy.words_to_int"
+],
+"netaddr.strategy.eui64": [
+"netaddr.core",
+"netaddr.strategy",
+"netaddr.strategy.eui64.eui64_bare",
+"netaddr.strategy.eui64.eui64_base",
+"netaddr.strategy.eui64.eui64_cisco",
+"netaddr.strategy.eui64.eui64_unix",
+"netaddr.strategy.eui64.eui64_unix_expanded"
+],
+"netaddr.strategy.eui64._get_match_result": [],
+"netaddr.strategy.eui64.bin_to_int": [
+"netaddr.strategy.bin_to_int"
+],
+"netaddr.strategy.eui64.bits_to_int": [
+"netaddr.strategy.bits_to_int"
+],
+"netaddr.strategy.eui64.eui64_bare": [],
+"netaddr.strategy.eui64.eui64_base": [],
+"netaddr.strategy.eui64.eui64_cisco": [],
+"netaddr.strategy.eui64.eui64_unix": [],
+"netaddr.strategy.eui64.eui64_unix_expanded": [],
+"netaddr.strategy.eui64.int_to_bin": [
+"netaddr.strategy.int_to_bin"
+],
+"netaddr.strategy.eui64.int_to_bits": [
+"netaddr.strategy.int_to_bits"
+],
+"netaddr.strategy.eui64.int_to_packed": [
+"netaddr.strategy.eui64.int_to_words"
+],
+"netaddr.strategy.eui64.int_to_str": [
+"netaddr.strategy.eui64.int_to_words"
+],
+"netaddr.strategy.eui64.int_to_words": [
+"netaddr.strategy.int_to_words"
+],
+"netaddr.strategy.eui64.packed_to_int": [
+"<builtin>.enumerate",
+"<builtin>.list",
+"<builtin>.reversed"
+],
+"netaddr.strategy.eui64.str_to_int": [
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len",
+"netaddr.strategy.eui64._get_match_result"
+],
+"netaddr.strategy.eui64.valid_bin": [
+"netaddr.strategy.valid_bin"
+],
+"netaddr.strategy.eui64.valid_bits": [
+"netaddr.strategy.valid_bits"
+],
+"netaddr.strategy.eui64.valid_str": [
+"netaddr.strategy.eui64._get_match_result"
+],
+"netaddr.strategy.eui64.valid_words": [
+"netaddr.strategy.valid_words"
+],
+"netaddr.strategy.eui64.words_to_int": [
+"netaddr.strategy.words_to_int"
+],
+"netaddr.strategy.int_to_bin": [
+"<builtin>.IndexError",
+"<builtin>.bin",
+"<builtin>.len",
+"append",
+"reverse"
+],
+"netaddr.strategy.int_to_bits": [
+"<builtin>.ValueError",
+"<builtin>.isinstance",
+"append",
+"netaddr.strategy.int_to_words",
+"reverse"
+],
+"netaddr.strategy.int_to_words": [
+"<builtin>.IndexError",
+"<builtin>.hex",
+"<builtin>.range",
+"<builtin>.reversed",
+"<builtin>.tuple",
+"append"
+],
+"netaddr.strategy.ipv4": [
+"<builtin>.dict",
+"<builtin>.range",
+"netaddr.core",
+"netaddr.fbsocket",
+"netaddr.strategy"
+],
+"netaddr.strategy.ipv4.bin_to_int": [
+"netaddr.strategy.bin_to_int"
+],
+"netaddr.strategy.ipv4.bits_to_int": [
+"netaddr.strategy.bits_to_int"
+],
+"netaddr.strategy.ipv4.expand_partial_address": [
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.range",
+"<builtin>.str.split",
+"<builtin>.tuple",
+"append"
+],
+"netaddr.strategy.ipv4.int_to_arpa": [
+"netaddr.strategy.ipv4.int_to_words"
+],
+"netaddr.strategy.ipv4.int_to_bin": [
+"netaddr.strategy.int_to_bin"
+],
+"netaddr.strategy.ipv4.int_to_bits": [
+"<builtin>.globals",
+"netaddr.strategy.int_to_bits"
+],
+"netaddr.strategy.ipv4.int_to_packed": [],
+"netaddr.strategy.ipv4.int_to_str": [
+"<builtin>.ValueError"
+],
+"netaddr.strategy.ipv4.int_to_words": [
+"<builtin>.ValueError"
+],
+"netaddr.strategy.ipv4.str_to_int": [
+"<builtin>.any",
+"<builtin>.int",
+"<builtin>.len",
+"<builtin>.str.join",
+"<builtin>.str.split",
+"netaddr.fbsocket.inet_pton",
+"socket.inet_aton",
+"socket.inet_pton"
+],
+"netaddr.strategy.ipv4.valid_bin": [
+"netaddr.strategy.valid_bin"
+],
+"netaddr.strategy.ipv4.valid_bits": [
+"netaddr.strategy.valid_bits"
+],
+"netaddr.strategy.ipv4.valid_str": [
+"<builtin>.TypeError",
+"<builtin>.isinstance",
+"<builtin>.type",
+"netaddr.strategy.ipv4.str_to_int"
+],
+"netaddr.strategy.ipv4.valid_words": [
+"netaddr.strategy.valid_words"
+],
+"netaddr.strategy.ipv4.words_to_int": [
+"<builtin>.ValueError",
+"netaddr.strategy.ipv4.valid_words"
+],
+"netaddr.strategy.ipv6": [
+"<builtin>.Exception",
+"<builtin>.dict",
+"<builtin>.range",
+"netaddr.core",
+"netaddr.fbsocket",
+"netaddr.strategy",
+"netaddr.strategy.ipv6.ipv6_compact",
+"netaddr.strategy.ipv6.ipv6_full",
+"netaddr.strategy.ipv6.ipv6_verbose"
+],
+"netaddr.strategy.ipv6.bin_to_int": [
+"netaddr.strategy.bin_to_int"
+],
+"netaddr.strategy.ipv6.bits_to_int": [
+"netaddr.strategy.bits_to_int"
+],
+"netaddr.strategy.ipv6.int_to_arpa": [
+"<builtin>.list",
+"<builtin>.str.replace",
+"netaddr.strategy.ipv6.int_to_str"
+],
+"netaddr.strategy.ipv6.int_to_bin": [
+"netaddr.strategy.int_to_bin"
+],
+"netaddr.strategy.ipv6.int_to_bits": [
+"<builtin>.globals",
+"netaddr.strategy.int_to_bits"
+],
+"netaddr.strategy.ipv6.int_to_packed": [
+"netaddr.strategy.ipv6.int_to_words"
+],
+"netaddr.strategy.ipv6.int_to_str": [
+"<builtin>.ValueError",
+"<builtin>.list",
+"_socket.inet_ntop",
+"netaddr.fbsocket.inet_ntop",
+"netaddr.strategy.ipv6.int_to_packed"
+],
+"netaddr.strategy.ipv6.int_to_words": [
+"<builtin>.globals",
+"netaddr.strategy.int_to_words"
+],
+"netaddr.strategy.ipv6.ipv6_compact": [],
+"netaddr.strategy.ipv6.ipv6_full": [],
+"netaddr.strategy.ipv6.ipv6_verbose": [],
+"netaddr.strategy.ipv6.packed_to_int": [
+"<builtin>.enumerate",
+"<builtin>.list",
+"<builtin>.reversed"
+],
+"netaddr.strategy.ipv6.str_to_int": [
+"_socket.inet_pton",
+"netaddr.fbsocket.inet_pton",
+"netaddr.strategy.ipv6.packed_to_int"
+],
+"netaddr.strategy.ipv6.valid_bin": [
+"netaddr.strategy.valid_bin"
+],
+"netaddr.strategy.ipv6.valid_bits": [
+"netaddr.strategy.valid_bits"
+],
+"netaddr.strategy.ipv6.valid_str": [
+"<builtin>.TypeError",
+"<builtin>.isinstance",
+"<builtin>.type",
+"_socket.inet_pton",
+"netaddr.fbsocket.inet_pton"
+],
+"netaddr.strategy.ipv6.valid_words": [
+"netaddr.strategy.valid_words"
+],
+"netaddr.strategy.ipv6.words_to_int": [
+"netaddr.strategy.words_to_int"
+],
+"netaddr.strategy.valid_bin": [
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len"
+],
+"netaddr.strategy.valid_bits": [
+"<builtin>.int",
+"<builtin>.isinstance",
+"<builtin>.len"
+],
+"netaddr.strategy.valid_words": [
+"<builtin>.hasattr",
+"<builtin>.len"
+],
+"netaddr.strategy.words_to_int": [
+"<builtin>.ValueError",
+"<builtin>.enumerate",
+"<builtin>.reversed",
+"netaddr.strategy.valid_words"
+],
+"pop": [],
+"remove": [],
+"reverse": [],
+"socket.inet_aton": [],
+"socket.inet_pton": [],
+"sort": [],
+"struct.pack": [],
+"struct.unpack": [],
+"xml.sax.make_parser": []
+}

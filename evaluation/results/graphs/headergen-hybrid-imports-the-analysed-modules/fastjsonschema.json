@@ -1,0 +1,602 @@
+{
+"<builtin>.any": [],
+"<builtin>.dict": [],
+"<builtin>.enumerate": [],
+"<builtin>.exec": [],
+"<builtin>.float": [],
+"<builtin>.getattr": [],
+"<builtin>.int": [],
+"<builtin>.isinstance": [],
+"<builtin>.len": [],
+"<builtin>.list": [],
+"<builtin>.list.get": [],
+"<builtin>.list.items": [],
+"<builtin>.min": [],
+"<builtin>.print": [],
+"<builtin>.repr": [],
+"<builtin>.set": [],
+"<builtin>.str": [],
+"<builtin>.super": [],
+"<builtin>.tuple": [],
+"classmethod": [],
+"collections.OrderedDict": [],
+"collections.OrderedDict.items": [],
+"compile_to_code": [],
+"contextlib.contextmanager": [],
+"draft04.CodeGeneratorDraft04": [],
+"draft04.CodeGeneratorDraft04._enum_value_matches": [],
+"draft04.CodeGeneratorDraft04.create_variable_is_dict": [],
+"draft04.CodeGeneratorDraft04.create_variable_is_list": [],
+"draft04.CodeGeneratorDraft04.create_variable_with_length": [],
+"draft04.CodeGeneratorDraft04.exc": [],
+"draft04.CodeGeneratorDraft04.generate_func_code_block": [],
+"draft04.CodeGeneratorDraft04.generate_ref": [],
+"draft04.CodeGeneratorDraft04.l": [],
+"draft04.CodeGeneratorDraft04.run_generate_functions": [],
+"draft04.CodeGeneratorDraft04.trial_validation": [],
+"draft06.CodeGeneratorDraft06": [],
+"draft06.CodeGeneratorDraft06.exc": [],
+"draft06.CodeGeneratorDraft06.generate_func_code_block": [],
+"draft06.CodeGeneratorDraft06.l": [],
+"draft06.CodeGeneratorDraft06.trial_validation": [],
+"draft07.CodeGeneratorDraft07": [],
+"draft2019.CodeGeneratorDraft2019": [],
+"exceptions.JsonSchemaDefinitionException": [],
+"fastjsonschema": [],
+"fastjsonschema.__main__": [
+"fastjsonschema.__main__.main"
+],
+"fastjsonschema.__main__.main": [
+"<builtin>.len",
+"<builtin>.print",
+"compile_to_code",
+"json.loads",
+"sys.stdin.read"
+],
+"fastjsonschema._factory": [
+"draft04.CodeGeneratorDraft04",
+"draft06.CodeGeneratorDraft06",
+"draft07.CodeGeneratorDraft07",
+"draft2019.CodeGeneratorDraft2019",
+"fastjsonschema._get_code_generator_class",
+"ref_resolver.RefResolver.from_schema"
+],
+"fastjsonschema._get_code_generator_class": [
+"<builtin>.isinstance"
+],
+"fastjsonschema.compile": [
+"<builtin>.exec",
+"fastjsonschema._factory",
+"functools.partial",
+"functools.update_wrapper"
+],
+"fastjsonschema.compile_to_code": [
+"fastjsonschema._factory"
+],
+"fastjsonschema.draft04": [
+"re.compile"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04": [
+"property"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.__init__": [
+"<builtin>.super"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04._enum_value_matches": [
+"<builtin>.enumerate",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.repr",
+"fastjsonschema.draft04.CodeGeneratorDraft04._enum_value_matches"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04._generate_format": [
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l",
+"re.compile"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_additional_properties": [
+"<builtin>.list",
+"generator.CodeGenerator.create_variable_is_dict",
+"generator.CodeGenerator.create_variable_keys",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.generate_func_code_block",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_all_of": [
+"generator.CodeGenerator.generate_func_code_block"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_any_of": [
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.generate_func_code_block",
+"generator.CodeGenerator.l",
+"generator.CodeGenerator.trial_validation"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_dependencies": [
+"<builtin>.isinstance",
+"<builtin>.len",
+"generator.CodeGenerator.create_variable_is_dict",
+"generator.CodeGenerator.e",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.generate_func_code_block",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_enum": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"fastjsonschema.draft04.CodeGeneratorDraft04._enum_value_matches",
+"generator.CodeGenerator.e",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_format": [
+"<builtin>.isinstance",
+"fastjsonschema.draft04.CodeGeneratorDraft04._generate_format",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_items": [
+"<builtin>.enumerate",
+"<builtin>.isinstance",
+"<builtin>.len",
+"generator.CodeGenerator.create_variable_is_list",
+"generator.CodeGenerator.create_variable_with_length",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.generate_func_code_block",
+"generator.CodeGenerator.l",
+"generator.repr_default"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_max_items": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.create_variable_is_list",
+"generator.CodeGenerator.create_variable_with_length",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_max_length": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.create_variable_with_length",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_max_properties": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.create_variable_is_dict",
+"generator.CodeGenerator.create_variable_with_length",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_maximum": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_min_items": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.create_variable_is_list",
+"generator.CodeGenerator.create_variable_with_length",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_min_length": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.create_variable_with_length",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_min_properties": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.create_variable_is_dict",
+"generator.CodeGenerator.create_variable_with_length",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_minimum": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_multiple_of": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_not": [
+"<builtin>.len",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.generate_func_code_block",
+"generator.CodeGenerator.l",
+"generator.CodeGenerator.trial_validation"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_one_of": [
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.generate_func_code_block",
+"generator.CodeGenerator.l",
+"generator.CodeGenerator.trial_validation"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_pattern": [
+"<builtin>.repr",
+"generator.CodeGenerator.e",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l",
+"re.compile"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_pattern_properties": [
+"<builtin>.repr",
+"generator.CodeGenerator.create_variable_is_dict",
+"generator.CodeGenerator.create_variable_keys",
+"generator.CodeGenerator.generate_func_code_block",
+"generator.CodeGenerator.l",
+"re.compile"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_properties": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.create_variable_is_dict",
+"generator.CodeGenerator.create_variable_keys",
+"generator.CodeGenerator.e",
+"generator.CodeGenerator.generate_func_code_block",
+"generator.CodeGenerator.l",
+"generator.repr_default",
+"re.sub"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_required": [
+"<builtin>.any",
+"<builtin>.isinstance",
+"<builtin>.len",
+"<builtin>.set",
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.create_variable_is_dict",
+"generator.CodeGenerator.e",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l",
+"re.search"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_type": [
+"exceptions.JsonSchemaDefinitionException",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l",
+"generator.enforce_list"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.generate_unique_items": [
+"generator.CodeGenerator.create_variable_is_list",
+"generator.CodeGenerator.create_variable_with_length",
+"generator.CodeGenerator.exc",
+"generator.CodeGenerator.l"
+],
+"fastjsonschema.draft04.CodeGeneratorDraft04.global_state": [
+"<builtin>.super"
+],
+"fastjsonschema.draft06": [],
+"fastjsonschema.draft06.CodeGeneratorDraft06": [
+"<builtin>.dict"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.__init__": [
+"<builtin>.super"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06._generate_func_code_block": [
+"<builtin>.isinstance",
+"draft04.CodeGeneratorDraft04.generate_ref",
+"draft04.CodeGeneratorDraft04.run_generate_functions",
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_boolean_schema"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_boolean_schema": [
+"draft04.CodeGeneratorDraft04.exc",
+"draft04.CodeGeneratorDraft04.l"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_const": [
+"draft04.CodeGeneratorDraft04._enum_value_matches",
+"draft04.CodeGeneratorDraft04.exc",
+"draft04.CodeGeneratorDraft04.l"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_contains": [
+"draft04.CodeGeneratorDraft04.create_variable_is_list",
+"draft04.CodeGeneratorDraft04.exc",
+"draft04.CodeGeneratorDraft04.generate_func_code_block",
+"draft04.CodeGeneratorDraft04.l",
+"draft04.CodeGeneratorDraft04.trial_validation"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_exclusive_maximum": [
+"<builtin>.isinstance",
+"draft04.CodeGeneratorDraft04.exc",
+"draft04.CodeGeneratorDraft04.l",
+"exceptions.JsonSchemaDefinitionException"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_exclusive_minimum": [
+"<builtin>.isinstance",
+"draft04.CodeGeneratorDraft04.exc",
+"draft04.CodeGeneratorDraft04.l",
+"exceptions.JsonSchemaDefinitionException"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_maximum": [
+"<builtin>.isinstance",
+"draft04.CodeGeneratorDraft04.exc",
+"draft04.CodeGeneratorDraft04.l",
+"exceptions.JsonSchemaDefinitionException"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_minimum": [
+"<builtin>.isinstance",
+"draft04.CodeGeneratorDraft04.exc",
+"draft04.CodeGeneratorDraft04.l",
+"exceptions.JsonSchemaDefinitionException"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_property_names": [
+"<builtin>.len",
+"draft04.CodeGeneratorDraft04.create_variable_is_dict",
+"draft04.CodeGeneratorDraft04.create_variable_with_length",
+"draft04.CodeGeneratorDraft04.exc",
+"draft04.CodeGeneratorDraft04.generate_func_code_block",
+"draft04.CodeGeneratorDraft04.l",
+"draft04.CodeGeneratorDraft04.trial_validation"
+],
+"fastjsonschema.draft06.CodeGeneratorDraft06.generate_type": [
+"draft04.CodeGeneratorDraft04.exc",
+"draft04.CodeGeneratorDraft04.l",
+"exceptions.JsonSchemaDefinitionException",
+"generator.enforce_list"
+],
+"fastjsonschema.draft07": [],
+"fastjsonschema.draft07.CodeGeneratorDraft07": [
+"<builtin>.dict"
+],
+"fastjsonschema.draft07.CodeGeneratorDraft07.__init__": [
+"<builtin>.super"
+],
+"fastjsonschema.draft07.CodeGeneratorDraft07.generate_content_encoding": [
+"draft06.CodeGeneratorDraft06.exc",
+"draft06.CodeGeneratorDraft06.l"
+],
+"fastjsonschema.draft07.CodeGeneratorDraft07.generate_content_media_type": [
+"draft06.CodeGeneratorDraft06.exc",
+"draft06.CodeGeneratorDraft06.l"
+],
+"fastjsonschema.draft07.CodeGeneratorDraft07.generate_if_then_else": [
+"<builtin>.len",
+"draft06.CodeGeneratorDraft06.generate_func_code_block",
+"draft06.CodeGeneratorDraft06.l",
+"draft06.CodeGeneratorDraft06.trial_validation"
+],
+"fastjsonschema.draft2019": [],
+"fastjsonschema.draft2019.CodeGeneratorDraft2019": [
+"<builtin>.dict"
+],
+"fastjsonschema.exceptions": [
+"re.compile"
+],
+"fastjsonschema.exceptions.JsonSchemaValueException": [
+"property"
+],
+"fastjsonschema.exceptions.JsonSchemaValueException.__init__": [
+"<builtin>.super"
+],
+"fastjsonschema.exceptions.JsonSchemaValueException.path": [],
+"fastjsonschema.exceptions.JsonSchemaValueException.rule_definition": [],
+"fastjsonschema.exceptions.JsonSchemaValuesException.__init__": [
+"<builtin>.super"
+],
+"fastjsonschema.generator": [],
+"fastjsonschema.generator.CodeGenerator": [
+"contextlib.contextmanager",
+"indent.indent",
+"property"
+],
+"fastjsonschema.generator.CodeGenerator.__init__": [
+"<builtin>.set",
+"collections.OrderedDict",
+"ref_resolver.RefResolver.from_schema"
+],
+"fastjsonschema.generator.CodeGenerator._expand_refs": [
+"<builtin>.isinstance",
+"fastjsonschema.generator.CodeGenerator._expand_refs"
+],
+"fastjsonschema.generator.CodeGenerator._generate_func_code": [
+"fastjsonschema.generator.CodeGenerator.generate_func_code"
+],
+"fastjsonschema.generator.CodeGenerator._generate_func_code_block": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"fastjsonschema.generator.CodeGenerator.generate_ref",
+"fastjsonschema.generator.CodeGenerator.run_generate_functions"
+],
+"fastjsonschema.generator.CodeGenerator._is_variable_in_scope": [
+"<builtin>.len",
+"<builtin>.tuple"
+],
+"fastjsonschema.generator.CodeGenerator.create_variable_is_dict": [
+"<builtin>.tuple",
+"fastjsonschema.generator.CodeGenerator._is_variable_in_scope",
+"fastjsonschema.generator.CodeGenerator.l"
+],
+"fastjsonschema.generator.CodeGenerator.create_variable_is_list": [
+"<builtin>.tuple",
+"fastjsonschema.generator.CodeGenerator._is_variable_in_scope",
+"fastjsonschema.generator.CodeGenerator.l"
+],
+"fastjsonschema.generator.CodeGenerator.create_variable_keys": [
+"<builtin>.tuple",
+"fastjsonschema.generator.CodeGenerator._is_variable_in_scope",
+"fastjsonschema.generator.CodeGenerator.l"
+],
+"fastjsonschema.generator.CodeGenerator.create_variable_with_length": [
+"<builtin>.tuple",
+"fastjsonschema.generator.CodeGenerator._is_variable_in_scope",
+"fastjsonschema.generator.CodeGenerator.l"
+],
+"fastjsonschema.generator.CodeGenerator.e": [
+"<builtin>.isinstance",
+"<builtin>.str"
+],
+"fastjsonschema.generator.CodeGenerator.exc": [
+"<builtin>.isinstance",
+"<builtin>.list.get",
+"<builtin>.repr",
+"fastjsonschema.generator.CodeGenerator._expand_refs",
+"fastjsonschema.generator.CodeGenerator.e",
+"fastjsonschema.generator.CodeGenerator.l",
+"fastjsonschema.generator.repr_default"
+],
+"fastjsonschema.generator.CodeGenerator.func_code": [
+"fastjsonschema.generator.CodeGenerator._generate_func_code"
+],
+"fastjsonschema.generator.CodeGenerator.generate_func_code": [
+"fastjsonschema.generator.CodeGenerator.generate_validation_function",
+"fastjsonschema.generator.CodeGenerator.l"
+],
+"fastjsonschema.generator.CodeGenerator.generate_func_code_block": [
+"fastjsonschema.generator.CodeGenerator._generate_func_code_block"
+],
+"fastjsonschema.generator.CodeGenerator.generate_ref": [
+"fastjsonschema.generator.CodeGenerator.l"
+],
+"fastjsonschema.generator.CodeGenerator.generate_validation_function": [
+"fastjsonschema.generator.CodeGenerator.generate_func_code_block",
+"fastjsonschema.generator.CodeGenerator.l"
+],
+"fastjsonschema.generator.CodeGenerator.global_state": [
+"<builtin>.dict",
+"fastjsonschema.generator.CodeGenerator._generate_func_code"
+],
+"fastjsonschema.generator.CodeGenerator.global_state_code": [
+"fastjsonschema.generator.CodeGenerator._generate_func_code"
+],
+"fastjsonschema.generator.CodeGenerator.l": [
+"<builtin>.dict"
+],
+"fastjsonschema.generator.CodeGenerator.run_generate_functions": [
+"collections.OrderedDict.items"
+],
+"fastjsonschema.generator.CodeGenerator.trial_validation": [],
+"fastjsonschema.generator.enforce_list": [
+"<builtin>.isinstance"
+],
+"fastjsonschema.generator.repr_default": [
+"<builtin>.float",
+"<builtin>.isinstance",
+"<builtin>.list.items",
+"<builtin>.repr",
+"<builtin>.str",
+"fastjsonschema.generator.repr_default"
+],
+"fastjsonschema.generator.repr_regex": [
+"<builtin>.getattr"
+],
+"fastjsonschema.generator.serialize_regexes": [
+"<builtin>.repr",
+"fastjsonschema.generator.repr_regex"
+],
+"fastjsonschema.indent": [],
+"fastjsonschema.indent.Indent.__enter__": [],
+"fastjsonschema.indent.Indent.__exit__": [],
+"fastjsonschema.indent.Indent.__init__": [],
+"fastjsonschema.indent.indent": [],
+"fastjsonschema.indent.indent.wrapper": [
+"fastjsonschema.indent.Indent.__init__"
+],
+"fastjsonschema.ref_resolver": [
+"<builtin>.min",
+"sys.getrecursionlimit"
+],
+"fastjsonschema.ref_resolver.RefResolver": [
+"classmethod",
+"contextlib.contextmanager"
+],
+"fastjsonschema.ref_resolver.RefResolver.__init__": [
+"<builtin>.set",
+"fastjsonschema.ref_resolver.RefResolver.walk",
+"fastjsonschema.ref_resolver.normalize"
+],
+"fastjsonschema.ref_resolver.RefResolver._ensure_walked": [
+"fastjsonschema.ref_resolver.RefResolver.walk",
+"fastjsonschema.ref_resolver.normalize"
+],
+"fastjsonschema.ref_resolver.RefResolver.from_schema": [
+"<builtin>.isinstance",
+"fastjsonschema.ref_resolver.RefResolver.__init__",
+"fastjsonschema.ref_resolver.get_id"
+],
+"fastjsonschema.ref_resolver.RefResolver.get_scope_name": [
+"re.sub",
+"urllib.parse.unquote"
+],
+"fastjsonschema.ref_resolver.RefResolver.get_uri": [
+"fastjsonschema.ref_resolver.normalize"
+],
+"fastjsonschema.ref_resolver.RefResolver.in_scope": [
+"urllib.parse.urljoin"
+],
+"fastjsonschema.ref_resolver.RefResolver.resolving": [
+"exceptions.JsonSchemaDefinitionException",
+"fastjsonschema.ref_resolver.RefResolver._ensure_walked",
+"fastjsonschema.ref_resolver.RefResolver.in_scope",
+"fastjsonschema.ref_resolver.normalize",
+"fastjsonschema.ref_resolver.resolve_path",
+"fastjsonschema.ref_resolver.resolve_remote",
+"urllib.parse.urldefrag",
+"urllib.parse.urljoin"
+],
+"fastjsonschema.ref_resolver.RefResolver.walk": [
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"fastjsonschema.ref_resolver.RefResolver.in_scope",
+"fastjsonschema.ref_resolver.RefResolver.walk",
+"fastjsonschema.ref_resolver.get_id",
+"fastjsonschema.ref_resolver.normalize",
+"urllib.parse.urljoin"
+],
+"fastjsonschema.ref_resolver.get_id": [],
+"fastjsonschema.ref_resolver.normalize": [
+"urllib.parse.urlsplit"
+],
+"fastjsonschema.ref_resolver.resolve_path": [
+"<builtin>.int",
+"<builtin>.isinstance",
+"exceptions.JsonSchemaDefinitionException",
+"urllib.parse.unquote"
+],
+"fastjsonschema.ref_resolver.resolve_remote": [
+"exceptions.JsonSchemaDefinitionException",
+"json.loads",
+"urllib.parse.urlsplit",
+"urllib.request.urlopen"
+],
+"fastjsonschema.validate": [
+"fastjsonschema.compile",
+"functools.update_wrapper"
+],
+"fastjsonschema.version": [],
+"functools.partial": [],
+"functools.update_wrapper": [],
+"generator.CodeGenerator.create_variable_is_dict": [],
+"generator.CodeGenerator.create_variable_is_list": [],
+"generator.CodeGenerator.create_variable_keys": [],
+"generator.CodeGenerator.create_variable_with_length": [],
+"generator.CodeGenerator.e": [],
+"generator.CodeGenerator.exc": [],
+"generator.CodeGenerator.generate_func_code_block": [],
+"generator.CodeGenerator.l": [],
+"generator.CodeGenerator.trial_validation": [],
+"generator.enforce_list": [],
+"generator.repr_default": [],
+"indent.indent": [],
+"json.loads": [],
+"property": [],
+"re.compile": [],
+"re.search": [],
+"re.sub": [],
+"ref_resolver.RefResolver.from_schema": [],
+"sys.getrecursionlimit": [],
+"sys.stdin.read": [],
+"urllib.parse.unquote": [],
+"urllib.parse.urldefrag": [],
+"urllib.parse.urljoin": [],
+"urllib.parse.urlsplit": [],
+"urllib.request.urlopen": []
+}

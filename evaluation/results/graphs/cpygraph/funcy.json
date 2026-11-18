@@ -1,0 +1,85 @@
+{
+"funcy": [
+"funcy.seqs.lcat"
+],
+"funcy._inspect": [
+"<builtin>.dict.items",
+"<builtin>.str.split"
+],
+"funcy.calc": [
+"funcy.calc._make_lookuper"
+],
+"funcy.colls": [
+"<builtin>.dict.items"
+],
+"funcy.debug": [
+"funcy.debug.log_durations.__init__",
+"funcy.debug.log_errors.__init__",
+"funcy.decorators.decorator"
+],
+"funcy.debug.<lambda1>": [
+"funcy.debug.<lambda1>",
+"funcy.debug.<lambda2>",
+"funcy.debug.<lambda3>",
+"funcy.debug.<lambda4>",
+"funcy.debug.format_time"
+],
+"funcy.debug.<lambda2>": [
+"funcy.debug.<lambda1>",
+"funcy.debug.<lambda2>",
+"funcy.debug.<lambda3>",
+"funcy.debug.<lambda4>",
+"funcy.debug.format_time"
+],
+"funcy.debug.<lambda3>": [
+"funcy.debug.<lambda1>",
+"funcy.debug.<lambda2>",
+"funcy.debug.<lambda3>",
+"funcy.debug.<lambda4>",
+"funcy.debug.format_time"
+],
+"funcy.debug.<lambda4>": [
+"funcy.debug.<lambda1>",
+"funcy.debug.<lambda2>",
+"funcy.debug.<lambda3>",
+"funcy.debug.<lambda4>",
+"funcy.debug.format_time"
+],
+"funcy.debug.format_time": [
+"funcy.debug.<lambda1>",
+"funcy.debug.<lambda2>",
+"funcy.debug.<lambda3>",
+"funcy.debug.<lambda4>",
+"funcy.debug.format_time"
+],
+"funcy.debug.log_durations.__init__": [
+"funcy.debug.<lambda1>",
+"funcy.debug.<lambda2>",
+"funcy.debug.<lambda3>",
+"funcy.debug.<lambda4>",
+"funcy.debug.LabeledContextDecorator.__init__",
+"funcy.debug.format_time"
+],
+"funcy.debug.log_errors.__init__": [
+"funcy.debug.LabeledContextDecorator.__init__"
+],
+"funcy.decorators.decorator": [
+"funcy.decorators.has_1pos_and_kwonly",
+"funcy.decorators.has_single_arg",
+"funcy.decorators.make_decorator",
+"funcy.decorators.wraps"
+],
+"funcy.decorators.has_single_arg": [
+"<builtin>.len"
+],
+"funcy.decorators.make_decorator": [
+"funcy.decorators.wraps"
+],
+"funcy.flow": [
+"funcy.decorators.decorator",
+"funcy.flow.once_per"
+],
+"funcy.types": [
+"funcy.types.isa"
+]
+}

@@ -1,0 +1,67 @@
+{
+"subbrute.subbrute": [
+"subbrute.subbrute.check_open",
+"subbrute.subbrute.error",
+"subbrute.subbrute.extract_subdomains",
+"subbrute.subbrute.print_target"
+],
+"subbrute.subbrute.check_open": [
+"subbrute.subbrute.error"
+],
+"subbrute.subbrute.lookup.__init__": [
+"subbrute.subbrute.signal_init"
+],
+"subbrute.subbrute.lookup.check": [
+"subbrute.subbrute.error",
+"subbrute.subbrute.trace"
+],
+"subbrute.subbrute.lookup.get_ns_blocking": [
+"subbrute.subbrute.trace"
+],
+"subbrute.subbrute.lookup.run": [
+"subbrute.subbrute.trace"
+],
+"subbrute.subbrute.print_target": [
+"subbrute.subbrute.run"
+],
+"subbrute.subbrute.run": [
+"subbrute.subbrute.check_open",
+"subbrute.subbrute.killproc",
+"subbrute.subbrute.lookup.__init__",
+"subbrute.subbrute.trace",
+"subbrute.subbrute.verify_nameservers.__init__",
+"subbrute.subbrute.verify_nameservers.end"
+],
+"subbrute.subbrute.verify_nameservers.__init__": [
+"subbrute.subbrute.signal_init"
+],
+"subbrute.subbrute.verify_nameservers.add_nameserver": [
+"subbrute.subbrute.trace"
+],
+"subbrute.subbrute.verify_nameservers.find_wildcards": [
+"subbrute.subbrute.trace"
+],
+"subbrute.subbrute.verify_nameservers.verify": [
+"subbrute.subbrute.trace"
+],
+"sublist3r": [
+"sublist3r.interactive"
+],
+"sublist3r.enumratorBaseThreaded.__init__": [
+"sublist3r.enumratorBase.__init__"
+],
+"sublist3r.interactive": [
+"sublist3r.banner",
+"sublist3r.main",
+"sublist3r.no_color",
+"sublist3r.parse_args"
+],
+"sublist3r.main": [
+"sublist3r.portscan.__init__",
+"sublist3r.portscan.run",
+"sublist3r.write_file"
+],
+"sublist3r.parser_error": [
+"sublist3r.banner"
+]
+}

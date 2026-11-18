@@ -1,0 +1,616 @@
+{
+"bottle": [
+"bottle._cli_patch",
+"bottle.main",
+"bottle.make_default_app_wrapper"
+],
+"bottle.<lambda1>": [
+"bottle.touni"
+],
+"bottle.AiohttpServer.run": [
+"bottle.AiohttpServer.get_event_loop"
+],
+"bottle.AppEngineServer.run": [
+"bottle.depr"
+],
+"bottle.AppStack.default": [
+"bottle.AppStack.push"
+],
+"bottle.BaseRequest.POST": [
+"bottle.BaseRequest._get_body_string",
+"bottle._MultipartParser.parse",
+"bottle._MultipartPart.is_buffered",
+"bottle._parse_http_header",
+"bottle._parse_qsl",
+"bottle.tob",
+"bottle.touni"
+],
+"bottle.BaseRequest._iter_chunked": [
+"bottle.tob",
+"bottle.touni"
+],
+"bottle.BaseRequest.auth": [
+"bottle.parse_auth"
+],
+"bottle.BaseRequest.get_cookie": [
+"bottle._lscmp",
+"bottle.tob"
+],
+"bottle.BaseRequest.json": [
+"bottle.<lambda1>",
+"bottle.BaseRequest._get_body_string"
+],
+"bottle.BaseRequest.path_shift": [
+"bottle.path_shift"
+],
+"bottle.BaseRequest.query": [
+"bottle._parse_qsl"
+],
+"bottle.BaseResponse.<lambda1>": [
+"bottle.parse_date"
+],
+"bottle.BaseResponse.<lambda2>": [
+"bottle.http_date"
+],
+"bottle.BaseResponse.__contains__": [
+"bottle._hkey"
+],
+"bottle.BaseResponse.__delitem__": [
+"bottle._hkey"
+],
+"bottle.BaseResponse.__getitem__": [
+"bottle._hkey"
+],
+"bottle.BaseResponse.__init__": [
+"bottle.BaseResponse.add_header"
+],
+"bottle.BaseResponse.__setitem__": [
+"bottle._hkey",
+"bottle._hval"
+],
+"bottle.BaseResponse._wsgi_status_line": [
+"bottle.FormsDict.decode"
+],
+"bottle.BaseResponse.add_header": [
+"bottle.ConfigDict.setdefault",
+"bottle._hkey",
+"bottle._hval"
+],
+"bottle.BaseResponse.copy": [
+"bottle.ConfigDict.update"
+],
+"bottle.BaseResponse.delete_cookie": [
+"bottle.BaseResponse.set_cookie"
+],
+"bottle.BaseResponse.get_header": [
+"bottle._hkey"
+],
+"bottle.BaseResponse.headerlist": [
+"bottle.FormsDict.decode",
+"bottle._hval"
+],
+"bottle.BaseResponse.set_cookie": [
+"bottle.ConfigDict.setdefault",
+"bottle.depr",
+"bottle.http_date",
+"bottle.tob",
+"bottle.touni"
+],
+"bottle.BaseResponse.set_header": [
+"bottle._hkey",
+"bottle._hval"
+],
+"bottle.BaseTemplate.__init__": [
+"bottle.BaseTemplate.prepare",
+"bottle.BaseTemplate.search",
+"bottle.ConfigDict.update"
+],
+"bottle.BaseTemplate.search": [
+"bottle.depr"
+],
+"bottle.Bottle.__call__": [
+"bottle.Bottle.wsgi"
+],
+"bottle.Bottle.__enter__": [
+"bottle.AppStack.push"
+],
+"bottle.Bottle.__init__": [
+"bottle.Bottle.install",
+"bottle.ConfigDict._add_change_listener",
+"bottle.ConfigDict._make_overlay",
+"bottle.ConfigDict.update",
+"bottle.depr"
+],
+"bottle.Bottle._cast": [
+"bottle.Bottle._cast"
+],
+"bottle.Bottle._global_config": [
+"bottle.ConfigDict.meta_set"
+],
+"bottle.Bottle._handle": [
+"bottle.Bottle.trigger_hook",
+"bottle.FormsDict.decode",
+"bottle.HTTPResponse.apply",
+"bottle.Route.call",
+"bottle.Route.reset",
+"bottle.depr"
+],
+"bottle.Bottle._mount_app": [
+"bottle.Bottle._mount_wsgi",
+"bottle.Bottle.add_route",
+"bottle.depr"
+],
+"bottle.Bottle._mount_wsgi": [
+"bottle.Bottle.route",
+"bottle.ConfigDict.setdefault"
+],
+"bottle.Bottle._mount_wsgi.mountpoint_wrapper": [
+"bottle.BaseRequest.path_shift"
+],
+"bottle.Bottle._mount_wsgi.mountpoint_wrapper.start_response": [
+"bottle.FormsDict.decode",
+"bottle._raise"
+],
+"bottle.Bottle.add_route": [
+"bottle.Router.add"
+],
+"bottle.Bottle.default_error_handler": [
+"bottle.template",
+"bottle.tob"
+],
+"bottle.Bottle.delete": [
+"bottle.Bottle.route"
+],
+"bottle.Bottle.error": [
+"bottle.Bottle.error.decorator"
+],
+"bottle.Bottle.error.decorator": [
+"bottle.load"
+],
+"bottle.Bottle.get": [
+"bottle.Bottle.route"
+],
+"bottle.Bottle.get_url": [
+"bottle.Router.build"
+],
+"bottle.Bottle.hook.decorator": [
+"bottle.Bottle.add_hook"
+],
+"bottle.Bottle.install": [
+"bottle.<lambda2>",
+"bottle.Bottle.reset",
+"bottle.JSONPlugin.setup",
+"bottle.TemplatePlugin.setup"
+],
+"bottle.Bottle.merge": [
+"bottle.Bottle.add_route"
+],
+"bottle.Bottle.mount": [
+"bottle.Bottle._mount_app",
+"bottle.Bottle._mount_wsgi"
+],
+"bottle.Bottle.patch": [
+"bottle.Bottle.route"
+],
+"bottle.Bottle.post": [
+"bottle.Bottle.route"
+],
+"bottle.Bottle.put": [
+"bottle.Bottle.route"
+],
+"bottle.Bottle.reset": [
+"bottle.Bottle.trigger_hook"
+],
+"bottle.Bottle.route": [
+"bottle.<lambda2>",
+"bottle.Bottle.route.decorator",
+"bottle.makelist"
+],
+"bottle.Bottle.route.decorator": [
+"bottle.Bottle.add_route",
+"bottle.load",
+"bottle.makelist",
+"bottle.yieldroutes"
+],
+"bottle.Bottle.run": [
+"bottle.run"
+],
+"bottle.Bottle.trigger_hook": [
+"bottle.make_default_app_wrapper.wrapper"
+],
+"bottle.Bottle.uninstall": [
+"bottle.Bottle.reset"
+],
+"bottle.Bottle.wsgi": [
+"bottle.BaseResponse._wsgi_status_line",
+"bottle.Bottle._cast",
+"bottle.Bottle._handle",
+"bottle.html_escape",
+"bottle.tob"
+],
+"bottle.CGIServer.run.fixed_environ": [
+"bottle.ConfigDict.setdefault"
+],
+"bottle.CheetahTemplate.render": [
+"bottle.ConfigDict.update"
+],
+"bottle.CherryPyServer.run": [
+"bottle.depr"
+],
+"bottle.ConfigDict.__delitem__": [
+"bottle.ConfigDict._delete_virtual",
+"bottle.ConfigDict._iter_overlays",
+"bottle.ConfigDict._on_change",
+"bottle.ConfigDict._set_virtual"
+],
+"bottle.ConfigDict.__setitem__": [
+"bottle.ConfigDict._iter_overlays",
+"bottle.ConfigDict._on_change",
+"bottle.ConfigDict._set_virtual",
+"bottle.ConfigDict.meta_get"
+],
+"bottle.ConfigDict._define": [
+"bottle.ConfigDict.meta_set",
+"bottle.ConfigDict.setdefault"
+],
+"bottle.ConfigDict._delete_virtual": [
+"bottle.ConfigDict._delete_virtual",
+"bottle.ConfigDict._iter_overlays",
+"bottle.ConfigDict._on_change"
+],
+"bottle.ConfigDict._make_overlay": [
+"bottle.ConfigDict._set_virtual"
+],
+"bottle.ConfigDict._set_virtual": [
+"bottle.ConfigDict._iter_overlays",
+"bottle.ConfigDict._on_change",
+"bottle.ConfigDict._set_virtual",
+"bottle.Router.add"
+],
+"bottle.ConfigDict.load_config": [
+"bottle.ConfigDict.setdefault"
+],
+"bottle.ConfigDict.load_dict": [
+"bottle.ConfigDict.load_dict"
+],
+"bottle.ConfigDict.load_module": [
+"bottle.ConfigDict.load_dict",
+"bottle.ConfigDict.update",
+"bottle.load"
+],
+"bottle.ConfigDict.meta_set": [
+"bottle.ConfigDict.setdefault"
+],
+"bottle.DieselServer.run": [
+"bottle.depr"
+],
+"bottle.FapwsServer.run": [
+"bottle._stderr",
+"bottle.depr"
+],
+"bottle.FileCheckerThread.run": [
+"bottle.FileCheckerThread.run.<lambda1>"
+],
+"bottle.FileUpload.filename": [
+"bottle.FormsDict.decode"
+],
+"bottle.FileUpload.save": [
+"bottle.FileUpload._copy_file"
+],
+"bottle.FlupFCGIServer.run": [
+"bottle.ConfigDict.setdefault"
+],
+"bottle.FormsDict.__getattr__": [
+"bottle.FormsDict.getunicode"
+],
+"bottle.FormsDict._fix": [
+"bottle.FormsDict.decode"
+],
+"bottle.FormsDict.decode": [
+"bottle.FormsDict._fix",
+"bottle.MultiDict.allitems",
+"bottle.MultiDict.append"
+],
+"bottle.FormsDict.getunicode": [
+"bottle.FormsDict._fix"
+],
+"bottle.GunicornServer.run": [
+"bottle.ConfigDict.update"
+],
+"bottle.HeaderDict.__contains__": [
+"bottle._hkey"
+],
+"bottle.HeaderDict.__delitem__": [
+"bottle._hkey"
+],
+"bottle.HeaderDict.__getitem__": [
+"bottle._hkey"
+],
+"bottle.HeaderDict.__setitem__": [
+"bottle._hkey",
+"bottle._hval"
+],
+"bottle.HeaderDict.append": [
+"bottle.ConfigDict.setdefault",
+"bottle._hkey",
+"bottle._hval"
+],
+"bottle.HeaderDict.filter": [
+"bottle._hkey"
+],
+"bottle.HeaderDict.get": [
+"bottle.MultiDict.get",
+"bottle._hkey"
+],
+"bottle.HeaderDict.getall": [
+"bottle._hkey"
+],
+"bottle.HeaderDict.replace": [
+"bottle._hkey",
+"bottle._hval"
+],
+"bottle.JSONPlugin.setup": [
+"bottle.ConfigDict._define"
+],
+"bottle.Jinja2Template.loader": [
+"bottle.BaseTemplate.search",
+"bottle.FormsDict.decode"
+],
+"bottle.Jinja2Template.prepare": [
+"bottle.ConfigDict.update"
+],
+"bottle.Jinja2Template.render": [
+"bottle.ConfigDict.update"
+],
+"bottle.LocalRequest": [
+"bottle._local_property"
+],
+"bottle.LocalResponse": [
+"bottle._local_property"
+],
+"bottle.MakoTemplate.prepare": [
+"bottle.ConfigDict.setdefault",
+"bottle.ConfigDict.update"
+],
+"bottle.MakoTemplate.render": [
+"bottle.ConfigDict.update"
+],
+"bottle.MultiDict.__setitem__": [
+"bottle.MultiDict.append"
+],
+"bottle.MultiDict.append": [
+"bottle.ConfigDict.setdefault"
+],
+"bottle.MultipartError.__init__": [
+"bottle.HTTPError.__init__"
+],
+"bottle.ResourceManager.open": [
+"bottle.ResourceManager.lookup"
+],
+"bottle.Route.__init__": [
+"bottle.ConfigDict._make_overlay",
+"bottle.ConfigDict.load_dict"
+],
+"bottle.Route.__repr__": [
+"bottle.Route.get_undecorated_callback"
+],
+"bottle.Route._make_callback": [
+"bottle.Route._make_callback",
+"bottle.Route.all_plugins",
+"bottle.update_wrapper"
+],
+"bottle.Route.all_plugins": [
+"bottle.Router.add"
+],
+"bottle.Route.call": [
+"bottle.Route._make_callback"
+],
+"bottle.Route.get_callback_args": [
+"bottle.Route.get_undecorated_callback",
+"bottle.getargspec"
+],
+"bottle.Route.get_config": [
+"bottle.depr"
+],
+"bottle.Router.__init__.<lambda1>": [
+"bottle._re_flatten"
+],
+"bottle.Router._itertokens": [
+"bottle.depr"
+],
+"bottle.Router.add": [
+"bottle.ConfigDict.setdefault",
+"bottle.Router._compile",
+"bottle.Router._itertokens",
+"bottle.Router.build",
+"bottle._re_flatten"
+],
+"bottle.Router.match": [
+"bottle.Router.add"
+],
+"bottle.SimpleTemplate._include": [
+"bottle.ConfigDict.update",
+"bottle.SimpleTemplate.execute"
+],
+"bottle.SimpleTemplate.code": [
+"bottle.StplParser.translate",
+"bottle.depr",
+"bottle.touni"
+],
+"bottle.SimpleTemplate.execute": [
+"bottle.ConfigDict.update",
+"bottle.SimpleTemplate._include"
+],
+"bottle.SimpleTemplate.prepare.<lambda1>": [
+"bottle.touni"
+],
+"bottle.SimpleTemplate.prepare.<lambda2>": [
+"bottle.touni"
+],
+"bottle.SimpleTemplate.render": [
+"bottle.ConfigDict.update",
+"bottle.SimpleTemplate.execute"
+],
+"bottle.StplParser.__init__": [
+"bottle.StplParser.set_syntax",
+"bottle.touni"
+],
+"bottle.StplParser.flush_text": [
+"bottle.StplParser.process_inline",
+"bottle.StplParser.write_code"
+],
+"bottle.StplParser.read_code": [
+"bottle.BaseTemplate.search",
+"bottle.StplParser.write_code"
+],
+"bottle.StplParser.translate": [
+"bottle.BaseTemplate.search",
+"bottle.StplParser.flush_text",
+"bottle.StplParser.read_code"
+],
+"bottle.TemplatePlugin.apply": [
+"bottle.view",
+"bottle.view.decorator"
+],
+"bottle.WSGIHeaderDict.__contains__": [
+"bottle.WSGIHeaderDict._ekey"
+],
+"bottle.WSGIHeaderDict.__getitem__": [
+"bottle.FormsDict.decode",
+"bottle.WSGIHeaderDict._ekey"
+],
+"bottle.WSGIHeaderDict.__iter__": [
+"bottle._hkey"
+],
+"bottle.WSGIHeaderDict.__len__": [
+"bottle.WSGIHeaderDict.keys"
+],
+"bottle.WSGIHeaderDict.raw": [
+"bottle.WSGIHeaderDict._ekey"
+],
+"bottle.WSGIRefServer.run.FixedHandler.log_request": [
+"bottle.WSGIRefServer.run.FixedHandler.log_request"
+],
+"bottle._ImportRedirect.__init__": [
+"bottle.ConfigDict.setdefault",
+"bottle.ConfigDict.update"
+],
+"bottle._ImportRedirect.create_module": [
+"bottle._ImportRedirect.load_module"
+],
+"bottle._MultipartParser.parse": [
+"bottle._MultipartParser._lineiter",
+"bottle._MultipartPart.close",
+"bottle._MultipartPart.feed",
+"bottle._MultipartPart.finish",
+"bottle._MultipartPart.is_buffered",
+"bottle.tob"
+],
+"bottle._MultipartPart.feed": [
+"bottle._MultipartPart.write_body",
+"bottle._MultipartPart.write_header"
+],
+"bottle._MultipartPart.finish_header": [
+"bottle.HeaderDict.get",
+"bottle._parse_http_header"
+],
+"bottle._MultipartPart.value": [
+"bottle.FormsDict.decode"
+],
+"bottle._MultipartPart.write_header": [
+"bottle.FormsDict.decode",
+"bottle._MultipartPart.finish_header"
+],
+"bottle._cli_patch": [
+"bottle._cli_parse"
+],
+"bottle._closeiter.__init__": [
+"bottle.makelist"
+],
+"bottle._hval": [
+"bottle.tob",
+"bottle.touni"
+],
+"bottle._main": [
+"bottle.<lambda1>",
+"bottle.ConfigDict.load_config",
+"bottle.ConfigDict.load_dict",
+"bottle.ConfigDict.setdefault",
+"bottle.ConfigDict.update",
+"bottle._cli_parse",
+"bottle._main._cli_error",
+"bottle.run"
+],
+"bottle._main._cli_error": [
+"bottle._stderr"
+],
+"bottle.cached_property.__init__": [
+"bottle.update_wrapper"
+],
+"bottle.cookie_decode": [
+"bottle._lscmp",
+"bottle.cookie_is_encoded",
+"bottle.depr",
+"bottle.tob"
+],
+"bottle.cookie_encode": [
+"bottle.depr",
+"bottle.tob"
+],
+"bottle.cookie_is_encoded": [
+"bottle.depr",
+"bottle.tob"
+],
+"bottle.getargspec": [
+"bottle.makelist"
+],
+"bottle.html_quote": [
+"bottle.html_escape"
+],
+"bottle.load_app": [
+"bottle.<lambda2>",
+"bottle.AppStack.push",
+"bottle.load"
+],
+"bottle.main": [
+"bottle._main"
+],
+"bottle.parse_auth": [
+"bottle.tob",
+"bottle.touni"
+],
+"bottle.redirect": [
+"bottle.BaseRequest.get",
+"bottle.BaseResponse.copy",
+"bottle.BaseResponse.set_header"
+],
+"bottle.run": [
+"bottle.<lambda2>",
+"bottle.Bottle.install",
+"bottle.ConfigDict.update",
+"bottle._stderr",
+"bottle.debug",
+"bottle.load",
+"bottle.load_app"
+],
+"bottle.static_file": [
+"bottle._rangeiter",
+"bottle.parse_date",
+"bottle.parse_range_header",
+"bottle.tob"
+],
+"bottle.template": [
+"bottle.ConfigDict.update",
+"bottle.abort"
+],
+"bottle.touni": [
+"bottle.FormsDict.decode"
+],
+"bottle.view.decorator.wrapper": [
+"bottle.ConfigDict.update",
+"bottle.template"
+],
+"bottle.yieldroutes": [
+"bottle.getargspec"
+]
+}
