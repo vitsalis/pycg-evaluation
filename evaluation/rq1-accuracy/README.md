@@ -51,9 +51,8 @@ depend on how a tool models code that it does not analyse, so the outside
 columns compare less well. The first measurements of batches 2 to 4 were
 scored before the table of names of one function existed. The traces of
 DyPyBench are a small and biased sample of the calls of each project, and
-a trace gives recall only. On the traces, the rows of JARVIS, CPyGraph and
-PyAnalyzer are not run yet; HeaderGen does not run there (it imports the
-analysed code).
+a trace gives recall only. HeaderGen does not run on the traces (it
+imports the analysed code, and DyPyBench's projects are not scanned).
 
 Reference: [`../README.md`](../README.md), sections "RQ1: accuracy", "How
 the benchmark grew", "How the scores are computed", "Trace recall" and

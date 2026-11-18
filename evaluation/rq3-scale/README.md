@@ -33,10 +33,11 @@ ISSTA 2026), each at the parent commit of the first target of its dataset. The
 fetched and unpacked packages (in the image: `/inputs/corpus/`, from the
 inputs image). The submodule `PyCG`
 at a clean commit, and in its history the 2021 analysis (commit `046479e`). The runs of the
-prior tools (`../results/tools/<row>/rq3-pilot.json`, `rq3.json`).
+prior tools (`../results/tools/<row>/rq3.json`; the pilot's
+`rq3-pilot.json`).
 
-**Outputs** (in `../results/`): `rq3-pilot.md` and `.json` (the pilot);
-`rq3-scale.md` and `.json`, with the report of each part
+**Outputs** (in `../results/`): `rq3-scale.md` and `.json`, with the
+report of each part
 (`robustness-pypi-top-100.*`, `robustness-dypybench.*`,
 `robustness-large-projects.*`).
 
@@ -45,14 +46,16 @@ and one per part. "With a target": the packages that have Python source to
 analyse. "Finished" and "Share": the packages whose analysis ended within
 the limits. "Failures": the others by status (crash, timeout, memory).
 Time and memory: median, 90th percentile and maximum over the finished
-runs. The pilot table also lists each package and tool.
+runs. The pilot writes `rq3-pilot.md` and `.json` (and the prior tools
+`tools/<row>/rq3-pilot.json`), which also list each package and tool: a
+check before a run, not a result, so the repository does not keep them.
 
-**Known limits.** Only the pilot is committed: ten packages, with the
-limit of 8 GiB that it had then. The run on the whole corpus is not done,
-and its time and memory figures need a quiet Linux host. The rows of
-JARVIS, CPyGraph and PyAnalyzer are not run yet. HeaderGen does not run on
-this corpus: it imports the code that it analyses, and no security scan
-covers the corpus. A package that the target rule does not cover is
+**Known limits.** The times and the memory depend on the machine (the
+committed run: linux x86_64, K = 1, alone on the machine; see
+`../../README.md`, "Reproducing the results"), and with the times which
+runs end at the time limit. Finishing is not accuracy: a tool that models
+less finishes sooner. HeaderGen does not run on this corpus: it imports
+the code that it analyses, and no security scan covers the corpus. A package that the target rule does not cover is
 listed with the reason, not guessed.
 
 Reference: [`../README.md`](../README.md), sections "RQ3: scale and

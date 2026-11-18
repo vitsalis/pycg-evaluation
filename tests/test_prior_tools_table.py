@@ -422,10 +422,21 @@ def test_the_committed_graphs_are_those_of_the_committed_records():
     assert seen and seen == set(prior.GRAPHS.glob("*/*.json"))
 
 
-def test_the_committed_rq1_run_of_pyan3_needs_a_rerun_only_for_its_limits():
-    """The committed run (made before the third part of RQ3's corpus) is
-    still one of pyan3's row and pin: its one problem is the limits."""
-    data = json.loads((prior.TOOLS_RESULTS / "pyan3" / "rq1.json").read_text())
-    assert tool_job.stored_problem("pyan", "pyan3", data, "rq1") == (
-        "needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB)"
-    )
+def test_every_committed_run_of_a_prior_tool_is_current():
+    """The committed runs of rq1 (and headergen-deps' rq1-<project>) and of
+    rq3 are those of each row as it is pinned and configured now: their
+    tables use them, none says "needs rerun"."""
+    rows = {
+        tool_job.slug(row): (tool, row)
+        for tool in tool_job._build().TOOLS
+        for row, _ in tool_job.rows(tool)
+    }
+    seen = set()
+    for path in sorted(prior.TOOLS_RESULTS.glob("*/*.json")):
+        tool, row = rows[path.parent.name]
+        question = "rq1" if path.stem.startswith("rq1") else path.stem
+        assert question in ("rq1", "rq3"), path
+        data = json.loads(path.read_text())
+        assert tool_job.stored_problem(tool, row, data, question) is None, path
+        seen.add((row, question))
+    assert {question for _, question in seen} == {"rq1", "rq3"}

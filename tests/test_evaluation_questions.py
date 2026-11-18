@@ -767,6 +767,34 @@ def test_rq3_reads_the_three_parts_of_the_corpus_and_pilots_the_first_two():
     assert all(path.is_file() for _, path, _ in rq3.PARTS)
 
 
+def test_the_published_table_of_rq3_is_that_of_the_committed_runs():
+    """rq3-scale.md and .json are what the committed reports of PyCG's run
+    (robustness-*.json) and the committed runs of the prior tools give,
+    with every tool's row measured: a stored run of another pin, manifest
+    or K would be a "needs rerun" row."""
+    results = tables.RESULTS
+    parts = {
+        label: json.loads((results / f"robustness-{path.stem}.json").read_text())
+        for label, path, _ in rq3.PARTS
+    }
+    rows = [("PyCG", "PyCG"), ("original PyCG", "original-PyCG")]
+    rows += rq3.tool_rows(parts, rq3.STEM)
+    stopped = any(rq3.cleanup_failed(part) for part in parts.values())
+    data, markdown = rq3.build(parts, rows, stopped)
+    published = json.loads((results / "rq3-scale.json").read_text())
+    assert published == json.loads(tables.dumps(data))
+    assert (results / "rq3-scale.md").read_text(encoding="utf-8") == markdown
+    measured = {
+        row["tool"]: row["corpus"]["all"]["with_target"]
+        for row in data["rows"]
+        if row["corpus"]["all"]["status"] == "measured"
+    }
+    assert set(measured) == {
+        "PyCG", "original PyCG", "pyan3", "JARVIS", "CPyGraph", "PyAnalyzer"
+    }  # fmt: skip
+    assert set(measured.values()) == {159}
+
+
 def test_the_rq3_service_copies_the_report_of_every_part():
     entry = fakes.load("container/question_entry")
     reports = {

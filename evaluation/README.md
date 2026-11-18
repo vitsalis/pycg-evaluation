@@ -306,7 +306,9 @@ docker compose -f evaluation/compose.yaml run --rm rq2        # results/rq2-caus
 ## The full run
 
 The commands of the final run, in order, on a Linux host with Docker and
-the Compose plugin, from the root of a clean checkout. Nothing else runs on
+the Compose plugin, from the root of a clean checkout. The committed run
+of 2026-11-17 ran them so (its machine: "Reproducing the results" in
+`../README.md`). Nothing else runs on
 the host. `C` stands for `docker compose -f evaluation/compose.yaml`. A
 `run --rm` without a terminal (in the background, under `nohup`, from a
 script) needs `-T`, which gives the service no pseudo-terminal: for example
@@ -330,29 +332,34 @@ for name in aiocache bottle configargparse itables markdown2 marshmallow tenacit
     NAME=$name $C build headergen-deps
 done
 
-# 3. The prior tools, one service run at a time (rq1: the micro-benchmark
-#    and the macro-benchmark; rq3-pilot, then rq3: the corpus; rq1-trace:
-#    DyPyBench's traced projects). rq1 and rq3 write
-#    results/tools/<row>/<question>.json, and rq1 the graph of each macro
-#    project to results/graphs/<row>/<project>.json; rq1-trace writes its
-#    graphs to the volume tool-graphs.
-for tool in pyan jarvis cpygraph pyanalyzer; do
-    $C run --rm $tool rq1
-    $C run --rm $tool rq3-pilot
-    $C run --rm $tool rq3
-    $C run --rm $tool rq1-trace
+# 3. RQ1 and RQ2: the prior tools, one service run at a time, three jobs
+#    at a time (rq1: the micro-benchmark and the macro-benchmark;
+#    rq1-trace: DyPyBench's traced projects), then the tables. rq1 writes
+#    results/tools/<row>/rq1.json and the graph of each macro project to
+#    results/graphs/<row>/<project>.json; rq1-trace writes its graphs to
+#    the volume tool-graphs.
+for tool in pyan jarvis cpygraph pyanalyzer headergen; do
+    EVAL_MEMORY=50g $C run --rm $tool rq1 --jobs 3
 done
-$C run --rm headergen rq1                                     # rq1 only
 for name in aiocache bottle configargparse itables markdown2 marshmallow tenacity; do
     NAME=$name $C run --rm headergen-deps rq1
 done
-
-# 4. The tables (results/), each after the runs that it reads.
+for tool in pyan jarvis cpygraph pyanalyzer; do                 # not HeaderGen
+    EVAL_MEMORY=50g $C run --rm $tool rq1-trace --jobs 3
+done
 $C run --rm rq1        # first scores the prior tools' runs: results/prior-tools.*
 $C run --rm rq2
-$C run --rm rq1-trace  # maps the traces, scores the tools' rq1-trace graphs
+EVAL_MEMORY=50g $C run --rm rq1-trace --jobs 3   # maps the traces, scores every graph
+
+# 4. RQ3, one service at a time, one job at a time (K = 1), with nothing
+#    else on the machine: its results are times and memory. rq3-pilot
+#    first checks the question on ten packages (optional; its outputs are
+#    not results). Each tool writes results/tools/<row>/rq3.json.
 $C run --rm rq3-pilot
-$C run --rm rq3        # reads results/tools/*/rq3.json
+for tool in pyan jarvis cpygraph pyanalyzer; do
+    $C run --rm $tool rq3
+done
+$C run --rm rq3        # PyCG and the PyCG of 2021; reads results/tools/*/rq3.json
 ```
 
 `$C run --rm jarvis rq1 --variant 2` runs one row of a tool (JARVIS has
@@ -455,11 +462,10 @@ end at its bound. A prior-tool micro cell of another cohort needs a rerun.
 `prior_tools.py` records the commit and the dirty flag of the checkout
 that holds its micro cases: the submodule `PyCG`, not this repository.
 
-**State today.** `results/rq1-accuracy.md` holds every row. It was
-converted on 2026-11-15 from the table of the six former benchmark
-directories (one column each), when they became one: each count is a
-recorded count or a sum of recorded counts, and the file says so. The next
-`rq1` run writes it again from the stored runs and graphs.
+**The committed table.** `results/rq1-accuracy.md` holds every row, from
+the run of 2026-11-17 (see "Reproducing the results" in `../README.md`):
+PyCG and the PyCG of 2021 measured by the `rq1` service, the prior tools
+scored from their stored runs and graphs.
 
 ### How the benchmark grew
 
@@ -767,9 +773,8 @@ A row without a run is "not run" with its command; a project whose input
 changed since the run makes the row "needs rerun". HeaderGen is a stated
 cell: it imports the analysed code, and the corpus is not scanned.
 
-**State today.** Tested on fixture projects and on two real ones
-(delegator.py and schedule, under a second each); the table is not run
-on the 48 projects here.
+**The committed table.** `results/rq1-trace-recall.md`, from the run of
+2026-11-17: every tool on the 48 projects with a trace, HeaderGen stated.
 
 ## RQ2: causes
 
@@ -829,8 +834,8 @@ notes into the limits and rules that the final pass names: `L-test`,
   (narrowing after an `assert`, which `python -O` does not run). A gap
   never counts under the stated limits.
 
-**State today.** The table is committed (`results/rq2-causes.md` gives the
-count of each group and the share under stated limits).
+**The committed table.** `results/rq2-causes.md` gives the count of each
+group and the share under stated limits.
 `tests/test_evaluation_questions.py` checks that the label data has, per
 batch and inside and outside, as many false positives and false negatives as
 PyCG has in `results/rq1-accuracy.json`, and that every label has exactly
@@ -893,19 +898,19 @@ same way (see "The large projects"). The build of the inputs image fetches
 the three: the top 100 into `CORPUS_WORK/work`, DyPyBench into
 `CORPUS_WORK/dypybench`, the large projects into `CORPUS_WORK/large`.
 
-**State today.** No run is committed.
-Both manifests exist; 49 of DyPyBench's 50 projects have a pinned archive
-(akshare cannot be recovered: a stated row). The table reads the three
-parts as one corpus. The prior tools' rows come from their services' runs
-(`results/tools/<row>/rq3.json`, `rq3-pilot.json`; see "Prior tools"): a
-row without a run says "not run" with its command, HeaderGen's row is
-stated (it imports the analysed code). HeaderGen imports the modules it analyses, so it does not run on a
-corpus that no security scan covered: its row says "not run: the tool
-imports the analysed code, and the corpus is not scanned" (the
-maintainer's rule, 2026-11-14, unless the maintainer decides otherwise).
-The final
-time and memory figures need a Linux host (the maintainer's decision) and
-are the last step.
+**The committed table.** `results/rq3-scale.md` and the three
+`results/robustness-*.md`, from the run of 2026-11-17 on linux x86_64 at
+K = 1 (see "Reproducing the results" in `../README.md`). 49 of
+DyPyBench's 50 projects have a pinned archive (akshare cannot be
+recovered: a stated row). The table reads the three parts as one corpus.
+The prior tools' rows come from their services' runs
+(`results/tools/<row>/rq3.json`; see "Prior tools"): a row without a run
+says "not run" with its command. HeaderGen imports the modules it
+analyses, so it does not run on a corpus that no security scan covered:
+its row says "not run: the tool imports the analysed code, and the corpus
+is not scanned" (the maintainer's rule, 2026-11-14). The pilot's outputs
+(`results/rq3-pilot.*`, `results/tools/<row>/rq3-pilot.json`) are a check
+before a run, not results: the repository does not keep them.
 
 ### Robustness on a corpus
 
@@ -1771,11 +1776,11 @@ by one:
 | `prior-tools.md`, `.json` | `rq1` (`prior_tools.py`, first) | `rq1` (the rows of the prior tools) |
 | `rq1-trace-recall.md`, `.json` | `rq1-trace` | - |
 | `rq2-causes.md`, `.json` | `rq2` | - |
-| `rq3-pilot.md`, `.json` | `rq3-pilot` | - |
-| `rq3-scale.md`, `.json`, `robustness-*.md`, `.json` | `rq3` (not run yet: the files are not there) | - |
+| `rq3-pilot.md`, `.json` (not in git: a check before a run) | `rq3-pilot` | - |
+| `rq3-scale.md`, `.json`, `robustness-*.md`, `.json` | `rq3` | - |
 | `tools/<row>/rq1.json`, `rq1-<project>.json` | `TOOL rq1`, `headergen-deps rq1`: the record of each job and the graphs of the micro cases | `rq1` |
 | `graphs/<row>/<project>.json` | `TOOL rq1`: the graph of each macro project | `rq1` |
-| `tools/<row>/rq3-pilot.json`, `rq3.json` | `TOOL rq3-pilot`, `TOOL rq3` | `rq3-pilot`, `rq3` |
+| `tools/<row>/rq3.json` (and `rq3-pilot.json`, not in git) | `TOOL rq3`, `TOOL rq3-pilot` | `rq3`, `rq3-pilot` |
 | `trace/` (not in git) | `trace` | - |
 
 The findings are in PyCG's `docs/paper-notes.md`.
