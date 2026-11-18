@@ -14,9 +14,9 @@
 "notes": {
 "merged: callers equal once line numbers are stripped": 44
 },
-"peak_rss_mib": 246.3,
+"peak_rss_mib": 245.9,
 "status": "ok",
-"wall_seconds": 3.565
+"wall_seconds": 7.177
 }
 }
 }
@@ -30,10 +30,10 @@
 "tool": {
 "image": "pycg-tool-headergen",
 "limits": {
-"memory_mib": 2048,
-"seconds": 600
+"memory_mib": 16384,
+"seconds": 1800
 },
-"memory_mib": 4096,
+"memory_mib": 16384,
 "note": "a shim of 15 lines replaces its framework_models package: the same check_alias over the pinned aliases/*.json, without the classifier, its pickles and the nltk download; HeaderGen imports the analysed modules and the libraries that they name, so each macro project with runtime dependencies runs in an image that has them (README, Prior tools)",
 "pin": {
 "commit": "1ea52265ca4e76bb202a2deb26f3b9394d3caa95",

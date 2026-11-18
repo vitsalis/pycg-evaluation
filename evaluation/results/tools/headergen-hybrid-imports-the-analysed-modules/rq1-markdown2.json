@@ -8,8 +8,12 @@
 "macro": {
 "runs": {
 "macro/markdown2": {
+"dependencies": "installed: tools/headergen-deps/markdown2.txt",
+"error": "exit status 1: RuntimeError: Set changed size during iteration",
 "input_sha256": "d72862277781250e984530af85a3d30a5bb20b02a0a54283be6f26e2225054a2",
-"status": "crash"
+"peak_rss_mib": 252.9,
+"status": "crash",
+"wall_seconds": 11.864
 }
 }
 }
@@ -23,10 +27,10 @@
 "tool": {
 "image": "pycg-tool-headergen",
 "limits": {
-"memory_mib": 2048,
-"seconds": 600
+"memory_mib": 16384,
+"seconds": 1800
 },
-"memory_mib": 4096,
+"memory_mib": 16384,
 "note": "a shim of 15 lines replaces its framework_models package: the same check_alias over the pinned aliases/*.json, without the classifier, its pickles and the nltk download; HeaderGen imports the analysed modules and the libraries that they name, so each macro project with runtime dependencies runs in an image that has them (README, Prior tools)",
 "pin": {
 "commit": "1ea52265ca4e76bb202a2deb26f3b9394d3caa95",

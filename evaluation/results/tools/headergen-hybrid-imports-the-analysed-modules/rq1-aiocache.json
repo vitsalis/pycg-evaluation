@@ -8,12 +8,15 @@
 "macro": {
 "runs": {
 "macro/aiocache": {
+"dependencies": "installed: tools/headergen-deps/aiocache.txt",
 "graph_sha256": "43c0c3e96020ca6be92221efe31a7e2bbfe0b167b6f86a3eee745c92ca6e2203",
 "input_sha256": "e53099d48b5fb98518e168356ce5eb790b604943d0d3db100865cb9a32c0458b",
 "notes": {
 "merged: callers equal once line numbers are stripped": 43
 },
-"status": "ok"
+"peak_rss_mib": 245.2,
+"status": "ok",
+"wall_seconds": 5.371
 }
 }
 }
@@ -27,10 +30,10 @@
 "tool": {
 "image": "pycg-tool-headergen",
 "limits": {
-"memory_mib": 2048,
-"seconds": 600
+"memory_mib": 16384,
+"seconds": 1800
 },
-"memory_mib": 4096,
+"memory_mib": 16384,
 "note": "a shim of 15 lines replaces its framework_models package: the same check_alias over the pinned aliases/*.json, without the classifier, its pickles and the nltk download; HeaderGen imports the analysed modules and the libraries that they name, so each macro project with runtime dependencies runs in an image that has them (README, Prior tools)",
 "pin": {
 "commit": "1ea52265ca4e76bb202a2deb26f3b9394d3caa95",

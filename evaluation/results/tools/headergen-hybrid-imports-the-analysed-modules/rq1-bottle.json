@@ -8,12 +8,15 @@
 "macro": {
 "runs": {
 "macro/bottle": {
+"dependencies": "installed: tools/headergen-deps/bottle.txt",
 "graph_sha256": "1587f37b921871c8a8b093256624deb5fa2f1eee0e45266f2d8f7af6f07e27c8",
 "input_sha256": "7ddb5ffc752ed0682f8f30d393d2eb69d5593b6b73912fab4897c059c8f8231c",
 "notes": {
 "merged: callers equal once line numbers are stripped": 95
 },
-"status": "ok"
+"peak_rss_mib": 309.4,
+"status": "ok",
+"wall_seconds": 31.146
 }
 }
 }
@@ -27,10 +30,10 @@
 "tool": {
 "image": "pycg-tool-headergen",
 "limits": {
-"memory_mib": 2048,
-"seconds": 600
+"memory_mib": 16384,
+"seconds": 1800
 },
-"memory_mib": 4096,
+"memory_mib": 16384,
 "note": "a shim of 15 lines replaces its framework_models package: the same check_alias over the pinned aliases/*.json, without the classifier, its pickles and the nltk download; HeaderGen imports the analysed modules and the libraries that they name, so each macro project with runtime dependencies runs in an image that has them (README, Prior tools)",
 "pin": {
 "commit": "1ea52265ca4e76bb202a2deb26f3b9394d3caa95",

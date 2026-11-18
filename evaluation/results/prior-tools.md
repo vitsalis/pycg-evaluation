@@ -8,14 +8,14 @@ the conversions of each adapter and what they lose. P: precision, R: recall.
 
 | Tool | Version | Python | Image | Memory | Run |
 |---|---|---|---|---|---|
-| pyan3 | v2.9.0 (8e8bd90646) | - | - | - | not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB) |
-| JARVIS | 8871b86 (8871b86494) | - | - | - | not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB) |
-| JARVIS, class edges dropped | 8871b86 (8871b86494) | - | - | - | not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB) |
-| JARVIS --precision | 8871b86 (8871b86494) | - | - | - | not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB) |
-| CPyGraph | v0.1.0 (984d34ed2f) | - | - | - | not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB) |
-| HeaderGen (hybrid: imports the analysed modules) | 1ea5226 (1ea52265ca) | - | - | - | not run: needs rerun: it ran with other limits (600 s, 4096 MiB; now 1800 s, 16384 MiB) |
-| PyAnalyzer | ea143ef (ea143ef8bd) | - | - | - | not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB) |
-| PyAnalyzer (call relations of the dependency report) | ea143ef (ea143ef8bd) | - | - | - | not run: needs rerun: it ran with other limits (600 s, 2048 MiB; now 1800 s, 16384 MiB) |
+| pyan3 | v2.9.0 (8e8bd90646) | 3.15.2 | `pycg-tool-pyan` | 16384 MiB | yes |
+| JARVIS | 8871b86 (8871b86494) | 3.13.18 | `pycg-tool-jarvis` | 16384 MiB | yes |
+| JARVIS, class edges dropped | 8871b86 (8871b86494) | 3.13.18 | `pycg-tool-jarvis` | 16384 MiB | yes |
+| JARVIS --precision | 8871b86 (8871b86494) | 3.13.18 | `pycg-tool-jarvis` | 16384 MiB | yes |
+| CPyGraph | v0.1.0 (984d34ed2f) | 3.14.10 | `pycg-tool-cpygraph` | 16384 MiB | yes |
+| HeaderGen (hybrid: imports the analysed modules) | 1ea5226 (1ea52265ca) | 3.12.16 | `pycg-tool-headergen` | 16384 MiB | yes |
+| PyAnalyzer | ea143ef (ea143ef8bd) | 3.13.18 | `pycg-tool-pyanalyzer` | 16384 MiB | yes |
+| PyAnalyzer (call relations of the dependency report) | ea143ef (ea143ef8bd) | 3.13.18 | `pycg-tool-pyanalyzer` | 16384 MiB | yes |
 
 How JARVIS, JARVIS, class edges dropped, JARVIS --precision run: the child imports importlib.metadata before the tool starts: JARVIS puts an import hook with empty module sources first, then calls importlib.invalidate_caches(), which on Python 3.10 and later imports importlib.metadata through that hook and fails.
 How HeaderGen (hybrid: imports the analysed modules) run: a shim of 15 lines replaces its framework_models package: the same check_alias over the pinned aliases/*.json, without the classifier, its pickles and the nltk download; HeaderGen imports the analysed modules and the libraries that they name, so each macro project with runtime dependencies runs in an image that has them (README, Prior tools).
@@ -26,39 +26,133 @@ The outside columns of PyAnalyzer (call relations of the dependency report): PyA
 Micro-benchmark: 622 cases. 14 cases need a
 Python newer than 3.12, the oldest interpreter of a tool that
 runs; they are left out for every tool.
-`macro-benchmark` at `64ceb8b7dc`: Sublist3r, aiocache, anytree, argcomplete, asciinema, asyncstdlib, autojump, bottle, cachetools, configargparse, dagster-pipes, fabric, face_classification, fastjsonschema, funcy, h11, itables, jmespath, markdown2, marshmallow, netaddr, pluggy, pyflakes, pypinyin, pyrate-limiter, python-barcode, sqlparse, structlog, tenacity, whitenoise.
+`macro-benchmark` at `f53515b300`, with changes: Sublist3r, aiocache, anytree, argcomplete, asciinema, asyncstdlib, autojump, bottle, cachetools, configargparse, dagster-pipes, fabric, face_classification, fastjsonschema, funcy, h11, itables, jmespath, markdown2, marshmallow, netaddr, pluggy, pyflakes, pypinyin, pyrate-limiter, python-barcode, sqlparse, structlog, tenacity, whitenoise.
 Each job: a child process in the tool's Compose service, without network, hash seed 0, at most 1800 s and the memory of its tool (table above).
 
 ## Raw names (the headline)
 
 | Tool | Benchmark | Runs | In TP | In FP | In FN | In P | In R | Out TP | Out FP | Out FN | Out P | Out R |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| pyan3 | all | not run | - | - | - | - | - | - | - | - | - | - |
-| JARVIS | all | not run | - | - | - | - | - | - | - | - | - | - |
-| JARVIS, class edges dropped | all | not run | - | - | - | - | - | - | - | - | - | - |
-| JARVIS --precision | all | not run | - | - | - | - | - | - | - | - | - | - |
-| CPyGraph | all | not run | - | - | - | - | - | - | - | - | - | - |
-| HeaderGen (hybrid: imports the analysed modules) | all | not run | - | - | - | - | - | - | - | - | - | - |
-| PyAnalyzer | all | not run | - | - | - | - | - | - | - | - | - | - |
-| PyAnalyzer (call relations of the dependency report) | all | not run | - | - | - | - | - | - | - | - | - | - |
+| pyan3 | micro | 622 | 720 | 401 | 532 | 0.642 | 0.575 | 0 | 0 | 474 | - | 0.000 |
+| pyan3 | macro | 30 | 4219 | 2158 | 4358 | 0.662 | 0.492 | 0 | 0 | 9461 | - | 0.000 |
+| JARVIS | micro | 622 | 774 | 577 | 478 | 0.573 | 0.618 | 203 | 62 | 271 | 0.766 | 0.428 |
+| JARVIS | macro | 30 | 3705 | 2035 | 4872 | 0.645 | 0.432 | 3773 | 579 | 5688 | 0.867 | 0.399 |
+| JARVIS, class edges dropped | micro | 622 | 774 | 201 | 478 | 0.794 | 0.618 | 203 | 62 | 271 | 0.766 | 0.428 |
+| JARVIS, class edges dropped | macro | 30 | 3705 | 1071 | 4872 | 0.776 | 0.432 | 3773 | 579 | 5688 | 0.867 | 0.399 |
+| JARVIS --precision | micro | 622 | 759 | 110 | 493 | 0.873 | 0.606 | 184 | 55 | 290 | 0.770 | 0.388 |
+| JARVIS --precision | macro | 30 | 3565 | 278 | 5012 | 0.928 | 0.416 | 3220 | 484 | 6241 | 0.869 | 0.340 |
+| CPyGraph | micro | 622 | 943 | 134 | 309 | 0.876 | 0.753 | 31 | 6 | 443 | 0.838 | 0.065 |
+| CPyGraph | macro | 30 | 992 | 609 | 7585 | 0.620 | 0.116 | 191 | 25 | 9270 | 0.884 | 0.020 |
+| HeaderGen (hybrid: imports the analysed modules) | micro | 622 (1 failed) | 715 | 94 | 537 | 0.884 | 0.571 | 296 | 101 | 178 | 0.746 | 0.625 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | 22 (2 failed); 22 of 30 projects measured | 2432 | 267 | 4500 | 0.901 | 0.351 | 3339 | 871 | 3221 | 0.793 | 0.509 |
+| PyAnalyzer | micro | 622 | 775 | 141 | 477 | 0.846 | 0.619 | - | - | - | - | - |
+| PyAnalyzer | macro | 30 (1 failed) | 1917 | 134 | 6660 | 0.935 | 0.224 | - | - | - | - | - |
+| PyAnalyzer (call relations of the dependency report) | micro | 622 | 740 | 159 | 512 | 0.823 | 0.591 | - | - | - | - | - |
+| PyAnalyzer (call relations of the dependency report) | macro | 30 (1 failed) | 3211 | 2527 | 5366 | 0.560 | 0.374 | - | - | - | - | - |
 
 ## Normalised names
 
 | Tool | Benchmark | Runs | In TP | In FP | In FN | In P | In R | Out TP | Out FP | Out FN | Out P | Out R |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| pyan3 | all | not run | - | - | - | - | - | - | - | - | - | - |
-| JARVIS | all | not run | - | - | - | - | - | - | - | - | - | - |
-| JARVIS, class edges dropped | all | not run | - | - | - | - | - | - | - | - | - | - |
-| JARVIS --precision | all | not run | - | - | - | - | - | - | - | - | - | - |
-| CPyGraph | all | not run | - | - | - | - | - | - | - | - | - | - |
-| HeaderGen (hybrid: imports the analysed modules) | all | not run | - | - | - | - | - | - | - | - | - | - |
-| PyAnalyzer | all | not run | - | - | - | - | - | - | - | - | - | - |
-| PyAnalyzer (call relations of the dependency report) | all | not run | - | - | - | - | - | - | - | - | - | - |
+| pyan3 | micro | 622 | 741 | 380 | 511 | 0.661 | 0.592 | 0 | 0 | 474 | - | 0.000 |
+| pyan3 | macro | 30 | 4252 | 2068 | 4325 | 0.673 | 0.496 | 0 | 0 | 9461 | - | 0.000 |
+| JARVIS | micro | 622 | 779 | 572 | 473 | 0.577 | 0.622 | 226 | 35 | 248 | 0.866 | 0.477 |
+| JARVIS | macro | 30 | 3733 | 1968 | 4844 | 0.655 | 0.435 | 3922 | 353 | 5539 | 0.917 | 0.414 |
+| JARVIS, class edges dropped | micro | 622 | 779 | 196 | 473 | 0.799 | 0.622 | 226 | 35 | 248 | 0.866 | 0.477 |
+| JARVIS, class edges dropped | macro | 30 | 3733 | 1004 | 4844 | 0.788 | 0.435 | 3922 | 353 | 5539 | 0.917 | 0.414 |
+| JARVIS --precision | micro | 622 | 764 | 105 | 488 | 0.879 | 0.610 | 202 | 34 | 272 | 0.856 | 0.426 |
+| JARVIS --precision | macro | 30 | 3593 | 211 | 4984 | 0.945 | 0.419 | 3348 | 308 | 6113 | 0.916 | 0.354 |
+| CPyGraph | micro | 622 | 950 | 127 | 302 | 0.882 | 0.759 | 31 | 6 | 443 | 0.838 | 0.065 |
+| CPyGraph | macro | 30 | 1022 | 540 | 7555 | 0.654 | 0.119 | 192 | 24 | 9269 | 0.889 | 0.020 |
+| HeaderGen (hybrid: imports the analysed modules) | micro | 622 (1 failed) | 720 | 89 | 532 | 0.890 | 0.575 | 305 | 87 | 169 | 0.778 | 0.643 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | 22 (2 failed); 22 of 30 projects measured | 2445 | 248 | 4487 | 0.908 | 0.353 | 3381 | 728 | 3179 | 0.823 | 0.515 |
+| PyAnalyzer | micro | 622 | 780 | 136 | 472 | 0.852 | 0.623 | - | - | - | - | - |
+| PyAnalyzer | macro | 30 (1 failed) | 1942 | 72 | 6635 | 0.964 | 0.226 | - | - | - | - | - |
+| PyAnalyzer (call relations of the dependency report) | micro | 622 | 747 | 151 | 505 | 0.832 | 0.597 | - | - | - | - | - |
+| PyAnalyzer (call relations of the dependency report) | macro | 30 (1 failed) | 3231 | 739 | 5346 | 0.814 | 0.377 | - | - | - | - | - |
 
 ## Failed runs
 
-None.
+- HeaderGen (hybrid: imports the analysed modules), micro, `micro/type_hints/pep695_generic_class`: crash: exit status 1: AttributeError: 'NoneType' object has no attribute 'reset_counters'
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/markdown2`: crash: exit status 1: RuntimeError: Set changed size during iteration
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/sqlparse`: crash: exit status 1: TypeError: unsupported operand type(s) for |=: 'set' and 'NoneType'
+- PyAnalyzer, macro, `macro/pypinyin`: memory
+- PyAnalyzer (call relations of the dependency report), macro, `macro/pypinyin`: memory
+
+## Not measured: the environment is not there
+
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/Sublist3r`: not available: no macro-benchmark/requirements/Sublist3r.txt for colorama, dns, requests, win_unicode_console
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/fabric`: not available: no macro-benchmark/requirements/fabric.txt for decorator, invoke, paramiko, six, win32api
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/face_classification`: not available: no macro-benchmark/requirements/face_classification.txt for cv2, flask, h5py, keras, matplotlib, mpl_toolkits, numpy, pandas, scipy, tensorflow
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/itables`: not installable on CPython 3.12: no resolution against HeaderGen's own pins for CPython 3.12 on aarch64-manylinux_2_28: nd when resolving dependencies: ╰─▶ Because typeguard==4.5.2 depends on typing-extensions>=4.14.0 and you require typeguard==4.5.2, we can conclude that you require typing-extensions>=4.14.0. And because you require typing-extensions==4.12.2, we can conclude that your requirements are unsatisfiable.
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/pyrate-limiter`: not pinned: no tools/headergen-deps/pyrate-limiter.txt (pin.py deps)
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/python-barcode`: not pinned: no tools/headergen-deps/python-barcode.txt (pin.py deps)
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/structlog`: not pinned: no tools/headergen-deps/structlog.txt (pin.py deps)
+- HeaderGen (hybrid: imports the analysed modules), macro, `macro/whitenoise`: not pinned: no tools/headergen-deps/whitenoise.txt (pin.py deps)
 
 ## Edges dropped or kept by the adapters
 
-None.
+| Tool | Benchmark | Reason | Edges |
+|---|---|---|---|
+| pyan3 | micro | an end not defined in the files | 1347 |
+| pyan3 | micro | target flavor class | 362 |
+| pyan3 | micro | target flavor module | 23 |
+| pyan3 | micro | target flavor name | 108 |
+| pyan3 | macro | an end not defined in the files | 26388 |
+| pyan3 | macro | target flavor class | 3175 |
+| pyan3 | macro | target flavor module | 102 |
+| pyan3 | macro | target flavor name | 2474 |
+| JARVIS | micro | kept: a name that cannot be mapped | 2 |
+| JARVIS, class edges dropped | micro | dropped: the callee is a class of the analysed source | 376 |
+| JARVIS, class edges dropped | micro | kept: a name that cannot be mapped | 2 |
+| JARVIS, class edges dropped | macro | dropped: the callee is a class of the analysed source | 964 |
+| JARVIS --precision | micro | kept: a name that cannot be mapped | 2 |
+| CPyGraph | micro | dropped: the callee is a helper frame (generic parameters) | 3 |
+| CPyGraph | macro | dropped: the callee is a helper frame (annotation scope) | 2 |
+| HeaderGen (hybrid: imports the analysed modules) | micro | kept: a name that cannot be mapped | 1 |
+| HeaderGen (hybrid: imports the analysed modules) | micro | merged: callers equal once line numbers are stripped | 7 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | kept: a name that cannot be mapped | 1 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | merged: callers equal once line numbers are stripped | 700 |
+| PyAnalyzer | micro | kept: a name that cannot be mapped | 8 |
+| PyAnalyzer (call relations of the dependency report) | micro | dropped: the target is a Alias | 3 |
+| PyAnalyzer (call relations of the dependency report) | micro | dropped: the target is a Ambiguous Attribute | 27 |
+| PyAnalyzer (call relations of the dependency report) | micro | dropped: the target is a Attribute | 6 |
+| PyAnalyzer (call relations of the dependency report) | micro | dropped: the target is a Class | 264 |
+| PyAnalyzer (call relations of the dependency report) | micro | dropped: the target is a LambdaParameter | 5 |
+| PyAnalyzer (call relations of the dependency report) | micro | dropped: the target is a Parameter | 71 |
+| PyAnalyzer (call relations of the dependency report) | micro | dropped: the target is a Unknown Variable | 238 |
+| PyAnalyzer (call relations of the dependency report) | micro | dropped: the target is a Unresolved Attribute | 251 |
+| PyAnalyzer (call relations of the dependency report) | micro | dropped: the target is a Variable | 187 |
+| PyAnalyzer (call relations of the dependency report) | macro | dropped: the target is a Alias | 117 |
+| PyAnalyzer (call relations of the dependency report) | macro | dropped: the target is a Ambiguous Attribute | 701 |
+| PyAnalyzer (call relations of the dependency report) | macro | dropped: the target is a Attribute | 53 |
+| PyAnalyzer (call relations of the dependency report) | macro | dropped: the target is a Class | 666 |
+| PyAnalyzer (call relations of the dependency report) | macro | dropped: the target is a LambdaParameter | 4 |
+| PyAnalyzer (call relations of the dependency report) | macro | dropped: the target is a Parameter | 219 |
+| PyAnalyzer (call relations of the dependency report) | macro | dropped: the target is a Unknown Variable | 3844 |
+| PyAnalyzer (call relations of the dependency report) | macro | dropped: the target is a Unresolved Attribute | 4272 |
+| PyAnalyzer (call relations of the dependency report) | macro | dropped: the target is a Variable | 181 |
+
+## Dependencies that the tool's environment gives
+
+HeaderGen's own environment wins over a project's trace pins:
+
+| Tool | Benchmark | Project | Distribution | Tool's version | Trace's version |
+|---|---|---|---|---|---|
+| HeaderGen (hybrid: imports the analysed modules) | macro | bottle | jinja2 | 3.1.4 | 3.1.6 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | bottle | markupsafe | 3.0.2 | 3.0.3 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | configargparse | pyyaml | 6.0.2 | 6.0.3 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | tenacity | attrs | 24.2.0 | 26.1.0 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | tenacity | idna | 3.10 | 3.20 |
+
+## Runtime dependencies of the projects
+
+| Tool | Benchmark | Dependencies | Projects |
+|---|---|---|---|
+| HeaderGen (hybrid: imports the analysed modules) | macro | installed: tools/headergen-deps/aiocache.txt | 1 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | installed: tools/headergen-deps/bottle.txt | 1 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | installed: tools/headergen-deps/configargparse.txt | 1 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | installed: tools/headergen-deps/markdown2.txt | 1 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | installed: tools/headergen-deps/marshmallow.txt | 1 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | installed: tools/headergen-deps/tenacity.txt | 1 |
+| HeaderGen (hybrid: imports the analysed modules) | macro | none: projects.toml lists no runtime dependency | 16 |
