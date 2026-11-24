@@ -1,9 +1,0 @@
-{
-"fabric._version": [
-"<builtin>.map",
-"<builtin>.str.join"
-],
-"fabric.main": [
-"fabric.main.make_program"
-]
-}

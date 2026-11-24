@@ -1,5 +1,0 @@
-# The build context of the prior tools' images is evaluation/: only our
-# files of tools/ go in (the trees are additional contexts).
-*
-!tools/
-tools/**/__pycache__

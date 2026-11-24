@@ -1,9 +1,0 @@
-# UNPINNED: the input of cpygraph-requirements.txt, which does not exist yet.
-# The lead resolves it, with the network, by
-#   python3 -I evaluation/tools/pin.py requirements cpygraph
-# (uv pip compile: Python 3.14, wheels only, every file by SHA-256, newest
-# release uploaded before the cutoff of pin.py).
-#
-# CMake for the build of pygCG (CPyGraph needs 3.16 or later). The compiler,
-# make and CPython's headers come with the full Python image.
-cmake>=3.16,<4
