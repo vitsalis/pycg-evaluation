@@ -1,8 +1,0 @@
-{
-"marshmallow.orderedset": [
-"marshmallow.orderedset.OrderedSet.__init__"
-],
-"marshmallow.validate.URL": [
-"marshmallow.validate.URL.RegexMemoizer.__init__"
-]
-}

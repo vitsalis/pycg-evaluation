@@ -1,5 +1,0 @@
-{
-"dagster_pipes": [
-"dagster_pipes._env_var_to_cli_argument"
-]
-}
